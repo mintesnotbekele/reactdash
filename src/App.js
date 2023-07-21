@@ -164,8 +164,7 @@ function App() {
           
           
           
-          <img alt="background" src={logo} style={{height: '300px', position: 'absolute',right: '850px',top: '7600px', zIndex: "500"}}/>
-          <img alt="background" src={logotext} style={{position: 'absolute',right: '800px',top: '7700px', zIndex: "500"}}/>
+          
           <Col span={3}></Col>
          </Row>
        </div>
@@ -409,9 +408,11 @@ function App() {
 
       </Col>
     </Row>
-    <div style={{width: '100%', overflow: 'hidden'}}>
-       <img alt="background" src={foot2} style={{height: '650px', right: '-700px', position: 'absolute',  overflow: 'hidden'}}/>
-       </div>
+     <div style={{width: '100%', overflow: 'hidden'}}>
+          <img alt="background" src={logo} style={{height: '300px', marginLeft: "42%", position: 'absolute', zIndex: "500"}}/>
+          <img alt="background" src={logotext} style={{ marginTop: '100px' , marginLeft: "41%",position: 'absolute', zIndex: "500"}}/>
+       <img alt="background" src={foot2} style={{height: '650px', right: '0px', position: 'absolute',  overflow: 'hidden'}}/>
+       </div> 
     </div>
   );
 }
