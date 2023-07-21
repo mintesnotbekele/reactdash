@@ -20,6 +20,7 @@ import foot1 from "./assets/foot.png";
 import foot2 from "./assets/foot2.png";
 import newhand from "./assets/thehand.png";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import birds from "./assets/birds.png";
 import 'react-multi-carousel/lib/styles.css';
 // Default theme
 import '@splidejs/react-splide/css';
@@ -49,7 +50,7 @@ function App() {
   return (
     
     <div className="App">    
-<div style={{background: "#4E3426", width: "100%", overflow: "hidden"}} className="flex flex-row">
+<div style={{background: "#4E3426",position: 'relative', width: "100%", }} >
     <div className='flex-auto w-10'></div>
     <div  className="flex-auto w-100">
         <Navbar
@@ -154,16 +155,17 @@ function App() {
             </div>
           </Col>
           <Col span={4} ></Col>
-          <img src={background1} style={{position: 'absolute', rigth: '80px', bottom: '-20px', top: '900px'}}/>
-          <img src={background2} style={{position: 'absolute', left: '1300px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
-          <img src={background4} style={{position: 'absolute', rigth: '80px',left: '-200px', top: '1900px', zIndex: "500"}}/>
-           <img src={foot1} style={{position: 'absolute', left: '-300px', top: '7300px', zIndex: "500"}}/> 
-            <img src={foot2} style={{position: 'absolute', width: '1500px', overflow: 'hidden', left: '700px', top: '7300px', zIndex: "500"}}/>  
-          <img src={background5} style={{position: 'absolute', left: "1200px", top: '2600px' , zIndex: "500"}}/>
-          <img src={newhand} style={{position: 'absolute', left: "1200px", top: '4900px' , zIndex: "500"}}/>
+          <img alt="background" src={background1} style={{position: 'absolute',overflow: 'hidden', rigth: '80px', bottom: '-20px', top: '900px'}}/>
+          <img alt="background" src={background2} style={{position: 'absolute',overflow: 'hidden', left: '1300px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
+          <img alt="background" src={background4} style={{position: 'absolute', overflow: 'hidden', rigth: '80px',left: '-200px', top: '1900px', zIndex: "500"}}/>
+           <img alt="background" src={foot1} style={{height: "800px", left: '-200px', position: 'absolute', overflow: 'hidden', top: '7500px', zIndex: "500"}}/> 
+           
+        
           
-          <img src={logo} style={{height: '300px', position: 'absolute',right: '850px',top: '7600px', zIndex: "500"}}/>
-          <img src={logotext} style={{position: 'absolute',right: '800px',top: '7700px', zIndex: "500"}}/>
+          
+          
+          <img alt="background" src={logo} style={{height: '300px', position: 'absolute',right: '850px',top: '7600px', zIndex: "500"}}/>
+          <img alt="background" src={logotext} style={{position: 'absolute',right: '800px',top: '7700px', zIndex: "500"}}/>
           <Col span={3}></Col>
          </Row>
        </div>
@@ -239,7 +241,7 @@ function App() {
          
    
          </Row>
-
+          <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute',right: "80px", height: '870px', marginTop: "-200px", zIndex: "500"}}/></div>
          <Row style={{marginTop: "180px", zIndex: "1500"}}>
          <Col span={4}></Col>
           <Col span={18}>
@@ -281,7 +283,7 @@ function App() {
           </Col>
          </Row>
 
-         <Row style={{background: '#ECDFD7', marginTop: '100px',marginBottom: '100px', paddingTop: '120px', paddingBottom: '120px'}}>
+         <Row style={{background: '#ECDFD7', width: '100%', marginTop: '100px',marginBottom: '100px', paddingTop: '120px', paddingBottom: '120px'}}>
           <Col span={24}>
             <Row>
             <Col span={4}></Col>
@@ -313,6 +315,7 @@ function App() {
 
               
           </Row>
+          <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={newhand} style={{position: 'absolute', width: "600px", marginTop: "-400px", overflow: "hidden", right: '0px', zIndex: "500"}}/></div>
           <Row>
             <Col span={7}></Col>
           <Col span={10}>
@@ -345,9 +348,11 @@ function App() {
     </Col>
 
     </Row>
-
+    <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={birds} style={{width: '380px', height: "1000px", position: 'absolute', left: '0px', overflow: "hidden", zIndex: "500"}}/></div>
+     
     <Row style={{marginTop: '250px'}}>
     <Col span={4}></Col>
+    
     <Col span={16}>
       <div>
         <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: "DM Serif Display"}}>
@@ -356,7 +361,7 @@ function App() {
         <p style={{margin: "20px", fontSize: '22px', fontFamily: "josh"}}>Detailed and fun to read articles written by well researched individuals from around the world.</p>
         </div>
        <Row>
-       <Col span={8}>  <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '20px', margin: '20px'}}> <img style={{borderRadius: '25px'}} src={article1}/>
+        <Col span={8}>  <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '20px', margin: '20px'}}> <img style={{borderRadius: '25px'}} src={article1}/>
               <h1 style={{fontSize: '25px', fontFamily: "josh"}}> Let’s Get Solution For Arthritis.</h1>
               <div style={{ marginTop: '30px', marginBottom: '20px'}}> <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}>26 December,2022 <span style={{float: 'right', paddingRight: '30px'}}><ArrowRightOutlined/></span></p> </div>
               
@@ -399,11 +404,14 @@ function App() {
     </Row>
     <Row>
       <Col span={12} style={{zIndex: "4000"}}>
-     
+      
     
 
       </Col>
     </Row>
+    <div style={{width: '100%', overflow: 'hidden'}}>
+       <img alt="background" src={foot2} style={{height: '650px', right: '-700px', position: 'absolute',  overflow: 'hidden'}}/>
+       </div>
     </div>
   );
 }
