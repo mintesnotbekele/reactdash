@@ -146,6 +146,7 @@ function App() {
            <img src={foot1} style={{position: 'absolute', left: '-300px', top: '7300px', zIndex: "500"}}/> 
             <img src={foot2} style={{position: 'absolute',right: '-500px',top: '7300px', zIndex: "500"}}/>  
           <img src={background5} style={{position: 'absolute', left: '1300px', bottom: '-20px', top: '2400px' }}/>
+          <img src={logo} style={{position: 'absolute',right: '850px',top: '7600px', zIndex: "500"}}/>
           <Col span={3}></Col>
          </Row>
        </div>
