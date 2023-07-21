@@ -18,6 +18,7 @@ import blurback from "./assets/blurrybackground.png"
 import background5 from "./assets/lady.png";
 import foot1 from "./assets/foot.png";
 import foot2 from "./assets/foot2.png";
+import newhand from "./assets/thehand.png";
 // import "@fontsource/dm-serif-display"; // Defaults to weight 400
 // import "@fontsource/dm-serif-display/400.css"; // Specify weight
 // import "@fontsource/dm-serif-display/400-italic.css";
@@ -103,7 +104,7 @@ function App() {
       </div>
        <div style={{margin: 'auto', width: '100%'}}>
 
-         <Row style={{marginTop: '100px', marginBottom: '100px'}}>
+         <Row style={{marginTop: '100px', marginBottom: '100px', zIndex: "1000"}}>
           <Col span={4}></Col>
           <Col className="gutter-row" span={5}>
           <h3 style={{color: '#292F36',fontSize: '25px', Align: 'center', fontFamily: 'DM Serif Display'}}>
@@ -144,8 +145,10 @@ function App() {
           <img src={background2} style={{position: 'absolute', left: '1300px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
           <img src={background4} style={{position: 'absolute', rigth: '80px',left: '-200px', top: '1900px', zIndex: "500"}}/>
            <img src={foot1} style={{position: 'absolute', left: '-300px', top: '7300px', zIndex: "500"}}/> 
-            <img src={foot2} style={{position: 'absolute',right: '-500px',top: '7300px', zIndex: "500"}}/>  
-          <img src={background5} style={{position: 'absolute', left: '1300px', bottom: '-20px', top: '2400px' }}/>
+            <img src={foot2} style={{position: 'absolute', width: '1500px', overflow: 'hidden', left: '700px', top: '7300px', zIndex: "500"}}/>  
+          <img src={background5} style={{position: 'absolute', left: "1200px", top: '2600px' , zIndex: "500"}}/>
+          <img src={newhand} style={{position: 'absolute', left: "1200px", top: '4900px' , zIndex: "500"}}/>
+          
           <img src={logo} style={{height: '300px', position: 'absolute',right: '850px',top: '7600px', zIndex: "500"}}/>
           <img src={logotext} style={{position: 'absolute',right: '800px',top: '7700px', zIndex: "500"}}/>
           <Col span={3}></Col>
@@ -214,9 +217,9 @@ Ipsum has been scrambled.</p>
    
          </Row>
 
-         <Row style={{marginTop: "180px"}}>
+         <Row style={{marginTop: "180px", zIndex: "1500"}}>
          <Col span={4}></Col>
-          <Col span={16}>
+          <Col span={18}>
           <h1 style={{fontSize: '50px', color: '#292F36', marginBottom: "40px", fontFamily: 'DM Serif Display'}}>Diseases</h1>
           <p style={{ width: '60%',  margin: 'auto', color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
           
