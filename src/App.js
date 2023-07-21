@@ -19,12 +19,19 @@ import background5 from "./assets/lady.png";
 import foot1 from "./assets/foot.png";
 import foot2 from "./assets/foot2.png";
 import newhand from "./assets/thehand.png";
-// import "@fontsource/dm-serif-display"; // Defaults to weight 400
-// import "@fontsource/dm-serif-display/400.css"; // Specify weight
-// import "@fontsource/dm-serif-display/400-italic.css";
-//import Carousel from 'react-multi-carousel';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 import 'react-multi-carousel/lib/styles.css';
+// Default theme
+import '@splidejs/react-splide/css';
 
+
+// or other themes
+import '@splidejs/react-splide/css/skyblue';
+import '@splidejs/react-splide/css/sea-green';
+
+
+// or only core styles
+import '@splidejs/react-splide/css/core';
 import {ArrowRightOutlined, RightOutlined} from '@ant-design/icons'
 
 
@@ -33,10 +40,16 @@ import { Navbar , Carousel} from 'flowbite-react';
 import { Image,Button ,Row, Col, Space} from "antd";
 
 function App() {
+  const options = {
+    type   : 'loop',
+    focus  : 'center',
+    perPage: 3,
+    perMove: 1,
+  };
   return (
     
     <div className="App">    
-<div style={{background: "#4E3426", width: "100%", overflow: "hidden"}} class="flex flex-row">
+<div style={{background: "#4E3426", width: "100%", overflow: "hidden"}} className="flex flex-row">
     <div className='flex-auto w-10'></div>
     <div  className="flex-auto w-100">
         <Navbar
@@ -54,8 +67,8 @@ function App() {
     
     >
       <Navbar.Brand style={{marginLeft: "250px"}}>
-        <img style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}} preview={false} src={logo}/>
-        <img style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }} preview={false} src={logotext}/>
+        <img style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}}  src={logo}/>
+        <img style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }}  src={logotext}/>
       </Navbar.Brand>
       <Navbar.Collapse>
         <Navbar.Link
@@ -179,41 +192,51 @@ function App() {
             What the People Think About Us
             </h1>
             <Row>
-        <Col span={8} >
+              <Col span={24}>
+            <Splide options={options}>
+      <SplideSlide>
+      
+           
            <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
 
             <img src={avatar}></img>
-            <p style={{fontSize: '22px',fontFamily: 'josh', textAlign: 'left'}}>Lorem Ipsum is simply dummy 
+            <p style={{fontSize: '22px',fontFamily: 'josh', textAlign: 'left'}}>1Lorem Ipsum is simply dummy 
                     text of the typesetting industry. 
                     Ipsum has been.</p>
                               </div>
-        </Col>
-           
-        <Col span={8} >
-           <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
-
-            <img src={avatar}></img>
-            <p style={{fontSize: '22px', textAlign: 'left', fontFamily: 'josh'}}>Lorem Ipsum is simply dummy 
-            Lorem Ipsum is simply dummy 
-text of the typesetting industry. 
-Ipsum has been scrambled it 
-to make a type book.</p>
-                              </div>
-        </Col>
         
-        <Col span={8} >
+      </SplideSlide>
+      <SplideSlide>
+      
            <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
 
             <img src={avatar}></img>
-            <p style={{fontSize: '22px', fontFamily: 'josh',textAlign: 'left'}}>Lorem Ipsum is simply dummy 
+            <p style={{fontSize: '22px', textAlign: 'left', fontFamily: 'josh'}}>2Lorem Ipsum is simply dummy 
             Lorem Ipsum is simply dummy 
-text of the typesetting industry. 
-Ipsum has been scrambled.</p>
+                  text of the typesetting industry. 
+                  Ipsum has been scrambled it 
+                  to make a type book.</p>
                               </div>
-        </Col>
+      
+      </SplideSlide>
+      <SplideSlide>
+           <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
+
+            <img src={avatar}></img>
+            <p style={{fontSize: '22px', fontFamily: 'josh',textAlign: 'left'}}>3Lorem Ipsum is simply dummy 
+                      Lorem Ipsum is simply dummy 
+          text of the typesetting industry. 
+          Ipsum has been scrambled.</p>
+                              </div>
+      </SplideSlide>
+    </Splide>
+    </Col>
+           
+               
+       
         </Row>
           </Col>
-         <Col span={6}></Col>
+         
    
          </Row>
 
@@ -224,7 +247,7 @@ Ipsum has been scrambled.</p>
           <p style={{ width: '60%',  margin: 'auto', color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
           
           
-          <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '30px' }} row-gutter>
+          <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '30px' }} >
             <Col style={{margin:"35px"}} span={10}>
             <Image src={phones} style={{borderTopRightRadius:'45px'}} preview={false}/>
             <div style={{width: '100%'}}>
@@ -300,7 +323,7 @@ Ipsum has been scrambled.</p>
               </div>
               </Col>
           </Row>
-
+      
     <Row>
       <Col span={4}> </Col>
       <Col style={{height: '600px'}} span={15}> 
@@ -374,7 +397,13 @@ Ipsum has been scrambled.</p>
       <p style={{color : '0xFF4D5053', fontSize: '22.sp', letterSpacing: '0.22.sp'}}>Copyright © Curevive | Designed by Collabity - Powered by OwlWorkLabs</p>
       </Col>
     </Row>
+    <Row>
+      <Col span={12} style={{zIndex: "4000"}}>
+     
+    
 
+      </Col>
+    </Row>
     </div>
   );
 }
