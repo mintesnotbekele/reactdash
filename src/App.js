@@ -146,7 +146,8 @@ function App() {
            <img src={foot1} style={{position: 'absolute', left: '-300px', top: '7300px', zIndex: "500"}}/> 
             <img src={foot2} style={{position: 'absolute',right: '-500px',top: '7300px', zIndex: "500"}}/>  
           <img src={background5} style={{position: 'absolute', left: '1300px', bottom: '-20px', top: '2400px' }}/>
-          <img src={logo} style={{position: 'absolute',right: '850px',top: '7600px', zIndex: "500"}}/>
+          <img src={logo} style={{height: '300px', position: 'absolute',right: '850px',top: '7600px', zIndex: "500"}}/>
+          <img src={logotext} style={{position: 'absolute',right: '800px',top: '7700px', zIndex: "500"}}/>
           <Col span={3}></Col>
          </Row>
        </div>
@@ -323,21 +324,21 @@ Ipsum has been scrambled.</p>
     <Col span={4}></Col>
     <Col span={16}>
       <div>
-        <h1 style={{fontSize: '50px', color: '#292F36'}}>
+        <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: "DM Serif Display"}}>
       Articles & News
         </h1>
-        <p style={{margin: "20px", fontSize: '22px'}}>Detailed and fun to read articles written by well researched individuals from around the world.</p>
+        <p style={{margin: "20px", fontSize: '22px', fontFamily: "josh"}}>Detailed and fun to read articles written by well researched individuals from around the world.</p>
         </div>
        <Row>
        <Col span={8}>  <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '20px', margin: '20px'}}> <img style={{borderRadius: '25px'}} src={article1}/>
-              <h1 style={{fontSize: '25px'}}> Let’s Get Solution For Arthritis.</h1>
+              <h1 style={{fontSize: '25px', fontFamily: "josh"}}> Let’s Get Solution For Arthritis.</h1>
               <div style={{ marginTop: '30px', marginBottom: '20px'}}> <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}>26 December,2022 <span style={{float: 'right', paddingRight: '30px'}}><ArrowRightOutlined/></span></p> </div>
               
               </div> 
               
         </Col> 
         <Col span={8}>  <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '20px',background: '#ECDFD7', margin: '20px'}}> <img style={{borderRadius: '25px'}} src={article2}/>
-              <h1 style={{fontSize: '25px'}}> Latest Massage Techniques To Try.</h1>
+              <h1 style={{fontSize: '25px', fontFamily: "josh"}}> Latest Massage Techniques To Try.</h1>
               <div style={{ marginTop: '30px', marginBottom: '20px'}}> <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}>26 December,2022 <span style={{float: 'right', paddingRight: '30px'}}><ArrowRightOutlined/></span></p> </div>
               
               </div> 
@@ -345,15 +346,10 @@ Ipsum has been scrambled.</p>
 
         </Col> 
         <Col span={8}>  <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '20px', margin: '20px'}}> <img style={{borderRadius: '25px'}} src={article3}/>
-              <h1 style={{fontSize: '25px'}}> Best For Homemade Mix Of Herbs.</h1>
+              <h1 style={{fontSize: '25px', fontFamily: "josh"}}> Best For Homemade Mix Of Herbs.</h1>
               <div style={{ marginTop: '30px', marginBottom: '20px'}}> <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}>26 December,2022 <span style={{float: 'right', paddingRight: '30px'}}><ArrowRightOutlined/></span></p> </div>
-              
-              </div> 
-              
-
-              
+              </div>
         </Col> 
-
        </Row>
        </Col>
     </Row>
