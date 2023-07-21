@@ -11,6 +11,11 @@ import article1 from "./assets/article 1.png";
 import article2 from "./assets/article2.png";
 import article3 from "./assets/article3.png";
 import avatar from "./assets/avatar.png";
+import background1 from './assets/first.png'
+import background2 from "./assets/first.png";
+import background4 from "./assets/background4.png";
+
+import background5 from "./assets/background1.png";
 // import "@fontsource/dm-serif-display"; // Defaults to weight 400
 // import "@fontsource/dm-serif-display/400.css"; // Specify weight
 // import "@fontsource/dm-serif-display/400-italic.css";
@@ -76,27 +81,32 @@ function App() {
     </div>
     <div className="flex-auto w-10"></div>
     </div>
+
+    <div className="h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-100">
+      
         <div style={{alignItems: 'center', height: "900px", backgroundImage: `url(${hands})`}}>
-          <div style={{height: '600px'}}></div>
-          <div style={{width: '100%', height: '230px'  , marginLeft: 'auto',marginRight: "auto", boxShadow: '10px -30px 300px 100px rgba(0, 0, 0, 0.3)'}}>
-          <h1 style={{fontSize: '120px'}}>
+          <div style={{marginTop: '100px',height: '650px'}}></div>
+          <div style={{width: '100%', webkitBackdropFilter: 'blur(8.5px)', backdropFilter: 'blur(8.5px)', boxShadow: '0 0 100px 20px rgba(0, 0, 0, 0.9)', background: 'rgba(255, 255, 255, 0)'}}>
+          <h1 style={{fontSize: '120px' , fontFamily: 'DM Serif Display'}}>
           Naturopathy
           </h1>
-            <h3 style={{fontSize: '40px', color: '#FFFFFFB2'}}>The natures way of healing.</h3>
-            <Button style={{background: '#292F36',fontSize: '18px', color: '#F6F5EC', border: 'none', paddingRight: "60px", paddingLeft: "60px" , paddingTop: '10px', paddingBottom: '40px', borderRadius: '50px'}}>About <ArrowRightOutlined/></Button>
-          </div>
+            <h3 style={{fontSize: '40px', color: '#FFFFFFB2', fontFamily: "Jost"}}>The natures way of healing.</h3>
+           </div>
+           <Button style={{background: '#292F36',marginTop: '30px', fontSize: '18px', color: '#F6F5EC', border: 'none', paddingRight: "60px", paddingLeft: "60px" , paddingTop: '10px', paddingBottom: '40px', borderRadius: '50px'}}>About <span> <ArrowRightOutlined style={{color: '#CDA274', width: '50px',fontSize: '25px'}}/></span></Button>
+          
       </div>
 
+      </div>
        <div style={{margin: 'auto', width: '100%'}}>
 
          <Row style={{marginTop: '100px', marginBottom: '100px'}}>
           <Col span={4}></Col>
           <Col className="gutter-row" span={5}>
-          <h3 style={{color: '#292F36',fontSize: '25px', Align: 'center'}}>
+          <h3 style={{color: '#292F36',fontSize: '25px', Align: 'center', fontFamily: 'DM Serif Display'}}>
               Diseases
             </h3>
             <div>
-            <p style={{fontSize: '22px', textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
+            <p style={{fontSize: '22px', textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px', }}>
               Have diabetes, hypertension, thyroid or more? Learn about your disease and much more.
               </p>
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
@@ -104,29 +114,32 @@ function App() {
           </Col>
          
           <Col className="gutter-row" span={5}>
-            <h3 style={{color: '#292F36', fontSize: '25px', Align: 'center'}}>
+            <h3 style={{color: '#292F36', fontSize: '25px', Align: 'center', fontFamily: 'DM Serif Display'}}>
             Welcome to Curevive
             </h3>
             <div>
-            <p style={{fontSize: '22px', textAlign: 'justify',  margin: '30px', color: '#4D5053', height: '150px'}}>
+            <p style={{fontSize: '22px', textAlign: 'justify',  margin: '30px', color: '#4D5053', height: '150px', fontFamily: 'josh'}}>
             We are an online platform with leading doctors in Nature Cure, providing exclusive consultation from the comfort of home.
               </p>
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
             </div>
-          </Col>
-           
-
-          <Col className="gutter-row" span={5}>
-          <h3 style={{color: '#292F36',fontSize: '25px', Align: 'center'}}>
+          </Col> 
+          <Col className="gutter-row" style={{backgroundColor: 'rgba(0, 0, 0, .0)'}} span={5}>
+          <h3 style={{color: '#292F36',fontSize: '25px', Align: 'center', fontFamily: 'DM Serif Display'}}>
               Treatments
             </h3>
             <div>
-              <p style={{fontSize: '22px', textAlign: 'justify',  margin: '30px',  color: '#4D5053',height: '150px'}}>
+              <p style={{fontSize: '22px', textAlign: 'justify',  margin: '30px',  color: '#4D5053',height: '150px', fontFamily: 'josh'}}>
               Find a cure for your problems through the extensively researched treatments by specialists of the nation.
               </p>
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
             </div>
           </Col>
+          <Col span={4} ></Col>
+          <img src={background1} style={{position: 'absolute', rigth: '80px', bottom: '-20px', top: '900px'}}/>
+          <img src={background2} style={{position: 'absolute', left: '1300px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
+          <img src={background4} style={{position: 'absolute', rigth: '80px',left: '-200px', top: '1900px', zIndex: "500"}}/>
+          
           <Col span={3}></Col>
          </Row>
        </div>
@@ -134,9 +147,9 @@ function App() {
       <Row>
         <Col span={4}></Col>
         <Col style={{margin: '20px'}} span={8}>
-        <h1 style={{ textAlign : 'left',fontSize: '50px', color: '#292F36'}}>
+        <h1 style={{ textAlign : 'left',fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>
            We Create The Art Of Healthy Living!</h1>
-          <p style={{fontSize: '22px', textAlign: 'justify', marginTop: '40px', marginRight: '40px', color: '#4D5053',height: '150px'}}>
+          <p style={{fontSize: '22px', textAlign: 'justify', marginTop: '40px', marginRight: '40px', color: '#4D5053',height: '150px', fontFamily: 'josh'}}>
           When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.
           </p>
           <div>
@@ -150,8 +163,8 @@ function App() {
 
          <Row style={{marginTop: '200px'}}>
           <Col span={4} ></Col>
-          <Col style={{background: '#ECDFD7', borderRadius: '15px'}} span={16}>
-            <h1 style={{fontSize: '50px', color: '#292F36'}}>
+          <Col style={{background: '#ECDFD7', borderRadius: '20px'}} span={16}>
+            <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>
             What the People Think About Us
             </h1>
             <Row>
@@ -159,7 +172,7 @@ function App() {
            <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
 
             <img src={avatar}></img>
-            <p style={{fontSize: '22px', textAlign: 'left'}}>Lorem Ipsum is simply dummy 
+            <p style={{fontSize: '22px',fontFamily: 'josh', textAlign: 'left'}}>Lorem Ipsum is simply dummy 
                     text of the typesetting industry. 
                     Ipsum has been.</p>
                               </div>
@@ -169,7 +182,7 @@ function App() {
            <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
 
             <img src={avatar}></img>
-            <p style={{fontSize: '22px', textAlign: 'left'}}>Lorem Ipsum is simply dummy 
+            <p style={{fontSize: '22px', textAlign: 'left', fontFamily: 'josh'}}>Lorem Ipsum is simply dummy 
             Lorem Ipsum is simply dummy 
 text of the typesetting industry. 
 Ipsum has been scrambled it 
@@ -181,7 +194,7 @@ to make a type book.</p>
            <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
 
             <img src={avatar}></img>
-            <p style={{fontSize: '22px', textAlign: 'left'}}>Lorem Ipsum is simply dummy 
+            <p style={{fontSize: '22px', fontFamily: 'josh',textAlign: 'left'}}>Lorem Ipsum is simply dummy 
             Lorem Ipsum is simply dummy 
 text of the typesetting industry. 
 Ipsum has been scrambled.</p>
@@ -196,34 +209,34 @@ Ipsum has been scrambled.</p>
          <Row style={{marginTop: "180px"}}>
          <Col span={4}></Col>
           <Col span={16}>
-          <h1 style={{fontSize: '50px', color: '#292F36', marginBottom: "40px"}}>Diseases</h1>
-          <p style={{ width: '60%',  margin: 'auto', color: '#4D5053', fontSize: '22px'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
+          <h1 style={{fontSize: '50px', color: '#292F36', marginBottom: "40px", fontFamily: 'DM Serif Display'}}>Diseases</h1>
+          <p style={{ width: '60%',  margin: 'auto', color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
           
           
           <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '30px' }} row-gutter>
             <Col style={{margin:"35px"}} span={10}>
             <Image src={phones} style={{borderTopRightRadius:'45px'}} preview={false}/>
             <div style={{width: '100%'}}>
-            <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', color: '#292F36'}}>Diabetes</p>
+            <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>Diabetes</p>
             <RightOutlined /></div>
             </Col>
             <Space/>
             <Col style={{margin:"35px"}} span={10}>
             <Image src={blur} style={{borderTopLeftRadius:'45px'}} preview={false}/>
             <div style={{width: '100%'}}>
-            <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', color: '#292F36'}}>Thyroid</p>
+            <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>Thyroid</p>
             <RightOutlined /></div>
             </Col>
             <Col style={{margin:"35px"}} span={10}>
             <Image src={obese} style={{borderBottomRightRadius:'45px'}} preview={false}/>
             <div style={{width: '100%'}}>
-            <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', color: '#292F36'}}>Obesity</p>
+            <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>Obesity</p>
             <RightOutlined /></div>
             </Col>
             <Col style={{margin:"35px"}} span={10}>
             <Image src={doctor} style={{borderBottomLeftRadius:'45px'}} preview={false}/>
             <div style={{width: '100%'}}>
-            <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', color: '#292F36'}}>Hypertension</p>
+            <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>Hypertension</p>
             <RightOutlined /></div>
             </Col>
           </Row>
@@ -240,18 +253,18 @@ Ipsum has been scrambled.</p>
             <Col span={4}></Col>
             <Col span={4} style={{borderRightWidth: '2px', borderColor: '#CDA274'}}>
               <h1 style={{fontSize: '85px', color: '#CDA274'}}> 03</h1> 
-              <p style={{color: '#4D5053', fontSize: '22px'}}>Years Of Experiance</p>
+              <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Years Of Experiance</p>
             </Col>
             <Col style={{borderRightWidth: '2px', borderColor: '#CDA274'}} span={4}>
               <h1 style={{fontSize: '85px', color: '#CDA274'}}>37</h1>
-            <p style={{color: '#4D5053', fontSize: '22px'}}>Success Stories</p>
+            <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Success Stories</p>
              </Col>
             <Col style={{borderRightWidth: '2px', borderColor: '#CDA274'}} span={4}>
               <h1 style={{fontSize: '85px', color: '#CDA274'}}>32</h1> 
-            <p style={{color: '#4D5053', fontSize: '22px'}}>Active Clients</p>
+            <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Active Clients</p>
             </Col>
             <Col span={4}><h1 style={{fontSize: '85px', color: '#CDA274'}}> 69</h1>
-            <p style={{color: '#4D5053', fontSize: '22px'}}>Happy Customers</p>
+            <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Happy Customers</p>
             </Col>
             </Row>
           </Col>
@@ -259,7 +272,7 @@ Ipsum has been scrambled.</p>
           <Row>
             <Col span={7}></Col>
             <Col span={10}>
-              <h1 style={{fontSize: '50px', color: '#292F36'}}>
+              <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>
               YOUR JOURNEY WITH US
               </h1>
               </Col>
@@ -270,7 +283,7 @@ Ipsum has been scrambled.</p>
             <Col span={7}></Col>
           <Col span={10}>
               <div>
-                <p style={{color: '#4D5053', fontSize: '22px'}}>
+                <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>
                 Wondering what your journey with us throughout your treatments would look like? Here is a breakdown of how we will be working together.
                 </p>
               </div>
@@ -280,7 +293,7 @@ Ipsum has been scrambled.</p>
     <Row>
       <Col span={4}> </Col>
       <Col style={{height: '600px'}} span={15}> 
-         <Carousel>
+         <Carousel >
       <img
         alt="..."
         src={carouse}
