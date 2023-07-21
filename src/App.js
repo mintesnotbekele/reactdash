@@ -14,8 +14,10 @@ import avatar from "./assets/avatar.png";
 import background1 from './assets/first.png'
 import background2 from "./assets/first.png";
 import background4 from "./assets/background4.png";
-
-import background5 from "./assets/background1.png";
+import blurback from "./assets/blurrybackground.png"
+import background5 from "./assets/lady.png";
+import foot1 from "./assets/foot.png";
+import foot2 from "./assets/foot2.png";
 // import "@fontsource/dm-serif-display"; // Defaults to weight 400
 // import "@fontsource/dm-serif-display/400.css"; // Specify weight
 // import "@fontsource/dm-serif-display/400-italic.css";
@@ -33,24 +35,26 @@ function App() {
   return (
     
     <div className="App">    
-<div style={{background: "#4E3426"}} class="flex flex-row">
+<div style={{background: "#4E3426", width: "100%", overflow: "hidden"}} class="flex flex-row">
     <div className='flex-auto w-10'></div>
     <div  className="flex-auto w-100">
         <Navbar
        style={{
         position: 'fixed',
+        paddingTop: "30px",
         top: '0',
         left: '0',
         right: '0',
         background: "#4E3426",
+        height: "100px",
         zIndex: "100",
       }}
       rounded
     
     >
       <Navbar.Brand style={{marginLeft: "250px"}}>
-        <Image style={{height: "70px"}} preview={false} src={logo}/>
-        <Image style={{height: "70px"}} preview={false} src={logotext}/>
+        <img style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}} preview={false} src={logo}/>
+        <img style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }} preview={false} src={logotext}/>
       </Navbar.Brand>
       <Navbar.Collapse>
         <Navbar.Link
@@ -85,8 +89,8 @@ function App() {
     <div className="h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-100">
       
         <div style={{alignItems: 'center', height: "900px", backgroundImage: `url(${hands})`}}>
-          <div style={{marginTop: '100px',height: '650px'}}></div>
-          <div style={{width: '100%', webkitBackdropFilter: 'blur(8.5px)', backdropFilter: 'blur(8.5px)', boxShadow: '0 0 100px 20px rgba(0, 0, 0, 0.9)', background: 'rgba(255, 255, 255, 0)'}}>
+          <div style={{marginTop: '50px',height: '660px'}}></div>
+          <div style={{width: '100%', backgroundImage: `url(${blurback})`}}>
           <h1 style={{fontSize: '120px' , fontFamily: 'DM Serif Display'}}>
           Naturopathy
           </h1>
@@ -139,7 +143,9 @@ function App() {
           <img src={background1} style={{position: 'absolute', rigth: '80px', bottom: '-20px', top: '900px'}}/>
           <img src={background2} style={{position: 'absolute', left: '1300px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
           <img src={background4} style={{position: 'absolute', rigth: '80px',left: '-200px', top: '1900px', zIndex: "500"}}/>
-          
+           <img src={foot1} style={{position: 'absolute', left: '-300px', top: '7300px', zIndex: "500"}}/> 
+            <img src={foot2} style={{position: 'absolute',right: '-500px',top: '7300px', zIndex: "500"}}/>  
+          <img src={background5} style={{position: 'absolute', left: '1300px', bottom: '-20px', top: '2400px' }}/>
           <Col span={3}></Col>
          </Row>
        </div>
@@ -161,7 +167,7 @@ function App() {
       </Row>
 
 
-         <Row style={{marginTop: '200px'}}>
+         <Row style={{marginTop: '300px'}}>
           <Col span={4} ></Col>
           <Col style={{background: '#ECDFD7', borderRadius: '20px'}} span={16}>
             <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>
@@ -368,10 +374,7 @@ Ipsum has been scrambled.</p>
       <p style={{color : '0xFF4D5053', fontSize: '22.sp', letterSpacing: '0.22.sp'}}>Copyright © Curevive | Designed by Collabity - Powered by OwlWorkLabs</p>
       </Col>
     </Row>
-    <div>
-    <Image style={{height: "250px", width: '250px'}} preview={false} src={logo}/>
-      </div>
-   <div><Image style={{height: "250px", width: '250px'}} preview={false} src={logotext}/></div> 
+
     </div>
   );
 }
