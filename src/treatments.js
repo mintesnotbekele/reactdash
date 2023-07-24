@@ -274,10 +274,10 @@ const Treatment =()=>{
               <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}> History of acupressure </h1>
               <p>
               Acupressure is an ancient therapy which originated in China. The doctrine of Traditional Chinese Medicine states
-that each organism has within itself a driving force which is essential for its survival. This energy is termed as “Qi”
-or “Chi”. “QI” flows through the body in channels known as Meridians which represent the vital organ of the
-body. Pioneers of TCM believed that the balance of “Qi” is necessary for the health and longevity of an organism.
-Any imbalance in the flow of “Qi” predisposed the organism to disease.
+              that each organism has within itself a driving force which is essential for its survival. This energy is termed as “Qi”
+              or “Chi”. “QI” flows through the body in channels known as Meridians which represent the vital organ of the
+              body. Pioneers of TCM believed that the balance of “Qi” is necessary for the health and longevity of an organism.
+              Any imbalance in the flow of “Qi” predisposed the organism to disease.
               </p>
 
               </div>
@@ -358,9 +358,11 @@ locate the points, chosen by our doctors for you.
             <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px", textAlign: "center"}}>
             Backed by evidence !
             </h1>
-            <p style={{fontFamily: 'Jost', fontSize: '22px'}}>Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-shown that acupressure has helped cancer patients by reducing cancer-related fatigue and nausea. Acupressure has shown marvellous results in reducing anxiety and improving health in patients undergoing surgeries.</p>
+            <p style={{fontFamily: 'Jost', fontSize: '22px'}}>
+              Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
+              circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
+              shown that acupressure has helped cancer patients by reducing cancer-related fatigue and nausea. 
+              Acupressure has shown marvellous results in reducing anxiety and improving health in patients undergoing surgeries.</p>
            </div>
         </Col>
         <Col span={6}>

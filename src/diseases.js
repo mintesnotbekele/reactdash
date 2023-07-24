@@ -25,29 +25,42 @@ const Diseases = ()=>{
                 <Col span={6}></Col>
                 <Col span={12}>
                     <Row>
-                    <Col span={10} style={{padding: "50px"}}> 
-                        <div style={{background: '#ECDFD7', borderRadius: '30px', padding: '30px'}}>
-                        <div style={{display: 'flex', }}>
-                            <span>Age Group:</span>
-                            <span>    
+                    <Col span={12} style={{padding: "50px"}}> 
+                        <div style={{background: '#ECDFD7', borderRadius: '30px', paddingTop: '50px', paddingBottom: '50px', paddingLeft: '5px', paddingRight: '5px'}}>
+                        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                         
+                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'DM Serif Display'}}>Age Group:</div>
+                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'jost'}}>    
                             30-60 yrs
-                            </span>
+                            </div>
+                            
                         </div>
-                        <div>
-                            <span>
+                        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                       
+                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'DM Serif Display'}}>
                             Duration:
-                            </span>
-                            <span>
-                                Treatment Includes:
-                            </span>
+                            </div>
+                            <div style={{width: '50%', textAlign: 'center'}}>
+                                <p style={{textAlign: 'center', fontFamily: 'jost'}}>
+                            One month treatment
+                            </p>
+                            </div>   
                         </div>
-                        <div>
-                        <span>
+                        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'DM Serif Display'}}>
+                             Treatment Includes:
+                            </div>
+                            <div style={{width: '50%', height: '100px', textAlign: 'center'}}>
+                               <p style={{overflowWrap: 'anywhere', fontFamily: 'jost'}}>Dietplan,Yoga,Herbology,Hydrotherapy,Acupressure,Aromatherapy. </p> 
+                            </div>
+                        </div>
+                        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'DM Serif Display'}}>
                             Mode: 
-                            </span>
-                            <span>
+                            </div>
+                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'jost'}}>
                             Online treatment
-                            </span>
+                            </div>
                         </div>
                         </div>
                  </Col>
@@ -55,7 +68,7 @@ const Diseases = ()=>{
                     <h1 style={{fontFamily: "DM Serif Display", fontSize: "40px"}}>
                     Gastritis 
                     </h1>
-                    <p style={{fontFamily: 'Jost', fontSize: '20px'}}>
+                    <p style={{fontFamily: 'Jost', fontSize: '18px'}}>
                     Gastritis is the inflammation, irritation or erosion of this protective stomach lining. 
                     Gastritis usually presents itself as a burning pain in the upper abdominal area, indigestion, 
                     nausea and vomiting. Chronic gastritis if not managed at the right time, can create cancerous conditions in the body.
@@ -70,12 +83,18 @@ const Diseases = ()=>{
         <Col span={6}></Col>
      </Row>
 
-     <Row>
+     <Row style={{marginTop: '100px'}}>
         <Col span={6}>
         </Col>
-        <Col span={12}>
-            <img alt='gastritus' src={gastritis}/>
+
+        <Col span={12} style={{backgroundImage: `url(${gastritis})`, height: '600px', backgroundSize: '100% 100%'}}>
+            <p style={{fontFamily: 'DM Serif Display', fontSize: '40px', color: 'white', marginTop: '250px' , textAlign: 'center', marginLeft: '20px', marginRight: '20px'}}> 
+                Curevive way of treating gastritis!
+                (Video with steps on how to avail) 
+             </p>
+            
         </Col>
+        
         <Col span={6}>
         </Col>
         </Row>
