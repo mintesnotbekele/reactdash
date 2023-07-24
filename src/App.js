@@ -74,25 +74,25 @@ function App() {
       <Navbar.Collapse>
         <Navbar.Link
           active
-          href="#"
+          href="/treatment"
         >
           <p style={{color: "#F6F5EC", fontSize: "20px"}}>
             Treatment
           </p>
         </Navbar.Link>
-        <Navbar.Link href="#">
+        <Navbar.Link href="/diseases">
           <p style={{color: "#F6F5EC", fontSize: "20px" }}>Diseases</p>
         </Navbar.Link>
-        <Navbar.Link href="#">
+        <Navbar.Link href="/blog">
         <p style={{color: "#F6F5EC", fontSize: "20px"}}>Blog</p>
         </Navbar.Link>
-        <Navbar.Link href="#">
+        <Navbar.Link href=".booking">
         <p style={{color: "#F6F5EC", fontSize: "20px"}}>Booking</p>
         </Navbar.Link>
-        <Navbar.Link href="#">
+        <Navbar.Link href="/about">
         <p style={{color: "#F6F5EC", fontSize: "20px"}}>About Us</p>
         </Navbar.Link>
-        <Navbar.Link href="#">
+        <Navbar.Link href="/login">
         <p style={{color: "#F6F5EC", fontSize: "20px"}}>Login</p>
         </Navbar.Link>
       </Navbar.Collapse>
