@@ -10,7 +10,7 @@ import success1 from './assets/success.png';
 import success2 from './assets/success.png';
 import {  Carousel} from 'flowbite-react';
 import carouse from './assets/carouser.png'
-import {ArrowRightOutlined, RightOutlined} from '@ant-design/icons'
+import { RightOutlined} from '@ant-design/icons'
 
 const Diseases = ()=>{
     return(
@@ -195,7 +195,7 @@ Here at Curevive, you would be put through yoga classes under trained profession
 
         <Row>
             <Col span={6}></Col>
-            <Col span={12} style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px'}}>
+            <Col span={12} style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', paddingTop: '30px'}}>
                 <div>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>
                     SUCESS STORIES
@@ -215,7 +215,7 @@ Here at Curevive, you would be put through yoga classes under trained profession
         <Row style={{marginTop: '100px'}}>
             <Col span={6}></Col>
             <Col span={12}>
-            <div>
+            <div style={{marginBottom: '40px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>
                     Begin your journey
                     </h1>
@@ -241,34 +241,93 @@ Here at Curevive, you would be put through yoga classes under trained profession
             </Col>
             <Col span={6}></Col>
         </Row>
-        <Row>
+        <Row >
             <Col span={6}></Col>
             <Col span={12}>
-            <div>
+            <div style={{margin: '50px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>
-                    Begin your journey
+                    Pricing & Plan
                     </h1>
               
                     </div>
                     <div style={{display: 'flex'}}>
-                        <div>
-                            <p>10 Day trial </p>
-                            <h1>₹950</h1>
-                            <p>1 Consultation</p>
-                            <p>Protocol Creation </p>
-                            <p>Diet Plan</p>
-                            <p>Yoga Protocol</p>
-                            <Button > Get Started<RightOutlined/></Button>
+                        <div style={{background: '#ECDFD7', borderRadius: '30px' , width: '100%', margin: '10px', padding: '40px'}}>
+                            <p style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>10 Day trial </p>
+                            <h1 style={{fontFamily: 'DM Serif Display', fontSize: '85px', fontWeight: 'bold', textAlign: 'center' }}>₹950</h1>
+                            <hr style={{height: '2px', background: '#CDA274'}}/>
+                            <p style={{fontFamily: 'jost', fontSize: '20px', textAlign: 'center'}}>1 Consultation</p>
+                            <p style={{fontFamily: 'jost', fontSize: '20px', textAlign: 'center'}}>Protocol Creation </p>
+                            <p style={{fontFamily: 'jost', fontSize: '20px', textAlign: 'center'}}>Diet Plan</p>
+                            <p style={{fontFamily: 'jost', fontSize: '20px', textAlign: 'center'}}>Yoga Protocol</p>
+                            <div style={{marginTop: '40px'}}>
+                            <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}}> Get Started<RightOutlined/></Button>
+                            </div>
                         </div>
+                        <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', margin: '10px', padding: '40px'}}>
+                            <p style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}> Complete Plan </p>
+                            <h1 style={{fontFamily: 'DM Serif Display', fontSize: '85px', fontWeight: 'bold', textAlign: 'center' }}>₹950</h1>
+                            <hr style={{height: '2px', background: '#CDA274'}}/>
+                            <p style={{fontFamily: 'jost', fontSize: '20px', textAlign: 'center', }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
+                                            Protocol Creation Diet Plan with Recipes Yoga Protocol
+                                            Trataka and Meditation Protocol
+                                            Acupressure and Reflexology
+                                            Hydrotherapy and Packs
+                                            Available doctor chat support
+
+                                            </p>
+                                            <div style={{marginTop: '40px'}}>
+                            <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}} > Get Started<RightOutlined/></Button>
+                            </div>
+                        </div>
+                        <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', margin: '10px', padding: '40px'}}>
+                            <p style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Premium Plan </p>
+                            <h1 style={{fontFamily: 'DM Serif Display', fontSize: '85px', fontWeight: 'bold', textAlign: 'center' }}>₹950</h1>
+                            <hr style={{height: '2px', background: '#CDA274'}}/>
+                            <p style={{fontFamily: 'jost', fontSize: '20px', textAlign: 'center'}}>Weekly Consultation followups
+                                        Additional Free 2 Consultations 3 Sessions with Reiki Master
+                                        Treatment Kit that include herbal capsules and esentil-oil bled
+                                        Protocol Creation
+                                        Diet Plan with Recipes
+                                        Yoga Protocol
+                                        Trataka and Meditation Protocol
+                                        Acupressure and Reflexology
+                                        Hydrotherapy and Packs
+                                        Available doctor chat support
+                                        </p>
+                         <div style={{marginTop: '40px'}}>
+                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}}> Get Started<RightOutlined/></Button>
+                          </div>
+                         </div>
                     </div>
             </Col>
             <Col span={6}></Col>
         </Row>
         <Row>
             <Col span={6}></Col>
-            <Col span={12}></Col>
+            <Col span={12}>
+                <div style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
+                    <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>Check out the questions asked by our patients previously</h1>
+                    <h3 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "25px"}}>Visit Q&A </h3>
+                </div>
+            </Col>
             <Col span={6}></Col>
         </Row>
+        <Row style={{marginTop: '30px', marginBottom: '50px'}}>
+            <Col span={6}>
+            
+            </Col>
+            <Col span={12}>
+        <div style={{margin: '70px'}}>
+            <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
+                    <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Not sure if its for you?</h1>
+                    <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>Talk to a doctor<RightOutlined/></Button>
+                </div>
+                </div>
+            </Col>
+            <Col span={6}>
+            </Col>
+        </Row>
+
         <Row>
         <Col span={24}>
           <div style={{textAlign: "center"}}>Copyright © Curevive | Designed by Collabity - Powered by OwlWorkLabs</div>
