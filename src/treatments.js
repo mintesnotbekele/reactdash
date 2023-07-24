@@ -1,9 +1,9 @@
-import { Button, Navbar} from 'flowbite-react';
+import { Button} from 'flowbite-react';
 import logo from './assets/logo.png';
 import logotext from './assets/text.png';
 import yoga  from './assets/yoga.png'
 import aboutBanner from "./assets/aboutBanner.jpg";
-import {Row, Col, Input} from 'antd';
+import {Row, Col} from 'antd';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Accordion } from 'flowbite-react';
 import firstyoga from "./assets/firtyoga.png";
@@ -12,6 +12,13 @@ import history from "./assets/history1.png";
 import expert from "./assets/expert.png";
 import slider from './assets/sliderframe.png';
 import {ArrowRightOutlined} from '@ant-design/icons';
+import treatment1 from './assets/treatment1.png';
+import treatment2 from './assets/treatment2.png';
+import treatment3 from './assets/treatment3.png';
+import treatment4 from './assets/treatment3.png';
+import treatment5 from './assets/treatment5.png';
+import treatment6 from './assets/treatment6.png';
+import Header from './components/header';
 
 const Treatment =()=>{
 
@@ -24,50 +31,7 @@ const Treatment =()=>{
   };
     return(
         <>
-           <Navbar
-       style={{
-        position: 'fixed',
-        paddingTop: "30px",
-        top: '0',
-        left: '0',
-        right: '0',
-        background: "#4E3426",
-        height: "100px",
-        zIndex: "100",
-      }}
-      rounded
-    
-    >
-     <Navbar.Brand style={{marginLeft: "250px"}}>
-        <img style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}}  src={logo}/>
-        <img style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }}  src={logotext}/>
-      </Navbar.Brand>
-      <Navbar.Collapse>
-        <Navbar.Link
-          active
-          href="#"
-        >
-          <p style={{color: "#F6F5EC", fontSize: "20px"}}>
-            Treatment
-          </p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-          <p style={{color: "#F6F5EC", fontSize: "20px" }}>Diseases</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Blog</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Booking</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>About Us</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Login</p>
-        </Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
+    <Header/>
     <img alt="about Banner"style={{marginBottom: '200px'}} src={aboutBanner}/>
        <Row>
         <Col span={6}>
@@ -75,50 +39,48 @@ const Treatment =()=>{
         <Col span={12}>
             
             <div style={{display: 'flex'}}>
-                    <div style={{width: '100%'}}>
+                    <div style={{width: '100%', height: '200px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment1})`}}>
                     <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px", textAlign: "center"}}>
                     Hydrotherapy
                     </h1>
-                    <p>A type of alternative medicine that involves the use of water for the treatment and prevention of..</p>
+                    <p style={{margin: '10px', textAlign: 'center'}}>A type of alternative medicine that involves the use of water for the treatment and prevention of..</p>
                     </div>
-                    <div style={{width: '100%'}} > <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px", textAlign: "center"}}>
+
+                    <div style={{width: '100%', height: '200px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment2})`}}> <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px", textAlign: "center"}}>
                     Aromatherapy
                     </h1>
-                    <p>
+                    <p style={{margin: '10px', textAlign: 'center'}}>
                     A caring, hands-on therapy which seeks to induce relaxation, to increase energy...
                     </p>
                     </div>
-                    <div style={{width: '100%'}}> <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px",textAlign: "center"}}>
+                    <div style={{width: '100%', height: '200px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment3})`}}> <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px",textAlign: "center"}}>
                     Herbology
                     </h1>
-                    <p>
+                    <p style={{margin: '10px', textAlign: 'center'}}>
                     The use of active compounds extracted from plants for treatment of diseases and...
                     </p>
                     </div>
-                   
             </div>
             <div style={{display: 'flex'}}>
-                    <div style={{width: '100%'}}>
+                    <div style={{width: '100%', height: '200px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment4})`}}>
                     <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px", textAlign: "center"}}>
                     Accupressure
                     </h1>
-                    <p>
+                    <p style={{margin: '10px', textAlign: 'center'}}>
                     A type of alternative medicine that includes applying pressure to particular points....
                     </p>
                     </div>
-                    <div style={{width: '100%'}} > <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px", textAlign: "center"}}>
+                    <div style={{width: '100%', height: '200px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment5})`}} > <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px", textAlign: "center"}}>
                     Yoga
                     </h1>
-                    <p>
-
+                    <p style={{margin: '10px', textAlign: 'center'}}>
                     Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas)...
                     </p>
                     </div>
-                    <div style={{width: '100%'}}> <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px",textAlign: "center"}}>
+                    <div style={{width: '100%', height: '200px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment6})`}}> <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px",textAlign: "center"}}>
                     Diet & Nutrition
-
                     </h1>
-                    <p> A healthy diet is an important foundation for good health, one that incorporates a range of foods..</p>
+                    <p style={{margin: '10px', textAlign: 'center'}}> A healthy diet is an important foundation for good health, one that incorporates a range of foods..</p>
                     </div>
                    
             </div>
@@ -127,8 +89,6 @@ const Treatment =()=>{
         <Col span={6}>
         </Col>
        </Row>
-
-
        <Row>
         <Col span={6}></Col>
         <Col  span={12}>
@@ -143,7 +103,7 @@ const Treatment =()=>{
               <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
               Diet & Nutrition
               </h1>
-              <Accordion>
+              <Accordion collapseAll>
                 <Accordion.Panel>
                   <Accordion.Title>
                   How long does it take?
@@ -198,7 +158,7 @@ const Treatment =()=>{
               <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
               Frequently Asked Questions
               </h1>
-              <Accordion>
+              <Accordion collapseAll>
                 <Accordion.Panel>
                   <Accordion.Title>
                   How long does it take?
@@ -253,7 +213,7 @@ const Treatment =()=>{
               <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
               Aroma Therapy
               </h1>
-              <Accordion>
+              <Accordion collapseAll> 
                 <Accordion.Panel>
                   <Accordion.Title>
                   How long does it take?
@@ -410,7 +370,7 @@ shown that acupressure has helped cancer patients by reducing cancer-related fat
         <Col span={6}>
         </Col>
         <Col span={12}>
-          <img src={slider}/>
+          <img alt='slider' src={slider}/>
         </Col>
         <Col span={6}>
         </Col>

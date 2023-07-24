@@ -22,8 +22,8 @@ const Header=()=>{
     
     >
       <Navbar.Brand style={{marginLeft: "250px"}}>
-        <img style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}}  src={logo}/>
-        <img style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }}  src={logotext}/>
+        <img alt='logo' style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}}  src={logo}/>
+        <img alt='second logo ' style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }}  src={logotext}/>
       </Navbar.Brand>
       <Navbar.Collapse>
         <Navbar.Link

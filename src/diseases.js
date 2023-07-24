@@ -1,14 +1,14 @@
-import { Button, Navbar} from 'flowbite-react';
+import { Button} from 'flowbite-react';
 import logo from './assets/logo.png';
 import logotext from './assets/text.png';
-import {Row, Col, Input} from 'antd';
+import {Row, Col} from 'antd';
 import disease from './assets/diseaseBanner.jpg';
 import disease1 from './assets/diseaseImage.png';
 import gastritis from './assets/gastritis.png';
 import diseaseframe from './assets/diseaseframe.png';
 import success1 from './assets/success.png';
 import success2 from './assets/success.png';
-import {  Carousel} from 'flowbite-react';
+import {Carousel} from 'flowbite-react';
 import carouse from './assets/carouser.png'
 import { ArrowRightOutlined} from '@ant-design/icons'
 import Header from './components/header';
@@ -25,52 +25,44 @@ const Diseases = ()=>{
                 <Col span={6}></Col>
                 <Col span={12}>
                     <Row>
-                        <Col span={10} style={{padding: "50px",}}> 
-                        <table style={{ background: '#ECDFD7', width: '100%', borderRadius: '30px', padding: '100px'}}>
-                            <tr>
-                        <td>
-                        Age Group:
-
-                        </td>
-                        <td style={{fontFamily: 'Jost', fontSize: '20px',}}>
-                        30-60 yrs
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        Duration:
-
-                        </td>
-                        <td style={{fontFamily: 'Jost', fontSize: '20px',}}>One month treatment</td>
-                    </tr>
-                    <tr>
-                        
-                            <td>
-                            Treatment Includes:
-                            </td>
-                        <td style={{fontFamily: 'Jost', fontSize: '20px',}}>
-                           <p style={{overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '0', }}> Dietplan,Yoga,Herbology,Hydrotherapy,Acupressure,Aromatherapy.
-                           </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        Mode: 
-                        </td>
-                        <td style={{fontFamily: 'Jost', fontSize: '20px',}}>Online treatment    </td>
-                    </tr>
-                 </table>
-              
+                    <Col span={10} style={{padding: "50px"}}> 
+                        <div style={{background: '#ECDFD7', borderRadius: '30px', padding: '30px'}}>
+                        <div style={{display: 'flex', }}>
+                            <span>Age Group:</span>
+                            <span>    
+                            30-60 yrs
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                            Duration:
+                            </span>
+                            <span>
+                                Treatment Includes:
+                            </span>
+                        </div>
+                        <div>
+                        <span>
+                            Mode: 
+                            </span>
+                            <span>
+                            Online treatment
+                            </span>
+                        </div>
+                        </div>
                  </Col>
                 <Col span={12}>
                     <h1 style={{fontFamily: "DM Serif Display", fontSize: "40px"}}>
                     Gastritis 
                     </h1>
-                    <p style={{fontFamily: 'Jost', fontSize: '20px',}}>
-                    Gastritis is the inflammation, irritation or erosion of this protective stomach lining. Gastritis usually presents itself as a burning pain in the upper abdominal area, indigestion, nausea and vomiting. Chronic gastritis if not managed at the right time, can create cancerous conditions in the body.
-We give importance to building up the body's own defense, in this case; building up the protective mucosal layer. 
-Here at Curevive, you would be put through yoga classes under trained professionals, prescribed specially designed Satwik diet plans and undergo guided hydrotherapy sessions specific to gastritis. So by the end of the treatments, you can be assured of a safe, natural and healthy improvement in your health.
+                    <p style={{fontFamily: 'Jost', fontSize: '20px'}}>
+                    Gastritis is the inflammation, irritation or erosion of this protective stomach lining. 
+                    Gastritis usually presents itself as a burning pain in the upper abdominal area, indigestion, 
+                    nausea and vomiting. Chronic gastritis if not managed at the right time, can create cancerous conditions in the body.
+                    We give importance to building up the body's own defense, in this case; building up the protective mucosal layer. 
+                    Here at Curevive, you would be put through yoga classes under trained professionals, prescribed specially designed 
+                    Satwik diet plans and undergo guided hydrotherapy sessions specific to gastritis. So by the end of the treatments, 
+                    you can be assured of a safe, natural and healthy improvement in your health.
                     </p>
                 </Col>
             </Row>
@@ -98,7 +90,7 @@ Here at Curevive, you would be put through yoga classes under trained profession
             <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>Clinically proven!</h1>
             <p style={{ fontFamily: "jost", fontSize: "22px"}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
             <div>
-                <img src={diseaseframe}/>
+                <img alt='frame' src={diseaseframe}/>
             </div>
             </Col>
             <Col span={6}></Col>
@@ -140,7 +132,7 @@ Here at Curevive, you would be put through yoga classes under trained profession
 
                     </p>
                     <div style={{marginTop: '30px', marginLeft: '20px', color:" blue", textDecoration: 'undeline'}}>
-                        <a href='https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html' target='_blank'>Read Research paper...</a>
+                        <a href='https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html' target='_blank' rel="noreferrer">Read Research paper...</a>
                     </div>
                     </div>
                      </div>
