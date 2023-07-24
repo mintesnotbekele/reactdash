@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Treatment from './treatments';
 import Diseases from './diseases';
+import Ecommerce from './ecommerce';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
                         <Route path="/about" element={<About />}></Route>
                         <Route path="/treatment" element={<Treatment />}></Route>
                         <Route path="/diseases" element={<Diseases/>}></Route>
+                        <Route path="/ecommerce" element={<Ecommerce/>}></Route>
                     </Routes>
  
     </BrowserRouter>

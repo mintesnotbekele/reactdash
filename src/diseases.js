@@ -10,7 +10,7 @@ import success1 from './assets/success.png';
 import success2 from './assets/success.png';
 import {  Carousel} from 'flowbite-react';
 import carouse from './assets/carouser.png'
-import { RightOutlined} from '@ant-design/icons'
+import { ArrowRightOutlined} from '@ant-design/icons'
 
 const Diseases = ()=>{
     return(
@@ -260,7 +260,7 @@ Here at Curevive, you would be put through yoga classes under trained profession
                             <p style={{fontFamily: 'jost', fontSize: '20px', textAlign: 'center'}}>Diet Plan</p>
                             <p style={{fontFamily: 'jost', fontSize: '20px', textAlign: 'center'}}>Yoga Protocol</p>
                             <div style={{marginTop: '40px'}}>
-                            <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}}> Get Started<RightOutlined/></Button>
+                            <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
                             </div>
                         </div>
                         <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', margin: '10px', padding: '40px'}}>
@@ -276,7 +276,7 @@ Here at Curevive, you would be put through yoga classes under trained profession
 
                                             </p>
                                             <div style={{marginTop: '40px'}}>
-                            <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}} > Get Started<RightOutlined/></Button>
+                            <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}} > Get Started<ArrowRightOutlined/></Button>
                             </div>
                         </div>
                         <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', margin: '10px', padding: '40px'}}>
@@ -295,7 +295,7 @@ Here at Curevive, you would be put through yoga classes under trained profession
                                         Available doctor chat support
                                         </p>
                          <div style={{marginTop: '40px'}}>
-                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}}> Get Started<RightOutlined/></Button>
+                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'jost', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
                           </div>
                          </div>
                     </div>
@@ -320,7 +320,7 @@ Here at Curevive, you would be put through yoga classes under trained profession
         <div style={{margin: '70px'}}>
             <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Not sure if its for you?</h1>
-                    <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>Talk to a doctor<RightOutlined/></Button>
+                    <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>Talk to a doctor<ArrowRightOutlined/></Button>
                 </div>
                 </div>
             </Col>
