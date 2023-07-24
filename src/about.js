@@ -14,56 +14,14 @@ import faq from "./assets/faq.png";
 import disease from "./assets/disease.jpg";
 import TextArea from 'antd/es/input/TextArea';
 import {ArrowRightOutlined} from '@ant-design/icons';
+import Header from './components/header';
 
 
 const About=()=>{
 
 return(
     <div>
-          <Navbar
-       style={{
-        position: 'fixed',
-        paddingTop: "30px",
-        top: '0',
-        left: '0',
-        right: '0',
-        background: "#4E3426",
-        height: "100px",
-        zIndex: "100",
-      }}
-      rounded
-    
-    >
-     <Navbar.Brand style={{marginLeft: "250px"}}>
-        <img style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}}  src={logo}/>
-        <img style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }}  src={logotext}/>
-      </Navbar.Brand>
-      <Navbar.Collapse>
-        <Navbar.Link
-          active
-          href="#"
-        >
-          <p style={{color: "#F6F5EC", fontSize: "20px"}}>
-            Treatment
-          </p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-          <p style={{color: "#F6F5EC", fontSize: "20px" }}>Diseases</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Blog</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Booking</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>About Us</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Login</p>
-        </Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
+      <Header/>
       <img alt="about Banner"style={{marginBottom: '200px'}} src={aboutBanner}/>
       <div>
         <img style={{margin: 'auto', width: '35%'}} src={quotes} alt= "about quotes"/>

@@ -11,65 +11,23 @@ import success2 from './assets/success.png';
 import {  Carousel} from 'flowbite-react';
 import carouse from './assets/carouser.png'
 import { ArrowRightOutlined} from '@ant-design/icons'
+import Header from './components/header';
 
 const Diseases = ()=>{
     return(
         <div>
-              <Navbar
-       style={{
-        position: 'fixed',
-        paddingTop: "30px",
-        top: '0',
-        left: '0',
-        right: '0',
-        background: "none",
-        height: "100px",
-        zIndex: "100",
-      }}
-      rounded
-    
-    >
-     <Navbar.Brand style={{marginLeft: "250px"}}>
-        <img style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}}  src={logo}/>
-        <img style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }}  src={logotext}/>
-      </Navbar.Brand>
-      <Navbar.Collapse>
-        <Navbar.Link
-          active
-          href="#"
-        >
-          <p style={{color: "#F6F5EC", fontSize: "20px"}}>
-            Treatment
-          </p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-          <p style={{color: "#F6F5EC", fontSize: "20px" }}>Diseases</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Blog</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Booking</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>About Us</p>
-        </Navbar.Link>
-        <Navbar.Link href="#">
-        <p style={{color: "#F6F5EC", fontSize: "20px"}}>Login</p>
-        </Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
-    <img style={{width: '100%'}} src={disease} alt='disease'/>
-    <div style={{width: '20%', margin: 'auto'}}>
-    <img  src={disease1} style={{marginTop: '-150px'}}  alt='disease'/>
-    </div>
-    <Row>
-        <Col span={6}></Col>
-        <Col span={12}>
+        <Header/>
+            <img style={{width: '100%'}} src={disease} alt='disease'/>
+            <div style={{width: '20%', margin: 'auto'}}>
+            <img  src={disease1} style={{marginTop: '-150px'}}  alt='disease'/>
+            </div>
             <Row>
-                <Col span={10} style={{padding: "50px",}}> 
-                <table style={{ background: '#ECDFD7', width: '100%', borderRadius: '30px', padding: '100px'}}>
-                    <tr>
+                <Col span={6}></Col>
+                <Col span={12}>
+                    <Row>
+                        <Col span={10} style={{padding: "50px",}}> 
+                        <table style={{ background: '#ECDFD7', width: '100%', borderRadius: '30px', padding: '100px'}}>
+                            <tr>
                         <td>
                         Age Group:
 
