@@ -1,9 +1,6 @@
 import logo from './assets/logo.png';
 import logotext from './assets/text.png';
 import meditate from "./assets/meditate.png";
-import article1 from "./assets/article 1.png";
-import article2 from "./assets/article2.png";
-import article3 from "./assets/article3.png";
 import background1 from './assets/first.png'
 import background2 from "./assets/first.png";
 import background4 from "./assets/background4.png";

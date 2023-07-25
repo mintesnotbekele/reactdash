@@ -30,24 +30,24 @@ const Header=()=>{
           active
           href="/treatment"
         >
-          <p style={{color: "#F6F5EC", fontSize: "20px", fontFamily: 'jost'}}>
+          <p className='navheader'>
             Treatment
           </p>
         </Navbar.Link>
         <Navbar.Link href="/diseases">
-          <p style={{color: "#F6F5EC", fontSize: "20px", fontFamily: 'jost' }}>Diseases</p>
+          <p className='navheader'>Diseases</p>
         </Navbar.Link>
         <Navbar.Link href="/blog">
-        <p style={{color: "#F6F5EC", fontSize: "20px", fontFamily: 'jost'}}>Blog</p>
+        <p className='navheader'>Blog</p>
         </Navbar.Link>
-        <Navbar.Link href=".booking">
-        <p style={{color: "#F6F5EC", fontSize: "20px", fontFamily: 'jost'}}>Booking</p>
+        <Navbar.Link href="/book">
+        <p className='navheader'>Booking</p>
         </Navbar.Link>
         <Navbar.Link href="/about">
-        <p style={{color: "#F6F5EC", fontSize: "20px", fontFamily: 'jost'}}>About Us</p>
+        <p className='navheader'>About Us</p>
         </Navbar.Link>
         <Navbar.Link href="/login">
-        <p style={{color: "#F6F5EC", fontSize: "20px", fontFamily: 'jost'}}>Login</p>
+        <p className='navheader'>Login</p>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

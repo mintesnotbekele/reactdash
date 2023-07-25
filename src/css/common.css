@@ -1,0 +1,59 @@
+.firstheaders {
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-weight: 400;
+    text-align: 'center';
+}
+.navigations {
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+.firsttext{
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+.navheader
+{
+ font-family: jost;
+ color: #F6F5EC;
+ font-size: 20px;
+ text-align: center;
+ font-weight: 400;
+}
+.articleHeader{
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 63px;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+}
+.latestArticleheader{
+    font-family: DM Serif Display;
+font-size: 25px;
+font-weight: 400;
+line-height: 31px;
+letter-spacing: 0.02em;
+text-align: left;
+
+}
+.blogHeader{
+    font-family: DM Serif Display;
+font-size: 25px;
+font-weight: 400;
+line-height: 31px;
+letter-spacing: 0.02em;
+text-align: left;
+
+}

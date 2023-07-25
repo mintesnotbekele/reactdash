@@ -1,18 +1,19 @@
 import { Button, Navbar} from 'flowbite-react';
 import logo from './assets/logo.png';
 import logotext from './assets/text.png';
-import herbalBanner from './assets/herbalcapsule.jpg';
+import capsuleBanner from './assets/capsuleBanner.jpg';
+import herbaloil from './assets/oil.png';
 import herbal from './assets/herbal.png';
 import {Row, Col, Input} from 'antd';
 import ecommerceframe from './assets/ecommerceframe.png';
-import capsules from './assets/capsules.png';
+import oilmart from './assets/oilmart.png';
 import {ArrowRightOutlined, RightOutlined} from '@ant-design/icons';
 import Header from './components/header';
-const Ecommerce = ()=>{
+const EcommerceCapsule = ()=>{
      return(
         <div>
      <Header/>
-    <img alt="about Banner"style={{marginBottom: '200px'}} src={herbalBanner}/>
+    <img alt="about Banner"style={{marginBottom: '200px'}} src={capsuleBanner}/>
 
       
 
@@ -23,7 +24,7 @@ const Ecommerce = ()=>{
         <Col span={12}>
            <Row style={{background: '#ECDFD7', borderRadius: '30px'}}>
            <Col span={8}> 
-             <div style={{marginTop: '50px', paddingLeft: '30px'}}> <img style={{height: '300px', width: '400px'}} alt='herbal' src={herbal}/></div>
+             <div style={{marginTop: '50px', paddingLeft: '30px'}}> <img style={{height: '300px', width: '400px'}} alt='herbal' src={herbaloil}/></div>
            </Col>
            <Col span={16}>
             <h1 style={{fontFamily: 'jost', fontSize: '20px', margin: '30px'}}> Herbal medicine has been used for centuries to treat a range of 
@@ -66,62 +67,62 @@ const Ecommerce = ()=>{
         <Col span={12}>
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
+                    <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
@@ -172,4 +173,4 @@ const Ecommerce = ()=>{
         </div>
      )
 }
-export default Ecommerce;
+export default EcommerceCapsule;
