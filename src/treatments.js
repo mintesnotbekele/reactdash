@@ -40,52 +40,52 @@ const Treatment =()=>{
         <Col span={16}>
             
             <div style={{display: 'flex'}}>
-            <div className='hoverarticle' style={{width: '100%', height: '200px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment1})`}}>
+            <div className='hoverarticle' style={{width: '100%', height: '300px', paddingTop: '80px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment1})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center'}}>
                     Hydrotherapy
                     </h1>
-                    <p className='articletext'>A type of alternative medicine that involves the use of water for the treatment and prevention of..</p>
+                    <p className='articletext' style={{margin: '10px'}}>A type of alternative medicine that involves the use of water for the treatment and prevention of..</p>
                     </div>
 
-                    <div className='hoverarticle' style={{width: '100%', height: '200px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment2})`}}> 
+                    <div className='hoverarticle' style={{width: '100%', height: '300px', paddingTop: '80px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment2})`}}> 
                     <h1 className='articlehead' style={{textAlign: 'center'}} >
                     Aromatherapy
                     </h1>
-                    <p className='articletext'>
+                    <p className='articletext' style={{margin: '10px'}}>
                     A caring, hands-on therapy which seeks to induce relaxation, to increase energy...
                     </p>
                     </div>
-                    <div className='hoverarticle' style={{width: '100%', height: '200px', padding: '10px',backgroundSize: '100% 100%', backgroundImage: `url(${treatment3})`}}> 
+                    <div className='hoverarticle' style={{width: '100%', height: '300px', paddingTop: '80px', padding: '10px',backgroundSize: '100% 100%', backgroundImage: `url(${treatment3})`}}> 
                     <h1 className='articlehead' style={{textAlign: 'center'}}>
                     Herbology
                     </h1>
-                    <p className='articletext'>
+                    <p className='articletext' style={{margin: '10px'}}>
                     The use of active compounds extracted from plants for treatment of diseases and...
                     </p>
                     </div>
             </div>
             <div style={{display: 'flex'}}>
-                    <div className='hoverarticle' style={{width: '100%', height: '200px', padding: '10px', backgroundSize: '100% 100%',backgroundImage: `url(${treatment5})`}}>
+                    <div className='hoverarticle' style={{width: '100%', height: '300px', paddingTop: '80px', padding: '10px', backgroundSize: '100% 100%',backgroundImage: `url(${treatment5})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center'}}>
                     Accupressure
                     </h1>
-                    <p className='articletext'>
+                    <p className='articletext' style={{margin: '10px'}}>
                     A type of alternative medicine that includes applying pressure to particular points....
                     </p>
                     </div>
-                    <div className='hoverarticle' style={{width: '100%', height: '200px', padding: '10px', backgroundSize: '100% 100%',backgroundImage: `url(${treatment5})`}} > 
+                    <div className='hoverarticle' style={{width: '100%', height: '300px', paddingTop: '80px',padding: '10px', backgroundSize: '100% 100%',backgroundImage: `url(${treatment5})`}} > 
                     <h1 className='articlehead' style={{textAlign: 'center'}}>
                     Yoga
                     </h1>
-                    <p className='articletext'>
+                    <p className='articletext' style={{margin: '10px'}}>
                     Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas)...
                     </p>
                     </div>
-                    <div className='hoverarticle' style={{width: '100%', height: '200px', padding: '10px', backgroundSize: '100% 100%',backgroundImage: `url(${treatment6})`}}> 
+                    <div className='hoverarticle' style={{width: '100%', height: '300px', paddingTop: '80px', padding: '10px', backgroundSize: '100% 100%',backgroundImage: `url(${treatment6})`}}> 
                     <h1 className='articlehead' style={{textAlign: 'center'}}>
                     Diet & Nutrition
                     </h1>
-                    <p className='articletext'> A healthy diet is an important foundation for good health, one that incorporates a range of foods..</p>
+                    <p className='articletext' style={{margin: '10px'}}> A healthy diet is an important foundation for good health, one that incorporates a range of foods..</p>
                     </div>
                    
             </div>
@@ -388,43 +388,43 @@ locate the points, chosen by our doctors for you.
         </Col>
         <Col span={16}>
           <div style={{display: 'flex'}}>
-            <div style={{width: '100%', borderRadius: '20px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
-                      <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold'}}>
+            <div style={{width: '100%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+                      <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         Peppermint, a safe alternative for improving gut health 
                         </h1>
-                        <p style={{fontFamily: 'Jost', fontSize: '22px'}}> 
+                        <p style={{fontFamily: 'Jost', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
           circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
           shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
                         </p>
                         <div style={{margin: '50px'}}>
-                        <a  href="https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html">Read reseach paper....</a>
+                        <a  style={{marginTop: '30px', marginLeft: '20px', color:" blue", textDecoration: 'undeline'}} href="https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html">Read reseach paper....</a>
                         </div>
                       </div>
-                      <div style={{width: '100%',borderRadius: '20px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
-                      <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px", fontWeight: 'bold'}}>
+                      <div style={{width: '100%',borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+                      <h1 style={{fontFamily: "DM Serif Display", fontSize: "25px", fontWeight: 'bold', margin: '10px'}}>
                         Peppermint, a safe alternative for improving gut health 
                         </h1>
-                        <p style={{fontFamily: 'Jost', fontSize: '22px'}}> 
+                        <p style={{fontFamily: 'Jost', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
           circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
           shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
                         </p>
                         <div style={{margin: '50px'}}>
-                        <a href="https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html">Read reseach paper....</a>
+                        <a style={{marginTop: '30px', marginLeft: '20px', color:" blue", textDecoration: 'undeline'}} href="https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html">Read reseach paper....</a>
                         </div>
                       </div>
-                      <div style={{width: '100%',borderRadius: '20px',margin: '10px', padding: '10px', background: "#ECDFD7"}}>
-                      <h1 style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold'}}>
+                      <div style={{width: '100%',borderRadius: '60px',margin: '10px', padding: '10px', background: "#ECDFD7"}}>
+                      <h1 style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         Peppermint, a safe alternative for improving gut health 
                         </h1>
-                        <p style={{fontFamily: 'Jost', fontSize: '22px'}}> 
+                        <p style={{fontFamily: 'Jost', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
           circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
           shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
                         </p>
                         <div style={{margin: '50px'}}>
-                        <a  href="https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html">Read reseach paper....</a>
+                        <a style={{marginTop: '30px', marginLeft: '20px', color:" blue", textDecoration: 'undeline'}} href="https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html">Read reseach paper....</a>
                         </div>
                       </div>
           </div>

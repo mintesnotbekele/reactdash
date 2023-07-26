@@ -1,6 +1,6 @@
 import Header from "./components/header";
 import curedbanner from './assets/curedbanner.jpg';
-import { Input, Col, Row } from 'antd';
+import {  Col, Row } from 'antd';
 import dis1 from './assets/dis1.png';
 import dis2 from './assets/dis2.png';
 import dis3 from './assets/dis3.png';
@@ -10,32 +10,39 @@ import dis6 from './assets/dis6.png';
 import dis7 from './assets/dis7.png';
 import dis8 from './assets/dis8.png';
 import Footer from "./components/footer";
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
 
+
+import InputAdornment from "@mui/material/InputAdornment";
 
 
 
 const DiseasesWeCure=()=>{
-    const { Search } = Input;
-    const onSearch = (value) => console.log(value);
+  
 
     return(
         <div>
             <Header/>
             <img src={curedbanner} alt="cured disease banner"/>
-            <div style={{margin: 'auto', width: '10%'}}>
-            <Search
-                
-                placeholder="input search text"
-                allowClear
-                onSearch={onSearch}
-                style={{
-                    width: 200,
+            <div style={{margin: 'auto', width: '20%', marginTop: '100px', marginBottom: '100px'}}>
+            <TextField
+                style={{ width: '100%'}}
+                variant="outlined"
+                placeholder="Search"
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment position="end">
+                        <SearchIcon />
+                    </InputAdornment>
+                    ),
+                    style: { background: '#ECDFD7',borderRadius: '30px'}
                 }}
                 />
             </div>
             <Row style={{marginBottom: '100px'}}>
-                <Col span={6}></Col>
-                        <Col span={12}>
+                <Col span={4}></Col>
+                        <Col span={16}>
                             <div style={{display: 'flex',  flexWrap: 'wrap'}}>
                                     <div style={{width: '45%', margin: '10px'}}>
                                     <img src={dis1} alt="diseases"/>
@@ -91,7 +98,7 @@ const DiseasesWeCure=()=>{
                                     </div>
                             </div>
                         </Col>
-                <Col span={6}></Col>
+                <Col span={4}></Col>
             </Row>
             <Footer/>
         </div>

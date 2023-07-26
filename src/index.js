@@ -23,6 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <div style={{background: '#F6F5EC'}}>
     <Routes>
                         <Route path="/" element={ <App />}>
                         </Route>
@@ -41,7 +42,7 @@ root.render(
                         <Route path="/bronchitis" element={<Bronchitis/>}></Route>
                         <Route path="/diabetes" element={<Diabetes/>}></Route>
                     </Routes>
- 
+                    </div>
     </BrowserRouter>
   </React.StrictMode>
 );

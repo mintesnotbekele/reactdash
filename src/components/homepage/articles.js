@@ -13,7 +13,7 @@ const Articles= ()=>{
             if(value == 1)
             setEntered1(false);
             else if(value ==2)
-            setEntered3(false);
+            setEntered2(false);
             else if(value ==3)
             setEntered3(false);
       }
