@@ -6,7 +6,7 @@ import herbal from './assets/herbal.png';
 import {Row, Col, Input} from 'antd';
 import ecommerceframe from './assets/ecommerceframe.png';
 import capsules from './assets/capsules.png';
-import {ArrowRightOutlined, RightOutlined} from '@ant-design/icons';
+import {ArrowRightOutlined, RightCircleTwoTone } from '@ant-design/icons';
 import Header from './components/header';
 const EcommerceHerbal = ()=>{
      return(
@@ -68,62 +68,62 @@ const EcommerceHerbal = ()=>{
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone /></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={capsules} alt='capsules' />
                     <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
+                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
                 </div>
             </div>
         </Col>

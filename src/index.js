@@ -15,6 +15,9 @@ import TreatmentHome from './treatmentehome';
 import Book from './book';
 import Articles from './articles';
 import Blogdetail from './blogdetail';
+import Bronchitis from './Bronchitisdetail';
+import Diabetes from './diabetesdetail';
+import EcommerceHome from './ecommercehome';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,15 +28,18 @@ root.render(
                         </Route>
                         <Route path="/about" element={<About />}></Route>
                         <Route path="/treatment" element={<Treatment />}></Route>
+                        <Route path="/cureddisease" element={<DiseasesWeCure/>}></Route>
                         <Route path="/diseases" element={<Diseases/>}></Route>
                         <Route path="/ecommercecapsule" element={<EcommerceCapsule/>}></Route>
                         <Route path="/ecommerceherbal" element={<EcommerceHerbal/>}></Route>
-                        <Route path="/cureddisease" element={<DiseasesWeCure/>}></Route>
+                        <Route path="/ecommercehome" element={<EcommerceHome/>}></Route>
+                       
                         <Route path="/treatmentHome" element={<TreatmentHome/>}></Route>
                         <Route path="/book" element={<Book/>}></Route>
                         <Route path="/blog" element={<Articles/>}></Route>
                         <Route path="/blogdetail" element={<Blogdetail/>}></Route>
-                        
+                        <Route path="/bronchitis" element={<Bronchitis/>}></Route>
+                        <Route path="/diabetes" element={<Diabetes/>}></Route>
                     </Routes>
  
     </BrowserRouter>

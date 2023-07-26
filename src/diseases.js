@@ -22,43 +22,43 @@ const Diseases = ()=>{
             <img  src={disease1} style={{marginTop: '-150px'}}  alt='disease'/>
             </div>
             <Row>
-                <Col span={6}></Col>
-                <Col span={12}>
+                <Col span={4}></Col>
+                <Col span={16}>
                     <Row>
                     <Col span={12} style={{padding: "50px"}}> 
                         <div style={{background: '#ECDFD7', borderRadius: '30px', paddingTop: '50px', paddingBottom: '50px', paddingLeft: '5px', paddingRight: '5px'}}>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                          
-                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'DM Serif Display'}}>Age Group:</div>
-                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'jost'}}>    
+                            <div className='diseasescol' style={{width: '50%',fontFamily: 'DM Serif Display'}}>Age Group:</div>
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'jost'}}>    
                             30-60 yrs
                             </div>
                             
                         </div>
-                        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                        <div  style={{display: 'flex', justifyContent: 'space-evenly'}}>
                        
-                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'DM Serif Display'}}>
+                            <div className='diseasescol' style={{width: '50%', fontFamily: 'DM Serif Display'}}>
                             Duration:
                             </div>
-                            <div style={{width: '50%', textAlign: 'center'}}>
-                                <p style={{textAlign: 'center', fontFamily: 'jost'}}>
+                            <div style={{width: '50%'}}>
+                                <p className='diseasescol'>
                             One month treatment
                             </p>
                             </div>   
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'DM Serif Display'}}>
+                            <div className='diseasescol' style={{width: '50%', fontFamily: 'DM Serif Display'}}>
                              Treatment Includes:
                             </div>
-                            <div style={{width: '50%', height: '100px', textAlign: 'center'}}>
-                               <p style={{overflowWrap: 'anywhere', fontFamily: 'jost'}}>Dietplan,Yoga,Herbology,Hydrotherapy,Acupressure,Aromatherapy. </p> 
+                            <div style={{width: '50%', height: '100px',}}>
+                            <p className='diseasescol'>Dietplan,Yoga,Herbology,Hydrotherapy,Acupressure,Aromatherapy. </p> 
                             </div>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'DM Serif Display'}}>
+                            <div className='diseasescol' style={{width: '50%', fontFamily: 'DM Serif Display'}}>
                             Mode: 
                             </div>
-                            <div style={{width: '50%', textAlign: 'center', fontFamily: 'jost'}}>
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'jost'}}>
                             Online treatment
                             </div>
                         </div>
@@ -68,7 +68,7 @@ const Diseases = ()=>{
                     <h1 style={{fontFamily: "DM Serif Display", fontSize: "40px"}}>
                     Gastritis 
                     </h1>
-                    <p style={{fontFamily: 'Jost', fontSize: '18px'}}>
+                    <p className='firsttext' style={{textAlign: 'left'}}>
                     Gastritis is the inflammation, irritation or erosion of this protective stomach lining. 
                     Gastritis usually presents itself as a burning pain in the upper abdominal area, indigestion, 
                     nausea and vomiting. Chronic gastritis if not managed at the right time, can create cancerous conditions in the body.
@@ -80,14 +80,14 @@ const Diseases = ()=>{
                 </Col>
             </Row>
         </Col>
-        <Col span={6}></Col>
+        <Col span={4}></Col>
      </Row>
 
      <Row style={{marginTop: '100px'}}>
-        <Col span={6}>
+        <Col span={4}>
         </Col>
 
-        <Col span={12} style={{backgroundImage: `url(${gastritis})`, height: '600px', backgroundSize: '100% 100%'}}>
+        <Col span={16} style={{backgroundImage: `url(${gastritis})`, height: '600px', backgroundSize: '100% 100%'}}>
             <p style={{fontFamily: 'DM Serif Display', fontSize: '40px', color: 'white', marginTop: '250px' , textAlign: 'center', marginLeft: '20px', marginRight: '20px'}}> 
                 Curevive way of treating gastritis!
                 (Video with steps on how to avail) 
@@ -95,7 +95,7 @@ const Diseases = ()=>{
             
         </Col>
         
-        <Col span={6}>
+        <Col span={4}>
         </Col>
         </Row>
         <Row style={{marginTop: "100px" , background: '#ECDFD7', paddingTop: '150px', paddingBottom: '150px'}}>
@@ -104,21 +104,21 @@ const Diseases = ()=>{
            </div>
         </Row>
         <Row style={{marginTop: '100px'}}>
-            <Col span={6}></Col>
-            <Col span={12}> 
+            <Col span={4}></Col>
+            <Col span={16}> 
             <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>Clinically proven!</h1>
             <p style={{ fontFamily: "jost", fontSize: "22px"}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
             <div>
                 <img alt='frame' src={diseaseframe}/>
             </div>
             </Col>
-            <Col span={6}></Col>
+            <Col span={4}></Col>
         </Row>
 
         <Row>
-            <Col span={6}>
+            <Col span={4}>
             </Col>
-            <Col span={12}>
+            <Col span={16}>
                 <div style={{display: 'flex'}}>
                 <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
                     <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
@@ -158,13 +158,13 @@ const Diseases = ()=>{
 
                      
             </Col>
-            <Col span={6}>
+            <Col span={4}>
             </Col>
         </Row>
 
         <Row>
-            <Col span={6}></Col>
-            <Col span={12} style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', paddingTop: '30px'}}>
+            <Col span={4}></Col>
+            <Col span={16} style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', paddingTop: '30px'}}>
                 <div>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>
                     SUCESS STORIES
@@ -179,11 +179,11 @@ const Diseases = ()=>{
                     </div>
                 </div>
             </Col>
-            <Col span={6}></Col>
+            <Col span={4}></Col>
         </Row>
         <Row style={{marginTop: '100px'}}>
-            <Col span={6}></Col>
-            <Col span={12}>
+            <Col span={4}></Col>
+            <Col span={16}>
             <div style={{marginBottom: '40px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>
                     Begin your journey
@@ -208,11 +208,11 @@ const Diseases = ()=>{
                 </Carousel>
                 </div>
             </Col>
-            <Col span={6}></Col>
+            <Col span={4}></Col>
         </Row>
         <Row >
-            <Col span={6}></Col>
-            <Col span={12}>
+            <Col span={4}></Col>
+            <Col span={16}>
             <div style={{margin: '50px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>
                     Pricing & Plan
@@ -269,23 +269,23 @@ const Diseases = ()=>{
                          </div>
                     </div>
             </Col>
-            <Col span={6}></Col>
+            <Col span={4}></Col>
         </Row>
         <Row>
-            <Col span={6}></Col>
-            <Col span={12}>
+            <Col span={4}></Col>
+            <Col span={16}>
                 <div style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>Check out the questions asked by our patients previously</h1>
                     <h3 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "25px"}}>Visit Q&A </h3>
                 </div>
             </Col>
-            <Col span={6}></Col>
+            <Col span={4}></Col>
         </Row>
         <Row style={{marginTop: '30px', marginBottom: '50px'}}>
-            <Col span={6}>
+            <Col span={4}>
             
             </Col>
-            <Col span={12}>
+            <Col span={16}>
         <div style={{margin: '70px'}}>
             <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Not sure if its for you?</h1>
@@ -293,7 +293,7 @@ const Diseases = ()=>{
                 </div>
                 </div>
             </Col>
-            <Col span={6}>
+            <Col span={4}>
             </Col>
         </Row>
 

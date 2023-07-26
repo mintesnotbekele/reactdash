@@ -44,33 +44,33 @@ function App() {
          <Row style={{marginTop: '100px', marginBottom: '100px', zIndex: "1000"}}>
           <Col span={4}></Col>
           <Col className="gutter-row" span={5}>
-          <h3 style={{color: '#292F36',fontSize: '25px', Align: 'center', fontFamily: 'DM Serif Display'}}>
+          <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
               Diseases
             </h3>
             <div>
-            <p style={{fontSize: '22px', textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px', }}>
+            <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
               Have diabetes, hypertension, thyroid or more? Learn about your disease and much more.
               </p>
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
             </div>
           </Col>
           <Col className="gutter-row" span={5}>
-            <h3 style={{color: '#292F36', fontSize: '25px', Align: 'center', fontFamily: 'DM Serif Display'}}>
+            <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
             Welcome to Curevive
             </h3>
             <div>
-            <p style={{fontSize: '22px', textAlign: 'justify',  margin: '30px', color: '#4D5053', height: '150px', fontFamily: 'josh'}}>
+            <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
             We are an online platform with leading doctors in Nature Cure, providing exclusive consultation from the comfort of home.
               </p>
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
             </div>
           </Col> 
           <Col className="gutter-row" style={{backgroundColor: 'rgba(0, 0, 0, .0)'}} span={5}>
-          <h3 style={{color: '#292F36',fontSize: '25px', Align: 'center', fontFamily: 'DM Serif Display'}}>
+          <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
               Treatments
             </h3>
             <div>
-              <p style={{fontSize: '22px', textAlign: 'justify',  margin: '30px',  color: '#4D5053',height: '150px', fontFamily: 'josh'}}>
+              <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
               Find a cure for your problems through the extensively researched treatments by specialists of the nation.
               </p>
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
@@ -79,17 +79,16 @@ function App() {
           <Col span={4} ></Col>
           <img alt="background" src={background1} style={{position: 'absolute',overflow: 'hidden', rigth: '80px', bottom: '-20px', top: '900px'}}/>
           <img alt="background" src={background2} style={{position: 'absolute',overflow: 'hidden', left: '1300px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
-          <img alt="background" src={background4} style={{position: 'absolute', overflow: 'hidden', rigth: '80px',left: '-200px', top: '1900px', zIndex: "500"}}/>
-           <img alt="background" src={foot1} style={{height: "800px", left: '-200px', position: 'absolute', overflow: 'hidden', top: '7500px', zIndex: "500"}}/> 
+            <img alt="background" src={foot1} style={{height: "800px", left: '-200px', position: 'absolute', overflow: 'hidden', top: '7500px', zIndex: "500"}}/> 
           <Col span={3}></Col>
          </Row>
        </div>
         <Row>
           <Col span={4}></Col>
           <Col style={{margin: '20px'}} span={8}>
-          <h1 style={{ textAlign : 'left',fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>
+          <h1 className='articleHeader' style={{color: '#292F36'}}>
               We Create The Art Of Healthy Living!</h1>
-            <p style={{fontSize: '22px', textAlign: 'justify', marginTop: '40px', marginRight: '40px', color: '#4D5053',height: '150px', fontFamily: 'josh'}}>
+            <p className='firsttext' style={{textAlign: 'justify', marginTop: '40px', marginRight: '40px', color: '#4D5053',height: '150px'}}>
             When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.
             </p>
             <div>
@@ -99,14 +98,15 @@ function App() {
             <Image preview={false} src={meditate}/>
           </Col>
         </Row>
+        <img alt="background" src={background4} style={{position: 'absolute', overflow: 'hidden', left: '-200px',marginTop: '-200px', zIndex: "500"}}/>
         <Testimonials/>
-          <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute',right: "80px", height: '870px', marginTop: "-200px", zIndex: "500"}}/></div>
+        <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute',right: "80px", height: '870px', marginTop: "-200px", zIndex: "500"}}/></div>
           <Diseases/>
           <Counter/>  
           <Row>
             <Col span={7}></Col>
             <Col span={10}>
-              <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>
+              <h1 className='firstheaders'>
               YOUR JOURNEY WITH US
               </h1>
               </Col>  
@@ -116,7 +116,7 @@ function App() {
             <Col span={7}></Col>
           <Col span={10}>
               <div>
-                <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>
+                <p className='firsttext' style={{color: '#4D5053'}}>
                 Wondering what your journey with us throughout your treatments would look like? Here is a breakdown of how we will be working together.
                 </p>
               </div>

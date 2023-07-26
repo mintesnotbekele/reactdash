@@ -6,6 +6,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import trt1 from './assets/trt1.png';
 import trt2 from './assets/trt2.png';
 import trt3 from './assets/trt3.png'; 
+import blurred from './assets/blurred.png';
 import {ArrowRightOutlined} from '@ant-design/icons';
 import { Button, } from 'flowbite-react';
 import {Row, Col} from 'antd';
@@ -22,8 +23,14 @@ const TreatmentHome=()=>{
     return(
         <div>
             <Header/>
-            <img src={treatmentbanner} alt="treatment"/>
             
+            <div style={{ marginTop: '0px', height: '700px',paddingTop: '300px',  width: '100%',backgroundImage: `url(${treatmentbanner})`}}>
+              <div style={{width: '60%', margin: 'auto', backgroundImage: `url(${blurred})`, backgroundSize: '100% 100%'}}>
+                <h1 style={{textAlign: 'center', fontFamily: 'DM Serif Display', fontSize: '75px' , fontWeight: '400', lineHeight: '113px', letterSpacing: '0.01em' }}>
+                Harness the healing benefits of nature with our essential oils
+                </h1>
+                </div>
+            </div>
             <Row style={{marginTop: '100px'}}>
                 <Col span={6}></Col>
                 <Col span={12}>

@@ -20,7 +20,7 @@ const Testimonials=()=>{
                 </h1>
                 <Row>
                     <Col span={24}>
-                <Splide options={options}>
+                <Splide style={{color:'black'}} options={options}>
                         <SplideSlide>
                         <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
 

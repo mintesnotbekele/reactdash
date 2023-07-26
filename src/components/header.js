@@ -22,8 +22,13 @@ const Header=()=>{
     
     >
       <Navbar.Brand style={{marginLeft: "250px"}}>
+      <Navbar.Link
+          active
+          href="/"
+        >
         <img alt='logo' style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}}  src={logo}/>
         <img alt='second logo ' style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }}  src={logotext}/>
+        </Navbar.Link>
       </Navbar.Brand>
       <Navbar.Collapse>
         <Navbar.Link
@@ -31,7 +36,7 @@ const Header=()=>{
           href="/treatment"
         >
           <p className='navheader'>
-            Treatment
+          <p className='navheader'>   Treatment</p>
           </p>
         </Navbar.Link>
         <Navbar.Link href="/diseases">
