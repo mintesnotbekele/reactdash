@@ -1,5 +1,6 @@
 import Header from "./components/header";
 import curedbanner from './assets/curedbanner.jpg';
+import {RightOutlined } from '@ant-design/icons';
 import {  Col, Row } from 'antd';
 import dis1 from './assets/dis1.png';
 import dis2 from './assets/dis2.png';
@@ -30,6 +31,7 @@ const DiseasesWeCure=()=>{
                 style={{ width: '100%'}}
                 variant="outlined"
                 placeholder="Search"
+
                 InputProps={{
                     endAdornment: (
                     <InputAdornment position="end">
@@ -47,53 +49,53 @@ const DiseasesWeCure=()=>{
                                     <div style={{width: '45%', margin: '10px'}}>
                                     <img src={dis1} alt="diseases"/>
                                     <h1 className="firstheaders">
-                                    Thyroid
+                                    Thyroid <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div>
 
                                     <div style={{width: '45%', margin: '10px', }}>
                                     <img src={dis2} alt="diseases"/>
                                     <h1 className="firstheaders">
-                                    Hyperlipidemia
+                                    Hyperlipidemia <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div> 
                                     
                                     <div style={{width: '45%', margin: '10px'}}>
                                     <img src={dis3} alt="diseases"/>
                                     <h1 className="firstheaders">
-                                    Gastritis
+                                    Gastritis <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div>
                                     <div style={{width: '45%', margin: '10px', marginTop: '-160px'}}>
                                     <img style={{height: 'inherit'}} src={dis4}  alt="diseases"/>
                                     <h1 className="firstheaders">
-                                    Hypertension
+                                    Hypertension <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div>
                                     <div style={{width: '45%', margin: '10px'}}>
                                     <img src={dis5} alt="diseases"/>
                                     <h1 className="firstheaders">
-                                    Obesity
+                                    Obesity <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div>
 
                                     <div style={{width: '45%', margin: '10px'}}>
                                     <img src={dis6} alt="diseases"/>
                                     <h1 className="firstheaders">
-                                    Diabetes
+                                    Diabetes <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div> 
                                     
                                     <div style={{width: '45%', margin: '10px'}}>
                                     <img src={dis7} alt="diseases"/>
                                     <h1 className="firstheaders">
-                                    Arthritis
+                                    Arthritis <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div>
                                     <div style={{width: '45%', margin: '10px', marginTop: '-180px'}}>
                                     <img src={dis8} alt="diseases"/>
                                     <h1 className="firstheaders">
-                                    PCOD
+                                    PCOD <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div>
                             </div>

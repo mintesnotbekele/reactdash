@@ -19,6 +19,7 @@ import Bronchitis from './Bronchitisdetail';
 import Diabetes from './diabetesdetail';
 import EcommerceHome from './ecommercehome';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
