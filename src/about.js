@@ -1,8 +1,5 @@
-import { Button, Navbar} from 'flowbite-react';
-import logo from './assets/logo.png';
-import logotext from './assets/text.png';
+import { Button} from 'flowbite-react';
 import aboutBanner from './assets/aboutBanner.jpg';
-import quotes from './assets/quotes.png';
 import {Row, Col, Input} from 'antd';
 import herbs from './assets/herbs.png';
 import meditate from './assets/meditate1.png';
@@ -10,7 +7,7 @@ import team1 from "./assets/team1.png";
 import team2 from "./assets/team2.png";
 import team3 from "./assets/team3.png";
 import team4 from "./assets/team4.png";
-import faq from "./assets/faq.png";
+import faqs from "./assets/faq.png";
 import disease from "./assets/disease.jpg";
 import TextArea from 'antd/es/input/TextArea';
 import {ArrowRightOutlined} from '@ant-design/icons';
@@ -18,24 +15,48 @@ import Header from './components/header';
 import { Accordion } from 'flowbite-react';
 import Footer from './components/footer';
 import {Carousel} from 'flowbite-react';
+import frame from './assets/frame.png'
+import { useState, useEffect } from 'react';
+import axios from 'axios';  
+
 
 const About=()=>{
+
+
+  const [quotes, setQuotes] = useState();
+  const [researchpaper, setResearchpaper] = useState([]);
+  const [faq, setFaq] = useState([]);
+  
+
+  useEffect(()=>{
+
+    axios.get('http://127.0.0.1:8000/api/quote')
+    .then((res)=>{
+      setQuotes(res.data);
+    });
+    
+    axios.get('http://127.0.0.1:8000/api/faq')
+    .then((res)=>{
+      setFaq(res.data);
+    });
+
+    
+ },[]);
 
 return(
     <div>
       <Header/>
       <img alt="about Banner"style={{marginBottom: '200px'}} src={aboutBanner}/>
-      <div style={{width: '100%', height: '400px'}}>
-      <Carousel >
-      <img style={{margin: 'auto', width: '35%'}} src={quotes} alt= "about quotes"/>
-                  <img style={{margin: 'auto', width: '35%'}} src={quotes} alt= "about quotes"/>
-                 <img style={{margin: 'auto', width: '35%'}} src={quotes} alt= "about quotes"/>
-                
-                </Carousel>
-      
-      </div>
-
-      
+      <div style={{width: '40%',padding: '40px',margin: 'auto', height: '300px' , backgroundImage: `url(${frame})`,backgroundSize: '100% 100%'}}>
+      <Carousel>
+      {
+      quotes?.map((item) => 
+               <p className="italictext">
+                {item?.description}
+               </p>
+      )}
+      </Carousel>
+      </div>      
       <Row style={{marginTop: "150px"}}>
         <Col span={4}>
             
@@ -123,55 +144,22 @@ return(
        </Col>
         <Col span={8}>
         <Accordion collapseAll>
+              {faq.map((item) => 
                 <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}> 
-                  Why the name Curevive?
+                  <Accordion.Title>
+                   {item.title}
                   </Accordion.Title>
                   <Accordion.Content>
-                  <h1 className='accordionsubheader'>So, how exactly does this work?</h1>
-                    <p className='firsttext' style={{color: '#4D5053', textAlign: 'left'}}>Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem
-                      vitae turpmaximus.posuere in.Contrary popular belief.
-                      There are many variations of passages of Lorem Ipsum available, but the majority randomised.</p>
+                  {item.description}
                   </Accordion.Content>
                 </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  What cities do you currently operate in?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  How do I get in touch?       
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  What kind of doctors do you have?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  Can you learn how to do yoga through books or television?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
+                 )}
               </Accordion>     
                 
          </Col>
          <Col span={8}>
          
-        <img alt="frequently asked question" src={faq}/>
+        <img alt="frequently asked question" src={faqs}/>
          </Col>
         <Col span={6}>
       </Col>
@@ -195,50 +183,17 @@ return(
          <Col span={8}>
                       
          <Accordion collapseAll>
+              {faq.map((item) => 
                 <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  How long does it take?
+                  <Accordion.Title>
+                   {item.title}
                   </Accordion.Title>
                   <Accordion.Content>
-                  <h1 className='accordionsubheader'>Can I use my existing medication?</h1>
-                    <p className='firsttext' style={{color: '#4D5053', textAlign: 'left'}}>Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem
-                      vitae turpmaximus.posuere in.Contrary popular belief.
-                      There are many variations of passages of Lorem Ipsum available, but the majority randomised.</p>
+                  {item.description}
                   </Accordion.Content>
                 </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  My disease is not listed, what do I do?
-                  </Accordion.Title >
-                  <Accordion.Content>
-                    test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  What do your services cost for multiple?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  Do you offer free consultations?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title className='accordionheader' style={{color: '#292F36'}}>
-                  Can you learn how to do yoga through books or television?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-              </Accordion>      
+                 )}
+              </Accordion>    
          </Col>
          
         <Col span={8}>

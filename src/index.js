@@ -31,7 +31,7 @@ root.render(
                         <Route path="/about" element={<About />}></Route>
                         <Route path="/treatment" element={<Treatment />}></Route>
                         <Route path="/cureddisease" element={<DiseasesWeCure/>}></Route>
-                        <Route path="/diseases" element={<Diseases/>}></Route>
+                        <Route path="/diseases/:id" element={<Diseases/>}></Route>
                         <Route path="/ecommercecapsule" element={<EcommerceCapsule/>}></Route>
                         <Route path="/ecommerceherbal" element={<EcommerceHerbal/>}></Route>
                         <Route path="/ecommercehome" element={<EcommerceHome/>}></Route>
@@ -39,7 +39,7 @@ root.render(
                         <Route path="/treatmentHome" element={<TreatmentHome/>}></Route>
                         <Route path="/book" element={<Book/>}></Route>
                         <Route path="/blog" element={<Articles/>}></Route>
-                        <Route path="/blogdetail" element={<Blogdetail/>}></Route>
+                        <Route path="/blogdetail/:id" element={<Blogdetail/>}></Route>
                         <Route path="/bronchitis" element={<Bronchitis/>}></Route>
                         <Route path="/diabetes" element={<Diabetes/>}></Route>
                     </Routes>

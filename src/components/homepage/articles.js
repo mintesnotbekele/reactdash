@@ -6,6 +6,7 @@ import article3 from "../../assets/article3.png";
 import { useState } from "react";
 import { useEffect} from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 
 const Articles= ()=>{
@@ -55,15 +56,21 @@ const Articles= ()=>{
             </div>
            <Row>
            {article.map((item) => 
-           <Col onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle' span={8}>  <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '20px', margin: '20px'}}>
-             <img src={`http://127.0.0.1:8000/${item.picture}`} alt="articles"/>
+           <Col onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle' span={8}>  
+           <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '10px', margin: '20px', height: '450px'}}>
+           <div style={{height: '100%'}}>
+              <img style={{height: '90%'}} src={`http://127.0.0.1:8000/${item.picture}`} alt="articles"/>
                   <h1 style={{fontSize: '25px', fontFamily: "josh"}}> {item.title}</h1>
                   <div style={{ marginTop: '30px', marginBottom: '20px'}}>
-                         <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}> <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 
-                         <RightOutlined className={ entered1 ? 'cursorhover': 'cursorfree'} /></p>
+                        <Link to={`/blogdetail/${item.id}`}>
+                         <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}> 
+                           <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 
+                                <RightOutlined className={ entered1 ? 'cursorhover': 'cursorfree'} /></p>
+                         
                         </p>
+                        </Link>
                    </div>
-                  
+                  </div>
                   </div> 
                   
             </Col> 

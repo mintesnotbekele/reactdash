@@ -39,7 +39,7 @@ const Header=()=>{
           <p className='navheader'>   Treatment</p>
           </p>
         </Navbar.Link>
-        <Navbar.Link href="/diseases">
+        <Navbar.Link href="/cureddisease">
           <p className='navheader'>Diseases</p>
         </Navbar.Link>
         <Navbar.Link href="/blog">

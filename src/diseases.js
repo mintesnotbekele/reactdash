@@ -5,21 +5,44 @@ import {Row, Col} from 'antd';
 import disease from './assets/diseaseBanner.jpg';
 import disease1 from './assets/diseaseImage.png';
 import gastritis from './assets/gastritis.png';
-import diseaseframe from './assets/diseaseframe.png';
+
 import success1 from './assets/success.png';
 import success2 from './assets/success.png';
 import {Carousel} from 'flowbite-react';
 import carouse from './assets/carouser.png'
 import { ArrowRightOutlined} from '@ant-design/icons'
 import Header from './components/header';
+import {useParams} from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import axios from 'axios';  
+
 
 const Diseases = ()=>{
+    const {id} = useParams();
+    const [diseases, setDiseases] = useState();
+    const [researchpaper, setResearchpaper] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [treatments, setTreatments] =useState();
+     useEffect(()=>{
+        axios.get('http://127.0.0.1:8000/api/treatment')
+        .then((res)=>{
+          setTreatments(res.data);
+        });
+        axios.get(`http://127.0.0.1:8000/api/disease/${id}`)
+        .then((res)=>{
+          setDiseases(res.data);
+        });
+        axios.get('http://127.0.0.1:8000/api/researchpaper')
+        .then((res)=>{
+          setResearchpaper(res.data);
+        });
+     },[]);
     return(
         <div>
         <Header/>
             <img style={{width: '100%'}} src={disease} alt='disease'/>
             <div style={{width: '20%', margin: 'auto'}}>
-            <img  src={disease1} style={{marginTop: '-150px'}}  alt='disease'/>
+            <img  src={`http://127.0.0.1:8000/${diseases?.picture}`} style={{marginTop: '-150px'}}  alt='disease'/>
             </div>
             <Row>
                 <Col span={4}></Col>
@@ -31,7 +54,7 @@ const Diseases = ()=>{
                          
                             <div className='diseasescol' style={{width: '50%',fontFamily: 'DM Serif Display'}}>Age Group:</div>
                             <div className='diseasecol1' style={{width: '50%', fontFamily: 'jost'}}>    
-                            30-60 yrs
+                            { diseases?.agegroup}
                             </div>
                             
                         </div>
@@ -42,7 +65,7 @@ const Diseases = ()=>{
                             </div>
                             <div style={{width: '50%'}}>
                                 <p className='diseasescol'>
-                            One month treatment
+                                {diseases?.duration} 
                             </p>
                             </div>   
                         </div>
@@ -51,7 +74,7 @@ const Diseases = ()=>{
                              Treatment Includes:
                             </div>
                             <div style={{width: '50%', height: '100px',}}>
-                            <p className='diseasescol'>Dietplan,Yoga,Herbology,Hydrotherapy,Acupressure,Aromatherapy. </p> 
+                            <p className='diseasescol'> {diseases?.treatments}  </p> 
                             </div>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
@@ -59,23 +82,17 @@ const Diseases = ()=>{
                             Mode: 
                             </div>
                             <div className='diseasecol1' style={{width: '50%', fontFamily: 'jost'}}>
-                            Online treatment
+                            {diseases?.mode} 
                             </div>
                         </div>
                         </div>
                  </Col>
                 <Col span={12}>
                     <h1 style={{fontFamily: "DM Serif Display", fontSize: "40px"}}>
-                    Gastritis 
+                    {diseases?.name} 
                     </h1>
                     <p className='firsttext' style={{textAlign: 'left'}}>
-                    Gastritis is the inflammation, irritation or erosion of this protective stomach lining. 
-                    Gastritis usually presents itself as a burning pain in the upper abdominal area, indigestion, 
-                    nausea and vomiting. Chronic gastritis if not managed at the right time, can create cancerous conditions in the body.
-                    We give importance to building up the body's own defense, in this case; building up the protective mucosal layer. 
-                    Here at Curevive, you would be put through yoga classes under trained professionals, prescribed specially designed 
-                    Satwik diet plans and undergo guided hydrotherapy sessions specific to gastritis. So by the end of the treatments, 
-                    you can be assured of a safe, natural and healthy improvement in your health.
+                      {diseases?.description}
                     </p>
                 </Col>
             </Row>
@@ -87,18 +104,32 @@ const Diseases = ()=>{
         <Col span={4}>
         </Col>
 
-        <Col span={16} style={{backgroundImage: `url(${gastritis})`, height: '600px', backgroundSize: '100% 100%'}}>
-            <p style={{fontFamily: 'DM Serif Display', fontSize: '40px', color: 'white', marginTop: '250px' , textAlign: 'center', marginLeft: '20px', marginRight: '20px'}}> 
-                Curevive way of treating gastritis!
-                (Video with steps on how to avail) 
-             </p>
+        <Col span={16} style={{ height: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
+                    <iframe
+                width="853"
+                height="480"
+                src={`${diseases?.videolink}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Embedded youtube"
+                />
+             
+          
             
+        </Col>
+        <Col span={16}>
+        <div className="video-responsive">
+
+  </div>
         </Col>
         
         <Col span={4}>
+   
         </Col>
         </Row>
         <Row style={{marginTop: "100px" , background: '#ECDFD7', paddingTop: '150px', paddingBottom: '150px'}}>
+            
             <div style={{width: '100%'}}> 
             <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "70px"}}>3d animation of products displaying out of the box</h1>
            </div>
@@ -108,8 +139,10 @@ const Diseases = ()=>{
             <Col span={16}> 
             <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>Clinically proven!</h1>
             <p style={{ fontFamily: "jost", fontSize: "22px"}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
-            <div>
-                <img alt='frame' src={diseaseframe}/>
+            <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+            {treatments?.map((item, index) => 
+                <Button  className="commonbutton buttonHeader" >{item?.name}</Button>
+               )}
             </div>
             </Col>
             <Col span={4}></Col>
@@ -119,41 +152,20 @@ const Diseases = ()=>{
             <Col span={4}>
             </Col>
             <Col span={16}>
-                <div style={{display: 'flex'}}>
-                <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-                    </p>
-                    </div>
-                    <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-                    </p>
-                    </div>
-                    <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-
-                    </p>
-                    <div style={{marginTop: '30px', marginLeft: '20px', color:" blue", textDecoration: 'undeline'}}>
-                        <a href='https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html' target='_blank' rel="noreferrer">Read Research paper...</a>
-                    </div>
-                    </div>
+                <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                {researchpaper.map((item) => 
+            <div style={{width: '30%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+                      <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
+                        {item.title}
+                        </h1>
+                        <p style={{fontFamily: 'Jost', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        {item.description}
+                        </p>
+                        <div style={{margin: '20px'}}>
+                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} href ={`url(${item.link})`} >Read reseach paper....</a>
+                        </div>
+                      </div>
+          )}
                      </div>
 
                      

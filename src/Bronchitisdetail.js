@@ -22,7 +22,7 @@ const Bronchitis=()=>{
       axios.get('http://127.0.0.1:8000/api/researchpaper')
       .then((res)=>{
         setResearchpaper(res.data);
-      });
+      }); 
      },[])
      return(
         <div>

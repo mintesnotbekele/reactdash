@@ -10,14 +10,7 @@ import firstyoga from "./assets/firtyoga.png";
 import thirdyoga from "./assets/thirdyoga.png";
 import history from "./assets/history1.png";
 import expert from "./assets/expert.png";
-import slider from './assets/sliderframe.png';
 import {ArrowRightOutlined} from '@ant-design/icons';
-import treatment1 from './assets/treatment1.png';
-import treatment2 from './assets/treatment2.png';
-import treatment3 from './assets/treatment3.png';
-import treatment4 from './assets/treatment3.png';
-import treatment5 from './assets/treatment5.png';
-import treatment6 from './assets/treatment6.png';
 import Header from './components/header';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -27,6 +20,8 @@ const Treatment =()=>{
   const [diseases, setDiseases] = useState([]);
   const [researchpaper, setResearchpaper] = useState([]);
   const [treatments, setTreatments] = useState([]);
+  const [faq, setFaq] = useState([]);
+  
   const [loading, setLoading] = useState(false);
    useEffect(()=>{
     axios.get('http://127.0.0.1:8000/api/disease')
@@ -40,6 +35,10 @@ const Treatment =()=>{
     axios.get('http://127.0.0.1:8000/api/researchpaper')
     .then((res)=>{
       setResearchpaper(res.data);
+    });
+    axios.get('http://127.0.0.1:8000/api/faq')
+    .then((res)=>{
+      setFaq(res.data);
     });
    },[])
 
@@ -59,10 +58,9 @@ const Treatment =()=>{
         <Col span={4}>
         </Col>
         <Col span={16}>
-            
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
             {treatments.map((item) => 
-            <div className='hoverarticle' style={{width: '30%', height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(${treatment1})`}}>
+            <div className='hoverarticle' style={{width: '30%', height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://127.0.0.1:8000/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px'}}>
                     {item.name}
                     </h1>
@@ -70,7 +68,6 @@ const Treatment =()=>{
                     </div>
                 )}
             </div>
-            
         </Col>
         <Col span={4}>
         </Col>
@@ -84,52 +81,22 @@ const Treatment =()=>{
             <Col  span={10}>
               <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
             </Col>
-            <Col span={14} style={{padding:'20px'}}>
+            <Col className='articletext' span={14} style={{padding:'20px'}}>
               <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
               <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
               Diet & Nutrition
               </h1>
               <Accordion collapseAll>
+              {faq.map((item) => 
                 <Accordion.Panel>
                   <Accordion.Title>
-                  How long does it take?
+                   {item.title}
                   </Accordion.Title>
                   <Accordion.Content>
-                    test
+                  {item.description}
                   </Accordion.Content>
                 </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  What age should you start yoga?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  How is yoga better than exercises?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  Does yoga require the help of an instructor or can it be self-taught?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  Can you learn how to do yoga through books or television?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
+                 )}
               </Accordion>
             </Col>
           </Row>
@@ -139,52 +106,22 @@ const Treatment =()=>{
             <Col  span={10}>
               <img style={{marginTop: "100px"}} alt='yoga' src={yoga}/>
             </Col>
-            <Col span={14} style={{padding:'20px'}}>
-              <p style={{fontFamily: 'jost', fontSize: '18px', color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
+            <Col className='articletext' span={14} style={{padding:'20px'}}>
+            <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
               <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
               Frequently Asked Questions
               </h1>
               <Accordion collapseAll>
+              {faq.map((item) => 
                 <Accordion.Panel>
                   <Accordion.Title>
-                  How long does it take?
+                   {item.title}
                   </Accordion.Title>
                   <Accordion.Content>
-                    test
+                  {item.description}
                   </Accordion.Content>
                 </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  What age should you start yoga?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  How is yoga better than exercises?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  Does yoga require the help of an instructor or can it be self-taught?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  Can you learn how to do yoga through books or television?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
+                 )}
               </Accordion>
             </Col>
           </Row>
@@ -195,51 +132,21 @@ const Treatment =()=>{
               <img style={{marginTop: "100px"}} alt='yoga' src={thirdyoga}/>
             </Col>
             <Col span={14} style={{padding:'20px'}}>
-              <p style={{fontFamily: 'jost', fontSize: '18px', color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
+            <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
               <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
               Aroma Therapy
               </h1>
-              <Accordion collapseAll> 
+              <Accordion collapseAll>
+              {faq.map((item) => 
                 <Accordion.Panel>
                   <Accordion.Title>
-                  How long does it take?
+                   {item.title}
                   </Accordion.Title>
                   <Accordion.Content>
-                    test
+                  {item.description}
                   </Accordion.Content>
                 </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  What age should you start yoga?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                    test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  How is yoga better than exercises?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  Does yoga require the help of an instructor or can it be self-taught?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
-                <Accordion.Panel>
-                  <Accordion.Title>
-                  Can you learn how to do yoga through books or television?
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  test
-                  </Accordion.Content>
-                </Accordion.Panel>
+                 )}
               </Accordion>
             </Col>
           </Row>
@@ -372,9 +279,9 @@ locate the points, chosen by our doctors for you.
         <Col span={4}>
         </Col>
         <Col span={16}>
-          <div style={{display: 'flex'}}>
+          <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {researchpaper.map((item) => 
-            <div style={{width: '100%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+            <div style={{width: '30%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
                       <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         {item.title}
                         </h1>
@@ -382,7 +289,7 @@ locate the points, chosen by our doctors for you.
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
-                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} href ={`url(${item.link})`} >Read reseach paper....</a>
+                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} href ={`http://127.0.0.1:8000/${item.file}`} >Read reseach paper....</a>
                         </div>
                       </div>
           )}

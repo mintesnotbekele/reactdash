@@ -93,9 +93,7 @@ font-weight: 600;
 line-height: 23px;
 letter-spacing: 0.02em;
 text-align: center;
-
 }
-
 .hoverarticle{
     
 
@@ -103,7 +101,7 @@ text-align: center;
 
 .hoverarticle:hover{
     background: #ECDFD7;
-    border-radius: 30px;
+    border-radius: 40px;
 
 }
 
@@ -206,7 +204,6 @@ border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(16.9px);
 }
-
 .commonactivebutton{
    background-color: #292F36;
 }
@@ -215,16 +212,14 @@ backdrop-filter: blur(16.9px);
 }
 .displayText{
     visibility: hidden;
-   
-   
 }
 .displayTextnone{
     visibility: visible;
     
 }
 .dismage{
-    background: rgba(255, 255, 255, 0.46);
+    background: rgba(255, 255, 255, 0.36);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(12.6px);
-    -webkit-backdrop-filter: blur(12.6px);
+    backdrop-filter: blur(14.3px);
+    -webkit-backdrop-filter: blur(14.3px);
 }

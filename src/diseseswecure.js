@@ -2,14 +2,6 @@ import Header from "./components/header";
 import curedbanner from './assets/curedbanner.jpg';
 import {RightOutlined } from '@ant-design/icons';
 import {  Col, Row } from 'antd';
-import dis1 from './assets/dis1.png';
-import dis2 from './assets/dis2.png';
-import dis3 from './assets/dis3.png';
-import dis4 from './assets/dis4.png';
-import dis5 from './assets/dis5.png';
-import dis6 from './assets/dis6.png';
-import dis7 from './assets/dis7.png';
-import dis8 from './assets/dis8.png';
 import Footer from "./components/footer";
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
@@ -17,6 +9,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import InputAdornment from "@mui/material/InputAdornment";
+import { Link } from "react-router-dom";
 
 
 
@@ -73,7 +66,7 @@ const DiseasesWeCure=()=>{
                                       <div className="treatmentslider" style={{ textAlign: 'center', backgroundImage: `url(http://127.0.0.1:8000/${item.picture})`, height: '500px'}}> 
                                            <div className={hoveredCart === index ? 'displayText dismage' : 'displayTextnone'}>                                   
                                                  <div style={{height: '500px'}}>
-                                                 <h1 style={{paddingTop: '300px',paddingBottom: '500px'}} className={hovered === index? 'displayText' : 'displayTextnone'}>  
+                                                 <h1 style={{paddingTop: '200px',paddingBottom: '200px'}} className={hovered === index? 'displayText' : 'displayTextnone'}>  
                                                 <a href={`${item.videolink}`} target="_blank"> {item.description}</a>
                                                  </h1>
                                             </div>
@@ -81,7 +74,8 @@ const DiseasesWeCure=()=>{
 
                                     </div>
                                     <h1 className="firstheaders">
-                                    {item.name} <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
+                                    <Link to={`/diseases/${item.id}`}> {item.name} <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
+                                    </Link>
                                     </h1>
                                     </div>
                                 </div>

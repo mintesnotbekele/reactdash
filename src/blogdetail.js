@@ -11,8 +11,24 @@ import {ArrowRightOutlined} from '@ant-design/icons';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from "@mui/material/InputAdornment";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
 
 const Blogdetail=()=>{
+    const {id} = useParams();
+   
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(false);
+  
+     useEffect(()=>{
+
+        axios.get(`http://127.0.0.1:8000/api/newsAndarticle/${id}`)
+        .then((res)=>{
+            setArticles(res.data);
+        })
+     },[]);
       return(
         <div>
             <Header/>
@@ -20,13 +36,13 @@ const Blogdetail=()=>{
             <Row style={{marginTop: '200px'}}>
                 <Col span={4}></Col>
                 <Col span={10}>
-                    <h1 className="firstheaders">Yoga can be the cure to most of your problems!</h1>
-                    <img src={blogdetail} alt="blog detail"/>
+                    <h1 className="firstheaders">{articles?.title}</h1>
+                    <img style={{margin: 'auto'}} src={`http://127.0.0.1:8000/${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
                     <p >26 December,2022  <span style={{float: 'right'}}>Interior / Design / Home / Decore</span></p></div>
 
 
-                 <p className="firsttext">  Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.
+                 <p className="firsttext" style={{textAlign: 'left', marginTop: '50px', marginBottom: '50px'}}>  Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.
                     Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, 
                     but the majority have suffered alteration in some form, by injecthumour, or randomised words
                      which don't look even slightly believable.
