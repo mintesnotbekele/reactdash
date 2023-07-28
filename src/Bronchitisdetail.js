@@ -6,8 +6,24 @@ import Footer from "./components/footer";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import herbalmedicine from './assets/herbalmedicine.png';
 import adoosa from './assets/broartilcle.png';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 const Bronchitis=()=>{
+
+
+    const [researchpaper, setResearchpaper] = useState([]);
+    const [treatments, setTreatments] = useState([]);
+    const [loading, setLoading] = useState(false);
+     useEffect(()=>{
+   
+   
+      axios.get('http://127.0.0.1:8000/api/researchpaper')
+      .then((res)=>{
+        setResearchpaper(res.data);
+      });
+     },[])
      return(
         <div>
             <Header/>
@@ -62,7 +78,7 @@ const Bronchitis=()=>{
                 <Col span={4}></Col>
                 <Col span={4}></Col>
             </Row>
-]
+
 
 
             <Row>
@@ -152,40 +168,20 @@ const Bronchitis=()=>{
             </Col>
             <Col span={12}>
                 <div style={{display: 'flex'}}>
-                <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-                    </p>
-                    </div>
-                    <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-                    </p>
-                    </div>
-                    <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-
-                    </p>
-                    <div style={{marginTop: '30px', marginLeft: '20px', color:" blue", textDecoration: 'undeline'}}>
-                        <a href='https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html' target='_blank' rel="noreferrer">Read Research paper...</a>
-                    </div>
-                    </div>
+              
+                {researchpaper.map((item) => 
+            <div style={{width: '100%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+                      <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
+                        {item.title}
+                        </h1>
+                        <p style={{fontFamily: 'Jost', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        {item.description}
+                        </p>
+                        <div style={{margin: '20px'}}>
+                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} href ={`url(${item.link})`} >Read reseach paper....</a>
+                        </div>
+                      </div>
+          )}
                      </div>
 
                      

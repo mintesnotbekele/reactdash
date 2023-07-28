@@ -1,14 +1,40 @@
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+
 import {Row, Col} from 'antd';
 import avatar from "../../assets/avatar.png";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const Testimonials=()=>{
+    
+   const [testimonials, setTestimonials] = useState([]);
+   const [loading, setLoading] = useState(false);
+    useEffect(()=>{
+     axios.get('http://127.0.0.1:8000/api/testimonial')
+     .then((res)=>{
+      setTestimonials(res.data);
+     })
+    },[])
 
-    const options = {
-        type   : 'loop',
-        focus  : 'center',
-        perPage: 3,
-        perMove: 1,
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 2
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 2
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 2
+        }
       };
 
       return(
@@ -20,42 +46,27 @@ const Testimonials=()=>{
                 </h1>
                 <Row>
                     <Col span={24}>
-                <Splide style={{color:'black'}} options={options}>
-                        <SplideSlide>
-                        <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
-
-                        <img src={avatar}></img>
-                        <p style={{fontSize: '22px',fontFamily: 'josh', textAlign: 'left'}}>1Lorem Ipsum is simply dummy 
-                                text of the typesetting industry. 
-                                Ipsum has been.</p>
-                                        </div>
-                        
-                    </SplideSlide>
-                    <SplideSlide>
-                            <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
-                            <img src={avatar}></img>
-                            <p style={{fontSize: '22px', textAlign: 'left', fontFamily: 'josh'}}>2Lorem Ipsum is simply dummy 
-                            Lorem Ipsum is simply dummy 
-                                text of the typesetting industry. 
-                                Ipsum has been scrambled it 
-                                to make a type book.</p>
-                                            </div>
-                    </SplideSlide>
-                    <SplideSlide>
-                            <div style={{background: '#F6F5EC', borderRadius: '20px', margin: '20px', padding: '30px'}}>
-
-                            <img src={avatar}></img>
-                            <p style={{fontSize: '22px', fontFamily: 'josh',textAlign: 'left'}}>3Lorem Ipsum is simply dummy 
-                                    Lorem Ipsum is simply dummy 
-                        text of the typesetting industry. 
-                        Ipsum has been scrambled.</p>
-                                            </div>
-                    </SplideSlide>
-                    </Splide>
+                     <Carousel length='3' responsive={responsive} centerMode={true} > 
+                     {testimonials.map((item) => 
+                              <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px'}}>
+                              <img style={{objectFit: 'initial'}} src={avatar}></img>
+                              <p style={{fontSize: '22px', fontFamily: 'josh',textAlign: 'left'}}>{item?.username}</p>                              
+                              <p style={{fontSize: '22px', fontFamily: 'josh',textAlign: 'left'}}>{item?.testimony}</p>
+                                              </div>
+                           )}
+                     
+                         
+                  
+                    
+                
+                 </Carousel>
+              
                 </Col>         
             </Row>
         </Col>
+      
      </Row>
+
       )
 }
 export default Testimonials;

@@ -63,7 +63,7 @@ const TreatmentHome=()=>{
                 <Col span={6}> 
                 </Col>
                 <Col span={12}> 
-                <Splide  options={options}>
+                <Splide style={{color: 'black', background: 'black'}} options={options}>
                     <SplideSlide>
                        <div style={{margin: '10px'}}> <img src={trt1} alt="diseases"/></div>
                     </SplideSlide>

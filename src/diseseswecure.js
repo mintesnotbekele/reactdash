@@ -13,14 +13,33 @@ import dis8 from './assets/dis8.png';
 import Footer from "./components/footer";
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import InputAdornment from "@mui/material/InputAdornment";
 
 
 
 const DiseasesWeCure=()=>{
+    const [hovered, setHovered] = useState(true);
+    const [diseases, setDiseases] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [hoveredCart, setHoveredCart] = useState(-1);
+     useEffect(()=>{
+      axios.get('http://127.0.0.1:8000/api/disease')
+      .then((res)=>{
+        setDiseases(res.data);
+      })
+     },[])
   
+     const showHoverHandler = (i)=>{
+        setHoveredCart(i);     
+     }
+     const toggleHover = () => {
+      
+        console.log(hovered);
+        setHovered(!hovered)
+     };
 
     return(
         <div>
@@ -46,58 +65,28 @@ const DiseasesWeCure=()=>{
                 <Col span={4}></Col>
                         <Col span={16}>
                             <div style={{display: 'flex',  flexWrap: 'wrap'}}>
-                                    <div style={{width: '45%', margin: '10px'}}>
-                                    <img src={dis1} alt="diseases"/>
-                                    <h1 className="firstheaders">
-                                    Thyroid <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
-                                    </h1>
-                                    </div>
-
-                                    <div style={{width: '45%', margin: '10px', }}>
-                                    <img src={dis2} alt="diseases"/>
-                                    <h1 className="firstheaders">
-                                    Hyperlipidemia <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
-                                    </h1>
-                                    </div> 
                                     
-                                    <div style={{width: '45%', margin: '10px'}}>
-                                    <img src={dis3} alt="diseases"/>
-                                    <h1 className="firstheaders">
-                                    Gastritis <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
-                                    </h1>
-                                    </div>
-                                    <div style={{width: '45%', margin: '10px', marginTop: '-160px'}}>
-                                    <img style={{height: 'inherit'}} src={dis4}  alt="diseases"/>
-                                    <h1 className="firstheaders">
-                                    Hypertension <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
-                                    </h1>
-                                    </div>
-                                    <div style={{width: '45%', margin: '10px'}}>
-                                    <img src={dis5} alt="diseases"/>
-                                    <h1 className="firstheaders">
-                                    Obesity <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
-                                    </h1>
-                                    </div>
-
-                                    <div style={{width: '45%', margin: '10px'}}>
-                                    <img src={dis6} alt="diseases"/>
-                                    <h1 className="firstheaders">
-                                    Diabetes <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
-                                    </h1>
-                                    </div> 
+                            {diseases.map((item, index) => 
+                            <div  style={{width: '45%', margin: '10px'}}>
+                                 <div onMouseEnter={()=>showHoverHandler(index)} onMouseLeave={toggleHover} >
                                     
-                                    <div style={{width: '45%', margin: '10px'}}>
-                                    <img src={dis7} alt="diseases"/>
+                                      <div className="treatmentslider" style={{ textAlign: 'center', backgroundImage: `url(http://127.0.0.1:8000/${item.picture})`, height: '500px'}}> 
+                                           <div className={hoveredCart === index ? 'displayText dismage' : 'displayTextnone'}>                                   
+                                                 <div style={{height: '500px'}}>
+                                                 <h1 style={{paddingTop: '300px',paddingBottom: '500px'}} className={hovered === index? 'displayText' : 'displayTextnone'}>  
+                                                <a href={`${item.videolink}`} target="_blank"> {item.description}</a>
+                                                 </h1>
+                                            </div>
+                                      </div>
+
+                                    </div>
                                     <h1 className="firstheaders">
-                                    Arthritis <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
+                                    {item.name} <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </h1>
                                     </div>
-                                    <div style={{width: '45%', margin: '10px', marginTop: '-180px'}}>
-                                    <img src={dis8} alt="diseases"/>
-                                    <h1 className="firstheaders">
-                                    PCOD <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
-                                    </h1>
-                                    </div>
+                                </div>
+                            )}
+
                             </div>
                         </Col>
                 <Col span={4}></Col>

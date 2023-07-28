@@ -46,7 +46,6 @@ font-weight: 400;
 line-height: 31px;
 letter-spacing: 0.02em;
 text-align: left;
-
 }
 .blogHeader{
     font-family: DM Serif Display;
@@ -197,7 +196,35 @@ text-align: left;
     padding: 5px;
     margin-top: -5px;
 }
-.ant-select-selection-search {
-    background-color: green;
-  }
+.react-multi-carousel-item--active img{
+   height: 600px;
+}
+.react-multi-carousel-item img{
+ 
+background: rgba(255, 255, 255, 0.4);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(16.9px);
+}
 
+.commonactivebutton{
+   background-color: #292F36;
+}
+.commonbutton{
+    background-color: #ECDFD7;
+}
+.displayText{
+    visibility: hidden;
+   
+   
+}
+.displayTextnone{
+    visibility: visible;
+    
+}
+.dismage{
+    background: rgba(255, 255, 255, 0.46);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.6px);
+    -webkit-backdrop-filter: blur(12.6px);
+}

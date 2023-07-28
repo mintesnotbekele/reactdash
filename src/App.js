@@ -10,6 +10,7 @@ import foot2 from "./assets/foot2.png";
 import newhand from "./assets/thehand.png";
 import birds from "./assets/birds.png";
 import Header from './components/header';
+import doctor from './assets/doctor.png';
 import 'react-multi-carousel/lib/styles.css';
 // Default theme
 import '@splidejs/react-splide/css';
@@ -28,6 +29,7 @@ import Counter from './components/homepage/counter';
 import Testimonials from './components/homepage/testimonials';
 import HomeSlider from './components/homepage/homeslider';
 import Articles from './components/homepage/articles';
+
 
 function App() {
 
@@ -149,10 +151,10 @@ function App() {
 
           </Col>
         </Row>
-        <div style={{width: '100%', overflow: 'hidden'}}>
+            <div style={{width: '100%', overflow: 'hidden'}}>
               <img alt="background" src={logo} style={{height: '300px', marginLeft: "42%", position: 'absolute', zIndex: "500"}}/>
               <img alt="background" src={logotext} style={{ marginTop: '100px' , marginLeft: "41%",position: 'absolute', zIndex: "500"}}/>
-          <img alt="background" src={foot2} style={{height: '650px', right: '0px', position: 'absolute',  overflow: 'hidden'}}/>
+              <img alt="background" src={foot2} style={{height: '650px', right: '0px', position: 'absolute',  overflow: 'hidden'}}/>
           </div> 
     </div>
   );

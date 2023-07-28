@@ -8,11 +8,24 @@ import art4 from './assets/article15.png';
 import art5 from './assets/article16.png';
 import art6 from './assets/article17.png';
 import blogframe  from './assets/blogframe.png';
-import {ArrowRightOutlined,RightOutlined, RightCircleTwoTone } from '@ant-design/icons';
+import {RightOutlined} from '@ant-design/icons';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 import blogBanner from './assets/blogsbanner.jpg';
 import Footer from './components/footer';
 const Articles =()=>{
+
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(false);
+     useEffect(()=>{
+        axios.get('http://127.0.0.1:8000/api/newsAndarticle')
+      .then((res)=>{
+        setArticles(res.data);
+      })
+     },[])
+
     return(
         <div>
             <Header/>
@@ -66,43 +79,15 @@ const Articles =()=>{
                 </Col>
                 <Col span={16}>
                     <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                    {articles.map((item) => 
                         <div style={{width: '30%', margin: '10px'}}>
-                            <img src={art1} alt="articles"/>
-                            <h1 className='blogHeader'>5 Asanas to build a strong body.</h1>
+                            <img src={`http://127.0.0.1:8000/${item.picture}`} alt="articles"/>
+                            <h1 className='blogHeader'>{item.title}</h1>
                             <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/></p>
             
                         </div>
-                        <div style={{width: '30%', margin: '10px'}}>
-                            <img src={art2} alt="articles"/>
-                            <h1 className='blogHeader'>Incense sticks that enlighten.</h1>
-                            <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/></p>
-            
-                        </div>
-                        <div style={{width: '30%', margin: '10px'}}>
-                            <img src={art3} alt="articles"/>
-                            <h1 className='blogHeader'>Best hydrotherapy practices.</h1>
-                            <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/></p>
-            
-                        </div>
-                        <div style={{width: '30%', margin: '10px'}}>
-                            <img src={art4} alt="articles"/>
-                            <h1 className='blogHeader'>10 pressure points to decrease headache.</h1>
-                            <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/></p>
-            
-                        </div>
-                        <div style={{width: '30%', margin: '10px'}}>
-                            <img src={art5} alt="articles"/>
-                            <h1 className='blogHeader'>World National Yoga Day Celebrations</h1>
-                            <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/></p>
-            
-                        </div>
-                        <div style={{width: '30%', margin: '10px'}}>
-                            <img src={art6} alt="articles"/>
-                            <h1 className='blogHeader'>Prime Minister in favour of Naturopathy!</h1>
-                            <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/></p>
-            
-                        </div>
-                    </div>
+                    )}
+                </div>
                 </Col>
                 <Col span={4}></Col>
             </Row> 
