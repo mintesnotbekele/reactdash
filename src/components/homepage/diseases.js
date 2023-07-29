@@ -6,7 +6,7 @@ import doctor from "../../assets/doctor.png";
 import blur from "../../assets/blur.png";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { Link } from "react-router-dom";
 
 const Diseases=()=>{
   const [diseases, setDiseases] = useState([]);
@@ -29,8 +29,12 @@ const Diseases=()=>{
         <Col style={{margin:"35px"}} span={10}>
         <img alt="disease images" src={`http://127.0.0.1:8000/${item.picture}`} style={{borderTopRightRadius:'45px'}} preview={false}/>
            <div style={{width: '100%'}}>
-           <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'DM Serif Display'}}>{item?.name}</p>
-           <RightOutlined className='cursorhover' style={{marginTop: '20px'}}/></div>
+
+           <Link to={`/diseases/${item.id}`}>
+           <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'Playfair Display', fontWeight: '600'}}>{item?.name}</p>
+           <RightOutlined className='cursorhover' style={{marginTop: '20px'}}/>
+           </Link>
+           </div>
         </Col>
 )}
    

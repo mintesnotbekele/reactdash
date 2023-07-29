@@ -41,7 +41,7 @@ root.render(
                         <Route path="/blog" element={<Articles/>}></Route>
                         <Route path="/blogdetail/:id" element={<Blogdetail/>}></Route>
                         <Route path="/bronchitis" element={<Bronchitis/>}></Route>
-                        <Route path="/diabetes" element={<Diabetes/>}></Route>
+                        <Route path="/ecommerce/:id" element={<Diabetes/>}></Route>
                     </Routes>
                     </div>
     </BrowserRouter>

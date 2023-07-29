@@ -53,11 +53,11 @@ const Testimonials=()=>{
                                     <img  style={{height: '50px', width: '10%'}} src={`http://127.0.0.1:8000/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 40px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
-                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053'}}>{item?.location}</p>    
+                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lato'}}>{item?.location}</p>    
                                     </div>
                              </div>
                                                         
-                              <p style={{fontSize: '22px', fontFamily: 'jost',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
+                              <p style={{fontSize: '22px', fontFamily: 'lato',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
                                               </div>
                            )}
                      

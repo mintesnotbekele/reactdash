@@ -4,11 +4,38 @@ import { Row, Col } from "antd";
 import { Button} from 'flowbite-react';
 import Footer from "./components/footer";
 import {ArrowRightOutlined} from '@ant-design/icons';
-import herbalmedicine from './assets/diabetis capsule.png';
+import herbalmedicine from './assets/herbalmedicine.png';
 import adoosa from './assets/broartilcle.png';
+import { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+import axios from 'axios';
 
-const Diabetes=()=>{
-    return(
+
+const Bronchitis=()=>{
+    const {id} = useParams();
+   
+    const [product, setProduct] = useState([]);
+  
+     useEffect(()=>{
+        
+        axios.get(`http://127.0.0.1:8000/api/product/${id}`)
+        .then((res)=>{
+            setProduct(res.data);
+        })
+     },[]);
+  
+    const [researchpaper, setResearchpaper] = useState([]);
+    const [treatments, setTreatments] = useState([]);
+    const [loading, setLoading] = useState(false);
+     useEffect(()=>{
+   
+   
+      axios.get('http://127.0.0.1:8000/api/researchpaper')
+      .then((res)=>{
+        setResearchpaper(res.data);
+      }); 
+     },[])
+     return(
         <div>
             <Header/>
             <img src={diseasesBanner} alt="Bronchitis banner"/>
@@ -16,17 +43,17 @@ const Diabetes=()=>{
             <Row style={{marginTop: '100px'}}>
                 <Col span={4}></Col>
                 <Col span={11}>
-                    <img src={herbalmedicine} alt="herbalmedicine"/>
+                    <img src={`http://127.0.0.1:8000/${product.picture}`} alt="herbalmedicine"/>
                 </Col>
 
                 <Col span={5} >
                 <div style={{background: '#ECDFD7', padding:'20px', borderRadius: '30px'}}>
                     <h1 className="blogHeader" style={{textAlign: 'center',}}>Product description</h1>
-                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274',  color: '#4D5053',margin: '10px'}}>Medicinal property: Clears bronchial congestion</p>
-                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Shelf life: 1Year</p>
-                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Storage: Dark and cool places</p>
-                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Size: 30 capsules</p>
-                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Application: As prescribed by the doctor</p>
+                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274',  color: '#4D5053',margin: '10px'}}>Medicinal property: {product.medicinalroperty}</p>
+                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Shelf life: {product.shelflife}</p>
+                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Storage: {product.storage}</p>
+                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Size:{product.size}</p>
+                    <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Application: {product.application}</p>
 
                      <Button className='buttonHeader' style={{background: '#292F36', width: '50%', margin: 'auto'}}>Buy now <ArrowRightOutlined style={{marginLeft: '5px'}}/></Button>
                     </div>
@@ -62,7 +89,7 @@ const Diabetes=()=>{
                 <Col span={4}></Col>
                 <Col span={4}></Col>
             </Row>
-]
+
 
 
             <Row>
@@ -141,7 +168,7 @@ const Diabetes=()=>{
             <Col span={4}></Col>
             <Col span={16}> 
             <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>Clinically proven!</h1>
-            <p style={{ fontFamily: "jost", fontSize: "22px"}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
+            <p style={{ fontFamily: "lato", fontSize: "22px"}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
          
             </Col>
             <Col span={4}></Col>
@@ -152,40 +179,20 @@ const Diabetes=()=>{
             </Col>
             <Col span={12}>
                 <div style={{display: 'flex'}}>
-                <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-                    </p>
-                    </div>
-                    <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-                    </p>
-                    </div>
-                    <div style={{background: '#ECDFD7', borderRadius: '30px', margin: '10px', padding: '10px'}}>
-                    <h1 style={{fontSize: '22px' , fontFamily: 'DM Serif Display', fontWeight: 'bold'}}>
-                    Peppermint, a safe alternative for improving gut health 
-                    </h1>
-                    <p style={{fontSize: '22px' , fontFamily: 'jost'}}>
-                    Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
-                    circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
-                    shown that acupressure has helped cancer.Acupressure has shown marvellous results in reducing anxiety 
-
-                    </p>
-                    <div style={{marginTop: '30px', marginLeft: '20px', color:" blue", textDecoration: 'undeline'}}>
-                        <a href='https://www.aafp.org/pubs/afp/issues/2007/0401/p1027.html' target='_blank' rel="noreferrer">Read Research paper...</a>
-                    </div>
-                    </div>
+              
+                {researchpaper.map((item) => 
+            <div style={{width: '100%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+                      <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
+                        {item.title}
+                        </h1>
+                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        {item.description}
+                        </p>
+                        <div style={{margin: '20px'}}>
+                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} href ={`url(${item.link})`} >Read reseach paper....</a>
+                        </div>
+                      </div>
+          )}
                      </div>
 
                      
@@ -201,7 +208,7 @@ const Diabetes=()=>{
             <div style={{margin: '70px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                         <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
-                        <p style={{fontFamily: 'jost', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
+                        <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                         
                         <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
                     </div>
@@ -214,4 +221,4 @@ const Diabetes=()=>{
         </div>
      )
 }
-export default Diabetes;
+export default Bronchitis;

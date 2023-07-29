@@ -14,6 +14,10 @@ import {ArrowRightOutlined} from '@ant-design/icons';
 import Header from './components/header';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+
 
 const Treatment =()=>{
 
@@ -42,6 +46,29 @@ const Treatment =()=>{
     });
    },[])
 
+   const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+      partialVisibilityGutter: 300 
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+      partialVisibilityGutter: 300 
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      partialVisibilityGutter: 300 
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      partialVisibilityGutter: 300 
+    }
+  };
 
   const options = {
     type   : 'loop',
@@ -58,10 +85,10 @@ const Treatment =()=>{
         <Col span={4}>
         </Col>
         <Col span={16}>
-            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
             <div className='hoverarticle' style={{width: '30%', height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://127.0.0.1:8000/${item.background})`}}>
-                    <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px'}}>
+                    <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
                     <p className='articletext' style={{margin: '10px'}}> {item.description}</p>
@@ -72,12 +99,16 @@ const Treatment =()=>{
         <Col span={4}>
         </Col>
        </Row>
-       <Row>
+       <Row style={{marginBottom: '100px'}}>
         <Col span={4}></Col>
         <Col  span={16}>
-        <Splide style={{color: 'black'}}  options={options}>
-        <SplideSlide>
-          <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
+        <Carousel
+            
+              itemClass="carousel-item-padding-40-px"
+              showDots={true}
+            responsive={responsive} 
+             style={{height: '1200px'}}>
+           <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
             <Col  span={10}>
               <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
             </Col>
@@ -100,9 +131,7 @@ const Treatment =()=>{
               </Accordion>
             </Col>
           </Row>
-      </SplideSlide>
-      <SplideSlide>
-      <Row style={{background: '#ECDFD7',borderRadius: '40px'}}>
+          <Row style={{background: '#ECDFD7',borderRadius: '40px'}}>
             <Col  span={10}>
               <img style={{marginTop: "100px"}} alt='yoga' src={yoga}/>
             </Col>
@@ -125,9 +154,7 @@ const Treatment =()=>{
               </Accordion>
             </Col>
           </Row>
-      </SplideSlide>
-      <SplideSlide>
-      <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
+          <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
             <Col  span={10}>
               <img style={{marginTop: "100px"}} alt='yoga' src={thirdyoga}/>
             </Col>
@@ -150,8 +177,9 @@ const Treatment =()=>{
               </Accordion>
             </Col>
           </Row>
-      </SplideSlide>
-    </Splide>
+          
+          </Carousel>
+    
         </Col>
         <Col span={4}>
         </Col>
@@ -285,7 +313,7 @@ locate the points, chosen by our doctors for you.
                       <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'Jost', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
@@ -304,7 +332,7 @@ locate the points, chosen by our doctors for you.
           <Col span={16}>
             <div style={{borderRadius: "50px", paddingBottom: '50px',  background: "#292F36" }}> 
               <h1 style={{paddingTop: '30px',fontFamily: "DM Serif Display", fontSize: "50px",color: 'white', textAlign: 'center', fontWeight: 'bold'}}>Want to talk to a doctor?</h1>
-              <p style={{margin: '30px',fontFamily: 'Jost', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>
+              <p style={{margin: '30px',fontFamily: 'lato', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>
               <Button style= {{margin: 'auto', color: 'white', background: '#CDA274'}}>Contact Us <ArrowRightOutlined style={{color: '##292F36', marginLeft: "10px"}}/></Button>
             </div>
           </Col>

@@ -1,11 +1,11 @@
 .firstheaders {
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
     font-size: 50px;
     font-weight: 400;
     text-align: 'center';
 }
 .navigations {
-    font-family: Jost;
+    font-family: lato;
     font-size: 20px;
     font-weight: 400;
     line-height: 25px;
@@ -14,7 +14,7 @@
 
 }
 .firsttext{
-    font-family: Jost;
+    font-family: lato;
     font-size: 22px;
     font-weight: 400;
     line-height: 33px;
@@ -24,14 +24,14 @@
 
 .navheader
 {
- font-family: jost;
+ font-family: lato;
  color: #F6F5EC;
  font-size: 20px;
  text-align: center;
  font-weight: 400;
 }
 .articleHeader{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
     font-size: 50px;
     font-weight: 400;
     line-height: 63px;
@@ -40,7 +40,7 @@
 
 }
 .latestArticleheader{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
 font-size: 25px;
 font-weight: 400;
 line-height: 31px;
@@ -48,7 +48,7 @@ letter-spacing: 0.02em;
 text-align: left;
 }
 .blogHeader{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
 font-size: 25px;
 font-weight: 400;
 line-height: 31px;
@@ -57,7 +57,7 @@ text-align: left;
 
 }
 .blogsecond{
-    font-family: Jost;
+    font-family: lato;
 font-size: 16px;
 font-weight: 400;
 line-height: 24px;
@@ -66,7 +66,7 @@ text-align: left;
 
 }
 .italicHeader{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
 font-size: 200px;
 font-style: italic;
 font-weight: 400;
@@ -76,7 +76,7 @@ text-align: center;
 
 }
 .italictext{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
 font-size: 25px;
 font-style: italic;
 font-weight: 400;
@@ -87,7 +87,7 @@ text-align: center;
 }
 
 .buttonHeader{
-    font-family: Jost;
+    font-family: lato;
 font-size: 18px;
 font-weight: 600;
 line-height: 23px;
@@ -106,7 +106,7 @@ text-align: center;
 }
 
 .articlehead{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
 font-size: 25px;
 font-weight: 400;
 line-height: 31px;
@@ -116,7 +116,7 @@ text-align: center;
 }
 
 .articletext{
-    font-family: Jost;
+    font-family: lato;
 font-size: 22px;
 font-weight: 400;
 line-height: 33px;
@@ -125,7 +125,7 @@ text-align: center;
 
 }
 .customButton{
-    font-family: Jost;
+    font-family: lato;
 font-size: 18px;
 font-weight: 600;
 line-height: 23px;
@@ -134,7 +134,7 @@ text-align: center;
 
 }
 .diseasescol{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
 font-size: 22px;
 font-weight: 400;
 line-height: 33px;
@@ -143,7 +143,7 @@ text-align: right;
 
 }
 .diseasecol1{
-    font-family: Jost;
+    font-family: lato;
 font-size: 22px;
 font-weight: 400;
 line-height: 33px;
@@ -152,7 +152,7 @@ text-align: center;
 
 }
 .treatmentslider{ 
-    font-family: Jost;
+    font-family: lato;
 font-size: 25px;
 font-weight: 400;
 line-height: 38px;
@@ -160,7 +160,7 @@ letter-spacing: 0.01em;
 text-align: left;
 }
 .accordionheader{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
     font-size: 25px;
     font-weight: 400;
     line-height: 38px;
@@ -168,7 +168,7 @@ text-align: left;
     text-align: left;   
 }
 .accordionsubheader{
-    font-family: DM Serif Display;
+    font-family: Playfair Display;
     font-size: 25px;
     font-weight: 400;
     line-height: 38px;
@@ -218,8 +218,12 @@ backdrop-filter: blur(16.9px);
     
 }
 .dismage{
-    background: rgba(255, 255, 255, 0.36);
+    background: rgba(255, 255, 255, 0.57);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(14.3px);
     -webkit-backdrop-filter: blur(14.3px);
+    /* From https://css.glass */
+
+
+
 }

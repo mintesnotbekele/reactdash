@@ -27,7 +27,7 @@ const HomeSlider=()=>{
     }
   };
 
-        return(
+        return( 
             <Row >
             <Col span={2}> </Col>
             <Col style={{height: '600px'}} span={20}> 

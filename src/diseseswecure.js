@@ -60,20 +60,20 @@ const DiseasesWeCure=()=>{
                             <div style={{display: 'flex',  flexWrap: 'wrap'}}>
                                     
                             {diseases.map((item, index) => 
-                            <div  style={{width: '45%', margin: '10px'}}>
+                            <div  style={{width: '40%', margin: '40px'}}>
                                  <div onMouseEnter={()=>showHoverHandler(index)} onMouseLeave={toggleHover} >
                                     
                                       <div className="treatmentslider" style={{ textAlign: 'center', backgroundImage: `url(http://127.0.0.1:8000/${item.picture})`, height: '500px'}}> 
                                            <div className={hoveredCart === index ? 'displayText dismage' : 'displayTextnone'}>                                   
                                                  <div style={{height: '500px'}}>
-                                                 <h1 style={{paddingTop: '200px',paddingBottom: '200px'}} className={hovered === index? 'displayText' : 'displayTextnone'}>  
-                                                <a href={`${item.videolink}`} target="_blank"> {item.description}</a>
+                                                 <h1 style={{paddingTop: '250px', paddingLeft: '20px', paddingRight: '20px',paddingBottom: '200px'}} className={hovered === index? 'displayText' : 'displayTextnone'}>  
+                                                <a style={{padding: '20px',}} href={`${item.videolink}`} target="_blank"> {item.description}</a>
                                                  </h1>
                                             </div>
                                       </div>
 
                                     </div>
-                                    <h1 className="firstheaders">
+                                    <h1 className="firstheaders" style={{marginTop: '30px'}}>
                                     <Link to={`/diseases/${item.id}`}> {item.name} <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </Link>
                                     </h1>

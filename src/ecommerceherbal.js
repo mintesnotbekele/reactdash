@@ -8,16 +8,31 @@ import ecommerceframe from './assets/ecommerceframe.png';
 import capsules from './assets/capsules.png';
 import {ArrowRightOutlined, RightCircleTwoTone } from '@ant-design/icons';
 import Header from './components/header';
+import {RightOutlined} from '@ant-design/icons';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 const EcommerceHerbal = ()=>{
+
+    const [products, setProducts] = useState([]);
+   
+
+    useEffect(()=>{
+        axios.get('http://127.0.0.1:8000/api/product')
+      .then((res)=>{
+        setProducts(res.data);
+        
+      })
+     },[])
+
+
      return(
         <div>
      <Header/>
     <img alt="about Banner"style={{marginBottom: '200px'}} src={herbalBanner}/>
 
-      
-
-     
-
+    
     <Row>
         <Col span={6}></Col>
         <Col span={12}>
@@ -50,81 +65,32 @@ const EcommerceHerbal = ()=>{
             <div style={{margin: '50px'}}>
             <h1 style={{textAlign: 'center', fontSize:'70px', fontFamily: 'DM Serif Display'}}>Filter by concern.</h1>
             </div>
-            <div>
-                <img alt='ecommerce frame' src={ecommerceframe}/>
-            </div>
+           
         </Col>
         <Col span={6}>
         </Col>
     </Row>
 
- 
-     
         <Row>
                 
         <Col span={6}></Col>
         <Col span={12}>
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
+            {products.map((item) =>   
+               
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone /></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
-                <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <img style={{padding: '20px'}} src={capsules} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
-                    <p style={{width: '30%', float: 'right'}}>Explore<RightCircleTwoTone/></p>
-                </div>
+                    <Link to={`/ecommerce/${item.id}`}>
+                    <img style={{padding: '20px'}} src={`http://127.0.0.1:8000/${item.picture}`} alt='capsules' />
+                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>{item.name}</h1>
+                    <p style={{width: '40%', float: 'right'}}>
+                         <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>Explore
+                            <RightOutlined style={{color: '#CDA274', marginLeft: "30px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-25px'}}/>
+                            </p>
+                            </p>
+                            </Link> 
+                               </div>
+                               
+            )}
             </div>
         </Col>
         <Col span={6}></Col>

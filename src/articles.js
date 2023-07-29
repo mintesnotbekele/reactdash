@@ -5,7 +5,7 @@ import {RightOutlined} from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-
+import article from './assets/diseaseBanner.jpg';
 import blogBanner from './assets/blogsbanner.jpg';
 import Footer from './components/footer';
 import { Link } from 'react-router-dom';
@@ -18,10 +18,7 @@ const Articles =()=>{
         axios.get('http://127.0.0.1:8000/api/newsAndarticle')
       .then((res)=>{
         setArticles(res.data);
-        setLatestPost(res.data.filter(element => 
-            {
-
-            }));
+       
       })
      },[])
 
@@ -46,7 +43,7 @@ const Articles =()=>{
                 <Col span={4}></Col>
                 <Col span={8}>
                 <div style={{margin: '20px'}}>
-                <img src={latestpost} alt="latest post"/>
+                <img src={article} alt="latest post"/>
                 </div>
                 </Col>
                 <Col style={{padding: '30px'}} span={8}>
@@ -78,6 +75,7 @@ const Articles =()=>{
             <Row>
                 <Col span={4}>
                 </Col>
+
                 <Col span={16}>
                     <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     {articles.map((item) => 
@@ -85,18 +83,21 @@ const Articles =()=>{
                             <img src={`http://127.0.0.1:8000/${item.picture}`} alt="articles"/>
                             <h1 className='blogHeader'>{item.title}</h1>
                             <Link to={`/blogdetail/${item.id}`}>
-                            <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/></p>
+                            <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 
+                            <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/>
+                            </p>
                                 </Link>
                         </div>
                     )}
                 </div>
                 </Col>
+
                 <Col span={4}></Col>
             </Row> 
+
             <Row style={{marginTop: '100px', marginBottom: '100px'}}>
                 <Col span={4}></Col>
                 <Col span={16}>
-                  
                 </Col>
                 <Col span={4}></Col>
             </Row>
