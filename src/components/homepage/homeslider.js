@@ -7,13 +7,13 @@ const HomeSlider=()=>{
 
         return( 
             <Row >
-            <Col span={1}> </Col>
-            <Col style={{height: '600px'}} span={23}> 
+            <Col span={4}> </Col>
+            <Col style={{height: '600px'}} span={16}> 
             <Carousel
            additionalTransfrom={0}
            arrows
            autoPlaySpeed={3000}
-           centerMode
+           centerMode={false}
            className=""
            containerClass="container"
            dotListClass=""
@@ -34,7 +34,7 @@ const HomeSlider=()=>{
                  min: 1024
                },
                items: 1,
-               partialVisibilityGutter: 40
+             
              },
              mobile: {
                breakpoint: {
@@ -42,7 +42,7 @@ const HomeSlider=()=>{
                  min: 0
                },
                items: 1,
-               partialVisibilityGutter: 30
+             
              },
              tablet: {
                breakpoint: {
@@ -50,7 +50,7 @@ const HomeSlider=()=>{
                  min: 464
                },
                items: 2,
-               partialVisibilityGutter: 30
+           
              }
            }}
            rewind={false}
@@ -80,7 +80,7 @@ const HomeSlider=()=>{
           
           </Carousel>
           </Col>
-         <Col span={1}></Col>
+         <Col span={4}></Col>
           </Row>
         )
 }
