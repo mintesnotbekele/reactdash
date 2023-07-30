@@ -24,7 +24,7 @@ const Blogdetail=()=>{
   
      useEffect(()=>{
 
-        axios.get(`https://curevive.thotamali.com:8000/api/newsAndarticle/${id}`)
+        axios.get(`https://curevive.thotamali.com/api/newsAndarticle/${id}`)
         .then((res)=>{
             setArticles(res.data);
         })
@@ -37,7 +37,7 @@ const Blogdetail=()=>{
                 <Col span={4}></Col>
                 <Col span={10}>
                     <h1 className="firstheaders">{articles?.title}</h1>
-                    <img style={{margin: 'auto'}} src={`https://curevive.thotamali.com:8000/${articles?.picture}`} alt="blog detail"/>
+                    <img style={{margin: 'auto'}} src={`https://curevive.thotamali.com/${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
                     <p >26 December,2022  <span style={{float: 'right'}}>Interior / Design / Home / Decore</span></p></div>
 

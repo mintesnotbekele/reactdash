@@ -18,7 +18,7 @@ const Articles= ()=>{
       const [loading, setLoading] = useState(false);
       const [latest, setLatest] = useState([]);
        useEffect(()=>{
-        axios.get('https://curevive.thotamali.com:8000/api/newsAndarticle')
+        axios.get('https://curevive.thotamali.com/api/newsAndarticle')
         .then((res)=>{
             setArticle(res.data);
     
@@ -68,7 +68,7 @@ const Articles= ()=>{
            <Col onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle' span={8}>  
            <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '10px', margin: '20px'}}>
            <div style={{height: '100%'}}>
-              <img style={{height: '300px'}} src={`https://curevive.thotamali.com:8000/${item.picture}`} alt="articles"/>
+              <img style={{height: '300px'}} src={`https://curevive.thotamali.com/${item.picture}`} alt="articles"/>
                   <h1 style={{fontSize: '25px', fontFamily: "lota", textAlign: 'left'}}> {item.title}</h1>
                   <div style={{ marginTop: '30px', marginBottom: '20px'}}>
                         <Link style={{color: 'black'}} to={`/blogdetail/${item.id}`}>

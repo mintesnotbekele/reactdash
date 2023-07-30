@@ -12,7 +12,7 @@ const Diseases=()=>{
   const [diseases, setDiseases] = useState([]);
   const [loading, setLoading] = useState(false);
    useEffect(()=>{
-    axios.get('https://curevive.thotamali.com:8000/api/disease')
+    axios.get('https://curevive.thotamali.com/api/disease')
     .then((res)=>{
       setDiseases(res.data);
     })
@@ -27,7 +27,7 @@ const Diseases=()=>{
          <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '30px' }} >
          {diseases.map((item) => 
         <Col style={{margin:"35px"}} span={10}>
-        <img alt="disease images" src={`https://curevive.thotamali.com:8000/${item.picture}`} style={{borderTopRightRadius:'45px'}} preview={false}/>
+        <img alt="disease images" src={`https://curevive.thotamali.com/${item.picture}`} style={{borderTopRightRadius:'45px'}} preview={false}/>
            <div style={{width: '100%'}}>
 
            <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>

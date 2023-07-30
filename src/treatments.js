@@ -28,19 +28,19 @@ const Treatment =()=>{
   
   const [loading, setLoading] = useState(false);
    useEffect(()=>{
-    axios.get('https://curevive.thotamali.com:8000/api/disease')
+    axios.get('https://curevive.thotamali.com/api/disease')
     .then((res)=>{
       setDiseases(res.data);
     });
-    axios.get('https://curevive.thotamali.com:8000/api/treatment')
+    axios.get('https://curevive.thotamali.com/api/treatment')
     .then((res)=>{
       setTreatments(res.data);
     });
-    axios.get('https://curevive.thotamali.com:8000/api/researchpaper')
+    axios.get('https://curevive.thotamali.com/api/researchpaper')
     .then((res)=>{
       setResearchpaper(res.data);
     });
-    axios.get('https://curevive.thotamali.com:8000/api/faq')
+    axios.get('https://curevive.thotamali.com/api/faq')
     .then((res)=>{
       setFaq(res.data);
     });
@@ -87,7 +87,7 @@ const Treatment =()=>{
         <Col span={16}>
             <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
-            <div className='hoverarticle' style={{width: '30%', height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(https://curevive.thotamali.com:8000/${item.background})`}}>
+            <div className='hoverarticle' style={{width: '30%', height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(https://curevive.thotamali.com/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>

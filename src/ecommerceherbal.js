@@ -20,7 +20,7 @@ const EcommerceHerbal = ()=>{
     
 
     useEffect(()=>{
-        axios.get('https://curevive.thotamali.com:8000/api/product')
+        axios.get('https://curevive.thotamali.com/api/product')
       .then((res)=>{
         setProducts(res.data);
         
@@ -81,7 +81,7 @@ const EcommerceHerbal = ()=>{
                
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <Link style={{color: 'black'}} to={`/ecommerce/${item.id}`}>
-                    <img style={{padding: '20px' , height:'28   0px', width: '90%' ,margin: 'auto'}} src={`https://curevive.thotamali.com:8000/${item.picture}`} alt='capsules' />
+                    <img style={{padding: '20px' , height:'28   0px', width: '90%' ,margin: 'auto'}} src={`https://curevive.thotamali.com/${item.picture}`} alt='capsules' />
                     <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>{item.name}</h1>
                     <p style={{width: '60%', float: 'right'}}>
                     <p className='blogsecond' style={{marginTop: '10px',marginRight: '70px',  width: '90%'}}>Explore

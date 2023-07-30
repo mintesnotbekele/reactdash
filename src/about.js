@@ -28,16 +28,16 @@ const About=()=>{
 
   useEffect(()=>{
 
-    axios.get('https://curevive.thotamali.com:8000/api/quote')
+    axios.get('https://curevive.thotamali.com/api/quote')
     .then((res)=>{
       setQuotes(res.data);
     });
-    axios.get('https://curevive.thotamali.com:8000/api/teams')
+    axios.get('https://curevive.thotamali.com/api/teams')
     .then((res)=>{
       setTeams(res.data);
     });
     
-    axios.get('https://curevive.thotamali.com:8000/api/faq')
+    axios.get('https://curevive.thotamali.com/api/faq')
     .then((res)=>{
       setFaq(res.data);
     });
@@ -222,7 +222,7 @@ return(
           >
           {teams.map((items) =>
                           <div style={{padding: '10px'}}>
-                            <img alt="team members" src={`https://curevive.thotamali.com:8000/${items?.picture}`}/>   
+                            <img alt="team members" src={`https://curevive.thotamali.com/${items?.picture}`}/>   
                           </div>
                           )} 
           

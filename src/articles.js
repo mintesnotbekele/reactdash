@@ -17,7 +17,7 @@ const Articles =()=>{
     const [loading, setLoading] = useState(false);
     const [latestpost, setLatestPost] = useState();
      useEffect(()=>{
-        axios.get('https://curevive.thotamali.com:8000/api/newsAndarticle')
+        axios.get('https://curevive.thotamali.com/api/newsAndarticle')
       .then((res)=>{
         setArticles(res.data);
     
@@ -46,7 +46,7 @@ const Articles =()=>{
                 <Col span={4}></Col>
                 <Col span={8}>
                 <div style={{margin: '20px'}}>
-                <img src={`https://curevive.thotamali.com:8000/${latestpost?.picture}`} alt="latest post"/>
+                <img src={`https://curevive.thotamali.com/${latestpost?.picture}`} alt="latest post"/>
                 </div>
                 </Col>
                 <Col style={{padding: '30px'}} span={8}>
