@@ -252,7 +252,7 @@ const Diseases = ()=>{
                     </h1>
                 </div>
          
-                 <Col style={{background: '#ECDFD7', borderRadius: '20px'}} span={24}>
+                 <Col style={{background: '#ECDFD7', borderRadius: '20px', padding: '100px'}} span={24}>
              
                  <Carousel
             additionalTransfrom={0}
@@ -308,7 +308,7 @@ const Diseases = ()=>{
             swipeable
           >
                      {testimonials.map((item) => 
-                              <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px'}}>
+                              <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px', width: '80%', margin: 'auto'}}>
                              <div style={{display: 'flex'}}> 
                                     <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.thotamali.com/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 40px'}}>
