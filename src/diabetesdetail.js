@@ -268,7 +268,7 @@ const Bronchitis=()=>{
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
-                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} href ={`url(${item.link})`} >Read reseach paper....</a>
+                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}}  href ={`${item.file}`} >Read reseach paper....</a>
                         </div>
                       </div>
           )}
