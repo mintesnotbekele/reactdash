@@ -182,7 +182,7 @@ text-align: left;
     float: right; 
     font-size: 22px;
     border-radius: 50%;
-    padding: 5px;
+    padding: 15px;
     margin-top: -5px;
 }
 .cursorfree{
@@ -191,7 +191,7 @@ text-align: left;
     float: right; 
     font-size: 22px;
     border-radius: 50%;
-    padding: 5px;
+    padding: 15px;
     margin-top: -5px;
 }
 .react-multi-carousel-item--active img{

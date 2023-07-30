@@ -3,19 +3,19 @@ import logo from './assets/logo.png';
 import logotext from './assets/text.png';
 import {Row, Col} from 'antd';
 import disease from './assets/diseaseBanner.jpg';
-import disease1 from './assets/diseaseImage.png';
-import gastritis from './assets/gastritis.png';
-
-import success1 from './assets/success.png';
-import success2 from './assets/success.png';
-import {Carousel} from 'flowbite-react';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import carouse from './assets/carouser.png'
 import { ArrowRightOutlined} from '@ant-design/icons'
 import Header from './components/header';
 import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import axios from 'axios';  
+
+
+import "react-multi-carousel/lib/styles.css";
 import Testimonials from './components/homepage/testimonials';
+
 
 
 
@@ -23,18 +23,27 @@ const Diseases = ()=>{
     const {id} = useParams();
     const [diseases, setDiseases] = useState();
     const [researchpaper, setResearchpaper] = useState([]);
+    const [testimonials, setTestimonials] = useState([]);
     const [loading, setLoading] = useState(false);
     const [treatments, setTreatments] =useState();
+
      useEffect(()=>{
-        axios.get('http://127.0.0.1:8000/api/treatment')
+      axios.get('https://curevive.thotamali.com:8000/api/testimonial')
+      .then((res)=>{
+       setTestimonials(res.data);
+      })
+     },[])
+ 
+     useEffect(()=>{
+        axios.get('https://curevive.thotamali.com:8000/api/treatment')
         .then((res)=>{
           setTreatments(res.data);
         });
-        axios.get(`http://127.0.0.1:8000/api/disease/${id}`)
+        axios.get(`https://curevive.thotamali.com:8000/api/disease/${id}`)
         .then((res)=>{
           setDiseases(res.data);
         });
-        axios.get('http://127.0.0.1:8000/api/researchpaper')
+        axios.get('https://curevive.thotamali.com:8000/api/researchpaper')
         .then((res)=>{
           setResearchpaper(res.data);
         });
@@ -44,7 +53,7 @@ const Diseases = ()=>{
         <Header/>
             <img style={{width: '100%'}} src={disease} alt='disease'/>
             <div style={{width: '20%', margin: 'auto'}}>
-            <img  src={`http://127.0.0.1:8000/${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
+            <img  src={`https://curevive.thotamali.com:8000/${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
             </div>
             <Row>
                 <Col span={4}></Col>
@@ -83,7 +92,7 @@ const Diseases = ()=>{
                             <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display', textAlign: 'left'}}>
                             Mode: 
                             </div>
-                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato'}}>
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato',textAlign: 'left'}}>
                             {diseases?.mode} 
                             </div>
                         </div>
@@ -108,6 +117,7 @@ const Diseases = ()=>{
 
         <Col span={16} style={{ height: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
                     <iframe
+                    style={{width: '100%'}}
                 width="853"
                 height="480"
                 src={`${diseases?.videolink}`}
@@ -120,7 +130,7 @@ const Diseases = ()=>{
           
             
         </Col>
-        <Col span={16}>
+        <Col span={4}>
         <div className="video-responsive">
 
   </div>
@@ -154,21 +164,78 @@ const Diseases = ()=>{
             <Col span={4}>
             </Col>
             <Col span={16}>
-                <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                {researchpaper.map((item) => 
-            <div style={{width: '30%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
-                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px', padding: '20px', paddingBottom: '5px', paddingTop: '20px'}}>
+            
+            <Carousel
+            additionalTransfrom={0}
+            arrows
+            autoPlaySpeed={1000}
+            centerMode={false}
+            className=""
+            containerClass="container-with-dots"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 3,
+                partialVisibilityGutter: 40
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 1,
+                partialVisibilityGutter: 30
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 2,
+                partialVisibilityGutter: 30
+              }
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            showDots={false}
+            sliderClass=""
+            slidesToSlide={1}
+            swipeable
+          >
+            {researchpaper.map((item) => 
+            <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         {item.title}
                         </h1>
                         <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
-                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} href ={`url(${item.link})`} >Read reseach paper....</a>
+                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
                         </div>
                       </div>
           )}
-                     </div>
+                         
+                  
+                    
+                
+                 </Carousel>
 
                      
             </Col>
@@ -181,10 +248,90 @@ const Diseases = ()=>{
             <Col span={16} style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', paddingTop: '30px'}}>
                 <div>
                     <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>
-                    SUCESS STORIES
+                    SUCCESS STORIES
                     </h1>
                 </div>
-                <Testimonials/>
+         
+                 <Col style={{background: '#ECDFD7', borderRadius: '20px'}} span={24}>
+             
+                 <Carousel
+            additionalTransfrom={0}
+            arrows
+            autoPlaySpeed={1000}
+            centerMode={false}
+            className=""
+            containerClass="container-with-dots"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 2,
+          
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 1,
+            
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 2,
+               
+              }
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            showDots={false}
+            sliderClass=""
+            slidesToSlide={1}
+            swipeable
+          >
+                     {testimonials.map((item) => 
+                              <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px'}}>
+                             <div style={{display: 'flex'}}> 
+                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.thotamali.com:8000/${item.profilepic}`}></img>
+                                    <div style={{padding: '0px 40px'}}>
+                                    <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
+                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lato'}}>{item?.location}</p>    
+                                    </div>
+                             </div>
+                                                        
+                              <p style={{fontSize: '22px', fontFamily: 'lato',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
+                                              </div>
+                           )}
+                     
+                         
+                  
+                    
+                
+                 </Carousel>
+              
+               
+      
+      
+     </Col>
+
             </Col>
             <Col span={4}></Col>
         </Row>
@@ -197,8 +344,60 @@ const Diseases = ()=>{
                     </h1>
               
                     </div>
-                    <div style={{width: '100%', height: '400px'}}>
-                    <Carousel >
+                    <div style={{width: '100%',}}>
+                    <Carousel
+            additionalTransfrom={0}
+            arrows
+            autoPlaySpeed={1000}
+            centerMode={false}
+            className=""
+            containerClass="container-with-dots"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 1,
+          
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 1,
+            
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 2,
+               
+              }
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            showDots={false}
+            sliderClass=""
+            slidesToSlide={1}
+            swipeable
+          >
                 <img
                     alt="..."
                     src={carouse}
@@ -212,7 +411,7 @@ const Diseases = ()=>{
                     src={carouse}
                 />
                 
-                </Carousel>
+                </Carousel> 
                 </div>
             </Col>
             <Col span={4}></Col>

@@ -27,7 +27,7 @@ const EcommerceCapsule = ()=>{
              <div style={{marginTop: '50px', paddingLeft: '30px'}}> <img style={{height: '300px', width: '400px'}} alt='herbal' src={herbaloil}/></div>
            </Col>
            <Col span={16}>
-            <h1 style={{fontFamily: 'jost', fontSize: '20px', margin: '30px'}}> Herbal medicine has been used for centuries to treat a range of 
+            <h1 style={{fontFamily: 'lato', fontSize: '20px', margin: '30px'}}> Herbal medicine has been used for centuries to treat a range of 
                 ailments and promote overall wellness. This ancient practice has 
                 a rich history that dates back to civilizations such as Egypt 
                 ,India and China. Today, it remains a popular alternative or
@@ -49,7 +49,7 @@ const EcommerceCapsule = ()=>{
         </Col>
         <Col span={12}>
             <div style={{margin: '50px'}}>
-            <h1 style={{textAlign: 'center', fontSize:'70px', fontFamily: 'DM Serif Display'}}>Filter by concern.</h1>
+            <h1 style={{textAlign: 'center', fontSize:'70px', fontFamily: 'Playfair Display'}}>Filter by concern.</h1>
             </div>
             <div>
                 <img alt='ecommerce frame' src={ecommerceframe}/>
@@ -68,62 +68,62 @@ const EcommerceCapsule = ()=>{
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
                     <img style={{padding: '20px'}} src={oilmart} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Diabetic Care</h1>
                     <p style={{width: '30%', float: 'right'}}>Explore<RightOutlined/></p>
                 </div>
             </div>
@@ -134,7 +134,7 @@ const EcommerceCapsule = ()=>{
         <Row style={{marginTop: '100px'}}>  
         <Col span={6}></Col>
         <Col span={12}>
-            <p style={{fontFamily: 'jost', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
+            <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
                 approach to health with Curevive. Our natural, high-quality herbal supplements and oils
                  work in harmony with healthy diet, yoga, acupressure, stress management, and other 
                  self-care practices to treat the root cause of disease and promote overall wellness. 
@@ -150,8 +150,8 @@ const EcommerceCapsule = ()=>{
                 <Col span={12}>
             <div style={{margin: '70px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
-                        <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
-                        <p style={{fontFamily: 'jost', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
+                        <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
+                        <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                         
                         <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
                     </div>

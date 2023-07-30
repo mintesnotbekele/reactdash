@@ -24,7 +24,7 @@ const Blogdetail=()=>{
   
      useEffect(()=>{
 
-        axios.get(`http://127.0.0.1:8000/api/newsAndarticle/${id}`)
+        axios.get(`https://curevive.thotamali.com:8000/api/newsAndarticle/${id}`)
         .then((res)=>{
             setArticles(res.data);
         })
@@ -37,7 +37,7 @@ const Blogdetail=()=>{
                 <Col span={4}></Col>
                 <Col span={10}>
                     <h1 className="firstheaders">{articles?.title}</h1>
-                    <img style={{margin: 'auto'}} src={`http://127.0.0.1:8000/${articles?.picture}`} alt="blog detail"/>
+                    <img style={{margin: 'auto'}} src={`https://curevive.thotamali.com:8000/${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
                     <p >26 December,2022  <span style={{float: 'right'}}>Interior / Design / Home / Decore</span></p></div>
 
@@ -120,13 +120,8 @@ const Blogdetail=()=>{
                             Tags
                             </h1>
                             <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                                <Button className='firsttext' style={{margin: '10px', background: '#292F36', color: '#F6F5EC', paddingLeft: '10px', paddingRight: '10px'}}> Yoga </Button>
-                                <Button className='firsttext' style={{margin: '10px', background: '#ECDFD7', color: '#292F36', paddingLeft: '10px', paddingRight: '10px'}}> Aroma</Button>
-                                <Button className='firsttext' style={{margin: '10px', background: '#ECDFD7', color: '#292F36', paddingLeft: '10px', paddingRight: '10px'}}> Hydro</Button>
-                                <Button className='firsttext' style={{margin: '10px', background: '#ECDFD7', color: '#292F36', paddingLeft: '10px', paddingRight: '10px'}}> Naturopathy</Button>
-                                <Button className='firsttext' style={{margin: '10px', background: '#ECDFD7', color: '#292F36', paddingLeft: '10px', paddingRight: '10px'}}> Acupressure</Button>
-                                <Button className='firsttext' style={{margin: '10px', background: '#ECDFD7', color: '#292F36', paddingLeft: '10px', paddingRight: '10px'}}>Herbs</Button>
-                            </div>
+                                <Button className='firsttext' style={{margin: '10px', background: '#292F36', color: '#F6F5EC', paddingLeft: '10px', paddingRight: '10px'}}> {articles?.tags} </Button>
+                                 </div>
                             </div>
                 </Col>
                 <Col span={4}></Col>

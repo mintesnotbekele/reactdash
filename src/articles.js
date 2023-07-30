@@ -9,16 +9,19 @@ import article from './assets/diseaseBanner.jpg';
 import blogBanner from './assets/blogsbanner.jpg';
 import Footer from './components/footer';
 import { Link } from 'react-router-dom';
+import ArticlesComponent from './components/homepage/articles';
+
 const Articles =()=>{
 
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(false);
     const [latestpost, setLatestPost] = useState();
      useEffect(()=>{
-        axios.get('http://127.0.0.1:8000/api/newsAndarticle')
+        axios.get('https://curevive.thotamali.com:8000/api/newsAndarticle')
       .then((res)=>{
         setArticles(res.data);
-       
+    
+        setLatestPost(res.data.reduce(function (max, x) { return (x.id > max) ? x.id : max}))
       })
      },[])
 
@@ -43,58 +46,25 @@ const Articles =()=>{
                 <Col span={4}></Col>
                 <Col span={8}>
                 <div style={{margin: '20px'}}>
-                <img src={article} alt="latest post"/>
+                <img src={`https://curevive.thotamali.com:8000/${latestpost?.picture}`} alt="latest post"/>
                 </div>
                 </Col>
                 <Col style={{padding: '30px'}} span={8}>
                     <h1  className='latestArticleheader'>
-                    Yoga can be the cure to most of your problems!
+                     { latestpost == null ?  "new article" :  latestpost?.title}
                     </h1>
                     <p className='firsttext' style={{textAlign: 'left'}}>
-                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.
-                    posuere in.Contrary to popular belief. Lorem Ipsum is not simply random text.
-                    It has roots in a piece of classica.
+                    { latestpost == null ?  "new article" :  latestpost?.description}
                     </p>
                     
-                    <p className='blogsecond' style={{marginTop: '30px' , width: '90%'}}>26 December,2022 <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px'}}/></p>
+                    <p className='blogsecond' style={{marginTop: '30px' , width: '90%'}}>{latestpost?.created_at}<RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px'}}/></p>
                     
                  </Col>
                 <Col span={4}></Col>
             </Row>
-           
-            <Row style={{marginTop: '150px'}}>
-                <Col span={4}></Col>
-                <Col span={16}>
-                <h1 className='articleHeader'>
-                Articles & News
-                    </h1>
-                </Col>
-                <Col span={4}></Col>
-            </Row>
 
-            <Row>
-                <Col span={4}>
-                </Col>
-
-                <Col span={16}>
-                    <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                    {articles.map((item) => 
-                        <div style={{width: '30%', margin: '10px'}}>
-                            <img src={`http://127.0.0.1:8000/${item.picture}`} alt="articles"/>
-                            <h1 className='blogHeader'>{item.title}</h1>
-                            <Link to={`/blogdetail/${item.id}`}>
-                            <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>26 December,2022 
-                            <RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-5px'}}/>
-                            </p>
-                                </Link>
-                        </div>
-                    )}
-                </div>
-                </Col>
-
-                <Col span={4}></Col>
-            </Row> 
-
+            <ArticlesComponent/>
+            
             <Row style={{marginTop: '100px', marginBottom: '100px'}}>
                 <Col span={4}></Col>
                 <Col span={16}>

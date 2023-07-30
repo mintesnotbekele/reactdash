@@ -9,6 +9,8 @@ import adoosa from './assets/broartilcle.png';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 
 const Bronchitis=()=>{
@@ -18,23 +20,46 @@ const Bronchitis=()=>{
   
      useEffect(()=>{
         
-        axios.get(`http://127.0.0.1:8000/api/product/${id}`)
+        axios.get(`https://curevive.thotamali.com:8000/api/product/${id}`)
         .then((res)=>{
             setProduct(res.data);
-        })
+        });
+        axios.get('https://curevive.thotamali.com:8000/api/researchpaper')
+        .then((res)=>{
+          setResearchpaper(res.data);
+        }); 
      },[]);
   
     const [researchpaper, setResearchpaper] = useState([]);
     const [treatments, setTreatments] = useState([]);
     const [loading, setLoading] = useState(false);
-     useEffect(()=>{
    
-   
-      axios.get('http://127.0.0.1:8000/api/researchpaper')
-      .then((res)=>{
-        setResearchpaper(res.data);
-      }); 
-     },[])
+
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 1,
+          partialVisibilityGutter: 300 
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1,
+          partialVisibilityGutter: 300 
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 1,
+          partialVisibilityGutter: 300 
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1,
+          partialVisibilityGutter: 300 
+        }
+      };
+    
+ 
      return(
         <div>
             <Header/>
@@ -43,7 +68,7 @@ const Bronchitis=()=>{
             <Row style={{marginTop: '100px'}}>
                 <Col span={4}></Col>
                 <Col span={11}>
-                    <img src={`http://127.0.0.1:8000/${product.picture}`} alt="herbalmedicine"/>
+                    <img src={`https://curevive.thotamali.com:8000/${product.picture}`} alt="herbalmedicine"/>
                 </Col>
 
                 <Col span={5} >
@@ -167,7 +192,7 @@ const Bronchitis=()=>{
             <Row style={{marginTop: '100px'}}>
             <Col span={4}></Col>
             <Col span={16}> 
-            <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px"}}>Clinically proven!</h1>
+            <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>Clinically proven!</h1>
             <p style={{ fontFamily: "lato", fontSize: "22px"}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
          
             </Col>
@@ -178,11 +203,65 @@ const Bronchitis=()=>{
             <Col span={6}>
             </Col>
             <Col span={12}>
-                <div style={{display: 'flex'}}>
-              
-                {researchpaper.map((item) => 
-            <div style={{width: '100%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
-                      <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
+                <div style={{ height: '500px'}}>
+       
+               <Carousel
+            additionalTransfrom={0}
+            arrows={true}
+            autoPlaySpeed={3000}
+            centerMode={false}
+            className=""
+            containerClass="container-with-dots"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 3,
+                
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 1,
+                
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 1,
+                
+              }
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            showDots={false}
+            sliderClass=""
+            slidesToSlide={1}
+            swipeable
+          >
+     
+     {researchpaper?.map((item) => 
+            <div style={{width: '90%',margin: '40px' , borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         {item.title}
                         </h1>
                         <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
@@ -193,6 +272,7 @@ const Bronchitis=()=>{
                         </div>
                       </div>
           )}
+          </Carousel>
                      </div>
 
                      
@@ -207,7 +287,7 @@ const Bronchitis=()=>{
                 <Col span={12}>
             <div style={{margin: '70px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
-                        <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
+                        <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
                         <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                         
                         <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>

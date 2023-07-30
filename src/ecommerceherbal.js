@@ -16,10 +16,11 @@ import { Link } from 'react-router-dom';
 const EcommerceHerbal = ()=>{
 
     const [products, setProducts] = useState([]);
-   
+    const [entered1, setEntered1] = useState(true);
+    
 
     useEffect(()=>{
-        axios.get('http://127.0.0.1:8000/api/product')
+        axios.get('https://curevive.thotamali.com:8000/api/product')
       .then((res)=>{
         setProducts(res.data);
         
@@ -41,7 +42,7 @@ const EcommerceHerbal = ()=>{
              <div style={{marginTop: '50px', paddingLeft: '30px'}}> <img style={{height: '300px', width: '400px'}} alt='herbal' src={herbal}/></div>
            </Col>
            <Col span={16}>
-            <h1 style={{fontFamily: 'jost', fontSize: '20px', margin: '30px'}}> Herbal medicine has been used for centuries to treat a range of 
+            <h1 style={{fontFamily: 'lato', fontSize: '20px', margin: '30px'}}> Herbal medicine has been used for centuries to treat a range of 
                 ailments and promote overall wellness. This ancient practice has 
                 a rich history that dates back to civilizations such as Egypt 
                 ,India and China. Today, it remains a popular alternative or
@@ -63,7 +64,7 @@ const EcommerceHerbal = ()=>{
         </Col>
         <Col span={12}>
             <div style={{margin: '50px'}}>
-            <h1 style={{textAlign: 'center', fontSize:'70px', fontFamily: 'DM Serif Display'}}>Filter by concern.</h1>
+            <h1 style={{textAlign: 'center', fontSize:'70px', fontFamily: 'Playfair Display'}}>Filter by concern.</h1>
             </div>
            
         </Col>
@@ -79,16 +80,16 @@ const EcommerceHerbal = ()=>{
             {products.map((item) =>   
                
                 <div style={{width: '30%', border: '1px solid', borderRadius: '30px', margin: '10px'}}>
-                    <Link to={`/ecommerce/${item.id}`}>
-                    <img style={{padding: '20px'}} src={`http://127.0.0.1:8000/${item.picture}`} alt='capsules' />
-                    <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', textAlign: 'center'}}>{item.name}</h1>
-                    <p style={{width: '40%', float: 'right'}}>
-                         <p className='blogsecond' style={{marginTop: '30px', width: '90%'}}>Explore
-                            <RightOutlined style={{color: '#CDA274', marginLeft: "30px", float: 'right', fontSize: '22px', background: '#ECDFD7', borderRadius: '50%', padding: '5px', marginTop: '-25px'}}/>
-                            </p>
-                            </p>
-                            </Link> 
-                               </div>
+                    <Link style={{color: 'black'}} to={`/ecommerce/${item.id}`}>
+                    <img style={{padding: '20px' , height:'28   0px', width: '90%' ,margin: 'auto'}} src={`https://curevive.thotamali.com:8000/${item.picture}`} alt='capsules' />
+                    <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>{item.name}</h1>
+                    <p style={{width: '60%', float: 'right'}}>
+                    <p className='blogsecond' style={{marginTop: '10px',marginRight: '70px',  width: '90%'}}>Explore
+                         <RightOutlined style={{marginTop: '-10px'}} className={ entered1 ? 'cursorhover': 'cursorfree'} />
+                         </p>
+                      </p>
+                    </Link> 
+            </div>
                                
             )}
             </div>
@@ -99,7 +100,7 @@ const EcommerceHerbal = ()=>{
         <Row style={{marginTop: '100px'}}>  
         <Col span={6}></Col>
         <Col span={12}>
-            <p style={{fontFamily: 'jost', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
+            <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
                 approach to health with Curevive. Our natural, high-quality herbal supplements and oils
                  work in harmony with healthy diet, yoga, acupressure, stress management, and other 
                  self-care practices to treat the root cause of disease and promote overall wellness. 
@@ -115,8 +116,8 @@ const EcommerceHerbal = ()=>{
                 <Col span={12}>
             <div style={{margin: '70px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
-                        <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
-                        <p style={{fontFamily: 'jost', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
+                        <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
+                        <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                         
                         <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
                     </div>

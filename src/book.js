@@ -50,7 +50,7 @@ const Book=()=>{
                 <Col span={16}>
             <div style={{margin: '70px'}}>
                 <div style={{background: '#292F36', borderRadius: '50px', marginTop: '100px', padding: '70px'}}>
-                        <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Here are some answers to frequently asked questions</h1>
+                        <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Here are some answers to frequently asked questions</h1>
                         
                         <Button className="customButton" style={{margin: 'auto', background: '#CDA274', color: 'white', padding: '10px', width: '150px'}}>FAQs<ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/></Button>
                     </div>

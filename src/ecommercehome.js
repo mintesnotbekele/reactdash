@@ -34,19 +34,19 @@ Gastritis is the inflammation, irritation or erosion of this protective stomach 
                   <div style={{display: 'flex', background: '#ECDFD7', borderRadius: '40px', margin: '70px', padding: '30px'}}>
                  
                     <div style={{width: '100%'}}>  
-                    <Link  to='/ecommerceherbal'>
-                        <h1 style={{ fontFamily: 'DM Serif Display', fontSize: '45px',fontWeight: '400' ,lineHeight: '56px', letterSpacing: '0em', textAlign: 'center'}}>Herbal capsule</h1>
+                    <Link style={{color: 'black'}} to='/ecommerceherbal'>
+                        <h1 style={{ fontFamily: 'Playfair Display', fontSize: '45px',fontWeight: '400' ,lineHeight: '56px', letterSpacing: '0em', textAlign: 'center'}}>Herbal capsule</h1>
                         <img style={{margin: 'auto'}} src={herbalcapsule} alt="herbal oil"/>
-                        <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', fontWeight: '400', lineHeight: '31px', letterSpacing: '0.02em', textAlign: 'center'}}>Diabetic Care</h1>
+                        <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', fontWeight: '400', lineHeight: '31px', letterSpacing: '0.02em', textAlign: 'center'}}>Diabetic Care</h1>
                         </Link>
                      </div>
                     
                      
                         <div style={{width: '100%'}}>  
-                        <Link  to='/ecommercecapsule'>
-                        <h1 style={{ fontFamily: 'DM Serif Display', fontSize: '45px',fontWeight: '400' ,lineHeight: '56px', letterSpacing: '0em', textAlign: 'center'}}>Herbal oil</h1>
+                        <Link style={{color: 'black'}} to='/ecommercecapsule'>
+                        <h1 style={{ fontFamily: 'Playfair Display', fontSize: '45px',fontWeight: '400' ,lineHeight: '56px', letterSpacing: '0em', textAlign: 'center'}}>Herbal oil</h1>
                         <img style={{margin: 'auto'}} src={herbaloil} alt="herbal oil"/>
-                        <h1 style={{fontFamily: 'DM Serif Display', fontSize: '25px', fontWeight: '400', lineHeight: '31px', letterSpacing: '0.02em', textAlign: 'center'}}>Diabetic Care</h1>
+                        <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', fontWeight: '400', lineHeight: '31px', letterSpacing: '0.02em', textAlign: 'center'}}>Diabetic Care</h1>
                         </Link>
                     </div>
                      
@@ -57,7 +57,7 @@ Gastritis is the inflammation, irritation or erosion of this protective stomach 
             <Row style={{marginTop: '100px'}}>  
         <Col span={6}></Col>
         <Col span={12}>
-            <p style={{fontFamily: 'jost', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
+            <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
                 approach to health with Curevive. Our natural, high-quality herbal supplements and oils
                  work in harmony with healthy diet, yoga, acupressure, stress management, and other 
                  self-care practices to treat the root cause of disease and promote overall wellness. 
@@ -73,8 +73,8 @@ Gastritis is the inflammation, irritation or erosion of this protective stomach 
                 <Col span={12}>
             <div style={{margin: '70px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
-                        <h1 style={{textAlign: 'center', fontFamily: "DM Serif Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
-                        <p style={{fontFamily: 'jost', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
+                        <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
+                        <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                         
                         <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
                     </div>

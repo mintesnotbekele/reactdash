@@ -4,7 +4,7 @@ import logotext from './assets/text.png';
 import yoga  from './assets/yoga.png'
 import aboutBanner from "./assets/treatmentBanner.jpg";
 import {Row, Col} from 'antd';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+
 import { Accordion } from 'flowbite-react';
 import firstyoga from "./assets/firtyoga.png";
 import thirdyoga from "./assets/thirdyoga.png";
@@ -28,19 +28,19 @@ const Treatment =()=>{
   
   const [loading, setLoading] = useState(false);
    useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/disease')
+    axios.get('https://curevive.thotamali.com:8000/api/disease')
     .then((res)=>{
       setDiseases(res.data);
     });
-    axios.get('http://127.0.0.1:8000/api/treatment')
+    axios.get('https://curevive.thotamali.com:8000/api/treatment')
     .then((res)=>{
       setTreatments(res.data);
     });
-    axios.get('http://127.0.0.1:8000/api/researchpaper')
+    axios.get('https://curevive.thotamali.com:8000/api/researchpaper')
     .then((res)=>{
       setResearchpaper(res.data);
     });
-    axios.get('http://127.0.0.1:8000/api/faq')
+    axios.get('https://curevive.thotamali.com:8000/api/faq')
     .then((res)=>{
       setFaq(res.data);
     });
@@ -87,7 +87,7 @@ const Treatment =()=>{
         <Col span={16}>
             <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
-            <div className='hoverarticle' style={{width: '30%', height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://127.0.0.1:8000/${item.background})`}}>
+            <div className='hoverarticle' style={{width: '30%', height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(https://curevive.thotamali.com:8000/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
@@ -114,7 +114,7 @@ const Treatment =()=>{
             </Col>
             <Col className='articletext' span={14} style={{padding:'20px'}}>
               <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
+              <h1 style={{fontFamily: "Playfair Display", fontSize: "50px"}}>
               Diet & Nutrition
               </h1>
               <Accordion collapseAll>
@@ -137,7 +137,7 @@ const Treatment =()=>{
             </Col>
             <Col className='articletext' span={14} style={{padding:'20px'}}>
             <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
+              <h1 style={{fontFamily: "Playfair Display", fontSize: "50px"}}>
               Frequently Asked Questions
               </h1>
               <Accordion collapseAll>
@@ -160,7 +160,7 @@ const Treatment =()=>{
             </Col>
             <Col span={14} style={{padding:'20px'}}>
             <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "DM Serif Display", fontSize: "50px"}}>
+              <h1 style={{fontFamily: "Playfair Display", fontSize: "50px"}}>
               Aroma Therapy
               </h1>
               <Accordion collapseAll>
@@ -245,20 +245,20 @@ according to your conditions and symptoms makes it very important to cure you fr
         <Col span={16}>
           <div >
           <h1 className='firstheaders' style={{color: '#292F36'}}> WHY CUREVIVE?</h1>
-            <p className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>Choosing the right points according to your condition and find their exact location can be a tedious task! Curevive
+            <p className='firsttext' style={{textAlign: 'left', color: '#4D5053', margin: '50px 0px'}}>Choosing the right points according to your condition and find their exact location can be a tedious task! Curevive
 is here to guide you at every step . We understand the importance of acupressure as a complementary therapy .</p>
              <ol>
-              <li className='firsttext' style={{textAlign: 'left', margin: '10px'}}>
+              <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
               <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '7px 10px', margin: '10px'}}>1</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}> Identify the root cause of your condition</span>
               </li>
-              <li className='firsttext' style={{textAlign: 'left', margin: '10px'}}>
+              <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
               <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '7px 10px', margin: '10px'}}>2</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>Make a list of what acupressure points will work best</span>
 with your condition.
               </li>
-              <li className='firsttext' style={{textAlign: 'left', margin: '10px'}}>
+              <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
               <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '7px 10px', margin: '10px', textAlign: 'left'}}>3</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>  Courier you our specially designed acupressure tool</span>
               </li>
-              <li className='firsttext' style={{textAlign: 'left' , margin: '10px'}}>
+              <li className='firsttext' style={{textAlign: 'left' , margin: '40px'}}>
               <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '7px 10px', margin: '10px', textAlign: 'left'}}>4</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>Equip you with our expert guided videos on how to</span>
 locate the points, chosen by our doctors for you.
               </li>
@@ -303,25 +303,81 @@ locate the points, chosen by our doctors for you.
         </Col>
        </Row>
 
-       <Row>
+       <Row style={{marginTop: '50px'}}>
         <Col span={4}>
         </Col>
         <Col span={16}>
-          <div style={{display: 'flex', flexWrap: 'wrap'}}>
-          {researchpaper.map((item) => 
-            <div style={{width: '30%', borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
-                      <h1  style={{fontFamily: "DM Serif Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
+        <Carousel
+            additionalTransfrom={0}
+            arrows={false}
+            autoPlaySpeed={1000}
+            centerMode={false}
+            className=""
+            containerClass="container-with-dots"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={true}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 3,
+            
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 1,
+           
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 2,
+             
+              }
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            showDots={true}
+            sliderClass=""
+            slidesToSlide={1}
+            swipeable
+          >
+            {researchpaper.map((item) => 
+            <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         {item.title}
                         </h1>
                         <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
-                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} href ={`http://127.0.0.1:8000/${item.file}`} >Read reseach paper....</a>
+                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
                         </div>
                       </div>
           )}
-          </div>
+                         
+                  
+                    
+                
+                 </Carousel>
         </Col >
         <Col span={4}>
         </Col>
@@ -331,9 +387,9 @@ locate the points, chosen by our doctors for you.
           <Col span={4}></Col>
           <Col span={16}>
             <div style={{borderRadius: "50px", paddingBottom: '50px',  background: "#292F36" }}> 
-              <h1 style={{paddingTop: '30px',fontFamily: "DM Serif Display", fontSize: "50px",color: 'white', textAlign: 'center', fontWeight: 'bold'}}>Want to talk to a doctor?</h1>
+              <h1 style={{paddingTop: '30px',fontFamily: "Playfair Display", fontSize: "50px",color: 'white', textAlign: 'center', fontWeight: 'bold'}}>Want to talk to a doctor?</h1>
               <p style={{margin: '30px',fontFamily: 'lato', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>
-              <Button style= {{margin: 'auto', color: 'white', background: '#CDA274'}}>Contact Us <ArrowRightOutlined style={{color: '##292F36', marginLeft: "10px"}}/></Button>
+              <Button style= {{margin: 'auto', color: 'white', background: '#CDA274'}}>Contact Us <ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/></Button>
             </div>
           </Col>
           <Col span={4}></Col>

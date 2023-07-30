@@ -7,18 +7,18 @@ const Counter=()=>{
            <Col span={4}></Col>
            <Col span={4} style={{borderRightWidth: '2px', borderColor: '#CDA274'}}>
              <h1 style={{fontSize: '85px', color: '#CDA274'}}> 03</h1> 
-             <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Years Of Experiance</p>
+             <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'lota'}}>Years Of Experiance</p>
            </Col>
            <Col style={{borderRightWidth: '2px', borderColor: '#CDA274'}} span={4}>
              <h1 style={{fontSize: '85px', color: '#CDA274'}}>37</h1>
-           <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Success Stories</p>
+           <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'lota'}}>Success Stories</p>
             </Col>
            <Col style={{borderRightWidth: '2px', borderColor: '#CDA274'}} span={4}>
              <h1 style={{fontSize: '85px', color: '#CDA274'}}>32</h1> 
-           <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Active Clients</p>
+           <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'lota'}}>Active Clients</p>
            </Col>
            <Col span={4}><h1 style={{fontSize: '85px', color: '#CDA274'}}> 69</h1>
-           <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'josh'}}>Happy Customers</p>
+           <p style={{color: '#4D5053', fontSize: '22px', fontFamily: 'lota'}}>Happy Customers</p>
            </Col>
            </Row>
          </Col>

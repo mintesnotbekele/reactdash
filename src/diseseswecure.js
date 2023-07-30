@@ -19,7 +19,7 @@ const DiseasesWeCure=()=>{
     const [loading, setLoading] = useState(false);
     const [hoveredCart, setHoveredCart] = useState(-1);
      useEffect(()=>{
-      axios.get('http://127.0.0.1:8000/api/disease')
+      axios.get('https://curevive.thotamali.com:8000/api/disease')
       .then((res)=>{
         setDiseases(res.data);
       })
@@ -63,18 +63,18 @@ const DiseasesWeCure=()=>{
                             <div  style={{width: '40%', margin: '40px'}}>
                                  <div onMouseEnter={()=>showHoverHandler(index)} onMouseLeave={toggleHover} >
                                     
-                                      <div className="treatmentslider" style={{ textAlign: 'center', backgroundImage: `url(http://127.0.0.1:8000/${item.picture})`, height: '500px'}}> 
-                                           <div className={hoveredCart === index ? 'displayText dismage' : 'displayTextnone'}>                                   
+                                      <div className="treatmentslider" style={{ textAlign: 'center', backgroundImage: `url(https://curevive.thotamali.com:8000/${item.picture})`, height: '500px'}}> 
+                                           <div className={hoveredCart === index ? ' dismage' : ''}>                                   
                                                  <div style={{height: '500px'}}>
-                                                 <h1 style={{paddingTop: '250px', paddingLeft: '20px', paddingRight: '20px',paddingBottom: '200px'}} className={hovered === index? 'displayText' : 'displayTextnone'}>  
-                                                <a style={{padding: '20px',}} href={`${item.videolink}`} target="_blank"> {item.description}</a>
+                                                 <h1  style={{paddingTop: '200px', paddingLeft: '20px', paddingRight: '20px',paddingBottom: '200px'}} className={hoveredCart === index? '' : 'displayText'}>  
+                                                <a  style={{padding: '20px', color: 'black'}} href={`${item.videolink}`} target="_blank"> {item.description}</a>
                                                  </h1>
                                             </div>
                                       </div>
 
                                     </div>
                                     <h1 className="firstheaders" style={{marginTop: '30px'}}>
-                                    <Link to={`/diseases/${item.id}`}> {item.name} <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
+                                    <Link style={{color: 'black'}} to={`/diseases/${item.id}`}> {item.name} <RightOutlined style={{marginTop: '10px', fontSize: '40px'}} className='cursorhover'/>
                                     </Link>
                                     </h1>
                                     </div>

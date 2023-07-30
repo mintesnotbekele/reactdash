@@ -29,6 +29,7 @@ import Counter from './components/homepage/counter';
 import Testimonials from './components/homepage/testimonials';
 import HomeSlider from './components/homepage/homeslider';
 import Articles from './components/homepage/articles';
+import { Link } from 'react-router-dom';
 
 
 function App() {
@@ -105,7 +106,7 @@ function App() {
         <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute',right: "80px", height: '870px', marginTop: "-200px", zIndex: "500"}}/></div>
           <Diseases/>
           <Counter/>  
-          <Row>
+          <Row style={{margin: '70px'}}>
             <Col span={7}></Col>
             <Col span={10}>
               <h1 className='firstheaders'>
@@ -114,7 +115,7 @@ function App() {
               </Col>  
           </Row>
           <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={newhand} style={{position: 'absolute', width: "600px", marginTop: "-400px", overflow: "hidden", right: '0px', zIndex: "500"}}/></div>
-          <Row>
+          <Row style={{margin: '30px'}}>
             <Col span={7}></Col>
           <Col span={10}>
               <div>
@@ -133,7 +134,7 @@ function App() {
               <div style={{marginTop: "70px",marginBottom: "40px", }}>
                 <h1 style={{fontSize: '50px', color: '#F6F5EC'}}>Want to get your doubts cleared?</h1>
               <p style={{margin: "20px", fontSize: '22px', color: '#F6F5EC'}}>Book a complimentary consultation now!</p>
-              <Button style={{margin: 'auto', paddingTop: '20px', fontSize: '22px', paddingLeft: '30px',paddingBottom: '50px',paddingRight: '30px', background: '#CDA274', color: '#F6F5EC'}}>Book <ArrowRightOutlined/> </Button>
+              <Button style={{margin: 'auto', paddingTop: '20px', fontSize: '22px', paddingLeft: '30px',paddingBottom: '50px',paddingRight: '30px', background: '#CDA274', color: '#F6F5EC'}}> <Link to='book' style={{color: 'white'}}> Book </Link><ArrowRightOutlined/> </Button>
               </div>
               </Col>
             </Row>

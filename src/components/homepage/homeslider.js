@@ -3,59 +3,84 @@ import carouse from '../../assets/carouser.png'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const HomeSlider=()=>{
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1,
-      partialVisibilityGutter: 300 
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-      partialVisibilityGutter: 300 
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-      partialVisibilityGutter: 300 
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      partialVisibilityGutter: 300 
-    }
-  };
+
 
         return( 
             <Row >
-            <Col span={2}> </Col>
-            <Col style={{height: '600px'}} span={20}> 
+            <Col span={1}> </Col>
+            <Col style={{height: '600px'}} span={23}> 
             <Carousel
-              partialVisbile={true} 
-              itemClass="carousel-item-padding-40-px"
-              showDots={true}
-            responsive={responsive} 
-             style={{height: '1200px'}}>
+           additionalTransfrom={0}
+           arrows
+           autoPlaySpeed={3000}
+           centerMode
+           className=""
+           containerClass="container"
+           dotListClass=""
+           draggable
+           focusOnSelect={false}
+           infinite
+           itemClass=""
+           keyBoardControl
+           minimumTouchDrag={80}
+           pauseOnHover
+           renderArrowsWhenDisabled={false}
+           renderButtonGroupOutside={false}
+           renderDotsOutside={false}
+           responsive={{
+             desktop: {
+               breakpoint: {
+                 max: 3000,
+                 min: 1024
+               },
+               items: 1,
+               partialVisibilityGutter: 40
+             },
+             mobile: {
+               breakpoint: {
+                 max: 464,
+                 min: 0
+               },
+               items: 1,
+               partialVisibilityGutter: 30
+             },
+             tablet: {
+               breakpoint: {
+                 max: 1024,
+                 min: 464
+               },
+               items: 2,
+               partialVisibilityGutter: 30
+             }
+           }}
+           rewind={false}
+           rewindWithAnimation={false}
+           rtl={false}
+           shouldResetAutoplay
+           showDots={false}
+           sliderClass=""
+           slidesToSlide={1}
+           swipeable
+         >
             <img
-              style={{margin: '10px'}}
+              style={{margin: '50px'}}
               alt="..."
               src={carouse}
             />
             <img
-            style={{margin: '10px'}}
+            style={{margin: '50px'}}
               alt="..."
               src={carouse}
             />
             <img
-            style={{margin: '10px'}}
+            style={{margin: '50px'}}
               alt="..."
               src={carouse}
             />
           
           </Carousel>
           </Col>
-      
+         <Col span={1}></Col>
           </Row>
         )
 }
