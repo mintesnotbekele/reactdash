@@ -41,7 +41,7 @@ const Diseases=()=>{
          </Row>
 
          <div>
-           <Button style={{color: "#F6F5EC",fontSize: '22px', margin: 'auto',  background: '#292F36', paddingLeft : '100px', paddingRight : '100px', paddingTop: '30px',borderRadius: '15px', paddingBottom: '50px'}}> <Link to='/cureddisease' style={{color: 'white'}}> More</Link></Button>
+           <Button style={{color: "#F6F5EC",fontSize: '22px', margin: 'auto',  background: '#292F36', paddingLeft : '100px', paddingRight : '100px', paddingTop: '30px',borderRadius: '15px', paddingBottom: '60px'}}> <Link to='/cureddisease' style={{color: 'white'}}> More</Link></Button>
          </div>
          </Col>
         </Row>
