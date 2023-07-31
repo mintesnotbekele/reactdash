@@ -5,7 +5,7 @@
     text-align: 'center';
 }
 .navigations {
-    font-family: lato;
+    font-family: lota;
     font-size: 20px;
     font-weight: 400;
     line-height: 25px;
@@ -14,7 +14,7 @@
 
 }
 .firsttext{
-    font-family: lato;
+    font-family: lota;
     font-size: 22px;
     font-weight: 400;
     line-height: 33px;
@@ -24,7 +24,7 @@
 
 .navheader
 {
- font-family: lato;
+ font-family: Playfair Display;
  color: #F6F5EC;
  font-size: 20px;
  text-align: center;
@@ -59,7 +59,7 @@ text-align: left;
 
 }
 .blogsecond{
-    font-family: lato;
+    font-family: lota;
 font-size: 16px;
 font-weight: 400;
 line-height: 24px;
@@ -89,7 +89,7 @@ text-align: center;
 }
 
 .buttonHeader{
-    font-family: lato;
+    font-family: lota;
 font-size: 18px;
 font-weight: 600;
 line-height: 23px;
@@ -118,7 +118,7 @@ text-align: center;
 }
 
 .articletext{
-    font-family: lato;
+    font-family: lota;
 font-size: 22px;
 font-weight: 400;
 line-height: 33px;
@@ -127,7 +127,7 @@ text-align: center;
 
 }
 .customButton{
-    font-family: lato;
+    font-family: lota;
 font-size: 18px;
 font-weight: 600;
 line-height: 23px;
@@ -145,7 +145,7 @@ text-align: right;
 
 }
 .diseasecol1{
-    font-family: lato;
+    font-family: lota;
 font-size: 22px;
 font-weight: 400;
 line-height: 33px;
@@ -154,7 +154,7 @@ text-align: center;
 
 }
 .treatmentslider{ 
-    font-family: lato;
+    font-family: lota;
 font-size: 25px;
 font-weight: 400;
 line-height: 38px;

@@ -100,7 +100,7 @@ function App() {
             </p>
             <div>
               <Link to='/treatments'>
-            <Button style={{ fontSize: '22px', background: 'none',marginTop: '80px',backgroundColor: '#292F36', float: 'left', padding: '30px',height: '100px', borderRadius: '20px',width: '40%', color: '#F6F5EC'}}>
+            <Button style={{ fontSize: '22px', background: 'none',marginTop: '120px',backgroundColor: '#292F36', float: 'left', padding: '30px',height: '100px', borderRadius: '20px',width: '40%', color: '#F6F5EC'}}>
               Find a cure 
               <ArrowRightOutlined /></Button>
               </Link>
@@ -110,7 +110,7 @@ function App() {
             <Image preview={false} src={meditate}/>
           </Col>
         </Row>
-        <img alt="background" src={background4} style={{position: 'absolute', width: '550px', opacity: '0.6', marginTop: '-200px', zIndex: "500"}}/>
+        <img alt="background" src={background4} style={{position: 'absolute', width: '550px', opacity: '0.6', marginTop: '-150px', zIndex: "500"}}/>
         <Testimonials/>
         <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute', width: '600px', left: '67%', opacity: '0.6', height: '700px', marginTop: "-200px", zIndex: "500"}}/></div>
           <Diseases/>
