@@ -1,8 +1,23 @@
 import { Navbar } from 'flowbite-react';
 import newlogo from '../assets/curlogo.png';
 import { Row } from 'antd';
+import {useScrollPosition} from '../hooks/scrollhooks';
+import { useEffect, useState } from 'react';
 
 const Header=()=>{
+  const scrollPosition = useScrollPosition()
+  const [top, setTop] = useState(false);
+
+      useEffect(()=>{
+          if(scrollPosition < 400)
+          {
+             setTop(true);
+          }
+          else{
+            setTop(false);
+          }
+      },[scrollPosition]);
+
     return(
         <div>
         <div  className="flex-auto w-100">
@@ -15,7 +30,7 @@ const Header=()=>{
         top: '0',
         left: '0',
         right: '0',
-        background: 'rgba(78, 52, 38, 0.3)',
+        background: top ? 'rgba(78, 52, 38, 0.0)': 'rgba(78, 52, 38, 0.6)',
         height: "100px",
         zIndex: "100",
       }}

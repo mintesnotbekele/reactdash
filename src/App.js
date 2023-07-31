@@ -44,8 +44,10 @@ function App() {
      <Banner/>
        <div style={{margin: 'auto', width: '100%'}}>
          <Row style={{marginTop: '100px', marginBottom: '100px', zIndex: "1000"}}>
-          <Col span={5}></Col>
-          <Col className="gutter-row" span={5} style={{justifyContent: 'space-evenly'}}>
+          <Col span={4}></Col>
+          <Col span={16}>
+            <Row>
+          <Col span={8} style={{justifyContent: 'space-evenly'}}>
           <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
               Diseases
             </h3>
@@ -57,7 +59,7 @@ function App() {
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
           </Col>
-          <Col  className="gutter-row" span={5}>
+          <Col  className="gutter-row" span={8}>
             <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
             Welcome to Curevive
             </h3>
@@ -68,7 +70,7 @@ function App() {
               <Link to="/">  <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
           </Col> 
-          <Col className="gutter-row" style={{backgroundColor: 'rgba(0, 0, 0, .0)'}} span={5}>
+          <Col className="gutter-row" style={{backgroundColor: 'rgba(0, 0, 0, .0)'}} span={8}>
           <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
               Treatments
             </h3>
@@ -78,10 +80,13 @@ function App() {
               </p>
               <Link to="/treatment"> <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
+           
+          </Col>
+          </Row>
           </Col>
           <Col span={4} ></Col>
           <img alt="background" src={background1} style={{position: 'absolute',overflow: 'hidden', rigth: '80px', bottom: '-20px', top: '900px'}}/>
-          <img alt="background" src={background2} style={{position: 'absolute',overflow: 'hidden', left: '1300px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
+          <img alt="background" src={background2} style={{position: 'absolute',overflow: 'hidden', left: '130px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
             <Col span={3}></Col>
          </Row>
        </div>
@@ -107,7 +112,7 @@ function App() {
         </Row>
         <img alt="background" src={background4} style={{position: 'absolute', width: '550px', opacity: '0.6', marginTop: '-200px', zIndex: "500"}}/>
         <Testimonials/>
-        <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute', width: '600px', right: '-50px', opacity: '0.6', height: '700px', marginTop: "-200px", zIndex: "500"}}/></div>
+        <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute', width: '600px', left: '67%', opacity: '0.6', height: '700px', marginTop: "-200px", zIndex: "500"}}/></div>
           <Diseases/>
           <Counter/>  
           <Row style={{margin: '70px'}}>
@@ -130,7 +135,7 @@ function App() {
               </Col>
           </Row>
          <HomeSlider/> 
-         <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={birds} style={{width: '500px', height: "700px", opacity: '0.6', position: 'absolute', left: '0px', overflow: "hidden", zIndex: "500"}}/></div>
+         <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={birds} style={{width: '400px', height: "700px", opacity: '0.6', position: 'absolute', left: '0px', overflow: "hidden", zIndex: "500"}}/></div>
          <Articles/>
             <Row style={{marginTop: "80px"}}>
               <Col span={4}></Col>
