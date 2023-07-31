@@ -86,11 +86,11 @@ const Testimonials=()=>{
                                     <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.thotamali.com/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 20px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
-                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lato'}}>{item?.location}</p>    
+                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lota'}}>{item?.location}</p>    
                                     </div>
                              </div>
                                                         
-                              <p style={{fontSize: '22px', fontFamily: 'lato',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
+                              <p style={{fontSize: '22px', fontFamily: 'lota',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
                                               </div>
                            )}
                      

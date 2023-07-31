@@ -90,7 +90,7 @@ const TreatmentHome=()=>{
             <Row style={{marginTop: '100px'}}>  
         <Col span={6}></Col>
         <Col span={12}>
-            <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
+            <p style={{fontFamily: 'lota', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
                 approach to health with Curevive. Our natural, high-quality herbal supplements and oils
                  work in harmony with healthy diet, yoga, acupressure, stress management, and other 
                  self-care practices to treat the root cause of disease and promote overall wellness. 
@@ -107,7 +107,7 @@ const TreatmentHome=()=>{
             <div style={{margin: '70px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                         <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
-                        <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
+                        <p style={{fontFamily: 'lota', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                         
                         <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
                     </div>

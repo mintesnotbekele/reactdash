@@ -13,7 +13,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';  
 import herbacap from './assets/herbalcapsule1.png';
 import herbaloil from './assets/herbaloil.png'
-
+import ReactPlayer from 'react-player'
 
 import "react-multi-carousel/lib/styles.css";
 import Testimonials from './components/homepage/testimonials';
@@ -67,7 +67,7 @@ const Diseases = ()=>{
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                          
                             <div className='diseasescol' style={{width: '50%',fontFamily: 'Playfair Display', textAlign: 'left'}}>Age Group:</div>
-                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato', textAlign: 'left'}}>    
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lota', textAlign: 'left'}}>    
                             { diseases?.agegroup}
                             </div>
                             
@@ -95,7 +95,7 @@ const Diseases = ()=>{
                             <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display', textAlign: 'left'}}>
                             Mode: 
                             </div>
-                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato',textAlign: 'left'}}>
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lota',textAlign: 'left'}}>
                             {diseases?.mode} 
                             </div>
                         </div>
@@ -119,17 +119,7 @@ const Diseases = ()=>{
         </Col>
 
         <Col span={16} style={{ height: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
-                    <iframe
-                    style={{width: '100%'}}
-                width="853"
-                height="480"
-                src={`${diseases?.videolink}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Embedded youtube"
-                />
-             
+        <ReactPlayer width={1000} style={{margin: 'auto'}} url={'path/to/video'} controls={true} />
           
             
         </Col>
@@ -228,7 +218,7 @@ const Diseases = ()=>{
                       <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '20px'}}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        <p style={{fontFamily: 'lota', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
@@ -318,11 +308,11 @@ const Diseases = ()=>{
                                     <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.thotamali.com/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 40px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
-                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lato'}}>{item?.location}</p>    
+                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lota'}}>{item?.location}</p>    
                                     </div>
                              </div>
                                                         
-                              <p style={{fontSize: '22px', fontFamily: 'lato',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
+                              <p style={{fontSize: '22px', fontFamily: 'lota',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
                                               </div>
                            )}
                      
@@ -435,19 +425,19 @@ const Diseases = ()=>{
                             <p style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>10 Day trial </p>
                             <h1 style={{fontFamily: 'Playfair Display', fontSize: '85px', fontWeight: '500', textAlign: 'center' }}>₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>1 Consultation</p>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Protocol Creation </p>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Diet Plan</p>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Yoga Protocol</p>
+                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>1 Consultation</p>
+                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Protocol Creation </p>
+                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Diet Plan</p>
+                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Yoga Protocol</p>
                             <div style={{marginTop: '40px'}}>
-                            <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
+                            <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
                             </div>
                         </div>
                         <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', margin: '20px', padding: '40px'}}>
                             <p style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}> Complete Plan </p>
                             <h1 style={{fontFamily: 'Playfair Display', fontSize: '85px', fontWeight: '500', textAlign: 'center' }}>₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
+                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center', }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
                                             Protocol Creation Diet Plan with Recipes Yoga Protocol
                                             Trataka and Meditation Protocol
                                             Acupressure and Reflexology
@@ -456,14 +446,14 @@ const Diseases = ()=>{
 
                                             </p>
                                             <div style={{marginTop: '40px'}}>
-                            <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}} > Get Started<ArrowRightOutlined/></Button>
+                            <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}} > Get Started<ArrowRightOutlined/></Button>
                             </div>
                         </div>
                         <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', margin: '20px', padding: '40px'}}>
                             <p style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Premium Plan </p>
                             <h1 style={{fontFamily: 'Playfair Display', fontSize: '85px', fontWeight: '500', textAlign: 'center' }}>₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Weekly Consultation followups
+                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Weekly Consultation followups
                                         Additional Free 2 Consultations 3 Sessions with Reiki Master
                                         Treatment Kit that include herbal capsules and esentil-oil bled
                                         Protocol Creation
@@ -475,7 +465,7 @@ const Diseases = ()=>{
                                         Available doctor chat support
                                         </p>
                          <div style={{marginTop: '40px'}}>
-                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
+                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
                           </div>
                          </div>
                     </div>
