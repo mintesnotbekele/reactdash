@@ -20,7 +20,7 @@ const Header=()=>{
 
     return(
         <div>
-        <div  className="flex-auto w-100">
+        <div  className="flex-auto w-100" style={{width: '100%'}}>
         <Row>
         <Navbar
        style={{

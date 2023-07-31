@@ -81,10 +81,10 @@ const Testimonials=()=>{
                           swipeable
                               >
                      {testimonials.map((item) => 
-                              <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px'}}>
-                             <div style={{display: 'flex'}}> 
+                              <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '10px', padding: '20px'}}>
+                             <div style={{display: 'flex' , flexWrap: 'wrap'}}> 
                                     <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.thotamali.com/${item.profilepic}`}></img>
-                                    <div style={{padding: '0px 40px'}}>
+                                    <div style={{padding: '0px 20px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
                                     <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lato'}}>{item?.location}</p>    
                                     </div>
