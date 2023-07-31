@@ -24,6 +24,7 @@ const Header=()=>{
         <Row>
         <Navbar
        style={{
+        zIndex: '2000',
         width: '100%',
         position: 'fixed',
         paddingTop: "13px",

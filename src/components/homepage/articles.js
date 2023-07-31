@@ -91,7 +91,7 @@ const Articles= ()=>{
                   <div style={{ marginTop: '30px', marginBottom: '20px'}}>
                         <Link style={{color: 'black'}} to={`/blogdetail/${item.id}`}>
                          <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}> 
-                           <p className='blogsecond' style={{marginTop: '60px', width: '90%'}}>{item.created_at} 
+                           <p className='blogsecond' style={{marginTop: '60px', width: '90%'}}>22 December,2022 
                                 <RightOutlined className={ entered1 ? 'cursorhover': 'cursorfree'} /></p>
                          
                         </p>
