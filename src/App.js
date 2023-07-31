@@ -1,14 +1,14 @@
 
-import newlogo from './assets/newlogo.png'
+import newlogo from './assets/curlogo.png'
 import meditate from "./assets/meditate.png";
 import background1 from './assets/first.png'
 import background2 from "./assets/first.png";
-import background4 from "./assets/background4.png";
-import background5 from "./assets/lady.png";
+import background4 from "./assets/1.png";
+import background5 from "./assets/4.png";
 import foot1 from "./assets/foot.png";
-import foot2 from "./assets/foot2.png";
-import newhand from "./assets/thehand.png";
-import birds from "./assets/birds.png";
+
+import newhand from "./assets/3.png";
+import birds from "./assets/6.png";
 import Header from './components/header';
 
 import 'react-multi-carousel/lib/styles.css';
@@ -38,15 +38,14 @@ function App() {
   return (
     
     <div className="App">    
-     <div style={{background: "#4E3426",position: 'relative', width: "100%", }} >
-    <div className='flex-auto w-10'></div>
+     <div style={{background: "#4E3426",position: 'relative', width: "100%" }} >
      <Header/>
     </div>
      <Banner/>
        <div style={{margin: 'auto', width: '100%'}}>
          <Row style={{marginTop: '100px', marginBottom: '100px', zIndex: "1000"}}>
-          <Col span={4}></Col>
-          <Col className="gutter-row" span={5}>
+          <Col span={5}></Col>
+          <Col className="gutter-row" span={5} style={{justifyContent: 'space-evenly'}}>
           <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
               Diseases
             </h3>
@@ -58,7 +57,7 @@ function App() {
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
           </Col>
-          <Col className="gutter-row" span={5}>
+          <Col  className="gutter-row" span={5}>
             <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
             Welcome to Curevive
             </h3>
@@ -83,13 +82,12 @@ function App() {
           <Col span={4} ></Col>
           <img alt="background" src={background1} style={{position: 'absolute',overflow: 'hidden', rigth: '80px', bottom: '-20px', top: '900px'}}/>
           <img alt="background" src={background2} style={{position: 'absolute',overflow: 'hidden', left: '1300px', bottom: '-20px', top: '1200px' , transform: 'scaleX(-1)'}}/>
-            <img alt="background" src={foot1} style={{height: "800px", left: '-200px', position: 'absolute', overflow: 'hidden', top: '7500px', zIndex: "500"}}/> 
-          <Col span={3}></Col>
+            <Col span={3}></Col>
          </Row>
        </div>
         <Row>
           <Col span={4}></Col>
-          <Col style={{margin: '20px'}} span={8}>
+          <Col xs={24} xl={8} style={{margin: '20px'}} span={8}>
           <h1 className='articleHeader' style={{color: '#292F36'}}>
               We Create The Art Of Healthy Living!</h1>
             <p className='firsttext' style={{textAlign: 'justify', marginTop: '40px', marginRight: '40px', color: '#4D5053',height: '150px'}}>
@@ -103,13 +101,13 @@ function App() {
               </Link>
               </div>
           </Col>
-          <Col style={{margin: '20px'}}  span={8}>
+          <Col xs={24} xl={8} style={{margin: '20px'}}  span={8}>
             <Image preview={false} src={meditate}/>
           </Col>
         </Row>
-        <img alt="background" src={background4} style={{position: 'absolute', overflow: 'hidden', left: '-200px',marginTop: '-200px', zIndex: "500"}}/>
+        <img alt="background" src={background4} style={{position: 'absolute', width: '550px', opacity: '0.6', marginTop: '-200px', zIndex: "500"}}/>
         <Testimonials/>
-        <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute',right: "80px", height: '870px', marginTop: "-200px", zIndex: "500"}}/></div>
+        <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" src={background5} style={{position: 'absolute', width: '600px', right: '-50px', opacity: '0.6', height: '700px', marginTop: "-200px", zIndex: "500"}}/></div>
           <Diseases/>
           <Counter/>  
           <Row style={{margin: '70px'}}>
@@ -120,7 +118,7 @@ function App() {
               </h1>
               </Col>  
           </Row>
-          <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={newhand} style={{position: 'absolute', width: "600px", marginTop: "-400px", overflow: "hidden", right: '0px', zIndex: "500"}}/></div>
+          <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={newhand} style={{position: 'absolute', opacity: '60%',width: "600px", marginTop: "-400px", overflow: "hidden", right: '0px', zIndex: "500"}}/></div>
           <Row style={{margin: '30px'}}>
             <Col span={7}></Col>
           <Col span={10}>
@@ -132,9 +130,9 @@ function App() {
               </Col>
           </Row>
          <HomeSlider/> 
-         <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={birds} style={{width: '380px', height: "1000px", position: 'absolute', left: '0px', overflow: "hidden", zIndex: "500"}}/></div>
+         <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={birds} style={{width: '500px', height: "700px", opacity: '0.6', position: 'absolute', left: '0px', overflow: "hidden", zIndex: "500"}}/></div>
          <Articles/>
-            <Row style={{marginTop: "150px"}}>
+            <Row style={{marginTop: "80px"}}>
               <Col span={4}></Col>
               <Col span={16} style={{background: '#292F36  ', borderRadius: '40px', alignItems: 'center'}}>
               <div style={{marginTop: "70px",marginBottom: "40px", }}>
@@ -148,7 +146,7 @@ function App() {
             <Row style={{alignContent: 'center'}}>
               <Col span={9}></Col>
               <Col span={6} style={{marginTop: '90px'}}>
-              <p style={{color : '0xFF4D5053', fontSize: '22.sp', letterSpacing: '0.22.sp'}}>Copyright © Curevive | Designed by Collabity - Powered by OwlWorkLabs</p>
+              <p style={{color : '0xFF4D5053', fontSize: '22.sp', letterSpacing: '0.22.sp'}}>Copyright © Curevive</p>
               </Col>
             </Row>
             <Row>
@@ -159,10 +157,7 @@ function App() {
           </Col>
         </Row>
             <div style={{width: '100%', overflow: 'hidden'}}>
-              <img alt="background" src={newlogo} style={{ margin: "auto", zIndex: "500"}}/>
-            
-              <img alt="background" src={foot2} style={{height: '450px', right: '0px', position: 'absolute', marginTop: '-450px', overflow: 'hidden'}}/>
-          </div> 
+               </div> 
     </div>
   );
 }

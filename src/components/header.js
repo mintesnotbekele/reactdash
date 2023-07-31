@@ -1,30 +1,34 @@
 import { Navbar } from 'flowbite-react';
 import newlogo from '../assets/curlogo.png';
+import { Row } from 'antd';
 
 const Header=()=>{
     return(
         <div>
-            <div  className="flex-auto w-100">
+        <div  className="flex-auto w-100">
+        <Row>
         <Navbar
        style={{
+        width: '100%',
         position: 'fixed',
         paddingTop: "13px",
         top: '0',
         left: '0',
         right: '0',
-        background: 'rgba(78, 52, 38, 0.6)',
+        background: 'rgba(78, 52, 38, 0.3)',
         height: "100px",
         zIndex: "100",
       }}
       rounded
     
     >
-     <Navbar.Brand style={{marginLeft: "250px"}}>
-      <Navbar.Link
+     <Navbar.Brand >
+      <Navbar.Link 
+      
           active
           href="/"
         >
-        <img alt='logo' style={{objectFit: 'contain', marginTop: '-50px', height: '100px'}} src={newlogo}/>
+        <img alt='logo' style={{objectFit: 'contain', marginTop: '-40px', height: '100px'}} src={newlogo}/>
 
         </Navbar.Link>
       </Navbar.Brand> 
@@ -55,6 +59,7 @@ const Header=()=>{
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
+    </Row>
     </div>
         </div>
     )

@@ -11,10 +11,13 @@ import Header from './components/header';
 import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import axios from 'axios';  
+import herbacap from './assets/herbalcapsule1.png';
+import herbaloil from './assets/herbaloil.png'
 
 
 import "react-multi-carousel/lib/styles.css";
 import Testimonials from './components/homepage/testimonials';
+import { flexbox } from '@mui/system';
 
 
 
@@ -142,15 +145,17 @@ const Diseases = ()=>{
         </Row>
         <Row style={{marginTop: "100px" , background: '#ECDFD7', paddingTop: '150px', paddingBottom: '150px'}}>
             
-            <div style={{width: '100%'}}> 
-            <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "70px"}}>3d animation of products displaying out of the box</h1>
+            <div style={{width: '100%' , display: 'flex' , justifyContent: 'center'}}> 
+              <img src={herbacap} style={{margin: '30px', height: '400px'}}/>
+              <img src={herbaloil} style={{margin: '30px' , height: '400px'}}/>
+              
            </div>
         </Row>
         <Row style={{marginTop: '100px'}}>
             <Col span={4}></Col>
             <Col span={16}> 
             <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", marginBottom: '70px'}}>Clinically proven!</h1>
-            <p style={{ fontFamily: "lato", fontSize: "22px",  marginBottom: '70px'}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
+            <p style={{ fontFamily: "lato", fontSize: "22px", textAlign: 'center', marginBottom: '70px'}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
             <div style={{display: 'flex', justifyContent: 'space-evenly',  marginBottom: '100px'}}>
             {treatments?.map((item, index) => 
                 <Button  className="commonbutton buttonHeader" style={{color: 'black'}}>{item?.name}</Button>
@@ -220,7 +225,7 @@ const Diseases = ()=>{
           >
             {researchpaper.map((item) => 
             <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
-                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '20px'}}>
                         {item.title}
                         </h1>
                         <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
@@ -505,11 +510,9 @@ const Diseases = ()=>{
 
         <Row>
         <Col span={24}>
-          <div style={{textAlign: "center"}}>Copyright © Curevive | Designed by Collabity - Powered by OwlWorkLabs</div>
-          <div style={{margin: 'auto', width: "10%"}}>
-          <img style={{}} alt="logo" src={logo}/>
-          <img alt="logo text" src={logotext}/>
-          </div>
+          <div style={{textAlign: "center", paddingBottom: '100px'}}>Copyright © Curevive </div>
+        
+          
         </Col>
       </Row>
                 </div>

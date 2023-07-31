@@ -10,6 +10,7 @@ import axios from 'axios';
 import Pagination from '@mui/material/Pagination';
 import InputAdornment from "@mui/material/InputAdornment";
 import { Link } from "react-router-dom";
+import Item from "antd/es/list/Item";
 
 
 
@@ -36,7 +37,8 @@ const DiseasesWeCure=()=>{
                 )
             }));
         setPage(1);
-        setCounter(Math.ceil(res.data.length/3));
+        setCounter(Math.ceil(res.data.length/4));
+        console.log()
         setDiseasesInit(temp);
       })
      },[])
@@ -59,11 +61,16 @@ const DiseasesWeCure=()=>{
 
    const handleChange = (event, value) => {
     let div = counter; 
-
+    console.log(value);
     setDiseases(diseasesInit.filter(item=>{
+        if(value> 1){
         return(
-            item.index >= div*value - div && item.index < (div*value)
-            )
+            item.index > div*value - div+1 && item.index <= (div*value)+4
+            )}
+         else {
+            console.log(item.index)
+            return (item.index < 4)
+         }
         }));
     setPage(value);
   };
@@ -96,7 +103,7 @@ const DiseasesWeCure=()=>{
                             {diseases.map((item, index) => 
                             <div  style={{width: '40%', margin: '40px'}}>
                                  <div onMouseEnter={()=>showHoverHandler(index)} onMouseLeave={toggleHover} >
-                                      <div className="treatmentslider" style={{ textAlign: 'center', borderTopRightRadius: index % 2 == 0 ? '50px': '0px', borderTopLeftRadius: index % 2 != 0 ? '50px': '0px', backgroundImage: `url(https://curevive.thotamali.com/${item.picture})`, height: '500px'}}> 
+                                      <div className="treatmentslider" style={{ textAlign: 'center', borderTopRightRadius: index % 2 == 0 ? '50px': '0px', borderTopLeftRadius: index % 2 != 0 ? '50px': '0px', backgroundImage: `url(https://curevive.thotamali.com/${item.picture})`, backgroundSize: '100%  100%', height: '500px'}}> 
                                            <div className={hoveredCart === index ? ' dismage' : ''}>                                   
                                                  <div style={{height: '500px'}}>
                                                  <h1  style={{paddingTop: '150px', paddingLeft: '20px', paddingRight: '20px',paddingBottom: '50px'}} className={hoveredCart === index? '' : 'displayText'}>  

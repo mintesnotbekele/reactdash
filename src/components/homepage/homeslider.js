@@ -31,14 +31,12 @@ const HomeSlider=()=>{
     }
 ]
 
-const [slideIndex, setSlideIndex] = React.useState(0);
+const [activeItemIndex, setActiveItemIndex] = React.useState(0);
 
-  const [activity, setActive ] =useState(0);
-   const handlechange= (active)=>
-{
-   setActive(active);
-}
-  
+const handleJumpToItem = (index) => {
+    console.log(index);
+  setActiveItemIndex(index);
+};
 
   var items = [
     {
@@ -57,6 +55,8 @@ const [slideIndex, setSlideIndex] = React.useState(0);
             <Col style={{height: '600px'}} span={16}> 
         
             <Carousel
+            activeItemIndex={activeItemIndex} 
+            onChange={handleJumpToItem}
             additionalTransfrom={0}
             arrows
             autoPlaySpeed={1000}
@@ -109,18 +109,30 @@ const [slideIndex, setSlideIndex] = React.useState(0);
             slidesToSlide={1}
             swipeable
           >
-                <img
+                <div> <img
                     alt="..."
                     src={carouse}
-                />
-                <img
+                /></div>
+               <div>   <img
                     alt="..."
                     src={carouse}
-                />
-                <img
+                /></div>
+               <div> <img
                     alt="..."
                     src={carouse}
-                />
+                /></div>
+                   <div>  <img
+                    alt="..."
+                    src={carouse}
+                /></div>
+               <div>  <img
+                    alt="..."
+                    src={carouse}
+                /></div>
+               <div> <img
+                    alt="..."
+                    src={carouse}
+                /></div>
                 
                 </Carousel>
          

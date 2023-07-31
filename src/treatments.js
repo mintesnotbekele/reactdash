@@ -6,8 +6,9 @@ import aboutBanner from "./assets/treatmentBanner.jpg";
 import {Row, Col} from 'antd';
 
 import { Accordion } from 'flowbite-react';
-import firstyoga from "./assets/firtyoga.png";
-import thirdyoga from "./assets/thirdyoga.png";
+import firstyoga from "./assets/1.png";
+import secondyoga from "./assets/2.png";
+import thirdyoga from "./assets/3.png";
 import history from "./assets/history1.png";
 import expert from "./assets/expert.png";
 import {ArrowRightOutlined} from '@ant-design/icons';
@@ -81,7 +82,7 @@ const Treatment =()=>{
         <>
     <Header/>
     <img alt="about Banner"style={{marginBottom: '200px'}} src={aboutBanner}/>
-       <Row>
+       <Row style={{marginBottom: '100px'}}>
         <Col span={4}>
         </Col>
         <Col span={16}>
@@ -102,42 +103,24 @@ const Treatment =()=>{
        <Row style={{marginBottom: '100px'}}>
         <Col span={4}></Col>
         <Col  span={16}>
-        <Carousel
-            
+        <Carousel 
+        className='carousel'
+              arrows
+              showDots
               itemClass="carousel-item-padding-40-px"
-              showDots={true}
-            responsive={responsive} 
+              
+              responsive={responsive} 
              style={{height: '1200px'}}>
            <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
             <Col  span={10}>
+            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , margin: '100px'}}>
+              Diet & Nutrition
+              </h1>
               <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
             </Col>
             <Col className='articletext' span={14} style={{padding:'20px'}}>
               <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "Playfair Display", fontSize: "50px"}}>
-              Diet & Nutrition
-              </h1>
-              <Accordion collapseAll>
-              {faq.map((item) => 
-                <Accordion.Panel>
-                  <Accordion.Title>
-                   {item.title}
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  {item.description}
-                  </Accordion.Content>
-                </Accordion.Panel>
-                 )}
-              </Accordion>
-            </Col>
-          </Row>
-          <Row style={{background: '#ECDFD7',borderRadius: '40px'}}>
-            <Col  span={10}>
-              <img style={{marginTop: "100px"}} alt='yoga' src={yoga}/>
-            </Col>
-            <Col className='articletext' span={14} style={{padding:'20px'}}>
-            <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "Playfair Display", fontSize: "50px"}}>
+              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px'}}>
               Frequently Asked Questions
               </h1>
               <Accordion collapseAll>
@@ -156,12 +139,41 @@ const Treatment =()=>{
           </Row>
           <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
             <Col  span={10}>
+            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , margin: '100px'}}>
+             Yoga
+              </h1>
+              <img style={{marginTop: "100px"}} alt='yoga' src={secondyoga}/>
+            </Col>
+            <Col className='articletext' span={14} style={{padding:'20px'}}>
+              <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
+              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px'}}>
+              Frequently Asked Questions
+              </h1>
+              <Accordion collapseAll>
+              {faq.map((item) => 
+                <Accordion.Panel>
+                  <Accordion.Title>
+                   {item.title}
+                  </Accordion.Title>
+                  <Accordion.Content>
+                  {item.description}
+                  </Accordion.Content>
+                </Accordion.Panel>
+                 )}
+              </Accordion>
+            </Col>
+          </Row>
+          <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
+            <Col  span={10}>
+            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , margin: '100px'}}>
+            Aroma Therapy
+              </h1>
               <img style={{marginTop: "100px"}} alt='yoga' src={thirdyoga}/>
             </Col>
-            <Col span={14} style={{padding:'20px'}}>
-            <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "Playfair Display", fontSize: "50px"}}>
-              Aroma Therapy
+            <Col className='articletext' span={14} style={{padding:'20px'}}>
+              <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
+              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px'}}>
+              Frequently Asked Questions
               </h1>
               <Accordion collapseAll>
               {faq.map((item) => 
@@ -362,7 +374,7 @@ locate the points, chosen by our doctors for you.
           >
             {researchpaper.map((item) => 
             <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
-                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', }}>
                         {item.title}
                         </h1>
                         <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
@@ -396,11 +408,8 @@ locate the points, chosen by our doctors for you.
        </Row>
        <Row>
         <Col span={24}>
-          <div style={{textAlign: "center"}}>Copyright © Curevive | Designed by Collabity - Powered by OwlWorkLabs</div>
-          <div style={{margin: 'auto', width: "10%"}}>
-          <img style={{}} alt="logo" src={logo}/>
-          <img alt="logo text" src={logotext}/>
-          </div>
+          <div style={{textAlign: "center"}}>Copyright © Curevive  </div>
+         
         </Col>
       </Row>
         </>
