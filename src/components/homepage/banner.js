@@ -8,7 +8,7 @@ const Banner=()=>{
         <div className="h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-100">
       
         <div style={{alignItems: 'center', height: "800px", backgroundImage: `url(${hands})`, backgroundSize: '100% 100%', marginBottom: '100px'}}>
-          <div style={{marginTop: '50px',height: '550px'}}></div>
+          <div style={{height: '550px'}}></div>
           <div style={{width: '100%',}}>
           <h1 style={{fontSize: '120px' , fontFamily: 'Playfair Display'}}>
           Naturopathy

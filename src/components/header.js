@@ -12,22 +12,23 @@ const Header=()=>{
         top: '0',
         left: '0',
         right: '0',
-        background: "#4E3426",
+        background: 'rgba(78, 52, 38, 0.6)',
         height: "100px",
         zIndex: "100",
       }}
       rounded
     
     >
-      <Navbar.Brand style={{marginLeft: "250px"}}>
+     <Navbar.Brand style={{marginLeft: "250px"}}>
       <Navbar.Link
           active
           href="/"
         >
-        <img alt='logo' style={{objectFit: 'contain', marginTop: '-30px', height: '100px'}} src={newlogo}/>
+        <img alt='logo' style={{objectFit: 'contain', marginTop: '-50px', height: '100px'}} src={newlogo}/>
 
         </Navbar.Link>
-      </Navbar.Brand>
+      </Navbar.Brand> 
+      <Navbar.Toggle/>
       <Navbar.Collapse>
         <Navbar.Link
           active
