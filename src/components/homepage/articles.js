@@ -15,15 +15,33 @@ import Stack from '@mui/material/Stack';
 const Articles= ()=>{
 
       const [article, setArticle] = useState([]);
+      const [articleInit, setArticleInit] = useState([]);
       const [loading, setLoading] = useState(false);
       const [latest, setLatest] = useState([]);
+      const [counter , setCounter] = useState([]);
+      const [page, setPage] = useState(1);
        useEffect(()=>{
         axios.get('https://curevive.thotamali.com/api/newsAndarticle')
         .then((res)=>{
             setArticle(res.data);
-    
+            setArticleInit(res.data)
+
+            setPage(1);
+           
+            setCounter(Math.ceil(res.data.length/3))
         })
        },[])
+
+       const handleChange = (event, value) => {
+        let div = counter; 
+    
+        setArticle(articleInit.filter(item=>{
+            return(
+                item.index >= div*value - div && item.index < (div*value)
+                )
+            }));
+        setPage(value);
+      };
        const [current, setCurrent] = useState(3);
   const onChange = (page) => {
     console.log(page);
@@ -88,7 +106,14 @@ const Articles= ()=>{
      <div style={{margin: 'auto', width: '30%'}}>
            <Stack spacing={2}>
      
-      <Pagination count={5} variant="outlined" color="secondary" />
+           <Row>
+            <Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
+           <div style={{margin: 'auto', width: '50%', height: '100px'}}> 
+           <Pagination size="large"  count={counter} page={page} onChange={handleChange} />
+           </div> 
+           </Col>
+           </Row>
+            
      
     </Stack>
     </div>

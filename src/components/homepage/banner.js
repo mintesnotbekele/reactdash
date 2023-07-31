@@ -1,4 +1,4 @@
-import hands from "../../assets/hands.png";
+import hands from "../../assets/homebanner.jpg";
 import blurback from "../../assets/blurrybackground.png";
 import { Button} from "antd";
 import {ArrowRightOutlined} from '@ant-design/icons'
@@ -7,9 +7,9 @@ const Banner=()=>{
     return(
         <div className="h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-100">
       
-        <div style={{alignItems: 'center', height: "700px", backgroundImage: `url(${hands})`, marginBottom: '100px'}}>
+        <div style={{alignItems: 'center', height: "800px", backgroundImage: `url(${hands})`, backgroundSize: '100% 100%', marginBottom: '100px'}}>
           <div style={{marginTop: '50px',height: '550px'}}></div>
-          <div style={{width: '100%', backgroundImage: `url(${blurback})`}}>
+          <div style={{width: '100%',}}>
           <h1 style={{fontSize: '120px' , fontFamily: 'Playfair Display'}}>
           Naturopathy
           </h1>

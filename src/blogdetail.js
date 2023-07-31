@@ -120,7 +120,7 @@ const Blogdetail=()=>{
                             Tags
                             </h1>
                             <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                                <Button className='firsttext' style={{margin: '10px', background: '#292F36', color: '#F6F5EC', paddingLeft: '10px', paddingRight: '10px'}}> {articles?.tags} </Button>
+                                <Button className='firsttext' style={{margin: '10px', background: '#292F36', color: '#F6F5EC', paddingLeft: '10px', paddingRight: '10px'}}> {articles?.tag} </Button>
                                  </div>
                             </div>
                 </Col>

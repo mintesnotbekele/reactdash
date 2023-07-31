@@ -24,13 +24,24 @@ const About=()=>{
   const [quotes, setQuotes] = useState([]);
   const [teams, setTeams] = useState([]);
   const [faq, setFaq] = useState([]);
+  const [sectionone, setSectionone] = useState([]);
+  const [sectiontwo, setSectiontwo] = useState([]);
   
+
 
   useEffect(()=>{
 
     axios.get('https://curevive.thotamali.com/api/quote')
     .then((res)=>{
       setQuotes(res.data);
+    });
+    axios.get('https://curevive.thotamali.com/api/sectionone')
+    .then((res)=>{
+      setSectionone(res.data);
+    });
+    axios.get('https://curevive.thotamali.com/api/sectiontwo')
+    .then((res)=>{
+      setSectiontwo(res.data);
     });
     axios.get('https://curevive.thotamali.com/api/teams')
     .then((res)=>{
@@ -113,41 +124,47 @@ return(
           
           </Carousel>
       </div>      
+      { sectiontwo.map((items) =>
       <Row style={{marginTop: "150px"}}>
         <Col span={4}>
             
         </Col>
+        
         <Col span={8}>
             <div>
               
-                <img alt="herbs" src={herbs}/>
+                <img alt="herbs" src={`https://curevive.thotamali.com/${items.picture}`}/>
             </div>
         </Col>
         <Col span={8}>
+        
             <div style={{padding: "30px"}}>
-            <h1 className='firstheaders'>About Naturopathy</h1>
-            <p className='firsttext' style={{textAlign: 'left'}}> Humans are complex organisms having different planes of being; physical, mental, psychological, emotional and spiritual. Previously, all human ailments were perceived and treated only on the physical aspect of being. However, with the advancement in information and technology, there has been a surge of lifestyle disorders and psychosomatic diseases This has created the need for a treatment modality which takes into consideration all the elements pertaining to a human being. Naturopathy is a form of holistic treatment where we improve the body's ability to overcome any imbalance through traditional therapies, in conjunct to modern medicine. Therapies such as accupuncture, yoga, hydrotherapy, diet and massage are employed to improve a patients quality of life.</p>
+            <h1 className='firstheaders'>{items.title}</h1>
+            <p className='firsttext' style={{textAlign: 'left'}}>{items.description}</p>
             </div>
+          
          </Col>
         <Col span={4}>
             
         </Col>
       </Row>
+       )}
       
-      
+      { sectionone.map((items) =>
+
       <Row style={{marginTop: "100px"}}>
         <Col span={4}>
             
         </Col>
         <Col span={8}>
             <div style={{padding: "30px"}}>
-            <h1 className='firstheaders'>What We Do</h1>
-            <p className='firsttext' style={{textAlign: 'left'}}> We are an online platform with leading doctors in Nature Cure, providing exclusive consultation from the comfort of your home. You are put on a course of drugless treatment modalities which are cost effective and safe. Our doctors will give you a holistic diagnosis of your health condition and offer you a balanced approach through regular weekly check ups. Specialized Diet plans are constructed consisting of whole foods which enrich your body’s microbiome, complementing your lifestyle. As a part of your package, fresh herbs and essential oils essential for your treatment will be delivered to your residence.</p>
+            <h1 className='firstheaders'>{items.title}</h1>
+            <p className='firsttext' style={{textAlign: 'left'}}> {items.description}</p>
             </div>
          </Col>
          <Col span={8}>
             <div>
-                <img alt="herbs" src={meditate}/>
+                <img alt="herbs" src={`https://curevive.thotamali.com/${items.picture}`}/>
             </div>
         </Col>
         <Col span={4}>
@@ -155,7 +172,7 @@ return(
         </Col>
       </Row>
 
-
+       )}
       <Row style={{marginTop: "100px", backgroundColor: "#ECDFD7"}}>
       <Col span={24}>
             <div style={{margin: 'auto', width: '100%', }}> 

@@ -1,7 +1,5 @@
 import { Navbar } from 'flowbite-react';
-import logo from '../assets/logo.png';
-import logotext from '../assets/text.png';
-
+import newlogo from '../assets/curlogo.png';
 
 const Header=()=>{
     return(
@@ -10,7 +8,7 @@ const Header=()=>{
         <Navbar
        style={{
         position: 'fixed',
-        paddingTop: "30px",
+        paddingTop: "13px",
         top: '0',
         left: '0',
         right: '0',
@@ -26,8 +24,8 @@ const Header=()=>{
           active
           href="/"
         >
-        <img alt='logo' style={{height: "180px" ,position: 'absolute', left: '350px', top: '-40px'}}  src={logo}/>
-        <img alt='second logo ' style={{height: "300px" ,position: 'absolute', left: '500px', top: '-100px' }}  src={logotext}/>
+        <img alt='logo' style={{objectFit: 'contain', marginTop: '-30px', height: '100px'}} src={newlogo}/>
+
         </Navbar.Link>
       </Navbar.Brand>
       <Navbar.Collapse>

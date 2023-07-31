@@ -28,58 +28,58 @@ const Testimonials=()=>{
                 <Row>
                     <Col span={24}>
                     <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlaySpeed={1000}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass=""
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024
-                },
-                items: 3,
-                partialVisibilityGutter: 40
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0
-                },
-                items: 1,
-                partialVisibilityGutter: 30
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464
-                },
-                items: 2,
-                partialVisibilityGutter: 30
-              }
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-            swipeable
-          >
+                          additionalTransfrom={0}
+                          arrows={true}
+                          autoPlaySpeed={3000}
+                          centerMode={false}
+                          className=""
+                          containerClass="container-with-dots"
+                          dotListClass=""
+                          draggable
+                          focusOnSelect={false}
+                          infinite
+                          itemClass=""
+                          keyBoardControl
+                          minimumTouchDrag={80}
+                          pauseOnHover
+                          renderArrowsWhenDisabled={false}
+                          renderButtonGroupOutside={false}
+                          renderDotsOutside={false}
+                          responsive={{
+                            desktop: {
+                              breakpoint: {
+                                max: 3000,
+                                min: 1024
+                              },
+                              items: 3,
+                              
+                            },
+                            mobile: {
+                              breakpoint: {
+                                max: 464,
+                                min: 0
+                              },
+                              items: 1,
+                              
+                            },
+                            tablet: {
+                              breakpoint: {
+                                max: 1024,
+                                min: 464
+                              },
+                              items: 1,
+                              
+                            }
+                          }}
+                          rewind={false}
+                          rewindWithAnimation={false}
+                          rtl={false}
+                          shouldResetAutoplay
+                          showDots={false}
+                          sliderClass=""
+                          slidesToSlide={1}
+                          swipeable
+                              >
                      {testimonials.map((item) => 
                               <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px'}}>
                              <div style={{display: 'flex'}}> 

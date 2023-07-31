@@ -1,5 +1,5 @@
-import logo from './assets/logo.png';
-import logotext from './assets/text.png';
+
+import newlogo from './assets/newlogo.png'
 import meditate from "./assets/meditate.png";
 import background1 from './assets/first.png'
 import background2 from "./assets/first.png";
@@ -10,7 +10,7 @@ import foot2 from "./assets/foot2.png";
 import newhand from "./assets/thehand.png";
 import birds from "./assets/birds.png";
 import Header from './components/header';
-import doctor from './assets/doctor.png';
+
 import 'react-multi-carousel/lib/styles.css';
 // Default theme
 import '@splidejs/react-splide/css';
@@ -54,7 +54,8 @@ function App() {
             <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
               Have diabetes, hypertension, thyroid or more? Learn about your disease and much more.
               </p>
-              <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
+              <Link to="/cureddisease">
+              <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
           </Col>
           <Col className="gutter-row" span={5}>
@@ -65,7 +66,7 @@ function App() {
             <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
             We are an online platform with leading doctors in Nature Cure, providing exclusive consultation from the comfort of home.
               </p>
-              <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
+              <Link to="/">  <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
           </Col> 
           <Col className="gutter-row" style={{backgroundColor: 'rgba(0, 0, 0, .0)'}} span={5}>
@@ -76,7 +77,7 @@ function App() {
               <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
               Find a cure for your problems through the extensively researched treatments by specialists of the nation.
               </p>
-              <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
+              <Link to="/treatment"> <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
           </Col>
           <Col span={4} ></Col>
@@ -95,7 +96,12 @@ function App() {
             When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.
             </p>
             <div>
-            <Button style={{ fontSize: '22px', background: 'none',marginTop: '80px',backgroundColor: '#292F36', float: 'left', padding: '30px',height: '100px', borderRadius: '20px',width: '40%', color: '#F6F5EC'}}>Find a cure <ArrowRightOutlined /></Button></div>
+              <Link to='/treatments'>
+            <Button style={{ fontSize: '22px', background: 'none',marginTop: '80px',backgroundColor: '#292F36', float: 'left', padding: '30px',height: '100px', borderRadius: '20px',width: '40%', color: '#F6F5EC'}}>
+              Find a cure 
+              <ArrowRightOutlined /></Button>
+              </Link>
+              </div>
           </Col>
           <Col style={{margin: '20px'}}  span={8}>
             <Image preview={false} src={meditate}/>
@@ -153,9 +159,9 @@ function App() {
           </Col>
         </Row>
             <div style={{width: '100%', overflow: 'hidden'}}>
-              <img alt="background" src={logo} style={{height: '300px', marginLeft: "42%", position: 'absolute', zIndex: "500"}}/>
-              <img alt="background" src={logotext} style={{ marginTop: '100px' , marginLeft: "41%",position: 'absolute', zIndex: "500"}}/>
-              <img alt="background" src={foot2} style={{height: '650px', right: '0px', position: 'absolute',  overflow: 'hidden'}}/>
+              <img alt="background" src={newlogo} style={{ margin: "auto", zIndex: "500"}}/>
+            
+              <img alt="background" src={foot2} style={{height: '450px', right: '0px', position: 'absolute', marginTop: '-450px', overflow: 'hidden'}}/>
           </div> 
     </div>
   );
