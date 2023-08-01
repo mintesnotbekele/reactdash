@@ -18,6 +18,8 @@ import Blogdetail from './blogdetail';
 import Bronchitis from './Bronchitisdetail';
 import Diabetes from './diabetesdetail';
 import EcommerceHome from './ecommercehome';
+import Login from './Auth/login';
+import Register from './Auth/register';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -42,6 +44,9 @@ root.render(
                         <Route path="/blogdetail/:id" element={<Blogdetail/>}></Route>
                         <Route path="/bronchitis" element={<Bronchitis/>}></Route>
                         <Route path="/ecommerce/:id" element={<Diabetes/>}></Route>
+
+                        <Route path="/login" element={<Login/>}></Route>
+                        <Route path="/register" element={<Register/>}></Route>
                     </Routes>
                     </div>
     </BrowserRouter>

@@ -11,7 +11,7 @@ const Testimonials=()=>{
    const [testimonials, setTestimonials] = useState([]);
    const [loading, setLoading] = useState(false);
     useEffect(()=>{
-     axios.get('https://curevive.thotamali.com/api/testimonial')
+     axios.get('http://127.0.0.1:8000/api/testimonial')
      .then((res)=>{
       setTestimonials(res.data);
      })
@@ -21,7 +21,7 @@ const Testimonials=()=>{
       return(
         <Row style={{marginTop: '300px'}}>
          <Col span={4} ></Col>
-                 <Col style={{background: '#ECDFD7', borderRadius: '20px'}} span={16}>
+                 <Col xs={24} xl={16} style={{background: '#ECDFD7', borderRadius: '20px'}} span={16}>
                 <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: 'Playfair Display'}}>
                 What the People Think About Us
                 </h1>
@@ -83,7 +83,7 @@ const Testimonials=()=>{
                      {testimonials.map((item) => 
                               <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '10px', padding: '20px'}}>
                              <div style={{display: 'flex' , flexWrap: 'wrap'}}> 
-                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.thotamali.com/${item.profilepic}`}></img>
+                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`http://127.0.0.1:8000/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 20px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
                                     <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lota'}}>{item?.location}</p>    

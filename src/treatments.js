@@ -25,23 +25,33 @@ const Treatment =()=>{
   const [diseases, setDiseases] = useState([]);
   const [researchpaper, setResearchpaper] = useState([]);
   const [treatments, setTreatments] = useState([]);
+  const [sectionone, setSectionone] = useState([]);
+  const [sectiontwo, setSectiontwo] = useState([]);
   const [faq, setFaq] = useState([]);
   
   const [loading, setLoading] = useState(false);
    useEffect(()=>{
-    axios.get('https://curevive.thotamali.com/api/disease')
+    axios.get('http://127.0.0.1:8000/api/sectiononeTreatment')
+    .then((res)=>{
+      setSectionone(res.data);
+    });
+    axios.get('http://127.0.0.1:8000/api/sectiontwoTreatment')
+    .then((res)=>{
+      setSectiontwo(res.data);
+    });
+    axios.get('http://127.0.0.1:8000/api/disease')
     .then((res)=>{
       setDiseases(res.data);
     });
-    axios.get('https://curevive.thotamali.com/api/treatment')
+    axios.get('http://127.0.0.1:8000/api/treatment')
     .then((res)=>{
       setTreatments(res.data);
     });
-    axios.get('https://curevive.thotamali.com/api/researchpaper')
+    axios.get('http://127.0.0.1:8000/api/researchpaper')
     .then((res)=>{
       setResearchpaper(res.data);
     });
-    axios.get('https://curevive.thotamali.com/api/faq')
+    axios.get('http://127.0.0.1:8000/api/faq')
     .then((res)=>{
       setFaq(res.data);
     });
@@ -85,10 +95,10 @@ const Treatment =()=>{
        <Row style={{marginBottom: '100px'}}>
         <Col span={4}>
         </Col>
-        <Col span={16}>
-            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
+        <Col xl={16} xs={24} span={16}>
+            <div  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
-            <div className='hoverarticle' style={{width: '30%', height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(https://curevive.thotamali.com/${item.background})`}}>
+            <div className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://127.0.0.1:8000/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
@@ -101,8 +111,8 @@ const Treatment =()=>{
         </Col>
        </Row>
        <Row style={{marginBottom: '100px'}}>
-        <Col span={4}></Col>
-        <Col  span={16}>
+        <Col  span={4}></Col>
+        <Col  xl={16} xs={24} span={16}>
         <Carousel 
         className='carousel'
               arrows
@@ -112,13 +122,13 @@ const Treatment =()=>{
               responsive={responsive} 
              style={{height: '1200px'}}>
            <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
-            <Col  span={10}>
-            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , margin: '100px'}}>
+            <Col xl={10} xs={24}  span={10}>
+            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , padding: '10px'}}>
               Diet & Nutrition
               </h1>
               <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
             </Col>
-            <Col className='articletext' span={14} style={{padding:'20px'}}>
+            <Col xl={14} xs={24} className='articletext' span={14} style={{padding:'20px'}}>
               <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
               <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px'}}>
               Frequently Asked Questions
@@ -200,25 +210,23 @@ const Treatment =()=>{
        <Row>
         <Col span={4}>
         </Col>
-        <Col span={16}>
+        <Col xl={16} xs={24} span={16}>
+        { sectionone.map((items) =>
           <Row>
-            <Col span={14}>
+            <Col xl={14} xs={24} span={14}>
               <div style={{padding: '50px'}}>
-              <h1 className='firstheaders'> History of acupressure </h1>
+              <h1 className='firstheaders'> {items?.title} </h1>
               <p className='firsttext' style={{textAlign: 'left'}}>
-              Acupressure is an ancient therapy which originated in China. The doctrine of Traditional Chinese Medicine states
-              that each organism has within itself a driving force which is essential for its survival. This energy is termed as “Qi”
-              or “Chi”. “QI” flows through the body in channels known as Meridians which represent the vital organ of the
-              body. Pioneers of TCM believed that the balance of “Qi” is necessary for the health and longevity of an organism.
-              Any imbalance in the flow of “Qi” predisposed the organism to disease.
+              {items.description}
               </p>
 
               </div>
             </Col>
-            <Col span={10}>
-              <img alt="history" src={history} />
+            <Col xl={10} xs={24} span={10}>
+            <img alt="herbs" src={`http://127.0.0.1:8000/${items?.picture}`}/>
             </Col>
           </Row>
+        )}
         </Col>
         <Col span={4}></Col>
        </Row>
@@ -226,23 +234,22 @@ const Treatment =()=>{
         <Col span={4}>
         
         </Col>
-        <Col  span={16}>
+        <Col xl={16} xs={24} span={16}>
+        { sectiontwo.map((items) =>
           <Row>
-            <Col style={{padding: "50px"}} span={12}>
-               <img alt="expert" src={expert}/>
+            <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
+            <img alt="herbs" src={`http://127.0.0.1:8000/${items?.picture}`}/>
             </Col>
-            <Col style={{padding: "50px"}} span={12}>
+            <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
               <h1 className='firstheaders'>
-              Why you need expert  guidance ?
+               {items?.title}
               </h1> 
               <p className='firsttext' style={{textAlign: 'left'}}>
-              Though the use of acupressure works as a great complementary therapy it has many benefits ,but the best results
-it can only be done by applying pressure on the exact location for the right amount of time, a small miscalculation
-in finding the right location can result in loss of any results at all .Careful selection of these points by an expert
-according to your conditions and symptoms makes it very important to cure you from your symptoms.
+               {items?.description}
               </p>
             </Col>
           </Row>
+        )}
         </Col>
         <Col span={4}>
         
@@ -254,25 +261,30 @@ according to your conditions and symptoms makes it very important to cure you fr
         <Col span={4}>
         
         </Col>
-        <Col span={16}>
+        <Col xl={16} xs={24} span={16}>
           <div >
           <h1 className='firstheaders' style={{color: '#292F36'}}> WHY CUREVIVE?</h1>
-            <p className='firsttext' style={{textAlign: 'left', color: '#4D5053', margin: '50px 0px'}}>Choosing the right points according to your condition and find their exact location can be a tedious task! Curevive
-is here to guide you at every step . We understand the importance of acupressure as a complementary therapy .</p>
+            <p className='firsttext' style={{textAlign: 'left', color: '#4D5053', margin: '50px 0px'}}>
+              Choosing the right points according to your condition and find their exact location can be a tedious task! Curevive
+                    is here to guide you at every step . We understand the importance of acupressure as a complementary therapy .</p>
              <ol>
               <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
-              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>1</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}> Identify the root cause of your condition</span>
+              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>1</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}> 
+              Identify the root cause of your condition</span>
               </li>
               <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
-              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>2</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>Make a list of what acupressure points will work best</span>
-with your condition.
+              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>2</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>
+                Make a list of what acupressure points will work best</span>
+                  with your condition.
               </li>
               <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
-              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>3</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>  Courier you our specially designed acupressure tool</span>
+              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>3</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}> 
+                 Courier you our specially designed acupressure tool</span>
               </li>
               <li className='firsttext' style={{textAlign: 'left' , margin: '40px'}}>
-              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>4</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>Equip you with our expert guided videos on how to</span>
-locate the points, chosen by our doctors for you.
+              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>4</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>
+                Equip you with our expert guided videos on how to</span>
+                locate the points, chosen by our doctors for you.
               </li>
 
              </ol>
@@ -286,12 +298,12 @@ locate the points, chosen by our doctors for you.
         <Col span={4}>
 
         </Col>
-        <Col span={16}>
+        <Col xl={16} xs={24}  span={16}>
            <div>
             <h1 className='firstheaders' style={{textAlign: 'center'}}>
             Backed by evidence !
             </h1>
-            <p className='firsttext' style={{textAlign: 'left'}}>
+            <p className='firsttext' style={{textAlign: 'left', width: '90%', margin: 'auto'}}>
               Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
               circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
               shown that acupressure has helped cancer patients by reducing cancer-related fatigue and nausea. 
@@ -304,7 +316,7 @@ locate the points, chosen by our doctors for you.
        <Row style={{marginTop: "100px" }}>
         <Col span={4}>
         </Col>
-        <Col span={16}>
+        <Col xl={16} xs={24} span={16}>
           <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
         {diseases.map((item) => 
           <Button className="commonbutton buttonHeader" style={{color: '#000000'}}>{item?.name}</Button>
@@ -318,7 +330,7 @@ locate the points, chosen by our doctors for you.
        <Row style={{marginTop: '50px'}}>
         <Col span={4}>
         </Col>
-        <Col span={16}>
+        <Col xl={16} xs={24} span={16}>
         <Carousel
             additionalTransfrom={0}
             arrows={false}
@@ -384,11 +396,7 @@ locate the points, chosen by our doctors for you.
                         <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
                         </div>
                       </div>
-          )}
-                         
-                  
-                    
-                
+          )}      
                  </Carousel>
         </Col >
         <Col span={4}>
@@ -397,7 +405,7 @@ locate the points, chosen by our doctors for you.
 
        <Row style={{marginTop: '150px', marginBottom: '100px'}}>
           <Col span={4}></Col>
-          <Col span={16}>
+          <Col xl={16} xs={24} span={16}>
             <div style={{borderRadius: "50px", paddingBottom: '50px',  background: "#292F36" }}> 
               <h1 style={{paddingTop: '30px',fontFamily: "Playfair Display", fontSize: "50px",color: 'white', textAlign: 'center', fontWeight: 'bold'}}>Want to talk to a doctor?</h1>
               <p style={{margin: '30px',fontFamily: 'lota', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>

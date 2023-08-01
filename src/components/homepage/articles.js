@@ -21,7 +21,7 @@ const Articles= ()=>{
       const [counter , setCounter] = useState([]);
       const [page, setPage] = useState(1);
        useEffect(()=>{
-        axios.get('https://curevive.thotamali.com/api/newsAndarticle')
+        axios.get('http://127.0.0.1:8000/api/newsAndarticle')
         .then((res)=>{
             setArticle(res.data);
             setArticleInit(res.data)
@@ -37,7 +37,7 @@ const Articles= ()=>{
     
         setArticle(articleInit.filter(item=>{
             return(
-                item.index >= div*value - div && item.index < (div*value)
+                item?.index >= div*value - div && item?.index < (div*value)
                 )
             }));
         setPage(value);
@@ -74,7 +74,7 @@ const Articles= ()=>{
         <Row style={{marginTop: '250px'}}>
         <Col span={4}></Col>
         
-        <Col span={16}>
+        <Col xs={24} xl={16} span={16}>
           <div>
             <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: "Playfair Display"}}>
           Articles & News
@@ -86,14 +86,13 @@ const Articles= ()=>{
            <Col onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle' span={8}>  
            <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '10px', margin: '20px'}}>
            <div style={{height: '100%'}}>
-              <img style={{height: '300px'}} src={`https://curevive.thotamali.com/${item.picture}`} alt="articles"/>
-                  <h1 style={{fontSize: '25px', fontFamily: "lota", textAlign: 'left'}}> {item.title}</h1>
+              <img style={{height: '300px'}} src={`http://127.0.0.1:8000/${item?.picture}`} alt="articles"/>
+                  <h1 style={{fontSize: '25px', fontFamily: "lota", textAlign: 'left'}}> {item?.title}</h1>
                   <div style={{ marginTop: '30px', marginBottom: '20px'}}>
-                        <Link style={{color: 'black'}} to={`/blogdetail/${item.id}`}>
+                        <Link style={{color: 'black'}} to={`/blogdetail/${item?.id}`}>
                          <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}> 
                            <p className='blogsecond' style={{marginTop: '60px', width: '90%'}}>22 December,2022 
                                 <RightOutlined className={ entered1 ? 'cursorhover': 'cursorfree'} /></p>
-                         
                         </p>
                         </Link>
                    </div>
@@ -104,18 +103,15 @@ const Articles= ()=>{
            )}     
            </Row>
      <div style={{margin: 'auto', width: '30%'}}>
-           <Stack spacing={2}>
-     
-           <Row>
-            <Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
-           <div style={{margin: 'auto', width: '50%', height: '100px'}}> 
-           <Pagination size="large"  count={counter} page={page} onChange={handleChange} />
-           </div> 
-           </Col>
-           </Row>
-            
-     
-    </Stack>
+           <Stack spacing={2}> 
+              <Row>
+                  <Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
+                      <div style={{margin: 'auto', width: '50%', height: '100px'}}> 
+                      <Pagination size="large"  count={counter} page={page} onChange={handleChange} />
+                      </div> 
+                 </Col>
+              </Row>
+          </Stack>
     </div>
            </Col>
         </Row>

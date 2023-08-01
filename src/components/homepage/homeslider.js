@@ -52,7 +52,7 @@ const handleJumpToItem = (index) => {
         return(
             <Row style={{height: '500px'}}>
             <Col span={4}> </Col>
-            <Col style={{height: '600px'}} span={16}> 
+            <Col  xs={24} xl={16}  style={{height: '600px'}} span={16}> 
         
             <Carousel
             activeItemIndex={activeItemIndex} 

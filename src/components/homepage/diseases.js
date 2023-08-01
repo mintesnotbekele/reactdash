@@ -8,7 +8,7 @@ const Diseases=()=>{
   const [diseases, setDiseases] = useState([]);
   const [loading, setLoading] = useState(false);
    useEffect(()=>{
-    axios.get('https://curevive.thotamali.com/api/disease')
+    axios.get('http://127.0.0.1:8000/api/disease')
     .then((res)=>{
       setDiseases(res.data);
     })
@@ -17,13 +17,13 @@ const Diseases=()=>{
     return(
         <Row style={{marginTop: "180px", zIndex: "1500"}}>
         <Col xs={24} xl={4} span={4}></Col>
-         <Col span={18}>
+         <Col xs={24} xl={18} span={18}>
          <h1 style={{fontSize: '50px', color: '#292F36', marginBottom: "40px", fontFamily: 'Playfair Display'}}>Diseases</h1>
-         <p style={{ marginLeft: '60px', textAlign: 'left', color: '#4D5053', fontSize: '22px', fontFamily: 'lota'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
-         <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '30px' }} >
+         <p style={{ marginLeft: '30px', textAlign: 'left', color: '#4D5053', fontSize: '22px', fontFamily: 'lota'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
+         <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '5px', padding: '10px' }} >
          {diseases.map((item) => 
-        <Col style={{margin:"35px"}} span={10}>
-        <img alt="disease images" src={`https://curevive.thotamali.com/${item.picture}`} style={{borderTopRightRadius:'45px', height: '550px', width: '100%'}} preview={false}/>
+        <Col xs={24} xl={10} span={10}>
+        <img className="diseaseimages" alt="disease images" src={`http://127.0.0.1:8000/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
            <div style={{width: '100%'}}>
 
            <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>

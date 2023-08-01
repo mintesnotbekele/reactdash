@@ -31,24 +31,24 @@ const About=()=>{
 
   useEffect(()=>{
 
-    axios.get('https://curevive.thotamali.com/api/quote')
+    axios.get('http://127.0.0.1:8000/api/quote')
     .then((res)=>{
       setQuotes(res.data);
     });
-    axios.get('https://curevive.thotamali.com/api/sectionone')
+    axios.get('http://127.0.0.1:8000/api/sectionone')
     .then((res)=>{
       setSectionone(res.data);
     });
-    axios.get('https://curevive.thotamali.com/api/sectiontwo')
+    axios.get('http://127.0.0.1:8000/api/sectiontwo')
     .then((res)=>{
       setSectiontwo(res.data);
     });
-    axios.get('https://curevive.thotamali.com/api/teams')
+    axios.get('http://127.0.0.1:8000/api/teams')
     .then((res)=>{
       setTeams(res.data);
     });
     
-    axios.get('https://curevive.thotamali.com/api/faq')
+    axios.get('http://127.0.0.1:8000/api/faq')
     .then((res)=>{
       setFaq(res.data);
     });
@@ -133,7 +133,7 @@ return(
         <Col span={8}>
             <div>
               
-                <img alt="herbs" src={`https://curevive.thotamali.com/${items.picture}`}/>
+                <img alt="herbs" src={`http://127.0.0.1:8000/${items.picture}`}/>
             </div>
         </Col>
         <Col span={8}>
@@ -164,7 +164,7 @@ return(
          </Col>
          <Col span={8}>
             <div>
-                <img alt="herbs" src={`https://curevive.thotamali.com/${items.picture}`}/>
+                <img alt="herbs" src={`http://127.0.0.1:8000/${items.picture}`}/>
             </div>
         </Col>
         <Col span={4}>
@@ -239,7 +239,7 @@ return(
           >
           {teams.map((items) =>
                           <div style={{padding: '10px'}}>
-                            <img alt="team members" src={`https://curevive.thotamali.com/${items?.picture}`}/>   
+                            <img alt="team members" src={`http://127.0.0.1:8000/${items?.picture}`}/>   
                           </div>
                           )} 
           

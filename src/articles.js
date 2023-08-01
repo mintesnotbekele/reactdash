@@ -13,15 +13,15 @@ import ArticlesComponent from './components/homepage/articles';
 
 const Articles =()=>{
 
-    const [articles, setArticles] = useState([]);
+
     const [loading, setLoading] = useState(false);
-    const [latestpost, setLatestPost] = useState();
+    const [latestpost, setLatestPost] = useState([]);
      useEffect(()=>{
-        axios.get('https://curevive.thotamali.com/api/newsAndarticle')
+        axios.get('http://127.0.0.1:8000/api/newsAndarticle')
       .then((res)=>{
-        setArticles(res.data);
-    
-        setLatestPost(res.data.reduce(function (max, x) { return (x.id > max) ? x.id : max}))
+     
+        if(res.data.length != 0)
+        {setLatestPost(res.data.reduce(function (max, x) { return (x?.id > max) ? x?.id : max}))}
       })
      },[])
 
@@ -46,15 +46,15 @@ const Articles =()=>{
                 <Col span={4}></Col>
                 <Col span={8}>
                 <div style={{margin: '20px'}}>
-                <img src={`https://curevive.thotamali.com/${latestpost?.picture}`} alt="latest post"/>
+                <img src={`http://127.0.0.1:8000/${latestpost?.picture}`} alt="latest post"/>
                 </div>
                 </Col>
                 <Col style={{padding: '30px'}} span={8}>
                     <h1  className='latestArticleheader'>
-                     { latestpost == null ?  "new article" :  latestpost?.title}
+                     { latestpost == null ?  "" :  latestpost?.title}
                     </h1>
                     <p className='firsttext' style={{textAlign: 'left'}}>
-                    { latestpost == null ?  "new article" :  latestpost?.description}
+                    { latestpost == null ?  "" :  latestpost?.description}
                     </p>
                     
                     <p className='blogsecond' style={{marginTop: '30px' , width: '90%'}}>{latestpost?.created_at}<RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px'}}/></p>

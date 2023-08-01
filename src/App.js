@@ -45,9 +45,9 @@ function App() {
        <div style={{margin: 'auto', width: '100%'}}>
          <Row style={{marginTop: '100px', marginBottom: '100px', zIndex: "1000"}}>
           <Col span={4}></Col>
-          <Col span={16}>
+          <Col xs={24} xl={16} span={16}>
             <Row>
-          <Col span={8} style={{justifyContent: 'space-evenly'}}>
+          <Col xs={24} xl={8} span={8} style={{justifyContent: 'space-evenly'}}>
           <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
               Diseases
             </h3>
@@ -59,7 +59,7 @@ function App() {
               <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
           </Col>
-          <Col  className="gutter-row" span={8}>
+          <Col xs={24} xl={8} className="gutter-row" span={8}>
             <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
             Welcome to Curevive
             </h3>
@@ -70,7 +70,7 @@ function App() {
               <Link to="/">  <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
             </div>
           </Col> 
-          <Col className="gutter-row" style={{backgroundColor: 'rgba(0, 0, 0, .0)'}} span={8}>
+          <Col xs={24} xl={8} className="gutter-row" style={{backgroundColor: 'rgba(0, 0, 0, .0)'}} span={8}>
           <h3 className='latestArticleheader' style={{textAlign: 'center'}}>
               Treatments
             </h3>
@@ -95,16 +95,16 @@ function App() {
           <Col xs={24} xl={8} style={{margin: '20px'}} span={8}>
           <h1 className='articleHeader' style={{color: '#292F36'}}>
               We Create The Art Of Healthy Living!</h1>
-            <p className='firsttext' style={{textAlign: 'justify', marginTop: '40px', marginRight: '40px', color: '#4D5053',height: '150px'}}>
+            <p className='firsttext' style={{textAlign: 'left', marginTop: '40px', marginRight: '40px', color: '#4D5053'}}>
             When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.
             </p>
-            <div>
-              <Link to='/treatments'>
-            <Button style={{ fontSize: '22px', background: 'none',marginTop: '120px',backgroundColor: '#292F36', float: 'left', padding: '30px',height: '100px', borderRadius: '20px',width: '40%', color: '#F6F5EC'}}>
+        
+              <Link to='/treatments' style={{margin: '100px'}}>
+            <Button style={{ fontSize: '22px', background: 'none',backgroundColor: '#292F36',height: '100px', borderRadius: '20px', color: '#F6F5EC'}}>
               Find a cure 
               <ArrowRightOutlined /></Button>
               </Link>
-              </div>
+              
           </Col>
           <Col xs={24} xl={8} style={{margin: '20px'}}  span={8}>
             <Image preview={false} src={meditate}/>
@@ -117,7 +117,7 @@ function App() {
           <Counter/>  
           <Row style={{margin: '70px'}}>
             <Col span={7}></Col>
-            <Col span={10}>
+            <Col  xs={24} xl={10}  span={10}>
               <h1 className='firstheaders'>
               YOUR JOURNEY WITH US
               </h1>
@@ -126,7 +126,7 @@ function App() {
           <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" src={newhand} style={{position: 'absolute', opacity: '60%',width: "600px", marginTop: "-400px", overflow: "hidden", right: '0px', zIndex: "500"}}/></div>
           <Row style={{margin: '30px'}}>
             <Col span={7}></Col>
-          <Col span={10}>
+          <Col  xs={24} xl={10}  span={10}>
               <div>
                 <p className='firsttext' style={{color: '#4D5053'}}>
                 Wondering what your journey with us throughout your treatments would look like? Here is a breakdown of how we will be working together.
@@ -139,9 +139,9 @@ function App() {
          <Articles/>
             <Row style={{marginTop: "80px"}}>
               <Col span={4}></Col>
-              <Col span={16} style={{background: '#292F36  ', borderRadius: '40px', alignItems: 'center'}}>
+              <Col xs={24} xl={16} span={16} style={{background: '#292F36  ', borderRadius: '40px', alignItems: 'center'}}>
               <div style={{marginTop: "70px",marginBottom: "40px", }}>
-                <h1 style={{fontSize: '50px', color: '#F6F5EC'}}>Want to get your doubts cleared?</h1>
+                <h1 className='articleHeader' style={{ textAlign: 'center', color: '#F6F5EC'}}>Want to get your doubts cleared?</h1>
               <p style={{margin: "20px", fontSize: '22px', color: '#F6F5EC'}}>Book a complimentary consultation now!</p>
               <Button style={{margin: 'auto', paddingTop: '20px', fontSize: '22px', paddingLeft: '30px',paddingBottom: '50px',paddingRight: '30px', background: '#CDA274', color: '#F6F5EC'}}> <Link to='book' style={{color: 'white'}}> Book </Link><ArrowRightOutlined/> </Button>
               </div>

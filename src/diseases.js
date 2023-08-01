@@ -31,22 +31,22 @@ const Diseases = ()=>{
     const [treatments, setTreatments] =useState();
 
      useEffect(()=>{
-      axios.get('https://curevive.thotamali.com/api/testimonial')
+      axios.get('http://127.0.0.1:8000/api/testimonial')
       .then((res)=>{
        setTestimonials(res.data);
       })
      },[])
  
      useEffect(()=>{
-        axios.get('https://curevive.thotamali.com/api/treatment')
+        axios.get('http://127.0.0.1:8000/api/treatment')
         .then((res)=>{
           setTreatments(res.data);
         });
-        axios.get(`https://curevive.thotamali.com/api/disease/${id}`)
+        axios.get(`http://127.0.0.1:8000/api/disease/${id}`)
         .then((res)=>{
           setDiseases(res.data);
         });
-        axios.get('https://curevive.thotamali.com/api/researchpaper')
+        axios.get('http://127.0.0.1:8000/api/researchpaper')
         .then((res)=>{
           setResearchpaper(res.data);
         });
@@ -56,13 +56,13 @@ const Diseases = ()=>{
         <Header/>
             <img style={{width: '100%'}} src={disease} alt='disease'/>
             <div style={{width: '20%', margin: 'auto'}}>
-            <img  src={`https://curevive.thotamali.com/${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
+            <img  src={`http://127.0.0.1:8000/${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
             </div>
             <Row>
-                <Col span={4}></Col>
-                <Col span={16}>
+                <Col  span={4}></Col>
+                <Col xl={16} xs={24} span={16}>
                     <Row>
-                    <Col span={12} style={{padding: "50px"}}> 
+                    <Col xl={12} xs={24} span={12} style={{padding: "50px"}}> 
                         <div style={{background: '#ECDFD7', borderRadius: '30px', paddingTop: '50px', paddingBottom: '50px', paddingLeft: '50px', paddingRight: '5px'}}>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                          
@@ -305,7 +305,7 @@ const Diseases = ()=>{
                      {testimonials.map((item) => 
                               <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px', width: '95%',}}>
                              <div style={{display: 'flex'}}> 
-                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.thotamali.com/${item.profilepic}`}></img>
+                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`http://127.0.0.1:8000/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 40px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
                                     <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lota'}}>{item?.location}</p>    
@@ -314,17 +314,8 @@ const Diseases = ()=>{
                                                         
                               <p style={{fontSize: '22px', fontFamily: 'lota',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
                                               </div>
-                           )}
-                     
-                         
-                  
-                    
-                
+                           )}                
                  </Carousel>
-              
-               
-      
-      
      </Col>
 
             </Col>

@@ -41,6 +41,13 @@
         font-size: 36px;        
         }
 }
+.naturopathy{
+font-size: 120px;
+ font-family: Playfair Display;
+ @media screen and (max-width: 699px) {
+    font-size: 36px;        
+    }
+}
 .latestArticleheader{
     font-family: Playfair Display;
 font-size: 25px;
@@ -240,4 +247,66 @@ backdrop-filter: blur(16.9px);
 }
 .activeitem{
    font-size: 50px;
+}
+.diseaseimages{
+    height: 550px;
+    @media screen and (max-width: 699px) {
+       height: 350px;        
+        }
+}
+.diseaseitems{
+    width: 30%;
+    @media screen and (max-width: 699px) {
+        width: 100%;        
+         }
+}
+.loginHeader{
+    font-family: Poppins;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 54px;
+    letter-spacing: 0.02em;
+    margin: 150px 0px;
+}
+.logintext{
+    font-family: Poppins;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0.02em;
+text-align: center;
+color: #C0C7CE;
+}
+.loginform{
+  margin: 50px 0px;
+}
+
+.registerHeader{
+font-family: Poppins;
+font-size: 120px;
+font-weight: 400;
+line-height: 150px;
+letter-spacing: 0em;
+text-align: left;
+margin-left:  15%;
+color: #000000AD;
+
+}
+.registerText{
+    font-family: lota;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 90px;
+    margin-left: 15%;
+    letter-spacing: 0.01em;   
+}
+.registerOr{
+    font-family: lota;
+font-size: 60px;
+font-weight: 400;
+line-height: 90px;
+letter-spacing: 0.01em;
+text-align: center;
+color: #000000B2;
 }

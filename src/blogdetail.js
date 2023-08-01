@@ -5,7 +5,7 @@ import quotes from "./assets/blogquotes.png";
 import { Col, Row, Input, Checkbox, Space } from "antd";
 import Footer from "./components/footer";
 import TextArea from "antd/es/input/TextArea";
-import blogmeditate from './assets/blogmeditate.png';
+
 import { Button } from "flowbite-react";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import TextField from '@mui/material/TextField';
@@ -24,7 +24,7 @@ const Blogdetail=()=>{
   
      useEffect(()=>{
 
-        axios.get(`https://curevive.thotamali.com/api/newsAndarticle/${id}`)
+        axios.get(`http://127.0.0.1:8000/api/newsAndarticle/${id}`)
         .then((res)=>{
             setArticles(res.data);
         })
@@ -37,18 +37,18 @@ const Blogdetail=()=>{
                 <Col span={4}></Col>
                 <Col span={10}>
                     <h1 className="firstheaders">{articles?.title}</h1>
-                    <img style={{margin: 'auto'}} src={`https://curevive.thotamali.com/${articles?.picture}`} alt="blog detail"/>
+                    <img style={{margin: 'auto'}} src={`http://127.0.0.1:8000/${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
                     <p >26 December,2022  <span style={{float: 'right'}}>Interior / Design / Home / Decore</span></p></div>
 
 
-                 <p className="firsttext" style={{textAlign: 'left', marginTop: '50px', marginBottom: '50px'}}>  Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.
-                    Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, 
-                    but the majority have suffered alteration in some form, by injecthumour, or randomised words
-                     which don't look even slightly believable.
-                     Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet
-                      tend to repeat predefined chunks as necessary.</p>
-                    <img src={quotes} alt="blog quotes"/>
+                 <p className="firsttext" style={{textAlign: 'left', marginTop: '50px', marginBottom: '50px'}}> 
+                 {articles?.description}
+                 </p>
+                   <div style={{background: '#ECDFD7', borderRadius: '50px'}}>
+                   <h1 className="italicHeader" style={{color: '#CDA274'}}> “</h1>
+                    <p className="italictext" style={{color: '#CDA274', marginTop: '-100px', paddingBottom: '100px'}}> {articles?.quotes}</p>
+                   </div>
                 </Col>
                 <Col span={6} style={{marginTop: '60px'}}>
                 <TextField
@@ -120,7 +120,7 @@ const Blogdetail=()=>{
                             Tags
                             </h1>
                             <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                                <Button className='firsttext' style={{margin: '10px', background: '#292F36', color: '#F6F5EC', paddingLeft: '10px', paddingRight: '10px'}}> {articles?.tag} </Button>
+                                <Button className='firsttext' style={{margin: '10px', background: '#292F36', color: '#F6F5EC', paddingLeft: '10px', paddingRight: '10px'}}> {articles?.tags} </Button>
                                  </div>
                             </div>
                 </Col>
@@ -130,21 +130,9 @@ const Blogdetail=()=>{
             <Row style={{marginTop: '30px'}}>
                 <Col span={4}></Col>
                 <Col span={10}>
-                    <h1 className="firstheaders">Design sprints are great</h1>
-                   
-                 <p className="firsttext" style={{textAlign: 'left'}}> Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in
-                 Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have 
-                 suffered.Contrary to popular belief.There are many variations of
-                  passages of Lorem Ipsum available, but the majority have suffered.
-                  Contrary to popular belief.There are many variations of
-                  passages of Lorem Ipsum available, but the majority have suffered.
-                  Contrary to popular belief.There are many variations of
-                  passages of Lorem Ipsum available, but the majority have suffered.
-                   </p>
-                   <img style={{marginTop: '30px', borderRadius: '30px'}} src={blogmeditate} alt="blog detail"/>
-                   <p className="firsttext" style={{textAlign: 'left'}}>Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.
-                   posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
-                   </p>
+                <div
+                    dangerouslySetInnerHTML={{__html: articles.articlecontent}}
+                    />
                 </Col>
                 <Col span={6}> 
               

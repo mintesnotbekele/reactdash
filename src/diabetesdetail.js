@@ -20,11 +20,11 @@ const Bronchitis=()=>{
   
      useEffect(()=>{
         
-        axios.get(`https://curevive.thotamali.com/api/product/${id}`)
+        axios.get(`http://127.0.0.1:8000/api/product/${id}`)
         .then((res)=>{
             setProduct(res.data);
         });
-        axios.get('https://curevive.thotamali.com/api/researchpaper')
+        axios.get('http://127.0.0.1:8000/api/researchpaper')
         .then((res)=>{
           setResearchpaper(res.data);
         }); 
@@ -68,7 +68,7 @@ const Bronchitis=()=>{
             <Row style={{marginTop: '100px'}}>
                 <Col span={4}></Col>
                 <Col span={11}>
-                    <img src={`https://curevive.thotamali.com/${product.picture}`} alt="herbalmedicine"/>
+                    <img src={`http://127.0.0.1:8000/${product.picture}`} alt="herbalmedicine"/>
                 </Col>
 
                 <Col span={5} >
