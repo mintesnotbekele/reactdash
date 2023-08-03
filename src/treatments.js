@@ -1,7 +1,5 @@
 import { Button} from 'flowbite-react';
-import logo from './assets/logo.png';
-import logotext from './assets/text.png';
-import yoga  from './assets/yoga.png'
+
 import aboutBanner from "./assets/treatmentBanner.jpg";
 import {Row, Col} from 'antd';
 
@@ -9,8 +7,7 @@ import { Accordion } from 'flowbite-react';
 import firstyoga from "./assets/1.png";
 import secondyoga from "./assets/2.png";
 import thirdyoga from "./assets/3.png";
-import history from "./assets/history1.png";
-import expert from "./assets/expert.png";
+
 import {ArrowRightOutlined} from '@ant-design/icons';
 import Header from './components/header';
 import { useEffect, useState } from 'react';
@@ -18,9 +15,25 @@ import axios from 'axios';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-
+import { useRef } from 'react';
 
 const Treatment =()=>{
+  const carouselRef = useRef(null);
+
+  const handleClick = (slideIndex) => {
+    console.log("clicked");
+    let index = treatments.filter(item=>{
+      return(
+        item.index == slideIndex
+          )
+      });
+      
+      if(index.length == 0)
+      index= 2;
+    carouselRef.current.goToSlide(index);
+  };
+
+  const activeIndex = 3;
 
   const [diseases, setDiseases] = useState([]);
   const [researchpaper, setResearchpaper] = useState([]);
@@ -45,7 +58,13 @@ const Treatment =()=>{
     });
     axios.get('http://127.0.0.1:8000/api/treatment')
     .then((res)=>{
-      setTreatments(res.data);
+      let temp  = res.data;
+      temp.forEach((value, idx) => 
+      {
+       temp[idx].index=idx;
+       
+      })
+      setTreatments(temp);
     });
     axios.get('http://127.0.0.1:8000/api/researchpaper')
     .then((res)=>{
@@ -81,13 +100,13 @@ const Treatment =()=>{
     }
   };
 
-  const options = {
-    type   : 'loop',
-    focus  : 'center',
-    perPage: 1,
-    perMove: 1,
-    
-  };
+
+  const [slideIndex,setSlideIndex] = useState();
+  const [updateCount,setUpdateCount] = useState();
+  
+   
+
+
     return(
         <>
     <Header/>
@@ -98,7 +117,8 @@ const Treatment =()=>{
         <Col xl={16} xs={24} span={16}>
             <div  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
-            <div className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://127.0.0.1:8000/${item.background})`}}>
+
+            <div onClick={() => handleClick(item.name)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://127.0.0.1:8000/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
@@ -113,7 +133,9 @@ const Treatment =()=>{
        <Row style={{marginBottom: '100px'}}>
         <Col  span={4}></Col>
         <Col  xl={16} xs={24} span={16}>
+       
         <Carousel 
+         ref={carouselRef}
         className='carousel'
               arrows
               showDots
@@ -121,6 +143,7 @@ const Treatment =()=>{
               
               responsive={responsive} 
              style={{height: '1200px'}}>
+              
            <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
             <Col xl={10} xs={24}  span={10}>
             <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , padding: '10px'}}>

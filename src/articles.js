@@ -33,7 +33,7 @@ const Articles =()=>{
             
             <Row style={{marginTop: '150px'}}>
                 <Col span={4}></Col>
-                <Col span={16}>
+                <Col xl={16} xs={24} span={16}>
                 <h1 className='articleHeader'>
                     Latest Post
                     </h1>
@@ -43,13 +43,13 @@ const Articles =()=>{
 
             
             <Row style={{marginTop: '30px'}}>
-                <Col span={4}></Col>
-                <Col span={8}>
+                <Col  span={4}></Col>
+                <Col xl={8} xs={24} span={8}>
                 <div style={{margin: '20px'}}>
                 <img src={`http://127.0.0.1:8000/${latestpost?.picture}`} alt="latest post"/>
                 </div>
                 </Col>
-                <Col style={{padding: '30px'}} span={8}>
+                <Col xl={8} xs={24} style={{padding: '30px'}} span={8}>
                     <h1  className='latestArticleheader'>
                      { latestpost == null ?  "" :  latestpost?.title}
                     </h1>

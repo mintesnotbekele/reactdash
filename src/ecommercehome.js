@@ -20,7 +20,7 @@ const EcommerceHome=()=>{
             <div style={{ width: '100%', margin: 'auto'}}> <h1 className="firstheaders" style={{ width: '10%', margin: 'auto'}}>Gastritis</h1></div>
             <Row>
                 <Col span={4}></Col>
-                <Col span={16}>
+                <Col xl={16} xs={24} span={16}>
                     <p className="firsttext">Looking to improve your health naturally? Choose Curevive for high-quality, natural herbal supplements and oils, expertly formulated for optimal wellness, with a commitment to transparency, customer satisfaction, and best results.
 
 Gastritis is the inflammation, irritation or erosion of this protective stomach lining. Gastritis usually presents itself as a burning pain in the upper abdominal area, indigestion, nausea and vomiting. Chronic gastritis if not managed at the right time, can create cancerous conditions in the body.We give importance to building up the body's own defense, in this case; building up the protective mucosal layer.</p>
@@ -30,7 +30,7 @@ Gastritis is the inflammation, irritation or erosion of this protective stomach 
                 
             <Row style={{marginTop: '70px'}}>
                 <Col span={4}></Col>
-                <Col span={16}>
+                <Col xl={16} xs={24} span={16}>
                   <div style={{display: 'flex', background: '#ECDFD7', borderRadius: '40px', margin: '70px', padding: '30px'}}>
                  
                     <div style={{width: '100%'}}>  
@@ -56,7 +56,7 @@ Gastritis is the inflammation, irritation or erosion of this protective stomach 
             </Row>
             <Row style={{marginTop: '100px'}}>  
         <Col span={6}></Col>
-        <Col span={12}>
+        <Col xl={12} xs={24} span={12}>
             <p style={{fontFamily: 'lota', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
                 approach to health with Curevive. Our natural, high-quality herbal supplements and oils
                  work in harmony with healthy diet, yoga, acupressure, stress management, and other 
@@ -67,10 +67,10 @@ Gastritis is the inflammation, irritation or erosion of this protective stomach 
         </Row>  
      
         <Row style={{marginTop: '30px', marginBottom: '50px'}}>
-                <Col span={6}>
+                <Col  span={6}>
                 
                 </Col>
-                <Col span={12}>
+                <Col xl={12} xs={24} span={12}>
             <div style={{margin: '70px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                         <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>

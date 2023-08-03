@@ -1,13 +1,20 @@
 import { Navbar } from 'flowbite-react';
 import newlogo from '../assets/curlogo.png';
-import { Row } from 'antd';
+import { Row, Col, Button } from 'antd';
 import {useScrollPosition} from '../hooks/scrollhooks';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header=()=>{
   const scrollPosition = useScrollPosition()
   const [top, setTop] = useState(false);
-
+  const tokens = localStorage.getItem('tokens');
+  const navigate = useNavigate();
+  const handleLogout=()=>{
+        console.log("clivjh");
+        localStorage.removeItem('tokens');
+        navigate('/login');
+  }
       useEffect(()=>{
           if(scrollPosition < 400)
           {
@@ -22,6 +29,7 @@ const Header=()=>{
         <div>
         <div  className="flex-auto w-100" style={{width: '100%'}}>
         <Row>
+        <Col span={24}>
         <Navbar
        style={{
         zIndex: '2000',
@@ -70,11 +78,21 @@ const Header=()=>{
         <Navbar.Link href="/about">
         <p className='navheader'>About Us</p>
         </Navbar.Link>
-        <Navbar.Link href="/login">
-        <p className='navheader'>Login</p>
+        <Navbar.Link href="/forums">
+        <p className='navheader'>Forum</p>
         </Navbar.Link>
+        {tokens != undefined ?
+         <div className="flex md:order-2">
+         <Button onClick={handleLogout}>
+           Loug out
+         </Button></div>
+        : <Navbar.Link href="/login">
+        <p className='navheader'>Login</p>
+        </Navbar.Link>}
+        
       </Navbar.Collapse>
     </Navbar>
+    </Col>
     </Row>
     </div>
         </div>

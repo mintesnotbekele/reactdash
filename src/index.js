@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './css/common.css';
@@ -20,9 +20,14 @@ import Diabetes from './diabetesdetail';
 import EcommerceHome from './ecommercehome';
 import Login from './Auth/login';
 import Register from './Auth/register';
+import DisplaySlider from './components/slider/sliderDisplay';
+import Forums from './forums';
+import ForumDetail from './forumdetail';
+import { useEffect } from 'react';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -36,17 +41,20 @@ root.render(
                         <Route path="/diseases/:id" element={<Diseases/>}></Route>
                         <Route path="/ecommercecapsule" element={<EcommerceCapsule/>}></Route>
                         <Route path="/ecommerceherbal" element={<EcommerceHerbal/>}></Route>
-                        <Route path="/ecommercehome" element={<EcommerceHome/>}></Route>
-                       
+                        <Route path="/ecommercehome" element={<EcommerceHome/>}></Route>    
                         <Route path="/treatmentHome" element={<TreatmentHome/>}></Route>
                         <Route path="/book" element={<Book/>}></Route>
                         <Route path="/blog" element={<Articles/>}></Route>
                         <Route path="/blogdetail/:id" element={<Blogdetail/>}></Route>
                         <Route path="/bronchitis" element={<Bronchitis/>}></Route>
                         <Route path="/ecommerce/:id" element={<Diabetes/>}></Route>
-
                         <Route path="/login" element={<Login/>}></Route>
                         <Route path="/register" element={<Register/>}></Route>
+                        <Route path="/slide" element={<DisplaySlider/>}></Route>
+                      
+                        <Route path="/forums" element={<Forums/>}></Route>
+                     
+                        <Route path="/forums/:id" element={<ForumDetail/>}></Route>
                     </Routes>
                     </div>
     </BrowserRouter>

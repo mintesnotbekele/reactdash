@@ -60,7 +60,7 @@ return(
     <div>
       <Header/>
       <img alt="about Banner"style={{marginBottom: '200px'}} src={aboutBanner}/>
-      <div style={{width: '40%',padding: '40px',paddingTop: '100px',margin: 'auto', height: '300px' , backgroundImage: `url(${frame})`,backgroundSize: '100% 100%'}}>
+      <div className='aboutquotes'>
       
       <Carousel
             additionalTransfrom={0}
@@ -130,13 +130,13 @@ return(
             
         </Col>
         
-        <Col span={8}>
+        <Col xl={8} xs={24} span={8}>
             <div>
               
                 <img alt="herbs" src={`http://127.0.0.1:8000/${items.picture}`}/>
             </div>
         </Col>
-        <Col span={8}>
+        <Col xl={8} xs={24} span={8}>
         
             <div style={{padding: "30px"}}>
             <h1 className='firstheaders'>{items.title}</h1>
@@ -156,13 +156,13 @@ return(
         <Col span={4}>
             
         </Col>
-        <Col span={8}>
+        <Col xl={8} xs={24} span={8}>
             <div style={{padding: "30px"}}>
             <h1 className='firstheaders'>{items.title}</h1>
             <p className='firsttext' style={{textAlign: 'left'}}> {items.description}</p>
             </div>
          </Col>
-         <Col span={8}>
+         <Col xl={8} xs={24} span={8}>
             <div>
                 <img alt="herbs" src={`http://127.0.0.1:8000/${items.picture}`}/>
             </div>
@@ -174,7 +174,7 @@ return(
 
        )}
       <Row style={{marginTop: "100px", backgroundColor: "#ECDFD7"}}>
-      <Col span={24}>
+      <Col xl={24} xs={24} span={24}>
             <div style={{margin: 'auto', width: '100%', }}> 
             <h1 className='firstheaders' style={{ textAlign: 'center'}}>OUR TEAM</h1>
             </div>
@@ -182,7 +182,7 @@ return(
         <Col span={6}>
 
         </Col>
-        <Col span={12}>
+        <Col xl={12} xs={24} span={12}>
         
        <Carousel
             additionalTransfrom={0}
@@ -260,7 +260,7 @@ return(
             </Col>
         <Col span={4}>
        </Col>
-        <Col span={8}>
+        <Col xl={8} xs={24} span={8}>
         <Accordion collapseAll>
               {faq.map((item) => 
                 <Accordion.Panel>
@@ -275,7 +275,7 @@ return(
               </Accordion>     
                 
          </Col>
-         <Col span={8}>
+         <Col xl={8} xs={24} span={8}>
          
         <img alt="frequently asked question" src={faqs}/>
          </Col>
@@ -294,11 +294,11 @@ return(
         <Col span={4}>
 
         </Col>
-        <Col span={8}>
+        <Col xl={8} xs={24} span={8}>
          
         <img style={{borderRadius: '30px'}} alt="disease related question" src={disease}/>
          </Col>
-         <Col span={8}>
+         <Col xl={8} xs={24} span={8}>
                       
          <Accordion collapseAll>
               {faq.map((item) => 
@@ -323,10 +323,10 @@ return(
 
       <Row style={{marginTop: "100px", marginBottom: '50px', backgroundColor: "#ECDFD7"}}>
    
-        <Col span={6}>
+        <Col xl={6} xs={24} span={6}>
 
         </Col>
-        <Col span={12} style={{padding: '150px'}}>
+        <Col xl={12} xs={24} span={12} className='aboutContainer'>
         <div style={{margin: 'auto', width: '100%', }}> 
             <h1 style={{fontFamily: "Playfair Display", fontSize: "50px", textAlign: 'center'}}>Have concerns? Let's have
 a productive talk.</h1>

@@ -1,143 +1,53 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button } from '@mui/material';
-import carouse from '../../assets/carouser.png'
+import carouse from '../../assets/carouser.png';
+import first from '../../assets/01.png';
+import second from '../../assets/02.png';
+import third from '../../assets/03.png';
+import four from '../../assets/04.png';
+
+
+
 import { Row, Col } from 'antd';
-import { useState } from 'react';
+import Slider from 'react-slick';
 const HomeSlider=()=>{
+  const settings = {
+    className: "center",
+      centerMode: true,
+      infinite: true,
+      centerPadding: "60px",
+      slidesToShow: 1,
+      fade: true,
+      speed: 1000
 
-
-  function Item(props)
-  {
-      return (
-          <Paper>
-              <h2>{props.item.name}</h2>
-              <p>{props.item.description}</p>
-  
-              <Button className="CheckButton">
-                  Check it out!
-              </Button>
-          </Paper>
-      )
-  }
-  var items = [
-    {
-        name: "Random Name #1",
-        description: "Probably the most random thing you have ever seen!"
-    },
-    {
-        name: "Random Name #2",
-        description: "Hello World!"
-    }
-]
-
-const [activeItemIndex, setActiveItemIndex] = React.useState(0);
-
-const handleJumpToItem = (index) => {
-    console.log(index);
-  setActiveItemIndex(index);
-};
-
-  var items = [
-    {
-        name: "Random Name #1",
-        description: "Probably the most random thing you have ever seen!"
-    },
-    {
-        name: "Random Name #2",
-        description: "Hello World!"
-    }
-]
+  };
 
         return(
-            <Row style={{height: '500px'}}>
-            <Col span={4}> </Col>
-            <Col  xs={24} xl={16}  style={{height: '600px'}} span={16}> 
-        
-            <Carousel
-            activeItemIndex={activeItemIndex} 
-            onChange={handleJumpToItem}
-            additionalTransfrom={0}
-            arrows
-            autoPlaySpeed={1000}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass=""
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024
-                },
-                items: 1,
-          
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0
-                },
-                items: 1,
-            
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464
-                },
-                items: 2,
-               
-              }
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-            swipeable
-          >
-                <div> <img
+            <Row className='homeslidecontainer'>
+            <Col xl={4}> </Col>
+            <Col  xs={24} xl={16} className='homeslider' span={16}> 
+            <Slider {...settings}>
+            <div> <img
                     alt="..."
-                    src={carouse}
+                    src={first
+                    }
                 /></div>
                <div>   <img
                     alt="..."
-                    src={carouse}
+                    src={second}
                 /></div>
                <div> <img
                     alt="..."
-                    src={carouse}
+                    src={third}
                 /></div>
                    <div>  <img
                     alt="..."
-                    src={carouse}
+                    src={four}
                 /></div>
-               <div>  <img
-                    alt="..."
-                    src={carouse}
-                /></div>
-               <div> <img
-                    alt="..."
-                    src={carouse}
-                /></div>
+              
                 
-                </Carousel>
-         
-
-
+              </Slider>
           </Col>
          <Col span={4}></Col>
           </Row>

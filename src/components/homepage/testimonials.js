@@ -22,7 +22,7 @@ const Testimonials=()=>{
         <Row style={{marginTop: '300px'}}>
          <Col span={4} ></Col>
                  <Col xs={24} xl={16} style={{background: '#ECDFD7', borderRadius: '20px'}} span={16}>
-                <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: 'Playfair Display'}}>
+                <h1 className='testimonialheader' >
                 What the People Think About Us
                 </h1>
                 <Row>

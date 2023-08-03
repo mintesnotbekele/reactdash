@@ -4,8 +4,8 @@ import {ArrowRightOutlined} from '@ant-design/icons'
 import { Link } from "react-router-dom";
 const Banner=()=>{
     return(
-        <div style={{alignItems: 'center', height: "1000px", backgroundImage: `url(${hands})`, backgroundSize: '100% 100%', paddingBottom: '100px', marginBottom: '100px'}}>
-          <div style={{height: '500px'}}></div>
+        <div className="bannerbackground" style={{alignItems: 'center',backgroundImage: `url(${hands})`, backgroundSize: '100% 100%', paddingBottom: '100px', marginBottom: '100px'}}>
+          <div className="bannergap" ></div>
           <div style={{width: '100%',}}>
           <h1 className="naturopathy">
             Naturopathy

@@ -41,7 +41,7 @@ const Book=()=>{
                 <Col span={8}>
                 </Col>
                 
-                    <Col span={8}>
+                    <Col xl={8} xs={24} span={8}>
                     <Form
                         name="basic" 
                         initialValues={{
@@ -115,8 +115,8 @@ const Book=()=>{
                         <div style={{marginTop: "50px"}}>
                         <Form.Item
                             wrapperCol={{
-                                offset: 8,
-                                span: 16,
+                                
+                                span: 10,
                             }}
                             >
                             <Button style={{background: '#292F36', float: 'right', fontSize: '18x', color: 'white', margin: '10px', padding: '10px'}} type="primary" className="customButton" htmlType="submit">
@@ -138,8 +138,8 @@ const Book=()=>{
                 <Col span={4}>
                 
                 </Col>
-                <Col span={16}>
-            <div style={{margin: '70px'}}>
+                <Col  xl={16} xs={24} span={16}>
+            <div >
                 <div style={{background: '#292F36', borderRadius: '50px', marginTop: '100px', padding: '70px'}}>
                         <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Here are some answers to frequently asked questions</h1>
                         

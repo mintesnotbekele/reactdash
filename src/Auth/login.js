@@ -3,8 +3,13 @@ import TextField from '@mui/material/TextField';
 import { Button } from "flowbite-react";
 import newlogo from '../assets/curlogo.png';
 import axios from "axios";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Login=()=>{
+
+    const navigate = useNavigate();
     const handleSubmit=(values)=>{
         axios.post('http://127.0.0.1:8000/api/auth/login', {
             "email" : values.email,
@@ -12,7 +17,11 @@ const Login=()=>{
        })
         .then((res)=>{
            if(res.data.message == 'User Logged In Successfully' && res.data.status == true)
+             {
+                localStorage.setItem('tokens', res.data.token);
                message.success(`successfully Logged In`);
+               navigate('/forums')
+                }
             else if(res.data.message == 'Email & Password does not match' && res.data.status == true) {
               message.error(`Email & Password does not match please try Again`);
             }
@@ -23,7 +32,7 @@ const Login=()=>{
     }
     return(
         <Row style={{height: '1000px'}}>
-            <Col style={{background: 'white'}} xl={12}>
+            <Col xs={24} xl={12} style={{background: 'white'}} >
                 <h1 style={{width: '100%'}} className="loginHeader">Welcome to Curevive</h1>
                 <h3 className="logintext">Let’s get you all set up so you can verify your personal account and begin setting up your profile</h3>
                 <div style={{width: '80%', margin: 'auto' }}>
@@ -86,7 +95,7 @@ const Login=()=>{
                 </div>
                 </div>
             </Col>
-            <Col xl={12}>
+            <Col xs={0} xl={12}>
                 <img src={newlogo}/>
             </Col>
         </Row>

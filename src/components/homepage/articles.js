@@ -1,8 +1,6 @@
 import { Row, Col } from "antd";
 import {RightOutlined } from '@ant-design/icons';
-import article1 from "../../assets/article 1.png";
-import article2 from "../../assets/article2.png";
-import article3 from "../../assets/article3.png";
+import moment from "moment";
 import { useState } from "react";
 import { useEffect} from 'react';
 import axios from 'axios';
@@ -71,7 +69,7 @@ const Articles= ()=>{
       }
  
     return(
-        <Row style={{marginTop: '250px'}}>
+        <Row className="articleTop">
         <Col span={4}></Col>
         
         <Col xs={24} xl={16} span={16}>
@@ -83,7 +81,8 @@ const Articles= ()=>{
             </div>
            <Row>
            {article.map((item) => 
-           <Col onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle' span={8}>  
+           <Col xl={8} xs={24} onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle' span={8}>  
+          
            <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '10px', margin: '20px'}}>
            <div style={{height: '100%'}}>
               <img style={{height: '300px'}} src={`http://127.0.0.1:8000/${item?.picture}`} alt="articles"/>
@@ -91,7 +90,7 @@ const Articles= ()=>{
                   <div style={{ marginTop: '30px', marginBottom: '20px'}}>
                         <Link style={{color: 'black'}} to={`/blogdetail/${item?.id}`}>
                          <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}> 
-                           <p className='blogsecond' style={{marginTop: '60px', width: '90%'}}>22 December,2022 
+                           <p className='blogsecond' style={{marginTop: '60px', width: '90%'}}>{moment(item.create_at).fromNow()} 
                                 <RightOutlined className={ entered1 ? 'cursorhover': 'cursorfree'} /></p>
                         </p>
                         </Link>

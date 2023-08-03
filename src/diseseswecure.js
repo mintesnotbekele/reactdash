@@ -82,8 +82,11 @@ const DiseasesWeCure=()=>{
             <Header/>
             <img src={curedbanner} alt="cured disease banner"/>
             <Row style={{ marginTop: '100px', marginBottom: '100px'}}>
+          <Col span={8}></Col>
+          <Col xl={8} xs={24}>
+             <div style={{width: '100%'}}>
             <TextField
-                style={{ width: '100%'}}
+                style={{width: '100%'}}
                 variant="outlined"
                 placeholder="Search"
                 onChange={handleSearch}
@@ -96,6 +99,9 @@ const DiseasesWeCure=()=>{
                     style: { background: '#ECDFD7',borderRadius: '30px'}
                 }}
                 />
+                </div>
+                </Col>
+                <Col xl={8} xs={24}></Col>
             </Row>
 
             <Diseases/>

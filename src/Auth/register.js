@@ -289,16 +289,15 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
                         <Col xl={8}></Col>
                         <Col xl={8}>
                             <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                                <img style={{margin: '20px', maxWidth: '200px'}} alt="google" src={google}/>
-                                <img style={{margin: '20px',maxWidth: '200px'}} alt="facebook" src={facebook}/>
-                                <img style={{margin: '20px', maxWidth: '200px'}} alt="apple" src={apple}/>
+                                <img className="socials" alt="google" src={google}/>
+                                <img className="socials" alt="facebook" src={facebook}/>
+                                <img className="socials" alt="apple" src={apple}/>
                             </div>
                         </Col>
                         <Col xl={8}></Col>
                             
                         </Row>
                      </Form>
-
                 </div>
                 </div>
             </Col>
