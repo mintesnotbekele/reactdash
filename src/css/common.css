@@ -354,7 +354,7 @@ color: #000000B2;
 .bannergap{
     height: 700px;
     @media screen and (max-width: 699px) {
-        height: 500px; 
+        height: 400px; 
          }
 }
 .aboutContainer{

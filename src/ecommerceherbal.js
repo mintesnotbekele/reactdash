@@ -42,7 +42,7 @@ const EcommerceHerbal = ()=>{
              <div style={{marginTop: '50px', paddingLeft: '30px'}}> <img style={{height: '300px', width: '400px'}} alt='herbal' src={herbal}/></div>
            </Col>
            <Col xl={16} xs={24} span={16}>
-            <h1 style={{fontFamily: 'lota', fontSize: '20px', margin: '30px'}}> Herbal medicine has been used for centuries to treat a range of 
+            <h1 style={{fontFamily: 'lato', fontSize: '20px', margin: '30px'}}> Herbal medicine has been used for centuries to treat a range of 
                 ailments and promote overall wellness. This ancient practice has 
                 a rich history that dates back to civilizations such as Egypt 
                 ,India and China. Today, it remains a popular alternative or
@@ -84,7 +84,7 @@ const EcommerceHerbal = ()=>{
                     <Link style={{color: 'black'}} to={`/ecommerce/${item.id}`}>
                     <img style={{padding: '2px' , height:'28px   0px', width: '90%' ,margin: 'auto'}} src={`https://curevive.prophecius.com/${item.picture}`} alt='capsules' />
                     <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>{item.name}</h1>
-                    <p className='blogsecond' style={{paddingTop: '10px', float: 'right', fontSize: '22px', fontFamily: 'lota'}}>Explore
+                    <p className='blogsecond' style={{paddingTop: '10px', float: 'right', fontSize: '22px', fontFamily: 'lato'}}>Explore
                          <RightOutlined style={{marginTop: '-10px'}} className={ entered1 ? 'cursorhover': 'cursorfree'} />
                       </p>
                     </Link> 
@@ -100,7 +100,7 @@ const EcommerceHerbal = ()=>{
         <Row style={{marginTop: '100px'}}>  
         <Col span={4}></Col>
         <Col xl={16} xs={24} span={16}>
-            <p style={{fontFamily: 'lota', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
+            <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
                 approach to health with Curevive. Our natural, high-quality herbal supplements and oils
                  work in harmony with healthy diet, yoga, acupressure, stress management, and other 
                  self-care practices to treat the root cause of disease and promote overall wellness. 
@@ -117,7 +117,7 @@ const EcommerceHerbal = ()=>{
             <div >
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                         <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
-                        <p style={{fontFamily: 'lota', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
+                        <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                         
                         <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
                     </div>

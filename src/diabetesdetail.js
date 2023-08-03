@@ -210,7 +210,7 @@ const Bronchitis=()=>{
                       <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lota', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
@@ -238,7 +238,7 @@ const Bronchitis=()=>{
                  with Curevive</div>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                         <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
-                        <p style={{fontFamily: 'lota', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
+                        <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                         
                         <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
                     </div>

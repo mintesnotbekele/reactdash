@@ -117,7 +117,7 @@ function App() {
             </p>
         
               <Link to='/treatments'>
-            <Button style={{ fontSize: '22px', background: 'none',backgroundColor: '#292F36',height: '100px', borderRadius: '20px', color: '#F6F5EC'}}>
+            <Button style={{ fontSize: '22px', background: 'none',backgroundColor: '#292F36',height: '60px', borderRadius: '20px', color: '#F6F5EC'}}>
               Find a cure 
               <ArrowRightOutlined /></Button>
               </Link>

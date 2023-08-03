@@ -77,7 +77,7 @@ const Articles= ()=>{
             <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: "Playfair Display"}}>
           Articles & News
             </h1>
-            <p style={{margin: "20px", fontSize: '22px', fontFamily: "lota"}}>Detailed and fun to read articles written by well researched individuals from around the world.</p>
+            <p style={{margin: "20px", fontSize: '22px', fontFamily: "lato"}}>Detailed and fun to read articles written by well researched individuals from around the world.</p>
             </div>
            <Row>
            {article.map((item) => 
@@ -86,7 +86,7 @@ const Articles= ()=>{
            <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '10px', margin: '20px'}}>
            <div style={{height: '100%'}}>
               <img style={{height: '300px'}} src={`https://curevive.prophecius.com/${item?.picture}`} alt="articles"/>
-                  <h1 style={{fontSize: '25px', fontFamily: "lota", textAlign: 'left'}}> {item?.title}</h1>
+                  <h1 style={{fontSize: '25px', fontFamily: "lato", textAlign: 'left'}}> {item?.title}</h1>
                   <div style={{ marginTop: '30px', marginBottom: '20px'}}>
                         <Link style={{color: 'black'}} to={`/blogdetail/${item?.id}`}>
                          <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}> 

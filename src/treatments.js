@@ -412,7 +412,7 @@ const Treatment =()=>{
                       <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', }}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lota', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
@@ -431,7 +431,7 @@ const Treatment =()=>{
           <Col xl={16} xs={24} span={16}>
             <div style={{borderRadius: "50px", paddingBottom: '50px',  background: "#292F36" }}> 
               <h1 style={{paddingTop: '30px',fontFamily: "Playfair Display", fontSize: "50px",color: 'white', textAlign: 'center', fontWeight: 'bold'}}>Want to talk to a doctor?</h1>
-              <p style={{margin: '30px',fontFamily: 'lota', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>
+              <p style={{margin: '30px',fontFamily: 'lato', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>
               <Button style= {{margin: 'auto', color: 'white', background: '#CDA274'}}>Contact Us <ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/></Button>
             </div>
           </Col>

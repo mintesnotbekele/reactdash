@@ -67,7 +67,7 @@ const Diseases = ()=>{
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                          
                             <div className='diseasescol' style={{width: '50%',fontFamily: 'Playfair Display', textAlign: 'left'}}>Age Group:</div>
-                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lota', textAlign: 'left'}}>    
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato', textAlign: 'left'}}>    
                             { diseases?.agegroup}
                             </div>
                             
@@ -95,7 +95,7 @@ const Diseases = ()=>{
                             <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display', textAlign: 'left'}}>
                             Mode: 
                             </div>
-                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lota',textAlign: 'left'}}>
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato',textAlign: 'left'}}>
                             {diseases?.mode} 
                             </div>
                         </div>
@@ -224,7 +224,7 @@ const Diseases = ()=>{
                       <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '20px'}}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lota', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
@@ -314,11 +314,11 @@ const Diseases = ()=>{
                                     <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.prophecius.com/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 40px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
-                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lota'}}>{item?.location}</p>    
+                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lato'}}>{item?.location}</p>    
                                     </div>
                              </div>
                                                         
-                              <p style={{fontSize: '22px', fontFamily: 'lota',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
+                              <p style={{fontSize: '22px', fontFamily: 'lato',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
                                               </div>
                            )}                
                  </Carousel>
@@ -425,12 +425,12 @@ const Diseases = ()=>{
                             <p className='pricingstyle'>10 Day trial </p>
                             <h1>₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
-                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>1 Consultation</p>
-                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Protocol Creation </p>
-                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Diet Plan</p>
-                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Yoga Protocol</p>
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>1 Consultation</p>
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Protocol Creation </p>
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Diet Plan</p>
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Yoga Protocol</p>
                             <div style={{marginTop: '40px'}}>
-                            <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
+                            <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
                             </div>
                         </div>
                         </div>
@@ -441,7 +441,7 @@ const Diseases = ()=>{
                             <p className='pricingstyle'> Complete Plan </p>
                             <h1 >₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
-                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center', }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
                                             Protocol Creation Diet Plan with Recipes Yoga Protocol
                                             Trataka and Meditation Protocol
                                             Acupressure and Reflexology
@@ -450,7 +450,7 @@ const Diseases = ()=>{
 
                                             </p>
                                             <div style={{marginTop: '40px'}}>
-                            <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}} > Get Started<ArrowRightOutlined/></Button>
+                            <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}} > Get Started<ArrowRightOutlined/></Button>
                             </div>
                         </div>
                         </div>
@@ -461,7 +461,7 @@ const Diseases = ()=>{
                             <p className='pricingstyle'>Premium Plan </p>
                             <h1>₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
-                            <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Weekly Consultation followups
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Weekly Consultation followups
                                         Additional Free 2 Consultations 3 Sessions with Reiki Master
                                         Treatment Kit that include herbal capsules and esentil-oil bled
                                         Protocol Creation
@@ -473,7 +473,7 @@ const Diseases = ()=>{
                                         Available doctor chat support
                                         </p>
                          <div style={{marginTop: '40px'}}>
-                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
+                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
                           </div>
                          </div>
                          </div>

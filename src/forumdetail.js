@@ -135,7 +135,7 @@ const navigate = useNavigate();
                     {
                      
                 comments?.map((item, index) => 
-                            <div style={{fontSize: '30px', border: 'solid', margin: '10px', borderRadius: '50px',padding: '30px', fontFamily: 'lota'}}>
+                            <div style={{fontSize: '30px', border: 'solid', margin: '10px', borderRadius: '50px',padding: '30px', fontFamily: 'lato'}}>
                             <AccountCircleIcon/>   {item.description}
                             <div style={{textAlign:"center",marginTop:"50px"}}>
                           </div>                                                                                                                                                                               
