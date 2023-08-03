@@ -118,15 +118,13 @@ const Diseases = ()=>{
         <Col span={4}>
         </Col>
 
-        <Col span={16} style={{ height: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
-        <ReactPlayer width={1000} style={{margin: 'auto'}} url={'path/to/video'} controls={true} />
+        <Col xl={16} xs={24} span={16} style={{ height: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
+        <ReactPlayer width={400} style={{width: '100%'}} url={'path/to/video'} controls={true} />
           
             
         </Col>
         <Col span={4}>
-        <div className="video-responsive">
-
-  </div>
+        
         </Col>
         
         <Col span={4}>
@@ -134,19 +132,27 @@ const Diseases = ()=>{
         </Col>
         </Row>
         <Row style={{marginTop: "100px" , background: '#ECDFD7', paddingTop: '150px', paddingBottom: '150px'}}>
-            
-            <div style={{width: '100%' , display: 'flex' , justifyContent: 'center'}}> 
-              <img src={herbacap} style={{margin: '30px', height: '400px'}}/>
-              <img src={herbaloil} style={{margin: '30px' , height: '400px'}}/>
-              
-           </div>
+           <Col xl={4}></Col>
+           <Col xs={16} xl={16}> 
+           <Row>
+           <Col xl={12} xs={24}>
+              <img src={herbacap} style={{margin: '30px', height: '400px', float: 'right'}}/>
+              </Col>
+             
+              <Col xl={12} xs={24}>
+              <img src={herbaloil} style={{margin: '30px' , height: '400px', float: 'left'}}/>
+             
+              </Col>
+              </Row>
+           </Col>
+           <Col xl={6}></Col>
         </Row>
         <Row style={{marginTop: '100px'}}>
             <Col span={4}></Col>
-            <Col span={16}> 
+            <Col xl={16} xs={24} span={16}> 
             <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", marginBottom: '70px'}}>Clinically proven!</h1>
             <p style={{ fontFamily: "lato", fontSize: "22px", textAlign: 'center', marginBottom: '70px'}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
-            <div style={{display: 'flex', justifyContent: 'space-evenly',  marginBottom: '100px'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly',  marginBottom: '100px'}}>
             {treatments?.map((item, index) => 
                 <Button  className="commonbutton buttonHeader" style={{color: 'black'}}>{item?.name}</Button>
                )}
@@ -158,7 +164,7 @@ const Diseases = ()=>{
         <Row>
             <Col span={4}>
             </Col>
-            <Col span={16}>
+            <Col xs={24} xl={16} span={16}>
             
             <Carousel
             additionalTransfrom={0}
@@ -240,7 +246,7 @@ const Diseases = ()=>{
 
         <Row>
             <Col span={4}></Col>
-            <Col span={16} style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', paddingTop: '30px'}}>
+            <Col xl={16} xs={24} span={16} style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', paddingTop: '30px'}}>
                 <div>
                     <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>
                     SUCCESS STORIES
@@ -323,7 +329,7 @@ const Diseases = ()=>{
         </Row>
         <Row style={{marginTop: '100px'}}>
             <Col span={4}></Col>
-            <Col span={16}>
+            <Col xl={16} xs={24} span={16}>
             <div style={{marginBottom: '40px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>
                     Begin your journey
@@ -404,17 +410,20 @@ const Diseases = ()=>{
         </Row>
         <Row >
             <Col span={4}></Col>
-            <Col span={16}>
-            <div style={{margin: '50px'}}>
+            <Col xl={16} xs={24} span={16}>
+            
+            <div>
                     <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>
                     Pricing & Plan
                     </h1>
               
                     </div>
-                    <div style={{display: 'flex'}}>
-                        <div style={{background: '#ECDFD7', borderRadius: '30px' , width: '100%', margin: '20px', padding: '40px'}}>
-                            <p style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>10 Day trial </p>
-                            <h1 style={{fontFamily: 'Playfair Display', fontSize: '85px', fontWeight: '500', textAlign: 'center' }}>₹950</h1>
+                   <Row>
+                    <Col xs={24} xl={8}>
+                      <div style={{padding: '10px'}}>
+                        <div style={{background: '#ECDFD7', borderRadius: '30px' , width: '100%', padding: '20px'}}>
+                            <p className='pricingstyle'>10 Day trial </p>
+                            <h1>₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
                             <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>1 Consultation</p>
                             <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Protocol Creation </p>
@@ -424,9 +433,13 @@ const Diseases = ()=>{
                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
                             </div>
                         </div>
-                        <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', margin: '20px', padding: '40px'}}>
-                            <p style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}> Complete Plan </p>
-                            <h1 style={{fontFamily: 'Playfair Display', fontSize: '85px', fontWeight: '500', textAlign: 'center' }}>₹950</h1>
+                        </div>
+                        </Col>
+                        <Col xs={24} xl={8}>
+                        <div style={{padding: '10px'}}>
+                        <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', padding: '40px'}}>
+                            <p className='pricingstyle'> Complete Plan </p>
+                            <h1 >₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
                             <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center', }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
                                             Protocol Creation Diet Plan with Recipes Yoga Protocol
@@ -440,9 +453,13 @@ const Diseases = ()=>{
                             <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}} > Get Started<ArrowRightOutlined/></Button>
                             </div>
                         </div>
-                        <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', margin: '20px', padding: '40px'}}>
-                            <p style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>Premium Plan </p>
-                            <h1 style={{fontFamily: 'Playfair Display', fontSize: '85px', fontWeight: '500', textAlign: 'center' }}>₹950</h1>
+                        </div>
+                        </Col>
+                        <Col xs={24} xl={8}>
+                        <div style={{padding: '10px'}}>
+                        <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', padding: '40px'}}>
+                            <p className='pricingstyle'>Premium Plan </p>
+                            <h1>₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
                             <p style={{fontFamily: 'lota', fontSize: '20px', textAlign: 'center'}}>Weekly Consultation followups
                                         Additional Free 2 Consultations 3 Sessions with Reiki Master
@@ -459,13 +476,15 @@ const Diseases = ()=>{
                              <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lota', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
                           </div>
                          </div>
-                    </div>
+                         </div>
+                         </Col>
+                         </Row>
             </Col>
             <Col span={4}></Col>
         </Row>
         <Row>
             <Col span={4}></Col>
-            <Col span={16}>
+            <Col xl={16} xs={24} span={16}>
                 <div style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>Check out the questions asked by our patients previously</h1>
                     <h3 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "25px"}}>Visit Q & A </h3>
@@ -477,9 +496,9 @@ const Diseases = ()=>{
             <Col span={4}>
             
             </Col>
-            <Col span={16}>
-        <div style={{margin: '70px'}}>
-            <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
+            <Col xl={16} xs={24} span={16}>
+        <div style={{margin: '10px'}}>
+            <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '30px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Not sure if its for you?</h1>
                     <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>Talk to a doctor<ArrowRightOutlined/></Button>
                 </div>
@@ -490,7 +509,7 @@ const Diseases = ()=>{
         </Row>
 
         <Row>
-        <Col span={24}>
+        <Col  span={24}>
           <div style={{textAlign: "center", paddingBottom: '100px'}}>Copyright © Curevive </div>
         
           
