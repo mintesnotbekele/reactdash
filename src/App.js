@@ -142,21 +142,24 @@ function App() {
             </Col>
           </Row>
           <Row style={{ zIndex: "1500"}}>
-        <Col xs={24} xl={5}></Col>
-         <Col xs={24} xl={15}>
+        <Col xs={24} xl={6}></Col>
+         <Col xs={24} xl={12}>
          <Row style={{flex: 'justify', marginTop: '100px', paddingLeftLeft: '15px', padding: '10px' }} >
          {diseases.map((item) => 
-         
-         <Col xs={24} md={5} xl={10} style={{margin: '10px'}}>
-        <img className="diseaseimages" alt="disease images" src={`https://curevive.prophecius.com/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
-           <div style={{width: '100%'}}>
+        
+         <Col xs={24} md={5} xl={12}>
+           <div style={{padding: '40px'}}>
+              <img className="diseaseimages" alt="disease images" src={`https://curevive.prophecius.com/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
+                <div style={{width: '100%'}}>
 
-           <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
-           <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'Playfair Display', fontWeight: '600'}}>{item?.name}</p>
-           <RightOutlined className='cursorhover' style={{marginTop: '20px', marginRight: '100px'}}/>
-           </Link>
+                <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
+                <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'Playfair Display', fontWeight: '600'}}>{item?.name}</p>
+                <RightOutlined className='cursorhover' style={{marginTop: '20px', marginRight: '100px'}}/>
+                </Link>
+                </div>
            </div>
         </Col>
+        
           )}
        
          <div style={{width: '80%'}}>
@@ -167,7 +170,7 @@ function App() {
           
         
          </Col>
-         <Col xl={5} >
+         <Col xl={6} >
          </Col>
         </Row>
          
