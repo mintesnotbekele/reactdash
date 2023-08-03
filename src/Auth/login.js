@@ -11,7 +11,7 @@ const Login=()=>{
 
     const navigate = useNavigate();
     const handleSubmit=(values)=>{
-        axios.post('http://127.0.0.1:8000/api/auth/login', {
+        axios.post('https://curevive.prophecius.com/api/auth/login', {
             "email" : values.email,
             "password" : values.password,
        })

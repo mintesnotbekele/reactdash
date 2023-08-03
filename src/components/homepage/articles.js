@@ -19,7 +19,7 @@ const Articles= ()=>{
       const [counter , setCounter] = useState([]);
       const [page, setPage] = useState(1);
        useEffect(()=>{
-        axios.get('http://127.0.0.1:8000/api/newsAndarticle')
+        axios.get('https://curevive.prophecius.com/api/newsAndarticle')
         .then((res)=>{
             setArticle(res.data);
             setArticleInit(res.data)
@@ -85,7 +85,7 @@ const Articles= ()=>{
           
            <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '10px', margin: '20px'}}>
            <div style={{height: '100%'}}>
-              <img style={{height: '300px'}} src={`http://127.0.0.1:8000/${item?.picture}`} alt="articles"/>
+              <img style={{height: '300px'}} src={`https://curevive.prophecius.com/${item?.picture}`} alt="articles"/>
                   <h1 style={{fontSize: '25px', fontFamily: "lota", textAlign: 'left'}}> {item?.title}</h1>
                   <div style={{ marginTop: '30px', marginBottom: '20px'}}>
                         <Link style={{color: 'black'}} to={`/blogdetail/${item?.id}`}>

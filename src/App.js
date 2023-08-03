@@ -37,7 +37,7 @@ import { Footer } from 'flowbite-react';
 function App() {
   const [diseases, setDiseases] = useState([]);
   useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/disease')
+    axios.get('https://curevive.prophecius.com/api/disease')
     .then((res)=>{
       let temp  = res.data;
         temp.forEach((value, idx) => 
@@ -148,7 +148,7 @@ function App() {
          {diseases.map((item) => 
          
          <Col xs={24} md={5} xl={10} style={{margin: '10px'}}>
-        <img className="diseaseimages" alt="disease images" src={`http://127.0.0.1:8000/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
+        <img className="diseaseimages" alt="disease images" src={`https://curevive.prophecius.com/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
            <div style={{width: '100%'}}>
 
            <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
@@ -198,7 +198,7 @@ function App() {
         
          <Articles/>
          <div className='homegap'>
-            <Row style={{padding: '10px'}} >
+            <Row style={{padding: '10px'}}                                                                                                                                 >
               <Col span={4}></Col>
               <Col xs={24} md={8} xl={16} span={16} style={{background: '#292F36  ', borderRadius: '40px', alignItems: 'center'}}>
               <div style={{marginTop: "70px",marginBottom: "40px", }}>

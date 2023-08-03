@@ -17,7 +17,7 @@ const Articles =()=>{
     const [loading, setLoading] = useState(false);
     const [latestpost, setLatestPost] = useState([]);
      useEffect(()=>{
-        axios.get('http://127.0.0.1:8000/api/newsAndarticle')
+        axios.get('https://curevive.prophecius.com/api/newsAndarticle')
       .then((res)=>{
      
         if(res.data.length != 0)
@@ -46,7 +46,7 @@ const Articles =()=>{
                 <Col  span={4}></Col>
                 <Col xl={8} xs={24} span={8}>
                 <div style={{margin: '20px'}}>
-                <img src={`http://127.0.0.1:8000/${latestpost?.picture}`} alt="latest post"/>
+                <img src={`https://curevive.prophecius.com/${latestpost?.picture}`} alt="latest post"/>
                 </div>
                 </Col>
                 <Col xl={8} xs={24} style={{padding: '30px'}} span={8}>

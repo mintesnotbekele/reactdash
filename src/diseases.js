@@ -31,22 +31,22 @@ const Diseases = ()=>{
     const [treatments, setTreatments] =useState();
 
      useEffect(()=>{
-      axios.get('http://127.0.0.1:8000/api/testimonial')
+      axios.get('https://curevive.prophecius.com/api/testimonial')
       .then((res)=>{
        setTestimonials(res.data);
       })
      },[])
  
      useEffect(()=>{
-        axios.get('http://127.0.0.1:8000/api/treatment')
+        axios.get('https://curevive.prophecius.com/api/treatment')
         .then((res)=>{
           setTreatments(res.data);
         });
-        axios.get(`http://127.0.0.1:8000/api/disease/${id}`)
+        axios.get(`https://curevive.prophecius.com/api/disease/${id}`)
         .then((res)=>{
           setDiseases(res.data);
         });
-        axios.get('http://127.0.0.1:8000/api/researchpaper')
+        axios.get('https://curevive.prophecius.com/api/researchpaper')
         .then((res)=>{
           setResearchpaper(res.data);
         });
@@ -56,7 +56,7 @@ const Diseases = ()=>{
         <Header/>
             <img style={{width: '100%'}} src={disease} alt='disease'/>
             <div style={{width: '20%', margin: 'auto'}}>
-            <img  src={`http://127.0.0.1:8000/${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
+            <img  src={`https://curevive.prophecius.com/${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
             </div>
             <Row>
                 <Col  span={4}></Col>
@@ -305,7 +305,7 @@ const Diseases = ()=>{
                      {testimonials.map((item) => 
                               <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px', width: '95%',}}>
                              <div style={{display: 'flex'}}> 
-                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`http://127.0.0.1:8000/${item.profilepic}`}></img>
+                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.prophecius.com/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 40px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
                                     <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lota'}}>{item?.location}</p>    

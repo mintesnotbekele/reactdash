@@ -24,11 +24,11 @@ const Blogdetail=()=>{
     const [sider, seSider] = useState([]);
      useEffect(()=>{
 
-        axios.get(`http://127.0.0.1:8000/api/newsAndarticle/${id}`)
+        axios.get(`https://curevive.prophecius.com/api/newsAndarticle/${id}`)
         .then((res)=>{
             setArticles(res.data);
         });
-        axios.get('http://127.0.0.1:8000/api/newsAndarticle')
+        axios.get('https://curevive.prophecius.com/api/newsAndarticle')
         .then((res)=>{
             let temp  = res.data;
             temp.forEach((value, idx) => 
@@ -49,7 +49,7 @@ const Blogdetail=()=>{
                 <Col span={4}></Col>
                 <Col xs={24} xl={10}>
                     <h1 className="firstheaders">{articles?.title}</h1>
-                    <img style={{margin: 'auto'}} src={`http://127.0.0.1:8000/${articles?.picture}`} alt="blog detail"/>
+                    <img style={{margin: 'auto'}} src={`https://curevive.prophecius.com/${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
                     <p >{moment(articles.create_at).fromNow()}  <span style={{float: 'right'}}>Interior / Design / Home / Decore</span></p></div>
 

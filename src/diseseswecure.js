@@ -24,7 +24,7 @@ const DiseasesWeCure=()=>{
 
     const [hoveredCart, setHoveredCart] = useState(-1);
      useEffect(()=>{
-      axios.get('http://127.0.0.1:8000/api/disease')
+      axios.get('https://curevive.prophecius.com/api/disease')
       .then((res)=>{
         let temp  = res.data;
         temp.forEach((value, idx) => 

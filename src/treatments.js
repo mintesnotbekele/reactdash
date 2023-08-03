@@ -44,19 +44,19 @@ const Treatment =()=>{
   
   const [loading, setLoading] = useState(false);
    useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/sectiononeTreatment')
+    axios.get('https://curevive.prophecius.com/api/sectiononeTreatment')
     .then((res)=>{
       setSectionone(res.data);
     });
-    axios.get('http://127.0.0.1:8000/api/sectiontwoTreatment')
+    axios.get('https://curevive.prophecius.com/api/sectiontwoTreatment')
     .then((res)=>{
       setSectiontwo(res.data);
     });
-    axios.get('http://127.0.0.1:8000/api/disease')
+    axios.get('https://curevive.prophecius.com/api/disease')
     .then((res)=>{
       setDiseases(res.data);
     });
-    axios.get('http://127.0.0.1:8000/api/treatment')
+    axios.get('https://curevive.prophecius.com/api/treatment')
     .then((res)=>{
       let temp  = res.data;
       temp.forEach((value, idx) => 
@@ -66,11 +66,11 @@ const Treatment =()=>{
       })
       setTreatments(temp);
     });
-    axios.get('http://127.0.0.1:8000/api/researchpaper')
+    axios.get('https://curevive.prophecius.com/api/researchpaper')
     .then((res)=>{
       setResearchpaper(res.data);
     });
-    axios.get('http://127.0.0.1:8000/api/faq')
+    axios.get('https://curevive.prophecius.com/api/faq')
     .then((res)=>{
       setFaq(res.data);
     });
@@ -118,7 +118,7 @@ const Treatment =()=>{
             <div  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
 
-            <div onClick={() => handleClick(item.name)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://127.0.0.1:8000/${item.background})`}}>
+            <div onClick={() => handleClick(item.name)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(https://curevive.prophecius.com/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
@@ -246,7 +246,7 @@ const Treatment =()=>{
               </div>
             </Col>
             <Col xl={10} xs={24} span={10}>
-            <img alt="herbs" src={`http://127.0.0.1:8000/${items?.picture}`}/>
+            <img alt="herbs" src={`https://curevive.prophecius.com/${items?.picture}`}/>
             </Col>
           </Row>
         )}
@@ -261,7 +261,7 @@ const Treatment =()=>{
         { sectiontwo.map((items) =>
           <Row>
             <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
-            <img alt="herbs" src={`http://127.0.0.1:8000/${items?.picture}`}/>
+            <img alt="herbs" src={`https://curevive.prophecius.com/${items?.picture}`}/>
             </Col>
             <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
               <h1 className='firstheaders'>

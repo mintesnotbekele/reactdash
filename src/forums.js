@@ -71,7 +71,7 @@ const Forums=()=>{
         let token = localStorage.getItem('tokens');
         if(token == undefined)
           navigate('/login');
-        axios.get('http://127.0.0.1:8000/api/threads', config)
+        axios.get('https://curevive.prophecius.com/api/threads', config)
         .then((res)=>{
          setThreads(res.data);
         }).catch((err)=> console.log(err))

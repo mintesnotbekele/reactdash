@@ -36,7 +36,7 @@ const ForumDetail=()=>{
   };
   const handleSubmit=(values)=>{
  
-    axios.post('http://127.0.0.1:8000/api/replies/',
+    axios.post('https://curevive.prophecius.com/api/replies/',
      {
         "description" : values.comment,
         "thread" : id,
@@ -54,29 +54,29 @@ const navigate = useNavigate();
     let token = localStorage.getItem('tokens');
     if(token == undefined)
       navigate('/login');
-      axios.get(`http://127.0.0.1:8000/api/threads/${id}`, config)
+      axios.get(`https://curevive.prophecius.com/api/threads/${id}`, config)
       .then((res)=>{
        setThreads(res.data);
       }).catch((err)=> console.log(err));
 
-      axios.get(`http://127.0.0.1:8000/api/likedby/${id}`, config)
+      axios.get(`https://curevive.prophecius.com/api/likedby/${id}`, config)
       .then((res)=>{
        if(res.data.length > 0 ){
         setLiked(true);
        }
       }).catch((err)=> console.log(err));
-      axios.get(`http://127.0.0.1:8000/api/repliedforum/${id}`, config)
+      axios.get(`https://curevive.prophecius.com/api/repliedforum/${id}`, config)
       .then((res)=>{
        setComments(res.data);
       }).catch((err)=> console.log(err))
-      axios.get(`http://127.0.0.1:8000/api/likecounter/${id}`, config)
+      axios.get(`https://curevive.prophecius.com/api/likecounter/${id}`, config)
       .then((res)=>{
         setLikeCount(res.data);
       }).catch((err)=> console.log(err))
      },[updated])
 
      const handliLikes=()=>{
-      axios.post(`http://127.0.0.1:8000/api/likes/`,
+      axios.post(`https://curevive.prophecius.com/api/likes/`,
       {
         "thread" : id,
    }, config)
@@ -87,7 +87,7 @@ const navigate = useNavigate();
      }
 
      const handleremoveLike=()=>{
-      axios.delete(`http://127.0.0.1:8000/api/dislike/`, config)
+      axios.delete(`https://curevive.prophecius.com/api/dislike/`, config)
       .then((res)=>{
        setLikes(res.data);
        setUpdated(!updated);

@@ -11,7 +11,7 @@ const Testimonials=()=>{
    const [testimonials, setTestimonials] = useState([]);
    const [loading, setLoading] = useState(false);
     useEffect(()=>{
-     axios.get('http://127.0.0.1:8000/api/testimonial')
+     axios.get('https://curevive.prophecius.com/api/testimonial')
      .then((res)=>{
       setTestimonials(res.data);
      })
@@ -83,7 +83,7 @@ const Testimonials=()=>{
                      {testimonials.map((item) => 
                               <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '10px', padding: '20px'}}>
                              <div style={{display: 'flex' , flexWrap: 'wrap'}}> 
-                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`http://127.0.0.1:8000/${item.profilepic}`}></img>
+                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.prophecius.com/${item.profilepic}`}></img>
                                     <div style={{padding: '0px 20px'}}>
                                     <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
                                     <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lota'}}>{item?.location}</p>    

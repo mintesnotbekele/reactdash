@@ -15,7 +15,7 @@ const Register=()=>{
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const handleSubmit=(values)=>{
-        axios.post('http://127.0.0.1:8000/api/auth/register', {
+        axios.post('https://curevive.prophecius.com/api/auth/register', {
             "name" : values.firstname+values.lastname,
             "email" : values.email,
             "password" : values.password,

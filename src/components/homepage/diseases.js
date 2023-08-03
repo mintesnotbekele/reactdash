@@ -8,7 +8,7 @@ const Diseases=()=>{
   const [diseases, setDiseases] = useState([]);
   const [loading, setLoading] = useState(false);
    useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/disease')
+    axios.get('https://curevive.prophecius.com/api/disease')
     .then((res)=>{
       setDiseases(res.data);
     })
@@ -22,7 +22,7 @@ const Diseases=()=>{
          {diseases.map((item) => 
          
          <Col xs={24} xl={10}>
-        <img className="diseaseimages" alt="disease images" src={`http://127.0.0.1:8000/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
+        <img className="diseaseimages" alt="disease images" src={`https://curevive.prophecius.com/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
            <div style={{width: '100%'}}>
 
            <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
