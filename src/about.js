@@ -30,6 +30,7 @@ const About=()=>{
    const [hovered, setHovered] =useState(false);
 
   const handleHOvered=()=>{
+    console.log("mouse over");
      setHovered(true);
 
    }
@@ -180,21 +181,21 @@ return(
         <Col span={4}>
             
         </Col>
-      </Row>
+      </Row> 
 
        )}
       <Row style={{marginTop: "100px", backgroundColor: "#ECDFD7"}}>
-      <Col xl={24} xs={24} span={24}>
+      <Col  xl={24} xs={24} span={24}>
             <div style={{margin: 'auto', width: '100%', }}> 
             <h1 className='firstheaders' style={{ textAlign: 'center'}}>OUR TEAM</h1>
             </div>
             </Col>
         <Col span={6}>
-
         </Col>
-        <Col xl={12} xs={24} span={12}>
+        <Col  xl={12} xs={24} span={12}>
         
        <Carousel
+            onMouseOver={()=>handleHOvered} onMouseOut={()=>handleHOveredleave}
             additionalTransfrom={0}
             arrows
             autoPlaySpeed={3000}
@@ -248,7 +249,7 @@ return(
             swipeable
           >
           {teams.map((items) =>
-                          <div onMouseEnter={()=>handleHOvered} onMouseLeave={()=>handleHOveredleave} className='teams' style={{padding: '10px',  backgroundImage: `url(https://curevive.prophecius.com/${items?.picture})`}}> 
+                          <div className='teams' style={{padding: '10px',  backgroundImage: `url(https://curevive.prophecius.com/${items?.picture})`}}> 
                             <p className={hovered ? 'teamsText displayoff': 'teamsText display' } style={{marginTop: '170px'}}>{items?.name}</p>
                             <p className='teamsText'>{items?.role}</p>  
                           </div>
@@ -260,9 +261,6 @@ return(
             
         </Col>
       </Row>
-
-
-
       <Row style={{marginTop: "100px",}}>
       <Col span={24}>
             <div style={{margin: 'auto', width: '100%', }}> 

@@ -104,7 +104,7 @@ const TreatmentHome=()=>{
                 
                 </Col>
                 <Col span={12}>
-            <div style={{margin: '70px'}}>
+            <div style={{padding: '10px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                         <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
                         <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>

@@ -50,10 +50,8 @@ root.render(
                         <Route path="/ecommerce/:id" element={<Diabetes/>}></Route>
                         <Route path="/login" element={<Login/>}></Route>
                         <Route path="/register" element={<Register/>}></Route>
-                        <Route path="/slide" element={<DisplaySlider/>}></Route>
-                      
+                        <Route path="/slide" element={<DisplaySlider/>}></Route>  
                         <Route path="/forums" element={<Forums/>}></Route>
-                     
                         <Route path="/forums/:id" element={<ForumDetail/>}></Route>
                     </Routes>
                     </div>

@@ -555,6 +555,9 @@ color: #000000B2;
 .displayoff{
     visibility: visible;
 }
+.flowbite-navbar-collapse ul{
+    background-color: #CDA274;
+}
 
 
 
