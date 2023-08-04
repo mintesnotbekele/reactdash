@@ -21,16 +21,8 @@ const Treatment =()=>{
   const carouselRef = useRef(null);
 
   const handleClick = (slideIndex) => {
-    console.log("clicked");
-    let index = treatments.filter(item=>{
-      return(
-        item.index == slideIndex
-          )
-      });
-      
-      if(index.length == 0)
-      index= 2;
-    carouselRef.current.goToSlide(index);
+    
+    carouselRef.current.goToSlide(slideIndex);
   };
 
   const activeIndex = 3;
@@ -118,7 +110,7 @@ const Treatment =()=>{
             <div  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
 
-            <div onClick={() => handleClick(item.name)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(https://curevive.prophecius.com/${item.background})`}}>
+            <div onClick={() => handleClick(item.index)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(https://curevive.prophecius.com/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
@@ -144,10 +136,12 @@ const Treatment =()=>{
               responsive={responsive} 
              style={{height: '1200px'}}>
               
+
+           {treatments.map(item=> 
            <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
             <Col xl={10} xs={24}  span={10}>
             <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , padding: '10px'}}>
-              Diet & Nutrition
+              {item?.name}
               </h1>
               <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
             </Col>
@@ -170,59 +164,7 @@ const Treatment =()=>{
               </Accordion>
             </Col>
           </Row>
-          <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
-            <Col  span={10}>
-            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , margin: '100px'}}>
-             Yoga
-              </h1>
-              <img style={{marginTop: "100px"}} alt='yoga' src={secondyoga}/>
-            </Col>
-            <Col className='articletext' span={14} style={{padding:'20px'}}>
-              <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px'}}>
-              Frequently Asked Questions
-              </h1>
-              <Accordion collapseAll>
-              {faq.map((item) => 
-                <Accordion.Panel>
-                  <Accordion.Title>
-                   {item.title}
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  {item.description}
-                  </Accordion.Content>
-                </Accordion.Panel>
-                 )}
-              </Accordion>
-            </Col>
-          </Row>
-          <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
-            <Col  span={10}>
-            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , margin: '100px'}}>
-            Aroma Therapy
-              </h1>
-              <img style={{marginTop: "100px"}} alt='yoga' src={thirdyoga}/>
-            </Col>
-            <Col className='articletext' span={14} style={{padding:'20px'}}>
-              <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px'}}>
-              Frequently Asked Questions
-              </h1>
-              <Accordion collapseAll>
-              {faq.map((item) => 
-                <Accordion.Panel>
-                  <Accordion.Title>
-                   {item.title}
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  {item.description}
-                  </Accordion.Content>
-                </Accordion.Panel>
-                 )}
-              </Accordion>
-            </Col>
-          </Row>
-          
+          )}
           </Carousel>
     
         </Col>
