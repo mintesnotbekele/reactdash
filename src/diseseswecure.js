@@ -105,7 +105,10 @@ const DiseasesWeCure=()=>{
             </Row>
 
             <Diseases/>
-            <Row><Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> <div style={{margin: 'auto', width: '20%', height: '100px'}}> <Pagination size="large"  count={counter} page={page} onChange={handleChange} /></div> </Col></Row>
+            <Row>
+                <Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> <div style={{margin: 'auto', width: '20%', height: '100px'}}> 
+                <Pagination size="large"  count={counter} page={page} onChange={handleChange} /></div> </Col>
+            </Row>
             <Footer/>
         </div>
     );

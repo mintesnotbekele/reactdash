@@ -8,7 +8,7 @@ const Diseases=()=>{
 
 
   const [diseases, setDiseases] = useState([]);
-  const [loading, setLoading] = useState(false);
+
    useEffect(()=>{
     axios.get('https://curevive.prophecius.com/api/disease')
     .then((res)=>{

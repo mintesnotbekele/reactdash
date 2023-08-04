@@ -1,8 +1,8 @@
 import { Button} from 'flowbite-react';
 import aboutBanner from './assets/aboutBanner.jpg';
 import {Row, Col, Input} from 'antd';
-import herbs from './assets/herbs.png';
-import meditate from './assets/meditate1.png';
+
+
 import faqs from "./assets/faq.png";
 import disease from "./assets/disease.jpg";
 import TextArea from 'antd/es/input/TextArea';
@@ -16,7 +16,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';  
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const About=()=>{
 
@@ -26,18 +27,16 @@ const About=()=>{
   const [faq, setFaq] = useState([]);
   const [sectionone, setSectionone] = useState([]);
   const [sectiontwo, setSectiontwo] = useState([]);
-  
-   const [hovered, setHovered] =useState(false);
+ 
+  const [show, setShow] = useState(false);
 
-  const handleHOvered=()=>{
-    console.log("mouse over");
-     setHovered(true);
+  const showOverlay = () => {
+      setShow(true);
+  };
 
-   }
-    
-   const handleHOveredleave=()=>{
-      setHovered(false);
-   }
+  const hideOverlay = () => {
+      setShow(false);
+  };
 
 
    useEffect(()=>{
@@ -66,6 +65,19 @@ const About=()=>{
 
     
  },[]);
+
+ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+  const { carouselState: { currentSlide } } = rest;
+  return (
+      <div className="carousel-button-group mb-4  gap-4 flex justify-end 
+      items-center w-full">
+        <button className='block p-3 bg-slate-300' onClick={() => 
+        previous()}> <ArrowBackIosIcon /></button>
+        <button onClick={() => next()}><span className='block p-3 bg-slate-300' ><ArrowForwardIosIcon /></span></button>
+     </div>
+  
+   );
+ };
 
 return(
     <div>
@@ -184,7 +196,7 @@ return(
       </Row> 
 
        )}
-      <Row style={{marginTop: "100px", backgroundColor: "#ECDFD7"}}>
+      <Row style={{marginTop: "100px", paddingBottom: '100px', backgroundColor: "#ECDFD7"}}>
       <Col  xl={24} xs={24} span={24}>
             <div style={{margin: 'auto', width: '100%', }}> 
             <h1 className='firstheaders' style={{ textAlign: 'center'}}>OUR TEAM</h1>
@@ -195,9 +207,11 @@ return(
         <Col  xl={12} xs={24} span={12}>
         
        <Carousel
-            onMouseOver={()=>handleHOvered} onMouseOut={()=>handleHOveredleave}
+            
             additionalTransfrom={0}
-            arrows
+            arrows={false} 
+            renderButtonGroupOutside={false} 
+            customButtonGroup={<ButtonGroup />}
             autoPlaySpeed={3000}
             centerMode={false}
             className=""
@@ -211,7 +225,7 @@ return(
             minimumTouchDrag={80}
             pauseOnHover
             renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
+           
             renderDotsOutside={false}
             responsive={{
               desktop: {
@@ -243,16 +257,29 @@ return(
             rewindWithAnimation={false}
             rtl={false}
             shouldResetAutoplay
-            showDots={false}
+            showDots={true}
             sliderClass=""
             slidesToSlide={1}
             swipeable
           >
           {teams.map((items) =>
-                          <div className='teams' style={{padding: '10px',  backgroundImage: `url(https://curevive.prophecius.com/${items?.picture})`}}> 
-                            <p className={hovered ? 'teamsText displayoff': 'teamsText display' } style={{marginTop: '170px'}}>{items?.name}</p>
-                            <p className='teamsText'>{items?.role}</p>  
-                          </div>
+                          <div
+                          className="image-container"
+                          onMouseOver={showOverlay}
+                          onMouseLeave={hideOverlay}
+                      >
+                          <img
+                              className='teamimages'
+                              src={`https://curevive.prophecius.com/${items?.picture}`}
+                              alt="team members"
+                          />
+                          {show && (
+                              <div className="overlay">
+                                  <h2>{items?.name}</h2>
+                                  <p>{items?.role}</p>
+                              </div>
+                          )}
+                      </div>
                           )} 
           
           </Carousel>

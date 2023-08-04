@@ -6,11 +6,10 @@ import first from '../../assets/01.png';
 import second from '../../assets/02.png';
 import third from '../../assets/03.png';
 import four from '../../assets/04.png';
-
-
-
 import { Row, Col } from 'antd';
 import Slider from 'react-slick';
+
+
 const HomeSlider=()=>{
   const settings = {
     className: "center",
@@ -19,7 +18,34 @@ const HomeSlider=()=>{
       centerPadding: "60px",
       slidesToShow: 1,
       fade: true,
-      speed: 1000
+      speed: 1000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+
 
   };
 

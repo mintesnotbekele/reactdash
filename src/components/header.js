@@ -42,7 +42,7 @@ useEffect(() => {
 const drawer = (
   <Box style={{background: 'rgba(78, 52, 38, 0.6)'}} onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
     <Typography variant="h6" sx={{ my: 2 }}>
-        <Link >
+        <Link to="/" >
           <img alt='logo' style={{objectFit: 'contain', maxWidth: '300px'}} src={newlogo}/>
       </Link>
     </Typography>
@@ -140,7 +140,7 @@ const container = window !== undefined ? () => window().document.body : undefine
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-          <img alt='logo' style={{objectFit: 'contain', marginTop: '-40px', height: '100px', margin: 'auto'}} src={newlogo}/>
+        <Link to="/">  <img alt='logo' style={{objectFit: 'contain', marginTop: '-40px', height: '100px', margin: 'auto'}} src={newlogo}/></Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } , margin: '0px 100px'}}>
             <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px'}} sx={{ color: '#fff' }}>

@@ -57,11 +57,11 @@ const Blogdetail=()=>{
             <img src={blogbanner} alt="blog detail banner"/>
             <Row style={{marginTop: '200px'}}>
                 <Col span={4}></Col>
-                <Col xs={24} xl={10}>
+                <Col xs={24} xl={10} style={{padding: '10px'}}>
                     <h1 className="firstheaders">{articles?.title}</h1>
                     <img style={{margin: 'auto'}} src={`https://curevive.prophecius.com/${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
-                    <p >{moment(articles.create_at).fromNow()}  <span style={{float: 'right'}}>Interior / Design / Home / Decore</span></p></div>
+                  </div>
                         <p className="firsttext" style={{textAlign: 'left', marginTop: '50px', marginBottom: '50px'}}> 
                         {articles?.description}
                         </p>
@@ -70,7 +70,7 @@ const Blogdetail=()=>{
                             <p className="italictext" style={{color: '#CDA274', marginTop: '-100px', paddingBottom: '100px'}}> {articles?.quotes}</p>
                         </div>
                 </Col>
-                <Col xs={24} xl={6} span={6} style={{marginTop: '60px'}}>
+                <Col xs={24} xl={6} span={6} style={{marginTop: '60px', padding: '10px'}}>
                 <TextField
                 style={{ width: '100%'}}
                 variant="outlined"

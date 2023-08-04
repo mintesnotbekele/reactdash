@@ -28,7 +28,12 @@
         font-size: 15px;        
         }
 }
-
+.homeitemms{
+    height: 150px;
+    @media screen and (max-width: 699px) {
+        font-size: 50px;        
+        }
+}
 .navheader
 {
  font-family: lato;
@@ -72,6 +77,18 @@ line-height: 31px;
 letter-spacing: 0.02em;
 text-align: left;
 
+}
+.testimonialgap{
+    height: 200px;
+    @media screen and (max-width: 699px) {
+        height: 30px;      
+        }
+}
+.homesgap{
+    height: 100px;
+    @media screen and (max-width: 699px) {
+        height: 30px;      
+        }   
 }
 .blogsecond{
     font-family: lato;
@@ -389,6 +406,7 @@ color: #000000B2;
 }
 .homeslider{
     height: 600px;
+    padding: 30px;
     background: #ECDFD7; 
     border-Radius: 50px;
     @media screen and (max-width: 699px) {
@@ -577,3 +595,67 @@ color: #4E3426;
     color: #140C44B5;
 }
 
+.earnmiddle{
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: 0.5px;
+    text-align: center;
+
+}
+.earnbanner{
+    background-color: #090426;
+    border-radius: 50px;
+}
+.earnbannertext{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFFB5;
+}
+.bannerCounter{
+    font-family: Poppins;
+font-size: 40px;
+font-weight: 700;
+line-height: 60px;
+letter-spacing: 0.5px;
+text-align: left;
+color: #FFFFFF;
+}
+.bannerContent{
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #FFFFFF;
+    padding: 0px 30px;
+}
+.cards{
+    border-radius: 50px;
+}
+.earcounter{
+    font-family: Poppins;
+font-size: 40px;
+font-weight: 600;
+line-height: 60px;
+letter-spacing: 0.5px;
+text-align: center;
+color: #4E3426;
+}
+.overlay{
+    margin-top: -100px;
+    padding-bottom: 100px;
+    color: #4E3426;
+    font-size: 26px;
+    font-family: lato;
+    text-align: center;
+}
+.teamimages{
+    margin: auto;
+}

@@ -19,7 +19,7 @@ const Testimonials=()=>{
 
 
       return(
-        <Row style={{marginTop: '300px'}}>
+        <Row>
          <Col span={4} ></Col>
                  <Col xs={24} xl={16} style={{background: '#ECDFD7', borderRadius: '20px'}} span={16}>
                 <h1 className='testimonialheader' >

@@ -174,7 +174,7 @@ const Treatment =()=>{
        <Row>
         <Col span={4}>
         </Col>
-        <Col xl={16} xs={24} span={16}>
+        <Col style={{padding: '10px'}} xl={16} xs={24} span={16}>
         { sectionone.map((items) =>
           <Row>
             <Col xl={14} xs={24} span={14}>
@@ -225,7 +225,7 @@ const Treatment =()=>{
         <Col span={4}>
         
         </Col>
-        <Col xl={16} xs={24} span={16}>
+        <Col xl={16} xs={24} style={{padding: '10px'}} span={16}>
           <div >
           <h1 className='firstheaders' style={{color: '#292F36'}}> WHY CUREVIVE?</h1>
             <p className='firsttext' style={{textAlign: 'left', color: '#4D5053', margin: '50px 0px'}}>

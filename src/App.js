@@ -60,7 +60,7 @@ function App() {
     </div>
      <Banner/> 
         <div style={{margin: 'auto', width: '100%'}}> 
-         <Row style={{marginTop: '100px', marginBottom: '100px', zIndex: "1000"}}>
+         <Row style={{marginTop: '100px', zIndex: "1000"}}>
           <Col span={4}></Col>
           <Col xs={24} md={8} xl={16} span={16}>
             <Row>
@@ -69,11 +69,13 @@ function App() {
               Diseases
             </h3>
             <div>
-            <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
+            <p className='firsttext homeitems' style={{textAlign: 'justify', margin: '30px', color: '#4D5053'}}>
               Have diabetes, hypertension, thyroid or more? Learn about your disease and much more.
               </p>
               <Link to="/cureddisease">
-              <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
+            <div style={{margin: '40px 0px' }}> <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
+            </div> 
+            </Link>
             </div>
           </Col>
           <Col xs={24} md={4} xl={8} className="gutter-row" span={8}>
@@ -81,10 +83,13 @@ function App() {
             Welcome to Curevive
             </h3>
             <div>
-            <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
+            <p className='firsttext homeitems' style={{textAlign: 'justify', margin: '30px', color: '#4D5053'}}>
             We are an online platform with leading doctors in Nature Cure, providing exclusive consultation from the comfort of home.
               </p>
-              <Link to="/">  <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
+              <Link to="/"> 
+              <div style={{margin: '40px 0px' }}> <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
+              </div>
+              </Link>
             </div>
           </Col> 
           <Col xs={24} md={4} xl={8} className="gutter-row" style={{backgroundColor: 'rgba(0, 0, 0, .0)'}} span={8}>
@@ -92,10 +97,13 @@ function App() {
               Treatments
             </h3>
             <div>
-              <p className='firsttext' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
-              Find a cure for your problems through the extensively researched treatments by specialists of the nation.
+              <p className='firsttext homeitems' style={{textAlign: 'justify', margin: '30px', color: '#4D5053',height: '150px'}}>
+               Find a cure for your problems through the extensively researched treatments by specialists of the nation.
               </p>
-              <Link to="/treatment"> <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button></Link>
+              <Link to="/treatment">
+              <div style={{margin: '40px 0px' }}> <Button style={{margin: 'auto', background: 'none', color: '#4D5053'}}>Read More <ArrowRightOutlined /></Button>
+              </div>
+              </Link>
             </div>
            
           </Col>
@@ -107,7 +115,9 @@ function App() {
             <Col span={3}></Col>
          </Row>
        </div> 
+       
          <Row>
+          <div className='homesgap'></div> 
           <Col span={4}></Col>
           <Col xs={24} md={4} xl={8} style={{margin: '0px', padding: '10px'}} span={8}>
           <h1 className='articleHeader' style={{color: '#292F36'}}>
@@ -124,10 +134,13 @@ function App() {
               
           </Col>
           <Col xs={24} md={4} xl={8} span={8}>
-            <Image preview={false} src={meditate}/>
+            <img alt="meditate" style={{margin: 'auto'}} src={meditate}/>
           </Col>
         </Row> 
          <img alt="background" src={background4} className='artlinestyle3'/>
+         <div className='testimonialgap'>
+
+         </div>
         <Testimonials/>
         <div style={{width: '1000px', overflowX: 'hidden'}}> <img alt="background" className='artlineStyle' src={background5}/></div>
           <Row style={{marginTop: "180px"}}>
@@ -209,9 +222,9 @@ function App() {
               <div style={{marginTop: "70px",marginBottom: "40px", }}>
                 <h1 className='articleHeader' style={{ textAlign: 'center', color: '#F6F5EC'}}>Want to get your doubts cleared?</h1>
               <p style={{margin: "20px", fontSize: '22px', color: '#F6F5EC'}}>Book a complimentary consultation now!</p>
-              <Button > 
-              <Link to='book' style={{color: 'white'}}> Book </Link>
-              <ArrowRightOutlined/> 
+              <Button style={{padding: '30px', background: '#CDA274'}}> 
+              <Link to='book' style={{color: 'white', fontFamily: 'lota', fontSize: '20px',}}> Book </Link>
+             <span> <ArrowRightOutlined style={{fontSize: '32px'}}/> </span>
               </Button>
               </div>
               </Col>
@@ -223,16 +236,9 @@ function App() {
               <p style={{color : '0xFF4D5053', fontSize: '22.sp', letterSpacing: '0.22.sp'}}>Copyright © Curevive</p>
               </Col>
             </Row>
-            <Row>
-            <Col span={12} style={{zIndex: "4000"}}>
-      
-    
-
-          </Col>
-        </Row>
-        <Footer style={{margin: '100px'}}/>
-            <div style={{width: '100%', overflow: 'hidden'}}>
-               </div> 
+        
+        <Footer/> 
+       
     </div>
   );
 }

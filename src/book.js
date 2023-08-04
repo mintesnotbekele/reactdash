@@ -41,7 +41,7 @@ const Book=()=>{
                 <Col span={8}>
                 </Col>
                 
-                    <Col xl={8} xs={24} span={8}>
+                    <Col style={{padding: '10px'}} xl={8} xs={24} span={8}>
                     <Form
                         name="basic" 
                         initialValues={{
@@ -52,7 +52,7 @@ const Book=()=>{
                     >
                     <div style={{width: '100%', display: "flex"}}>
                      <Form.Item 
-                        
+                       style={{width: '100%'}}
                        name="name"
                        rules={[
                          {
@@ -63,7 +63,7 @@ const Book=()=>{
                         <Input style={{border: "none", borderBottom: '1px solid', marginRight: "5px"}} placeholder='Name'/>
                         </Form.Item>
                         <Form.Item
-                       
+                            style={{width: '100%'}}
                           name="email"
                           rules={[
                             {
@@ -77,7 +77,7 @@ const Book=()=>{
                         </div>
                         <div style={{width: '100%', display: "flex"}}>
                         <Form.Item
-                     
+                            style={{width: '100%'}}
                           name="treatmentfor"
                           rules={[
                             {
@@ -88,7 +88,7 @@ const Book=()=>{
                         <Input style={{border: "none", borderBottom: '1px solid', marginRight: "5px"}} placeholder='Treatment for '/>
                         </Form.Item>
                         <Form.Item
-                        
+                            style={{width: '100%'}}
                           name="phone"
                           rules={[
                             {
@@ -116,7 +116,7 @@ const Book=()=>{
                         <Form.Item
                             wrapperCol={{
                                 
-                                span: 10,
+                                span: 24,
                             }}
                             >
                             <Button style={{background: '#292F36', float: 'right', fontSize: '18x', color: 'white', margin: '10px', padding: '10px'}} type="primary" className="customButton" htmlType="submit">
@@ -134,14 +134,14 @@ const Book=()=>{
                 </Col>
             </Row>
               
-        <Row style={{marginTop: '30px', marginBottom: '50px'}}>
+        <Row style={{ padding: '10px',marginTop: '30px'}}>
                 <Col span={4}>
                 
                 </Col>
                 <Col  xl={16} xs={24} span={16}>
             <div >
                 <div style={{background: '#292F36', borderRadius: '50px', marginTop: '100px', padding: '70px'}}>
-                        <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Here are some answers to frequently asked questions</h1>
+                        <h1 className="articleHeader" style={{textAlign: 'center', color: 'white'}}>Here are some answers to frequently asked questions</h1>
                         
                         <Button className="customButton" style={{margin: 'auto', background: '#CDA274', color: 'white', padding: '10px', width: '150px'}}>FAQs<ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/></Button>
                     </div>
@@ -150,7 +150,8 @@ const Book=()=>{
                 <Col span={4}>
                 </Col>
             </Row>
-            <Footer/>
+            
+            <Footer style={{margin: '200px'}}/>
             </div>
 
         )
