@@ -27,9 +27,19 @@ const About=()=>{
   const [sectionone, setSectionone] = useState([]);
   const [sectiontwo, setSectiontwo] = useState([]);
   
+   const [hovered, setHovered] =useState(false);
+
+  const handleHOvered=()=>{
+     setHovered(true);
+
+   }
+    
+   const handleHOveredleave=()=>{
+      setHovered(false);
+   }
 
 
-  useEffect(()=>{
+   useEffect(()=>{
 
     axios.get('https://curevive.prophecius.com/api/quote')
     .then((res)=>{
@@ -125,7 +135,7 @@ return(
           </Carousel>
       </div>      
       { sectiontwo.map((items) =>
-      <Row style={{marginTop: "150px"}}>
+      <Row  style={{marginTop: "150px"}}>
         <Col span={4}>
             
         </Col>
@@ -238,8 +248,9 @@ return(
             swipeable
           >
           {teams.map((items) =>
-                          <div style={{padding: '10px'}}>
-                            <img alt="team members" src={`https://curevive.prophecius.com/${items?.picture}`}/>   
+                          <div onMouseEnter={()=>handleHOvered} onMouseLeave={()=>handleHOveredleave} className='teams' style={{padding: '10px',  backgroundImage: `url(https://curevive.prophecius.com/${items?.picture})`}}> 
+                            <p className={hovered ? 'teamsText displayoff': 'teamsText display' } style={{marginTop: '170px'}}>{items?.name}</p>
+                            <p className='teamsText'>{items?.role}</p>  
                           </div>
                           )} 
           

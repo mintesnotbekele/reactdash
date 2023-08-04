@@ -268,7 +268,7 @@ backdrop-filter: blur(16.9px);
    font-size: 50px;
 }
 .diseaseimages{
-    height: 550px;
+    height: 500px;
     @media screen and (max-width: 699px) {
        height: 350px;        
         }
@@ -515,3 +515,46 @@ color: #000000B2;
         font-size: 40px;
     }
 }
+.diseaseList{
+    width: 50%; 
+    float: left; 
+    font-size: 50px; 
+    color: #292F36;
+    font-family: Playfair Display;
+    font-weight: 600;
+    @media screen and (max-width: 699px) {
+        width: 10%;
+        font-size: 40px;
+    }
+}
+.diseaseList span{
+    margin-top: 20px;
+     margin-right: 100px;
+     @media screen and (max-width: 699px) {
+        margin-top: 10px;
+        margin-right: 0px;
+
+    }
+}
+.teams{
+      height: 500px;
+      background-size: 100% 100%;
+      margin: 7px;
+}
+
+.teamsText{
+   margin: auto;
+    font-size: 25px;
+    color: #c32d2d;
+    text-align: center;
+}
+
+.display{
+    visibility: hidden;
+}
+.displayoff{
+    visibility: visible;
+}
+
+
+

@@ -153,8 +153,8 @@ function App() {
                 <div style={{width: '100%'}}>
 
                 <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
-                <p style={{width: '50%', float: 'left', fontSize: '50px', color: '#292F36', fontFamily: 'Playfair Display', fontWeight: '600'}}>{item?.name}</p>
-                <RightOutlined className='cursorhover' style={{marginTop: '20px', marginRight: '100px'}}/>
+                <p className='diseaseList' >{item?.name}</p>
+                <RightOutlined className='cursorhover' />
                 </Link>
                 </div>
            </div>
@@ -162,8 +162,10 @@ function App() {
         
           )}
        
-         <div style={{width: '80%'}}>
-           <Button style={{color: "#F6F5EC",fontSize: '22px', margin: 'auto',  background: '#292F36', paddingLeft : '100px', paddingRight : '100px', paddingTop: '30px',borderRadius: '15px', paddingBottom: '60px'}}> <Link to='/cureddisease' style={{color: 'white'}}> More</Link></Button>
+         <div style={{width: '100%'}}>
+           <Button style={{color: "#F6F5EC",fontSize: '22px', margin: 'auto',  background: '#292F36', paddingLeft : '60px', paddingRight : '60px', paddingTop: '10px',borderRadius: '15px', paddingBottom: '40px'}}> 
+           <Link to='/cureddisease' style={{color: 'white'}}> More</Link>
+           </Button>
          </div>
          </Row>
 
@@ -207,7 +209,10 @@ function App() {
               <div style={{marginTop: "70px",marginBottom: "40px", }}>
                 <h1 className='articleHeader' style={{ textAlign: 'center', color: '#F6F5EC'}}>Want to get your doubts cleared?</h1>
               <p style={{margin: "20px", fontSize: '22px', color: '#F6F5EC'}}>Book a complimentary consultation now!</p>
-              <Button style={{margin: 'auto', paddingTop: '20px', fontSize: '22px', paddingLeft: '30px',paddingBottom: '50px',paddingRight: '30px', background: '#CDA274', color: '#F6F5EC'}}> <Link to='book' style={{color: 'white'}}> Book </Link><ArrowRightOutlined/> </Button>
+              <Button > 
+              <Link to='book' style={{color: 'white'}}> Book </Link>
+              <ArrowRightOutlined/> 
+              </Button>
               </div>
               </Col>
             </Row>
