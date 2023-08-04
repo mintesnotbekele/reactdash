@@ -20,12 +20,9 @@ import {Drawer } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 440;
-const navItems = ['Treatment', 'Diseases', 'Blog', 'Booking', 'About Us', 'Forum', 'Login'];
 
 
-const Header=()=>{
-
-
+const Header=()=>{  
   
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -45,7 +42,9 @@ useEffect(() => {
 const drawer = (
   <Box style={{background: 'rgba(78, 52, 38, 0.6)'}} onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
     <Typography variant="h6" sx={{ my: 2 }}>
-    <img alt='logo' style={{objectFit: 'contain', maxWidth: '300px'}} src={newlogo}/>
+        <Link >
+          <img alt='logo' style={{objectFit: 'contain', maxWidth: '300px'}} src={newlogo}/>
+      </Link>
     </Typography>
     <Divider />
     <List>
@@ -141,9 +140,9 @@ const container = window !== undefined ? () => window().document.body : undefine
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-          <img alt='logo' style={{objectFit: 'contain', marginTop: '-40px', height: '100px'}} src={newlogo}/>
+          <img alt='logo' style={{objectFit: 'contain', marginTop: '-40px', height: '100px', margin: 'auto'}} src={newlogo}/>
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } , margin: '0px 0px'}}>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } , margin: '0px 100px'}}>
             <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px'}} sx={{ color: '#fff' }}>
               Treatments    
             </Link>

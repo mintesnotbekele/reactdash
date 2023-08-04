@@ -558,6 +558,22 @@ color: #000000B2;
 .flowbite-navbar-collapse ul{
     background-color: #CDA274;
 }
-
-
+.earnheader{
+    font-family: Poppins;
+font-size: 48px;
+font-weight: 700;
+line-height: 64px;
+letter-spacing: 0.5px;
+text-align: left;
+color: #4E3426;
+}
+.earntext{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #140C44B5;
+}
 

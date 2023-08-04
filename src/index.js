@@ -24,6 +24,7 @@ import DisplaySlider from './components/slider/sliderDisplay';
 import Forums from './forums';
 import ForumDetail from './forumdetail';
 import { useEffect } from 'react';
+import EarnWithUs from './earnwithus';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -52,6 +53,7 @@ root.render(
                         <Route path="/register" element={<Register/>}></Route>
                         <Route path="/slide" element={<DisplaySlider/>}></Route>  
                         <Route path="/forums" element={<Forums/>}></Route>
+                        <Route path="/earnwithus" element={<EarnWithUs/>}></Route>
                         <Route path="/forums/:id" element={<ForumDetail/>}></Route>
                     </Routes>
                     </div>

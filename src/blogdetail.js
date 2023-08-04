@@ -62,15 +62,13 @@ const Blogdetail=()=>{
                     <img style={{margin: 'auto'}} src={`https://curevive.prophecius.com/${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
                     <p >{moment(articles.create_at).fromNow()}  <span style={{float: 'right'}}>Interior / Design / Home / Decore</span></p></div>
-
-
-                 <p className="firsttext" style={{textAlign: 'left', marginTop: '50px', marginBottom: '50px'}}> 
-                 {articles?.description}
-                 </p>
-                   <div style={{background: '#ECDFD7', borderRadius: '50px'}}>
-                   <h1 className="italicHeader" style={{color: '#CDA274'}}> “</h1>
-                    <p className="italictext" style={{color: '#CDA274', marginTop: '-100px', paddingBottom: '100px'}}> {articles?.quotes}</p>
-                   </div>
+                        <p className="firsttext" style={{textAlign: 'left', marginTop: '50px', marginBottom: '50px'}}> 
+                        {articles?.description}
+                        </p>
+                        <div style={{background: '#ECDFD7', borderRadius: '50px'}}>
+                        <h1 className="italicHeader" style={{color: '#CDA274'}}> “</h1>
+                            <p className="italictext" style={{color: '#CDA274', marginTop: '-100px', paddingBottom: '100px'}}> {articles?.quotes}</p>
+                        </div>
                 </Col>
                 <Col xs={24} xl={6} span={6} style={{marginTop: '60px'}}>
                 <TextField
