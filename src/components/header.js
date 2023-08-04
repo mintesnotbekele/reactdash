@@ -43,19 +43,44 @@ useEffect(() => {
   }
 }, []);
 const drawer = (
-  <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+  <Box style={{background: 'rgba(78, 52, 38, 0.6)'}} onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
     <Typography variant="h6" sx={{ my: 2 }}>
-      CUREVIVE
+    <img alt='logo' style={{objectFit: 'contain', maxWidth: '300px'}} src={newlogo}/>
     </Typography>
     <Divider />
     <List>
-      {navItems.map((item) => (
-        <ListItem key={item} disablePadding>
-          <ListItemButton sx={{ textAlign: 'center' }}>
-            <ListItemText primary={item} />
-          </ListItemButton>
+      
+        <ListItem disablePadding>
+             <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Treatments    
+            </Link>
         </ListItem>
-      ))}
+        <ListItem disablePadding>
+            <Link className='navheader' to='/cureddisease' key="Diseases" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Diseases    
+            </Link>
+        </ListItem>
+        <ListItem disablePadding>
+            <Link className='navheader' to='/blog' key="" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Blog    
+            </Link>
+        </ListItem>
+        <ListItem disablePadding>
+            <Link className='navheader' to='/book' style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Booking    
+            </Link>
+         </ListItem>
+        <ListItem disablePadding>
+            <Link className='navheader' to='/about' style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              About Us    
+            </Link>
+        </ListItem>
+         <ListItem disablePadding>
+            <Link className='navheader' to='/forums' key="" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Forums    
+            </Link>
+        </ListItem>
+    
     </List>
   </Box>
 );
@@ -119,11 +144,24 @@ const container = window !== undefined ? () => window().document.body : undefine
           <img alt='logo' style={{objectFit: 'contain', marginTop: '-40px', height: '100px'}} src={newlogo}/>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } , margin: '0px 0px'}}>
-            {navItems.map((item) => (
-              <Link className='navheader' style={{margin: '10px'}} key={item} sx={{ color: '#fff' }}>
-                {item}
-              </Link>
-            ))}
+            <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Treatments    
+            </Link>
+            <Link className='navheader' to='/cureddisease' key="Diseases" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Diseases    
+            </Link>
+            <Link className='navheader' to='/blog' key="" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Blog    
+            </Link>
+            <Link className='navheader' to='/book' style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Booking    
+            </Link>
+            <Link className='navheader' to='/about' style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              About Us    
+            </Link>
+            <Link className='navheader' to='/forums' key="" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+              Forums    
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
