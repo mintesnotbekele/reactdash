@@ -235,7 +235,7 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
                             placeholder="Password"
                             id="outlined-disabled"
                             label="Password"
-                           
+                           type="password"
                             />
 
                         </Form.Item>
