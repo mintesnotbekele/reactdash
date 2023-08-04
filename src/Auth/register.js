@@ -5,7 +5,7 @@ import newlogo from '../assets/curlogo.png';
 import axios from "axios";
 import { Navbar } from 'flowbite-react';
 import Checkbox from '@mui/material/Checkbox';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import google from '../assets/google.png';
 import facebook from '../assets/facebook.png';
@@ -13,6 +13,7 @@ import apple from '../assets/apple.png';
 
 const Register=()=>{
 
+    const navigate = useNavigate();
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const handleSubmit=(values)=>{
         axios.post('https://curevive.prophecius.com/api/auth/register', {
@@ -22,7 +23,10 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
        })
         .then((res)=>{
            if(res.data.message == 'User Created Successfully' && res.data.status == true)
-               message.success(`successfully Registered to Curevive`);
+              { 
+                message.success(`successfully Registered to Curevive`)
+                navigate('/login')
+            }
             else if(res.data.message == 'Email & Password does not match' && res.data.status == true) {
               message.error(`Email & Password does not match please try Again`);
             }

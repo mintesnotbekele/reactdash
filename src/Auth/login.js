@@ -5,7 +5,7 @@ import newlogo from '../assets/curlogo.png';
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 const Login=()=>{
 
@@ -90,7 +90,7 @@ const Login=()=>{
                              Login
                             </Button>
                             </Form.Item>
-                            <p>Don’t have an account ? Signup Here</p>
+                            <p>Don’t have an account ? <Link to='/register'> Signup Here </Link></p>
                     </Form>
                 </div>
                 </div>
