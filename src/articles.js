@@ -1,20 +1,15 @@
 import Header from './components/header';
 import { Col, Row } from 'antd';
-
+import moment from 'moment';
 import {RightOutlined} from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
-import article from './assets/diseaseBanner.jpg';
 import blogBanner from './assets/blogsbanner.jpg';
 import Footer from './components/footer';
-import { Link } from 'react-router-dom';
 import ArticlesComponent from './components/homepage/articles';
 
 const Articles =()=>{
 
-
-    const [loading, setLoading] = useState(false);
     const [latestpost, setLatestPost] = useState([]);
      useEffect(()=>{
         axios.get('https://curevive.prophecius.com/api/newsAndarticle')
@@ -57,7 +52,9 @@ const Articles =()=>{
                     { latestpost == null ?  "" :  latestpost?.description}
                     </p>
                     
-                    <p className='blogsecond' style={{marginTop: '30px' , width: '90%'}}>{latestpost?.created_at}<RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px'}}/></p>
+                    <p className='blogsecond' style={{marginTop: '30px' , width: '90%'}}>
+                      {moment(latestpost?.create_at).fromNow()}<RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px'}}/>
+                        </p>
                     
                  </Col>
                 <Col span={4}></Col>

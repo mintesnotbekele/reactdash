@@ -20,6 +20,7 @@ const Blogdetail=()=>{
     const {id} = useParams();
    
     const [articles, setArticles] = useState([]);
+    const [allArticle, setAllarticle] = useState([]);
     const [loading, setLoading] = useState(false);
     const [sider, seSider] = useState([]);
      useEffect(()=>{
@@ -31,6 +32,7 @@ const Blogdetail=()=>{
         axios.get('https://curevive.prophecius.com/api/newsAndarticle')
         .then((res)=>{
             let temp  = res.data;
+            setAllarticle(res.data);
             temp.forEach((value, idx) => 
             {
              temp[idx].index=idx;
@@ -41,6 +43,14 @@ const Blogdetail=()=>{
                     )}));
         })
      },[]);
+
+     function handleSearch (e){
+         console.log()
+        seSider(allArticle.filter(item=>{
+              return(
+              item.title.toLowerCase().includes(e.target.value.toLowerCase()))
+          }))
+     }
       return(
         <div>
             <Header/>
@@ -67,7 +77,7 @@ const Blogdetail=()=>{
                 style={{ width: '100%'}}
                 variant="outlined"
                 placeholder="Search"
-
+                onChange={handleSearch}
                 InputProps={{
                     endAdornment: (
                     <InputAdornment position="end">
