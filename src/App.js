@@ -5,7 +5,7 @@ import background2 from "./assets/first.png";
 import background4 from "./assets/1.png";
 import background5 from "./assets/4.png";
 import newhand from "./assets/3.png";
-import birds from "./assets/art6.gif";
+import birds from "./assets/6.png";
 import Header from './components/header';
 import {RightOutlined } from '@ant-design/icons';
 import 'react-multi-carousel/lib/styles.css';
