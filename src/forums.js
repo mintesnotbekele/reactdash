@@ -1,7 +1,7 @@
 import Header from "./components/header";
 import aboutBanner from './assets/forumbanner.png';
 import moment from "moment";
-import { Row, Col, Modal, message,Input,Form } from "antd";
+import { Row,Button, Col, Modal, message,Input,Form } from "antd";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -10,7 +10,14 @@ import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "flowbite-react";
+
+import { CKEditor, CKEditorContext } from '@ckeditor/ckeditor5-react';
+
+import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
+import { Context } from '@ckeditor/ckeditor5-core';
+import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
+import { Essentials } from '@ckeditor/ckeditor5-essentials';
+import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 
 const tokens = localStorage.getItem('tokens');
 
@@ -196,7 +203,24 @@ const [form] = Form.useForm();
                             message: 'Please input topic!',
                          },
                      ]}>
-                         <Input style={{border: "none", borderBottom: '1px solid', marginRight: "5px"}} placeholder='Topic'/>
+                        <CKEditor
+                    editor={ ClassicEditor }
+                    data="<p>Hello from CKEditor 5!</p>"
+                    onReady={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        console.log( { event, editor, data } );
+                    } }
+                    onBlur={ ( event, editor ) => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        console.log( 'Focus.', editor );
+                    } }
+                />
                          </Form.Item>
                          <Form.Item 
                         label="Description"
@@ -207,7 +231,7 @@ const [form] = Form.useForm();
                             message: 'Please input description!',
                          },
                      ]}>
-                         <Input style={{border: "none", borderBottom: '1px solid', marginRight: "5px"}} placeholder='Description'/>
+                      
                          </Form.Item>
                   </Form>
               </Modal>

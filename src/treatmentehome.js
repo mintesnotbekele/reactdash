@@ -8,8 +8,8 @@ import trt2 from './assets/trt2.png';
 import trt3 from './assets/trt3.png'; 
 import blurred from './assets/blurred.png';
 import {ArrowRightOutlined} from '@ant-design/icons';
-import { Button, } from 'flowbite-react';
-import {Row, Col} from 'antd';
+
+import {Row, Button,Col} from 'antd';
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
 

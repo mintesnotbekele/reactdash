@@ -1,9 +1,9 @@
-import { Button} from 'flowbite-react';
+
 
 import aboutBanner from "./assets/treatmentBanner.jpg";
-import {Row, Col} from 'antd';
+import {Row, Button,Col} from 'antd';
 
-import { Accordion } from 'flowbite-react';
+
 import firstyoga from "./assets/1.png";
 import secondyoga from "./assets/2.png";
 import thirdyoga from "./assets/3.png";
@@ -103,9 +103,9 @@ const Treatment =()=>{
     <Header/>
     <img alt="about Banner"style={{marginBottom: '200px'}} src={aboutBanner}/>
        <Row style={{marginBottom: '100px'}}>
-        <Col span={4}>
+        <Col md={0} xl={4} span={4}>
         </Col>
-        <Col xl={16} xs={24} span={16}>
+        <Col xl={16} md={24} xs={24} span={16}>
             <div  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
 
@@ -118,7 +118,7 @@ const Treatment =()=>{
                 )}
             </div>
         </Col>
-        <Col span={4}>
+        <Col md={0} span={4}>
         </Col>
        </Row>
        <Row style={{marginBottom: '100px'}}>
@@ -131,11 +131,8 @@ const Treatment =()=>{
               arrows
               showDots
               itemClass="carousel-item-padding-40-px"
-              
               responsive={responsive} 
              style={{height: '1200px'}}>
-              
-
            {treatments.map(item=> 
            <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
             <Col xl={10} xs={24}  span={10}>
@@ -149,18 +146,28 @@ const Treatment =()=>{
               <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px'}}>
               Frequently Asked Questions
               </h1>
-              <Accordion collapseAll>
-              {faq.map((item) => 
-                <Accordion.Panel>
-                  <Accordion.Title>
-                   {item.title}
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  {item.description}
-                  </Accordion.Content>
-                </Accordion.Panel>
-                 )}
-              </Accordion>
+              
+             <div className="row mb-5">
+                <div className="col-md-10 mx-auto">
+                    <div className="card">
+                        <div className="accordion p-3" id="accordionPricing">
+                         {faq.map((item) => 
+                            <div className="accordion-item mb-3">
+                                <h6 className="accordion-header" id="headingOne"> <button className="accordion-button border-bottom font-weight-bold text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse`+item.id} aria-expanded="false" aria-controls="collapseOne">
+                                  {item?.title} <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> </button> </h6>
+                                <div id={`collapse`+item.id} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPricing" >
+                                    <div className="d-block d-lg-flex"> <img className="w-50 w-lg-20 my-3" src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/illustrations/rocket-white.png" alt="rocket"/>
+                                        <div className="accordion-body text-sm opacity-8 my-auto"> We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed. <br/><br/> There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment. </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        )}
+                        
+                    </div>
+                </div>
+            </div>   
+               </div> 
             </Col>
           </Row>
           )}

@@ -27,24 +27,24 @@ const Articles =()=>{
             
             
             <Row style={{marginTop: '150px'}}>
-                <Col span={4}></Col>
-                <Col xl={16} xs={24} span={16}>
+                <Col md={4} span={4}></Col>
+                <Col md={16} xl={16} xs={24} span={16}>
                 <h1 className='articleHeader'>
                     Latest Post
                     </h1>
                 </Col>
-                <Col span={4}></Col>
+                <Col md={4} span={4}></Col>
             </Row>
 
             
             <Row style={{marginTop: '30px'}}>
-                <Col  span={4}></Col>
-                <Col xl={8} xs={24} span={8}>
+                <Col md={0} span={4}></Col>
+                <Col xl={8} md={16} xs={24} span={8}>
                 <div style={{margin: '20px'}}>
                 <img src={`https://curevive.prophecius.com/${latestpost?.picture}`} alt="latest post"/>
                 </div>
                 </Col>
-                <Col xl={8} xs={24} style={{padding: '30px'}} span={8}>
+                <Col xl={8} md={14} xs={24} style={{padding: '30px'}} span={8}>
                     <h1  className='latestArticleheader'>
                      { latestpost == null ?  "" :  latestpost?.title}
                     </h1>

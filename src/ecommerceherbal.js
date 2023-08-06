@@ -1,9 +1,9 @@
-import { Button, Navbar} from 'flowbite-react';
+
 import logo from './assets/logo.png';
 import logotext from './assets/text.png';
 import herbalBanner from './assets/herbalcapsule.jpg';
 import herbal from './assets/herbal.png';
-import {Row, Col, Input} from 'antd';
+import {Row, Col,Button, Input} from 'antd';
 import ecommerceframe from './assets/ecommerceframe.png';
 import capsules from './assets/capsules.png';
 import {ArrowRightOutlined, RightCircleTwoTone } from '@ant-design/icons';

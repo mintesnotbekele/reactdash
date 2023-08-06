@@ -1,7 +1,7 @@
 import Header from "./components/header";
 import diseasesBanner from './assets/diseasesditailBanner.jpg';
-import { Row, Col } from "antd";
-import { Button} from 'flowbite-react';
+import { Row, Button,Col } from "antd";
+
 import Footer from "./components/footer";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import herbalmedicine from './assets/herbalmedicine.png';

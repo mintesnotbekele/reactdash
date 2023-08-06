@@ -1,6 +1,6 @@
-import { Button} from 'flowbite-react';
+
 import aboutBanner from './assets/aboutBanner.jpg';
-import {Row, Col, Input} from 'antd';
+import {Row, Col, Button,Input} from 'antd';
 
 
 import faqs from "./assets/faq.png";
@@ -8,7 +8,7 @@ import disease from "./assets/disease.jpg";
 import TextArea from 'antd/es/input/TextArea';
 import {ArrowRightOutlined} from '@ant-design/icons';
 import Header from './components/header';
-import { Accordion } from 'flowbite-react';
+// import { Accordion } from 'flowbite-react';
 import Footer from './components/footer';
 //import {Carousel} from 'flowbite-react';
 import frame from './assets/frame.png'
@@ -18,6 +18,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Link } from 'react-router-dom';
 
 const About=()=>{
 
@@ -82,7 +83,7 @@ const About=()=>{
 return(
     <div>
       <Header/>
-      <img alt="about Banner"style={{marginBottom: '200px'}} src={aboutBanner}/>
+      <img alt="about Banner" src={aboutBanner}/>
       <div className='aboutquotes'>
       
       <Carousel
@@ -148,7 +149,7 @@ return(
           </Carousel>
       </div>      
       { sectiontwo.map((items) =>
-      <Row  style={{marginTop: "150px"}}>
+      <Row  className='aboutgap'>
         <Col span={4}>
             
         </Col>
@@ -263,24 +264,46 @@ return(
             swipeable
           >
           {teams.map((items) =>
-                          <div
-                          className="image-container"
-                          onMouseOver={showOverlay}
-                          onMouseLeave={hideOverlay}
-                      >
-                          <img
-                              className='teamimages'
-                              src={`https://curevive.prophecius.com/${items?.picture}`}
-                              alt="team members"
-                          />
-                          {show && (
-                              <div className="overlay">
-                                  <h2>{items?.name}</h2>
-                                  <p>{items?.role}</p>
-                              </div>
-                          )}
-                      </div>
-                          )} 
+                        <div className='team-member p-1' >
+                        <div className="thumb">
+                            <img src={`https://curevive.prophecius.com/${items.picture}`} alt="Alexis-Team" />
+                        </div>
+                        <div className="content">
+                            <div className="member-info">
+                                <h3 className="name">
+                                    <Link
+                                        >{items.name }
+                                    </Link>
+                                </h3>
+                                <span className="designation">{items?.role}</span>
+                            </div>
+                            <div className="member-icons">
+                                <a
+                                    href="https://twitter.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="social_twitter"></i>
+                                </a>
+                                <a
+                                    href="https://facebook.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="social_facebook"></i>
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i className="social_linkedin_square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                          )
+                          } 
           
           </Carousel>
          </Col>
@@ -297,23 +320,32 @@ return(
         <Col span={4}>
        </Col>
         <Col xl={8} xs={24} span={8}>
-        <Accordion collapseAll>
-              {faq.map((item) => 
-                <Accordion.Panel>
-                  <Accordion.Title>
-                   {item.title}
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  {item.description}
-                  </Accordion.Content>
-                </Accordion.Panel>
-                 )}
-              </Accordion>     
-                
+
+             <div className="row mb-5">
+                <div className="col-md-10 mx-auto">
+                    <div className="card">
+                        <div className="accordion p-3" id="accordionPricing">
+                         {faq.map((item) => 
+                            <div className="accordion-item mb-3">
+                                <h6 className="accordion-header" id="headingOne"> <button className="accordion-button border-bottom font-weight-bold text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse`+item.id} aria-expanded="false" aria-controls="collapseOne">
+                                  {item?.title} <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> </button> </h6>
+                                <div id={`collapse`+item.id} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPricing" >
+                                    <div className="d-block d-lg-flex"> <img className="w-50 w-lg-20 my-3" src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/illustrations/rocket-white.png" alt="rocket"/>
+                                        <div className="accordion-body text-sm opacity-8 my-auto"> We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed. <br/><br/> There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment. </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        )}
+                        
+                    </div>
+                </div>
+            </div>   
+               </div> 
          </Col>
          <Col xl={8} xs={24} span={8}>
          
-        <img alt="frequently asked question" src={faqs}/>
+        <img style={{borderRadius: '30px', maxHeight: '500px', margin: 'auto'}} alt="frequently asked question" src={faqs}/>
          </Col>
         <Col span={6}>
       </Col>
@@ -332,22 +364,31 @@ return(
         </Col>
         <Col xl={8} xs={24} span={8}>
          
-        <img style={{borderRadius: '30px'}} alt="disease related question" src={disease}/>
+        <img style={{borderRadius: '30px', maxHeight: '500px', margin: 'auto'}} alt="disease related question" src={disease}/>
          </Col>
          <Col xl={8} xs={24} span={8}>
                       
-         <Accordion collapseAll>
-              {faq.map((item) => 
-                <Accordion.Panel>
-                  <Accordion.Title>
-                   {item.title}
-                  </Accordion.Title>
-                  <Accordion.Content>
-                  {item.description}
-                  </Accordion.Content>
-                </Accordion.Panel>
-                 )}
-              </Accordion>    
+         <div className="row mb-5">
+                <div className="col-md-10 mx-auto">
+                    <div className="card">
+                        <div className="accordion p-3" id="accordionPricing">
+                         {faq.map((item) => 
+                            <div className="accordion-item mb-3">
+                                <h6 className="accordion-header" id="headingOne"> <button className="accordion-button border-bottom font-weight-bold text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse`+item.id} aria-expanded="false" aria-controls="collapseOne">
+                                  {item?.title} <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> </button> </h6>
+                                <div id={`collapse`+item.id} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPricing" >
+                                    <div className="d-block d-lg-flex"> <img className="w-50 w-lg-20 my-3" src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/illustrations/rocket-white.png" alt="rocket"/>
+                                        <div className="accordion-body text-sm opacity-8 my-auto"> We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed. <br/><br/> There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment. </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        )}
+                        
+                    </div>
+                </div>
+            </div>   
+               </div> 
          </Col>
          
         <Col span={8}>

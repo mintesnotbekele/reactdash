@@ -1,7 +1,7 @@
 import Footer from "./components/footer";
 import Header from "./components/header";
 import { Row, Col } from "antd";
-import { Accordion } from 'flowbite-react';
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import banner from "./assets/earn.png"
@@ -214,7 +214,7 @@ the meaning of the field is different in each concerned
             <Col span={4}>
             </Col>
             <Col span={16}>
-            <Accordion collapseAll>
+            {/* <Accordion collapseAll>
               {faq.map((item) => 
                 <Accordion.Panel>
                   <Accordion.Title>
@@ -225,7 +225,7 @@ the meaning of the field is different in each concerned
                   </Accordion.Content>
                 </Accordion.Panel>
                  )}
-              </Accordion>
+              </Accordion> */}
             </Col>
          </Row>
          <Footer/>

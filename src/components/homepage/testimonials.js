@@ -16,35 +16,37 @@ const Testimonials=()=>{
       setTestimonials(res.data);
      })
     },[])
-
+   
 
       return(
-        <Row>
-         <Col span={4} ></Col>
-                 <Col xs={24} xl={16} style={{background: '#ECDFD7', borderRadius: '20px'}} span={16}>
-                <h1 className='testimonialheader' >
-                What the People Think About Us
-                </h1>
-                <Row>
-                    <Col span={24}>
+      <section className="py-lg-5">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-6 my-6 mx-auto text-center">
+                    <h2 className="mb-3 my-2 articleHeader" style={{textAlign: 'center', color: 'black'}}>
+                      What the People Think About Us</h2>
+                       </div>
+                    </div>
+             
                     <Carousel
+                           autoPlay
                           additionalTransfrom={0}
-                          arrows={true}
-                          autoPlaySpeed={3000}
+                          arrows={false}
+                          infinite
+                          autoPlaySpeed={2000}
                           centerMode={false}
                           className=""
                           containerClass="container-with-dots"
                           dotListClass=""
                           draggable
                           focusOnSelect={false}
-                          infinite
+                      
                           itemClass=""
                           keyBoardControl
                           minimumTouchDrag={80}
                           pauseOnHover
-                          renderArrowsWhenDisabled={false}
-                          renderButtonGroupOutside={false}
-                          renderDotsOutside={false}
+                       
+                          renderDotsOutside={true}
                           responsive={{
                             desktop: {
                               breakpoint: {
@@ -81,30 +83,43 @@ const Testimonials=()=>{
                           swipeable
                               >
                      {testimonials.map((item) => 
-                              <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '10px', padding: '20px'}}>
-                             <div style={{display: 'flex' , flexWrap: 'wrap'}}> 
-                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.prophecius.com/${item.profilepic}`}></img>
-                                    <div style={{padding: '0px 20px'}}>
-                                    <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
-                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lato'}}>{item?.location}</p>    
-                                    </div>
+                                 <div className="col-lg-11 col-md-8 mb-4">
+                                 <div className="card text-center" style={{background: 'rgb(0,0,0,0.0)'}}>
+                                     <div className="card-body">
+                                     <div className="mt-4 mb-4">
+                                             <img style={{float: 'left', borderRadius: '50%'}} src={`https://curevive.prophecius.com/${item.profilepic}`} alt="..." className="avatar mx-auto mb-2 shadow d-block mx-5"/>
+                                             <div style={{float: 'left'}} className="name d-block mx-3" >
+                                                 <span className="text-sm font-weight-bold text-dark mb-0">
+                                                  <div style={{textAlign: 'left', fontSize: '22px', color: 'black'}}>
+                                                  {item.username}
+
+                                                  </div>
+                                                  <div style={{textAlign: 'left', color: 'black'}}>
+                                                  {item.location}
+
+                                                  </div>
+                          
+                                                  </span>
+                                               
+                                             </div>
+                                         </div>
+                                         <br/>
+                                         <br/>
+                                         <p className="mt-4 md-12" style={{display: 'block', textAlign:'left', color: 'black'}}>{item.testimony}</p>
+                                        
+                                     </div>
+                                 </div>
                              </div>
-                                                        
-                              <p style={{fontSize: '22px', fontFamily: 'lato',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
-                                              </div>
                            )}
+                           </Carousel>
+                           </div>
+                                 
+                                 </section>
+                   
                      
                          
                   
-                    
                 
-                 </Carousel>
-              
-                </Col>         
-            </Row>
-        </Col>
-      
-     </Row>
 
       )
 }

@@ -1,11 +1,11 @@
 import Header from "./components/header";
 import disease from './assets/diseaseBanner.jpg';
 import disease1 from './assets/diseaseImage.png';
-import { Col, Row } from "antd";
+import { Col, Button, Row } from "antd";
 import Footer from "./components/footer";
 import herbaloil from './assets/oilmart.png';
 import herbalcapsule from './assets/herbalmedicine1.png';
-import { Button } from "flowbite-react";
+
 import {ArrowRightOutlined} from '@ant-design/icons';
 import { Link } from "react-router-dom";
 

@@ -18,15 +18,14 @@ const Diseases=()=>{
 
     return(
         <Row style={{ zIndex: "1500"}}>
-                <Col xs={24} xl={6}>
-
+                <Col xs={24} md={0} xl={6}>
                 </Col>
 
-                <Col xs={24} xl={12}>
+                <Col xs={24} md={24} xl={12}>
                 <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '15px', padding: '10px' }} >
                 {diseases.map((item) => 
                 
-                <Col xs={24} xl={12}>
+                <Col md={12} xs={24} xl={12}>
                         <img className="diseaseimages" alt="disease images" src={`https://curevive.prophecius.com/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
                             <div style={{width: '95%', }}>
                           <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
@@ -36,7 +35,7 @@ const Diseases=()=>{
                           </div>
                 </Col>
                   )}
-                <Col xs={24} xl={3}></Col>
+                <Col xs={24} md={0} xl={3}></Col>
                 </Row>
 
 

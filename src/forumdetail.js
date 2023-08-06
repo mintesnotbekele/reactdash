@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Form, Row, message } from "antd";
-import { Input } from 'antd';
-import { Button } from "flowbite-react";
+import { Input,Button } from 'antd';
+
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';

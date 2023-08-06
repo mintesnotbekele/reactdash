@@ -1,7 +1,7 @@
-import { Button} from 'flowbite-react';
+
 import logo from './assets/logo.png';
 import logotext from './assets/text.png';
-import {Row, Col} from 'antd';
+import {Row, Button,Col} from 'antd';
 import disease from './assets/diseaseBanner.jpg';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -68,7 +68,7 @@ const Diseases = ()=>{
                          
                             <div className='diseasescol' style={{width: '50%',fontFamily: 'Playfair Display', textAlign: 'left'}}>Age Group:</div>
                             <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato', textAlign: 'left'}}>    
-                            { diseases?.agegroup}
+                            <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word'}}>{ diseases?.agegroup}</p>
                             </div>
                             
                         </div>
@@ -78,7 +78,7 @@ const Diseases = ()=>{
                             Duration:
                             </div>
                             <div style={{width: '50%'}}>
-                                <p className='diseasescol' style={{textAlign: 'left'}}>
+                                <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word'}}>
                                 {diseases?.duration} 
                             </p>
                             </div>   
@@ -87,40 +87,51 @@ const Diseases = ()=>{
                             <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display', textAlign: 'left'}}>
                              Treatment Includes:
                             </div>
-                            <div style={{width: '50%', height: '100px',textAlign: 'left'}}>
-                            <p className='diseasescol' style={{textAlign: 'left'}}> {diseases?.treatments}  </p> 
+                            <div style={{width: '50%', height: '100px',textAlign: 'left', overflowWrap: 'break-word'}}>
+                            <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word'}}> {diseases?.treatments}  </p> 
                             </div>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                             <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display', textAlign: 'left'}}>
                             Mode: 
                             </div>
-                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato',textAlign: 'left'}}>
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato',textAlign: 'left', overflowWrap: 'break-word'}}>
                             {diseases?.mode} 
                             </div>
                         </div>
                         </div>
                  </Col>
                 <Col span={12} style={{marginTop: '40px'}}>
+                  <div style={{padding: '10px'}}>
                     <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", marginBottom: '40px'}}>
                     {diseases?.name} 
                     </h1>
                     <p className='firsttext' style={{textAlign: 'left'}}>
                       {diseases?.description}
                     </p>
+                    </div>
                 </Col>
             </Row>
         </Col>
         <Col span={4}></Col>
      </Row>
 
-     <Row style={{marginTop: '100px'}}>
+     <Row className='testimonialgap' >
         <Col span={4}>
         </Col>
 
         <Col xl={16} xs={24} span={16} style={{ height: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
-        <ReactPlayer width={400} style={{width: '100%'}} url={'path/to/video'} controls={true} />
-          
+
+            <div className="player-wrapper">
+          <ReactPlayer
+            url="https://youtu.be/3eLrINg3O2Q"
+            className="react-player"
+            playing
+            width="100%"
+            height="100%"
+            controls={false}
+          />
+        </div>
             
         </Col>
         <Col span={4}>
@@ -131,17 +142,20 @@ const Diseases = ()=>{
    
         </Col>
         </Row>
-        <Row style={{marginTop: "100px" , background: '#ECDFD7', paddingTop: '150px', paddingBottom: '150px'}}>
+        <Row className='ecogap' style={{ background: '#ECDFD7', paddingTop: '150px', paddingBottom: '150px'}}>
            <Col xl={4}></Col>
-           <Col xs={16} xl={16}> 
+           <Col xs={24} xl={16}> 
            <Row>
            <Col xl={12} xs={24}>
-              <img src={herbacap} style={{margin: '30px', height: '400px', float: 'right'}}/>
+            <div style={{width: '100%',}}>
+              <img src={herbacap} style={{ margin: 'auto',height: '400px'}}/>
+              </div>
               </Col>
              
               <Col xl={12} xs={24}>
-              <img src={herbaloil} style={{margin: '30px' , height: '400px', float: 'left'}}/>
-             
+              <div style={{width: '100%'}}>
+              <img src={herbaloil} style={{ margin: 'auto', height: '400px'}}/>
+             </div>
               </Col>
               </Row>
            </Col>

@@ -82,8 +82,8 @@ const DiseasesWeCure=()=>{
             <Header/>
             <img src={curedbanner} alt="cured disease banner"/>
             <Row style={{ marginTop: '100px', marginBottom: '100px'}}>
-          <Col span={8}></Col>
-          <Col xl={8} xs={24}>
+          <Col md={0} xl={8} xs={24} span={8}></Col>
+          <Col xl={8} md={10} sm={20} xs={24}>
              <div style={{width: '100%'}}>
             <TextField
                 style={{width: '100%'}}
@@ -101,12 +101,12 @@ const DiseasesWeCure=()=>{
                 />
                 </div>
                 </Col>
-                <Col xl={8} xs={24}></Col>
+                <Col md={2} xl={8}  xs={24}></Col>
             </Row>
-
             <Diseases/>
             <Row>
-                <Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> <div style={{margin: 'auto', width: '20%', height: '100px'}}> 
+                <Col  style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
+                <div style={{margin: 'auto', width: '20%', height: '100px'}}> 
                 <Pagination size="large"  count={counter} page={page} onChange={handleChange} /></div> </Col>
             </Row>
             <Footer/>

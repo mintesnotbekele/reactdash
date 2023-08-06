@@ -1,9 +1,9 @@
 import Header from "./components/header";
-import { Row, Col, Input, message,Form } from "antd";
+import { Row, Col, Button,Input, message,Form } from "antd";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import bookingbanner from './assets/bookBanner.jpg';
 import TextArea from 'antd/es/input/TextArea';
-import { Button } from "flowbite-react";
+
 import Footer from "./components/footer";
 import axios from "axios";
 
@@ -11,7 +11,7 @@ import axios from "axios";
 const Book=()=>{
 
     const handleSubmit=(values)=>{
-        axios.post('http://localhost:8000/api/books', {
+        axios.post('https://curevive.prophecius.com/api/books', {
             "name" : values.name,
             "email" : values.email,
             "phone" :  values.phone,
@@ -31,17 +31,16 @@ const Book=()=>{
             <div>
             <Header/>
             <img src={bookingbanner} alt="booking banner"/>
-            
             <Row style={{marginTop: '150px'}}>
                 <div style={{width: '100%', marginBottom: '100px'}}> 
                 <h1 className="firstheaders" style={{margin: 'auto', textAlign: 'center', width: '100%'}}>
                 We love meeting new people and helping them.
                     </h1>
                 </div>
-                <Col span={8}>
+                <Col md={4} span={8}>
                 </Col>
                 
-                    <Col style={{padding: '10px'}} xl={8} xs={24} span={8}>
+                    <Col  style={{padding: '10px'}} xl={8} md={16} xs={24} span={8}>
                     <Form
                         name="basic" 
                         initialValues={{
@@ -135,10 +134,10 @@ const Book=()=>{
             </Row>
               
         <Row style={{ padding: '10px',marginTop: '30px'}}>
-                <Col span={4}>
+                <Col md={4} span={4}>
                 
                 </Col>
-                <Col  xl={16} xs={24} span={16}>
+                <Col  xl={16} md={16} xs={24} span={16}>
             <div >
                 <div style={{background: '#292F36', borderRadius: '50px', marginTop: '100px', padding: '70px'}}>
                         <h1 className="articleHeader" style={{textAlign: 'center', color: 'white'}}>Here are some answers to frequently asked questions</h1>

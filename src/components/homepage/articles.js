@@ -69,12 +69,12 @@ const Articles= ()=>{
       }
  
     return(
-        <Row className="articleTop">
+        <Row className="my-lg-12" style={{zIndex: '5000'}}>
         <Col span={4}></Col>
         
         <Col xs={24} xl={16} span={16}>
           <div>
-            <h1 style={{fontSize: '50px', color: '#292F36', fontFamily: "Playfair Display"}}>
+            <h1  style={{fontSize: '50px', color: '#292F36', fontFamily: "Playfair Display"}}>
           Articles & News
             </h1>
             <p style={{margin: "20px", fontSize: '22px', fontFamily: "lato"}}>Detailed and fun to read articles written by well researched individuals from around the world.</p>

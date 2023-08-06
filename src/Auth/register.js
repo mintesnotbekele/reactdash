@@ -1,15 +1,15 @@
-import { Col, Form, message, Row } from "antd"
+import { Col, Form,Button, message, Row } from "antd"
 import TextField from '@mui/material/TextField';
-import { Button } from "flowbite-react";
+
 import newlogo from '../assets/curlogo.png';
 import axios from "axios";
-import { Navbar } from 'flowbite-react';
 import Checkbox from '@mui/material/Checkbox';
 import { Link, useNavigate } from "react-router-dom";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import google from '../assets/google.png';
 import facebook from '../assets/facebook.png';
 import apple from '../assets/apple.png';
+import Header from '../components/header.js'
 
 const Register=()=>{
 
@@ -42,59 +42,8 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
            {/* Register Header */}
            
             <Col span={24}>
-        <Navbar
-        fluid
-       style={{
-        zIndex: '2000',
-        width: '100%',
-     
-        paddingTop: "13px",
-      
-        background: 'rgba(78, 52, 38, 0.6)',
-        height: "100px",
-        zIndex: "100",
-      }}
-      rounded
-    
-    >
-     <Navbar.Brand >
-      <Navbar.Link 
-      
-          active
-          href="/"
-        >
-        <img alt='logo' style={{objectFit: 'contain', marginTop: '-40px', height: '100px'}} src={newlogo}/>
-
-        </Navbar.Link>
-      </Navbar.Brand> 
-      <Navbar.Toggle/>
-      <Navbar.Collapse>
-        <Navbar.Link
-          active
-          href="/treatment"
-        >
-          <p className='navheader'>
-          <p className='navheader'>   Treatment</p>
-          </p>
-        </Navbar.Link>
-        <Navbar.Link href="/cureddisease">
-          <p className='navheader'>Diseases</p>
-        </Navbar.Link>
-        <Navbar.Link href="/blog">
-        <p className='navheader'>Blog</p>
-        </Navbar.Link>
-        <Navbar.Link href="/book">
-        <p className='navheader'>Booking</p>
-        </Navbar.Link>
-        <Navbar.Link href="/about">
-        <p className='navheader'>About Us</p>
-        </Navbar.Link>
-        <Navbar.Link href="/login">
-        <p className='navheader'>Login</p>
-        </Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
-    </Col>
+            <Header/>
+            </Col>
     
 
             <Col xl={24}>
