@@ -1,20 +1,12 @@
-
-import meditate from "./assets/meditate.png";
-import background1 from './assets/first.png'
-import background2 from "./assets/first.png";
 import background4 from "./assets/1.png";
 import background5 from "./assets/4.png";
 import newhand from "./assets/3.png";
 import birds from "./assets/6.png";
 import Header from './components/header';
-import {RightOutlined } from '@ant-design/icons';
 import 'react-multi-carousel/lib/styles.css';
-import '@splidejs/react-splide/css';
-import '@splidejs/react-splide/css/skyblue';
-import '@splidejs/react-splide/css/sea-green';
-import '@splidejs/react-splide/css/core';
 import {ArrowRightOutlined} from '@ant-design/icons';
 import './App.css';
+import './css/theme.css';
 import { Button ,Row, Col} from "antd";
 import Banner from './components/homepage/banner';
 import Counter from './components/homepage/counter';
@@ -23,9 +15,9 @@ import Articles from './components/homepage/articles';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
 import DisplaySlider from "./components/slider/sliderDisplay";
 import hands from "./assets/na.jpeg";
+
 
 function App() {
   const [diseases, setDiseases] = useState([]);
@@ -191,10 +183,6 @@ function App() {
           </Row>
          <DisplaySlider style={{zIndex: '2000'}}/>  
          <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" className='artlinestyle5' src={birds}/></div>
-        
-
-         {/* <lottie-player src="https://lottie.host/8a58db85-046c-4365-b1da-cff75c32b55c/Nxt8agzi12.json" background="#FFF" speed="1" style={{width: '300px', height: '300px'}} loop controls autoplay direction="1" mode="normal"></lottie-player> */}
-        
            <Articles/>
          <div>
             <Row style={{padding: '10px'}}                                                                                                                                 >
