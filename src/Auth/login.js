@@ -1,6 +1,6 @@
 import { Col, Form, Button,message, Row } from "antd"
 import TextField from '@mui/material/TextField';
-
+import env from "react-dotenv";
 import newlogo from '../assets/curlogo.png';
 import axios from "axios";
 import { Navigate } from "react-router-dom";
@@ -11,7 +11,7 @@ const Login=()=>{
 
     const navigate = useNavigate();
     const handleSubmit=(values)=>{
-        axios.post('https://curevive.prophecius.com/api/auth/login', {
+        axios.post(`https://curevive.prophecius.com/api/auth/login`, {
             "email" : values.email,
             "password" : values.password,
        })

@@ -13,6 +13,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import env from "react-dotenv";
 
 
 const Blogdetail=()=>{
@@ -28,7 +29,7 @@ const Blogdetail=()=>{
         .then((res)=>{
             setArticles(res.data);
         });
-        axios.get('https://curevive.prophecius.com/api/newsAndarticle')
+        axios.get(`https://curevive.prophecius.com/api/newsAndarticle`)
         .then((res)=>{
             let temp  = res.data;
             setAllarticle(res.data);

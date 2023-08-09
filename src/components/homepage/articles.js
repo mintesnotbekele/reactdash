@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import * as React from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-
+import env from "react-dotenv";
 
 const Articles= ()=>{
 
@@ -19,7 +19,7 @@ const Articles= ()=>{
       const [counter , setCounter] = useState([]);
       const [page, setPage] = useState(1);
        useEffect(()=>{
-        axios.get('https://curevive.prophecius.com/api/newsAndarticle')
+        axios.get(`https://curevive.prophecius.com/api/newsAndarticle`)
         .then((res)=>{
             setArticle(res.data);
             setArticleInit(res.data)
@@ -96,22 +96,21 @@ const Articles= ()=>{
                         </Link>
                    </div>
                   </div>
-                  </div> 
-                  
+                  </div>    
             </Col> 
            )}     
            </Row>
-     <div style={{margin: 'auto', width: '30%'}}>
-           <Stack spacing={2}> 
-              <Row>
-                  <Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
-                      <div style={{margin: 'auto', width: '50%', height: '100px'}}> 
-                      <Pagination size="large"  count={counter} page={page} onChange={handleChange} />
-                      </div> 
-                 </Col>
-              </Row>
-          </Stack>
-    </div>
+                <div style={{margin: 'auto', width: '30%'}}>
+                      <Stack spacing={2}> 
+                          <Row>
+                              <Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
+                                  <div style={{margin: 'auto', width: '50%', height: '100px'}}> 
+                                  <Pagination size="large"  count={counter} page={page} onChange={handleChange} />
+                                  </div> 
+                            </Col>
+                          </Row>
+                      </Stack>
+                </div>
            </Col>
         </Row>
     

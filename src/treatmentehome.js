@@ -26,15 +26,15 @@ const TreatmentHome=()=>{
             <Header/>
             
             <div style={{ marginTop: '0px', height: '700px',paddingTop: '300px',  width: '100%',backgroundImage: `url(${treatmentbanner})`}}>
-              <div style={{width: '60%', margin: 'auto', backgroundImage: `url(${blurred})`, backgroundSize: '100% 100%'}}>
-                <h1 style={{textAlign: 'center', fontFamily: 'Playfair Display', fontSize: '75px' , fontWeight: '400', lineHeight: '113px', letterSpacing: '0.01em' }}>
+              <div className="treatmentcontainer" style={{backgroundImage: `url(${blurred})`}}>
+                <h1 className="treatmentheader">
                 Harness the healing benefits of nature with our essential oils
                 </h1>
                 </div>
             </div>
             <Row style={{marginTop: '100px'}}>
-                <Col span={6}></Col>
-                <Col span={12}>
+                <Col xl={6} xm={6} xs={24} span={6}></Col>
+                <Col xl={12} xs={24} xm={12} span={12}>
                     <h1 className="firstheaders" style={{margin: 'auto', width: '30%'}}>
                     Products
                     </h1>
@@ -42,14 +42,14 @@ const TreatmentHome=()=>{
                 </Col>
                 <Col span={6}></Col>
                 <Col span={6}></Col>
-                <Col span={6} style={{marginRight: '30px', marginTop: '100px'}}>
+                <Col xl={6} xs={24} xm={6} span={6} style={{marginRight: '30px', marginTop: '100px',padding: '10px'}}>
                     <Link style={{color: 'black'}} to='/ecommercecapsule'>
                     <h1 className="firstheaders" style={{backgroundImage: `url(${herbaloil})`, color: 'white', textAlign: 'center', backgroundSize: '100% 100%', paddingTop: '400px'}}>      
                                   Herbal oil
                     </h1>
                     </Link>
                 </Col>
-                <Col span={6} style={{marginLeft: '30px', marginTop: '100px'}}>
+                <Col xl={6} xs={24} xm={6} span={6} style={{padding: '10px', marginTop: '100px'}}>
                 <Link style={{color: 'black'}} to='/ecommerceherbal'>
                     <h1  className="firstheaders" style={{backgroundImage: `url(${herbalcapsule})`, color: 'white', textAlign: 'center', backgroundSize: '100% 100%', paddingTop: '400px'}}>
                     Herbal capsule
@@ -61,15 +61,17 @@ const TreatmentHome=()=>{
             </Row>
 
             <Row style={{background: '#ECDFD7', marginTop: '100px'}}>
-                
-                <div style={{width: '100%'}}>
-                <h1 className="firstheaders" style={{margin: 'auto', width: '10%'}}>
+            <Col  span={24}> 
+               
+                <div className="mx-auto flex justify-center">
+                <h1 className="firstheaders" style={{margin: 'auto'}}>
                 Diseases
                     </h1>
                 </div>
-                <Col span={6}> 
                 </Col>
-                <Col span={12}> 
+                <Col xl={6} xs={24} xm={6} span={6}> 
+                </Col>
+                <Col xs={24} xl={12} xm={12} span={12}> 
                 <Splide style={{color: 'black', background: 'black'}} options={options}>
                     <SplideSlide>
                        <div style={{margin: '10px'}}> <img src={trt1} alt="diseases"/></div>
@@ -88,32 +90,33 @@ const TreatmentHome=()=>{
             </Row>
 
             <Row style={{marginTop: '100px'}}>  
-        <Col span={6}></Col>
-        <Col span={12}>
-            <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
+        <Col xs={24} xl={6} span={6}></Col>
+        <Col xs={24} xl={12} span={12}>
+            <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center', padding: '10px'}}>Achieve long-term wellness and prevent future health problems by taking a holistic 
                 approach to health with Curevive. Our natural, high-quality herbal supplements and oils
                  work in harmony with healthy diet, yoga, acupressure, stress management, and other 
                  self-care practices to treat the root cause of disease and promote overall wellness. 
                  Start your journey towards a disease-free, healthy life today with Curevive</p>
         </Col>
-        <Col span={6}></Col>
+        <Col xl={6} xs={24} span={6}></Col>
         </Row>  
      
         <Row style={{marginTop: '30px', marginBottom: '50px'}}>
-                <Col span={6}>
+                <Col xl={6} xs={24} span={6}>
                 
                 </Col>
-                <Col span={12}>
+                <Col xs={24} xl={12} span={12}>
             <div style={{padding: '10px'}}>
                 <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
-                        <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
+                        <h1 className="articleHeader" style={{textAlign: 'center', color: 'white'}}>Want to talk to a doctor?</h1>
                         <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
-                        
-                        <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
+                        <div className="mx-auto flex justify-center">
+                        <Button style={{margin: 'auto', background: '#CDA274', color: 'white', paddingTop: '10px' , paddingBottom: '30px' }}>View packages<ArrowRightOutlined/></Button>
+                        </div>
                     </div>
                     </div>
                 </Col>
-                <Col span={6}>
+                <Col xl={6} xs={24} span={6}>
                 </Col>
             </Row>
             <Footer/>

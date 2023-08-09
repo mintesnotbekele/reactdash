@@ -7,12 +7,13 @@ import axios from 'axios';
 import blogBanner from './assets/blogsbanner.jpg';
 import Footer from './components/footer';
 import ArticlesComponent from './components/homepage/articles';
+import env from 'react-dotenv';
 
 const Articles =()=>{
 
     const [latestpost, setLatestPost] = useState([]);
      useEffect(()=>{
-        axios.get('https://curevive.prophecius.com/api/newsAndarticle')
+        axios.get(`https://curevive.prophecius.com/api/newsAndarticle`)
       .then((res)=>{
      
         if(res.data.length != 0)
@@ -27,8 +28,8 @@ const Articles =()=>{
             
             
             <Row style={{marginTop: '150px'}}>
-                <Col md={4} span={4}></Col>
-                <Col md={16} xl={16} xs={24} span={16}>
+                <Col md={4} xs={0} xl={4} span={4}></Col>
+                <Col md={16} xl={16} xs={24}>
                 <h1 className='articleHeader'>
                     Latest Post
                     </h1>
@@ -38,7 +39,7 @@ const Articles =()=>{
 
             
             <Row style={{marginTop: '30px'}}>
-                <Col md={0} span={4}></Col>
+                <Col md={0} xl={4} xs={0} span={4}></Col>
                 <Col xl={8} md={16} xs={24} span={8}>
                 <div style={{margin: '20px'}}>
                 <img src={`https://curevive.prophecius.com/${latestpost?.picture}`} alt="latest post"/>

@@ -35,19 +35,19 @@ const Treatment =()=>{
   const [faq, setFaq] = useState([]);
 
    useEffect(()=>{
-    axios.get('https://curevive.prophecius.com/api/sectiononeTreatment')
+    axios.get('http://127.0.0.1:8000/api/sectiononeTreatment')
     .then((res)=>{
       setSectionone(res.data);
     });
-    axios.get('https://curevive.prophecius.com/api/sectiontwoTreatment')
+    axios.get('http://127.0.0.1:8000/api/sectiontwoTreatment')
     .then((res)=>{
       setSectiontwo(res.data);
     });
-    axios.get('https://curevive.prophecius.com/api/disease')
+    axios.get('http://127.0.0.1:8000/api/disease')
     .then((res)=>{
       setDiseases(res.data);
     });
-    axios.get('https://curevive.prophecius.com/api/treatment')
+    axios.get('http://127.0.0.1:8000/api/treatment')
     .then((res)=>{
       let temp  = res.data;
       temp.forEach((value, idx) => 
@@ -57,11 +57,11 @@ const Treatment =()=>{
       })
       setTreatments(temp);
     });
-    axios.get('https://curevive.prophecius.com/api/researchpaper')
+    axios.get('http://127.0.0.1:8000/api/researchpaper')
     .then((res)=>{
       setResearchpaper(res.data);
     });
-    axios.get('https://curevive.prophecius.com/api/faq')
+    axios.get('http://127.0.0.1:8000/api/faq')
     .then((res)=>{
       setFaq(res.data);
     });
@@ -109,7 +109,7 @@ const Treatment =()=>{
             <div  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
 
-            <div onClick={() => handleClick(item.index)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(https://curevive.prophecius.com/${item.background})`}}>
+            <div onClick={() => handleClick(item.index)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://127.0.0.1:8000/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
@@ -194,7 +194,7 @@ const Treatment =()=>{
               </div>
             </Col>
             <Col xl={10} xs={24} span={10}>
-            <img alt="herbs" src={`https://curevive.prophecius.com/${items?.picture}`}/>
+            <img alt="herbs" src={`http://127.0.0.1:8000/${items?.picture}`}/>
             </Col>
           </Row>
         )}
@@ -209,7 +209,7 @@ const Treatment =()=>{
         { sectiontwo.map((items) =>
           <Row>
             <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
-            <img alt="herbs" src={`https://curevive.prophecius.com/${items?.picture}`}/>
+            <img alt="herbs" src={`http://127.0.0.1:8000/${items?.picture}`}/>
             </Col>
             <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
               <h1 className='firstheaders'>
@@ -373,20 +373,22 @@ const Treatment =()=>{
         <Col span={4}>
         </Col>
        </Row>
-
+ 
        <Row style={{marginTop: '150px', marginBottom: '100px'}}>
-          <Col span={4}></Col>
+          <Col xl={4} xs={0} span={4}></Col>
           <Col xl={16} xs={24} span={16}>
-            <div style={{padding: '10px'}}>
+             <div style={{padding: '10px'}}>
             <div style={{borderRadius: "50px", paddingBottom: '50px',  background: "#292F36" }}> 
               <h1 style={{paddingTop: '30px',fontFamily: "Playfair Display", fontSize: "50px",color: 'white', textAlign: 'center', fontWeight: 'bold'}}>Want to talk to a doctor?</h1>
               <p style={{margin: '30px',fontFamily: 'lato', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>
-              <Button style= {{margin: 'auto', color: 'white', background: '#CDA274'}}>Contact Us <ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/></Button>
+                    <div className="mx-auto  flex justify-center" style={{width: '100%'}}>
+                      <Button  style={{margin: 'auto', color: 'white', background: '#CDA274'}}>Contact Us <ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/></Button>
+                    </div>
             </div>
-            </div>
+            </div> 
           </Col>
-          <Col span={4}></Col>
-       </Row>
+          <Col xs={0} xl={4} span={4}></Col>
+       </Row> 
        <Row>
         <Col span={24}>
           <div style={{textAlign: "center"}}>Copyright © Curevive  </div>

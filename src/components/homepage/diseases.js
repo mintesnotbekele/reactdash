@@ -3,6 +3,7 @@ import {RightOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import env from "react-dotenv";
 
 const Diseases=()=>{
 
@@ -10,7 +11,7 @@ const Diseases=()=>{
   const [diseases, setDiseases] = useState([]);
 
    useEffect(()=>{
-    axios.get('https://curevive.prophecius.com/api/disease')
+    axios.get(`https://curevive.prophecius.com/api/disease`)
     .then((res)=>{
       setDiseases(res.data);
     })

@@ -4,9 +4,9 @@ const Counter=()=>{
       <section className="py-5 bg-gradient-dark" style={{background: '#ECDFD7'}}>
       <div className="container">
           <div className="row text-center">
-              <div className="col-lg-3 col-md-6">
+              <div className="col-lg-3">
                   <div className="info">
-                      <h3 className="mt-2 pricingstyle" style={{color: '#CDA274'}}>03</h3>
+                      <h3 className="mt-2 pricin" style={{color: '#CDA274'}}>03</h3>
                       <p className="firsttext" style={{color: '#4D5053'}}>Years of Experience</p>
                   </div>
               </div>

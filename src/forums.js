@@ -12,7 +12,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 import { CKEditor, CKEditorContext } from '@ckeditor/ckeditor5-react';
-
+import env from "react-dotenv";
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 import { Context } from '@ckeditor/ckeditor5-core';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
@@ -78,7 +78,7 @@ const Forums=()=>{
         let token = localStorage.getItem('tokens');
         if(token == undefined)
           navigate('/login');
-        axios.get('https://curevive.prophecius.com/api/threads', config)
+        axios.get(`https://curevive.prophecius.com/api/threads`, config)
         .then((res)=>{
          setThreads(res.data);
         }).catch((err)=> console.log(err))

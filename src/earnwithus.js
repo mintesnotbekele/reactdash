@@ -12,13 +12,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import env from "react-dotenv";
 
 
 const EarnWithUs=()=>{
     const [faq, setFaq] = useState([]);
     useEffect(()=>{
-        axios.get('https://curevive.prophecius.com/api/faq')
+        axios.get(`https://curevive.prophecius.com/api/faq`)
         .then((res)=>{
           setFaq(res.data);
         });

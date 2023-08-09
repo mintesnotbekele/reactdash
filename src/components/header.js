@@ -42,11 +42,7 @@ useEffect(() => {
 }, []);
 const drawer = (
   <Box style={{background: 'rgba(78, 52, 38, 0.6)'}} onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-    <Typography variant="h6" sx={{ my: 2 }}>
-        <Link to="/" >
-          <img alt='logo' style={{objectFit: 'contain', maxWidth: '300px'}} src={newlogo}/>
-      </Link>
-    </Typography>
+   
     <Divider />
     <List>
       

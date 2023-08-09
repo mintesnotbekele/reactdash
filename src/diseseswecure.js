@@ -12,7 +12,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { Link } from "react-router-dom";
 import Item from "antd/es/list/Item";
 import Diseases from "./components/homepage/diseases";
-
+import env from "react-dotenv";
 
 
 const DiseasesWeCure=()=>{
@@ -24,7 +24,7 @@ const DiseasesWeCure=()=>{
 
     const [hoveredCart, setHoveredCart] = useState(-1);
      useEffect(()=>{
-      axios.get('https://curevive.prophecius.com/api/disease')
+      axios.get(`https://curevive.prophecius.com/api/disease`)
       .then((res)=>{
         let temp  = res.data;
         temp.forEach((value, idx) => 
@@ -53,7 +53,7 @@ const DiseasesWeCure=()=>{
      };
 
    function handleSearch (e){
-
+      
       setDiseases(diseasesInit.filter(item=>{
             return(
             item.name.toLowerCase().includes(e.target.value.toLowerCase()))
@@ -82,7 +82,7 @@ const DiseasesWeCure=()=>{
             <Header/>
             <img src={curedbanner} alt="cured disease banner"/>
             <Row style={{ marginTop: '100px', marginBottom: '100px'}}>
-          <Col md={0} xl={8} xs={24} span={8}></Col>
+          <Col md={8} xl={8} xs={24} span={8}></Col>
           <Col xl={8} md={10} sm={20} xs={24}>
              <div style={{width: '100%'}}>
             <TextField
@@ -103,7 +103,33 @@ const DiseasesWeCure=()=>{
                 </Col>
                 <Col md={2} xl={8}  xs={24}></Col>
             </Row>
-            <Diseases/>
+            <Row style={{ zIndex: "1500"}}>
+                <Col xs={24} md={6} xl={6}>
+                </Col>
+
+                <Col xs={24} md={24} xl={12}>
+                <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '15px', padding: '10px' }} >
+                {diseases.map((item) => 
+                
+                <Col md={12} xs={24} xl={12}>
+                        <img className="diseaseimages" alt="disease images" src={`https://curevive.prophecius.com/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
+                            <div style={{width: '95%', }}>
+                          <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
+                          <p className="diseaseList" >{item?.name}</p>
+                          <RightOutlined style={{marginTop: '10px'}} className='cursorhover'/>
+                          </Link>
+                          </div>
+                </Col>
+                  )}
+                <Col xs={24} md={0} xl={3}></Col>
+                </Row>
+
+
+                
+                </Col>
+                <Col xl={6} >
+                </Col>
+        </Row>
             <Row>
                 <Col  style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
                 <div style={{margin: 'auto', width: '20%', height: '100px'}}> 

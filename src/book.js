@@ -3,7 +3,7 @@ import { Row, Col, Button,Input, message,Form } from "antd";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import bookingbanner from './assets/bookBanner.jpg';
 import TextArea from 'antd/es/input/TextArea';
-
+import env from "react-dotenv";
 import Footer from "./components/footer";
 import axios from "axios";
 
@@ -11,7 +11,7 @@ import axios from "axios";
 const Book=()=>{
 
     const handleSubmit=(values)=>{
-        axios.post('https://curevive.prophecius.com/api/books', {
+        axios.post(`https://curevive.prophecius.com/api/books`, {
             "name" : values.name,
             "email" : values.email,
             "phone" :  values.phone,
@@ -37,7 +37,7 @@ const Book=()=>{
                 We love meeting new people and helping them.
                     </h1>
                 </div>
-                <Col md={4} span={8}>
+                <Col  md={8} span={8}>
                 </Col>
                 
                     <Col  style={{padding: '10px'}} xl={8} md={16} xs={24} span={8}>
@@ -118,7 +118,7 @@ const Book=()=>{
                                 span: 24,
                             }}
                             >
-                            <Button style={{background: '#292F36', float: 'right', fontSize: '18x', color: 'white', margin: '10px', padding: '10px'}} type="primary" className="customButton" htmlType="submit">
+                            <Button style={{background: '#292F36', float: 'right', fontSize: '18x', color: 'white', margin: '10px', paddingTop: '10px',paddingBottom: '30px'}} type="primary" className="customButton" htmlType="submit">
                              Send Now <ArrowRightOutlined style={{color: '#CDA274', marginLeft: "10px"}}/>
                             </Button>
                             </Form.Item>
@@ -141,8 +141,11 @@ const Book=()=>{
             <div >
                 <div style={{background: '#292F36', borderRadius: '50px', marginTop: '100px', padding: '70px'}}>
                         <h1 className="articleHeader" style={{textAlign: 'center', color: 'white'}}>Here are some answers to frequently asked questions</h1>
-                        
-                        <Button className="customButton" style={{margin: 'auto', background: '#CDA274', color: 'white', padding: '10px', width: '150px'}}>FAQs<ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/></Button>
+                        <div className="mx-auto flex justify-center">
+                        <Button className="customButton" style={{margin: 'auto', background: '#CDA274', color: 'white', paddingTop: '10px',paddingBottom: '30px', marginTop: '30px',  width: '150px'}}>
+                          FAQs<ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/>
+                        </Button>
+                        </div>
                     </div>
                     </div>
                 </Col>

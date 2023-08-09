@@ -1,7 +1,6 @@
 import { Col, Form,Button, message, Row } from "antd"
 import TextField from '@mui/material/TextField';
-
-import newlogo from '../assets/curlogo.png';
+import env from "react-dotenv";
 import axios from "axios";
 import Checkbox from '@mui/material/Checkbox';
 import { Link, useNavigate } from "react-router-dom";
@@ -16,7 +15,7 @@ const Register=()=>{
     const navigate = useNavigate();
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const handleSubmit=(values)=>{
-        axios.post('https://curevive.prophecius.com/api/auth/register', {
+        axios.post(`https://curevive.prophecius.com/api/auth/register`, {
             "name" : values.firstname+values.lastname,
             "email" : values.email,
             "password" : values.password,
@@ -37,15 +36,9 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     }
     return(
         <Row >
-             
-           
-           {/* Register Header */}
-           
             <Col span={24}>
             <Header/>
             </Col>
-    
-
             <Col xl={24}>
                 <h1 className="registerHeader">Signup</h1>
                 <h2 className="registerText">to Curevive</h2>

@@ -18,7 +18,7 @@ import ReactPlayer from 'react-player'
 import "react-multi-carousel/lib/styles.css";
 import Testimonials from './components/homepage/testimonials';
 import { flexbox } from '@mui/system';
-
+import env from 'react-dotenv';
 
 
 
@@ -31,14 +31,14 @@ const Diseases = ()=>{
     const [treatments, setTreatments] =useState();
 
      useEffect(()=>{
-      axios.get('https://curevive.prophecius.com/api/testimonial')
+      axios.get(`https://curevive.prophecius.com/api/testimonial`)
       .then((res)=>{
        setTestimonials(res.data);
       })
      },[])
  
      useEffect(()=>{
-        axios.get('https://curevive.prophecius.com/api/treatment')
+        axios.get(`https://curevive.prophecius.com/api/treatment`)
         .then((res)=>{
           setTreatments(res.data);
         });
@@ -46,13 +46,13 @@ const Diseases = ()=>{
         .then((res)=>{
           setDiseases(res.data);
         });
-        axios.get('https://curevive.prophecius.com/api/researchpaper')
+        axios.get(`https://curevive.prophecius.com/api/researchpaper`)
         .then((res)=>{
           setResearchpaper(res.data);
         });
      },[]);
     return(
-        <div>
+      <div className="App">  
         <Header/>
             <img style={{width: '100%'}} src={disease} alt='disease'/>
             <div style={{width: '20%', margin: 'auto'}}>
@@ -120,7 +120,7 @@ const Diseases = ()=>{
         <Col span={4}>
         </Col>
 
-        <Col xl={16} xs={24} span={16} style={{ height: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
+        <Col xl={16} xs={24} span={16} style={{ maxHeight: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
 
             <div className="player-wrapper">
           <ReactPlayer
@@ -268,79 +268,103 @@ const Diseases = ()=>{
                 </div>
          
                  <Col style={{background: '#ECDFD7', borderRadius: '20px', padding: '50px'}} span={24}>
-             
+                 <section className="py-lg-5">
+        <div className="container">
                  <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlaySpeed={1000}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass=""
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024
-                },
-                items: 2,
-          
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0
-                },
-                items: 1,
-            
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464
-                },
-                items: 2,
-               
-              }
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-            swipeable
-          >
+                           autoPlay
+                          additionalTransfrom={0}
+                          arrows={false}
+                          infinite
+                          autoPlaySpeed={2000}
+                          centerMode={false}
+                          className=""
+                          containerClass="container-with-dots"
+                          dotListClass=""
+                          draggable
+                          focusOnSelect={false}
+                      
+                          itemClass=""
+                          keyBoardControl
+                          minimumTouchDrag={80}
+                          pauseOnHover
+                       
+                          renderDotsOutside={true}
+                          responsive={{
+                            desktop: {
+                              breakpoint: {
+                                max: 3000,
+                                min: 1024
+                              },
+                              items: 3,
+                              
+                            },
+                            mobile: {
+                              breakpoint: {
+                                max: 464,
+                                min: 0
+                              },
+                              items: 1,
+                              
+                            },
+                            tablet: {
+                              breakpoint: {
+                                max: 1024,
+                                min: 464
+                              },
+                              items: 1,
+                              
+                            }
+                          }}
+                          rewind={false}
+                          rewindWithAnimation={false}
+                          rtl={false}
+                          shouldResetAutoplay
+                          showDots={false}
+                          sliderClass=""
+                          slidesToSlide={1}
+                          swipeable
+                              >
                      {testimonials.map((item) => 
-                              <div style={{background: '#F6F5EC',  borderRadius: '20px', margin: '20px', padding: '30px', width: '95%',}}>
-                             <div style={{display: 'flex'}}> 
-                                    <img  style={{height: '50px', width: '15%', borderRadius: '50%'}} src={`https://curevive.prophecius.com/${item.profilepic}`}></img>
-                                    <div style={{padding: '0px 40px'}}>
-                                    <p className='blogHeader' style={{textAlign: 'left'}}>{item?.username}</p>    
-                                    <p className='navigations' style={{textAlign: 'left', color: '#4D5053', fontSize: '18px', fontFamily: 'lato'}}>{item?.location}</p>    
-                                    </div>
+                                 <div className="col-lg-11 col-md-8 mb-4">
+                                 <div className="card text-center" style={{background: 'background: #F6F5EC'}}>
+                                     <div className="card-body">
+                                     <div className="mt-4 mb-4">
+                                             <img style={{float: 'left', borderRadius: '50%'}} src={`http://curevive.prophecius.com/${item.profilepic}`} alt="..." className="avatar mx-auto mb-2 shadow d-block mx-5"/>
+                                             <div style={{float: 'left'}} className="name d-block mx-3" >
+                                                 <span className="text-sm font-weight-bold text-dark mb-0">
+                                                  <div style={{textAlign: 'left', fontSize: '22px', color: 'black'}}>
+                                                  {item.username}
+
+                                                  </div>
+                                                  <div style={{textAlign: 'left', color: 'black'}}>
+                                                  {item.location}
+
+                                                  </div>
+                          
+                                                  </span>
+                                               
+                                             </div>
+                                         </div>
+                                         <br/>
+                                         <br/>
+                                         <p className="mt-4 md-12" style={{display: 'block', textAlign:'left', color: 'black'}}>{item.testimony}</p>
+                                        
+                                     </div>
+                                 </div>
                              </div>
-                                                        
-                              <p style={{fontSize: '22px', fontFamily: 'lato',textAlign: 'left', color: '#4D5053'}}>{item?.testimony}</p>
-                                              </div>
-                           )}                
-                 </Carousel>
+                           )}
+                           </Carousel>
+                    </div>
+                    </section>
      </Col>
 
             </Col>
             <Col span={4}></Col>
         </Row>
+        
+        
+        
+        
         <Row style={{marginTop: '100px'}}>
             <Col span={4}></Col>
             <Col xl={16} xs={24} span={16}>
@@ -436,24 +460,26 @@ const Diseases = ()=>{
                     <Col xs={24} xl={8}>
                       <div style={{padding: '10px'}}>
                         <div style={{background: '#ECDFD7', borderRadius: '30px' , width: '100%', padding: '20px'}}>
-                            <p className='pricingstyle'>10 Day trial </p>
-                            <h1>₹950</h1>
+                            <p className='pricingheader'>10 Day trial </p>
+                            <p style={{textAlign: 'center'}}>/ month</p>
+                            <h1 className='pricingstyle'>₹950</h1>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
                             <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>1 Consultation</p>
                             <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Protocol Creation </p>
                             <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Diet Plan</p>
                             <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Yoga Protocol</p>
-                            <div style={{marginTop: '40px'}}>
-                            <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
-                            </div>
+                            <div className='mx-auto justify-center flex'>
+                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto', paddingTop: '10px', paddingBottom: '30px'}}> Get Started<ArrowRightOutlined/></Button>
+                          </div>
                         </div>
                         </div>
                         </Col>
                         <Col xs={24} xl={8}>
                         <div style={{padding: '10px'}}>
                         <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', padding: '40px'}}>
-                            <p className='pricingstyle'> Complete Plan </p>
-                            <h1 >₹950</h1>
+                        <p className='pricingheader'> Complete Plan </p>
+                            <h1 className='pricingstyle'>₹9800</h1>
+                            <p style={{textAlign: 'center'}}>/ month</p>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
                             <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
                                             Protocol Creation Diet Plan with Recipes Yoga Protocol
@@ -463,18 +489,21 @@ const Diseases = ()=>{
                                             Available doctor chat support
 
                                             </p>
-                                            <div style={{marginTop: '40px'}}>
-                            <Button style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}} > Get Started<ArrowRightOutlined/></Button>
-                            </div>
+                          <div className='mx-auto justify-center flex'>
+                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto', paddingTop: '10px', paddingBottom: '30px'}}> Get Started<ArrowRightOutlined/></Button>
+                          </div>
                         </div>
                         </div>
                         </Col>
                         <Col xs={24} xl={8}>
                         <div style={{padding: '10px'}}>
                         <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', padding: '40px'}}>
-                            <p className='pricingstyle'>Premium Plan </p>
-                            <h1>₹950</h1>
+                        <p className='pricingheader'>Premium Plan </p>
+                            <h1 className='pricingstyle'>₹10,,380</h1>
+                            <p style={{textAlign: 'center'}}>/ month</p>
+                            
                             <hr style={{height: '2px', background: '#CDA274'}}/>
+                            
                             <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Weekly Consultation followups
                                         Additional Free 2 Consultations 3 Sessions with Reiki Master
                                         Treatment Kit that include herbal capsules and esentil-oil bled
@@ -486,8 +515,8 @@ const Diseases = ()=>{
                                         Hydrotherapy and Packs
                                         Available doctor chat support
                                         </p>
-                         <div style={{marginTop: '40px'}}>
-                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto'}}> Get Started<ArrowRightOutlined/></Button>
+                         <div className='mx-auto justify-center flex'>
+                             <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto', paddingTop: '10px', paddingBottom: '30px'}}> Get Started<ArrowRightOutlined/></Button>
                           </div>
                          </div>
                          </div>
@@ -514,7 +543,9 @@ const Diseases = ()=>{
         <div style={{margin: '10px'}}>
             <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '30px'}}>
                     <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Not sure if its for you?</h1>
-                    <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>Talk to a doctor<ArrowRightOutlined/></Button>
+                   <div className='mx-auto justify-center flex'>
+                    <Button style={{margin: 'auto', background: '#CDA274', color: 'white', paddingBottom: '30px', paddingTop: '5px'}}>Talk to a doctor<ArrowRightOutlined/></Button>
+                    </div>
                 </div>
                 </div>
             </Col>

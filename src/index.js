@@ -31,6 +31,9 @@ import EarnWithUs from './earnwithus';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+
+
+    
     <div style={{background: '#F6F5EC'}}>
     <Routes>
                         <Route path="/" element={ <App />}>

@@ -1,17 +1,12 @@
 
 import aboutBanner from './assets/aboutBanner.jpg';
 import {Row, Col, Button,Input} from 'antd';
-
-
 import faqs from "./assets/faq.png";
 import disease from "./assets/disease.jpg";
 import TextArea from 'antd/es/input/TextArea';
 import {ArrowRightOutlined} from '@ant-design/icons';
 import Header from './components/header';
-// import { Accordion } from 'flowbite-react';
 import Footer from './components/footer';
-//import {Carousel} from 'flowbite-react';
-import frame from './assets/frame.png'
 import { useState, useEffect } from 'react';
 import axios from 'axios';  
 import Carousel from "react-multi-carousel";
@@ -19,6 +14,8 @@ import "react-multi-carousel/lib/styles.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
+import env from "react-dotenv";
+import Testimonials from './components/homepage/testimonials';
 
 const About=()=>{
 
@@ -42,24 +39,24 @@ const About=()=>{
 
    useEffect(()=>{
 
-    axios.get('https://curevive.prophecius.com/api/quote')
+    axios.get(`https://curevive.prophecius.com/api/quote`)
     .then((res)=>{
       setQuotes(res.data);
     });
-    axios.get('https://curevive.prophecius.com/api/sectionone')
+    axios.get(`https://curevive.prophecius.com/api/sectionone`)
     .then((res)=>{
       setSectionone(res.data);
     });
-    axios.get('https://curevive.prophecius.com/api/sectiontwo')
+    axios.get(`https://curevive.prophecius.com/api/sectiontwo`)
     .then((res)=>{
       setSectiontwo(res.data);
     });
-    axios.get('https://curevive.prophecius.com/api/teams')
+    axios.get(`https://curevive.prophecius.com/api/teams`)
     .then((res)=>{
       setTeams(res.data);
     });
     
-    axios.get('https://curevive.prophecius.com/api/faq')
+    axios.get(`https://curevive.prophecius.com/api/faq`)
     .then((res)=>{
       setFaq(res.data);
     });
@@ -81,7 +78,7 @@ const About=()=>{
  };
 
 return(
-    <div>
+  <div className="App">    
       <Header/>
       <img alt="about Banner" src={aboutBanner}/>
       <div className='aboutquotes'>
@@ -91,6 +88,7 @@ return(
             arrows={false}
             autoPlaySpeed={3000}
             centerMode={false}
+            autoPlay
             className=""
             containerClass="container-with-dots"
             dotListClass=""
@@ -157,7 +155,7 @@ return(
         <Col xl={8} xs={24} span={8}>
             <div>
               
-                <img alt="herbs" src={`https://curevive.prophecius.com/${items.picture}`}/>
+                <img alt="herbs" src={`http://127.0.0.1:8000/${items.picture}`}/>
             </div>
         </Col>
         <Col xl={8} xs={24} span={8}>
@@ -188,7 +186,7 @@ return(
          </Col>
          <Col xl={8} xs={24} span={8}>
             <div>
-                <img alt="herbs" src={`https://curevive.prophecius.com/${items.picture}`}/>
+                <img alt="herbs" src={`http://127.0.0.1:8000/${items.picture}`}/>
             </div>
         </Col>
         <Col span={4}>
@@ -266,7 +264,7 @@ return(
           {teams.map((items) =>
                         <div className='team-member p-1' >
                         <div className="thumb">
-                            <img src={`https://curevive.prophecius.com/${items.picture}`} alt="Alexis-Team" />
+                            <img src={`http://127.0.0.1:8000/${items.picture}`} alt="Alexis-Team" />
                         </div>
                         <div className="content">
                             <div className="member-info">
@@ -350,7 +348,7 @@ return(
         <Col span={6}>
       </Col>
       </Row>
-
+      <Testimonials/>
     
     
       <Row style={{marginTop: "100px",}}>
@@ -364,7 +362,7 @@ return(
         </Col>
         <Col xl={8} xs={24} span={8}>
          
-        <img style={{borderRadius: '30px', maxHeight: '500px', margin: 'auto'}} alt="disease related question" src={disease}/>
+        <img style={{borderRadius: '30px', maxHeight: '500px', margin: 'auto', padding: '10px'}} alt="disease related question" src={disease}/>
          </Col>
          <Col xl={8} xs={24} span={8}>
                       
@@ -416,8 +414,8 @@ a productive talk.</h1>
             <div style={{marginTop: "30px"}}>
             <TextArea style={{background: "#ECDFD7", border: "none",borderBottom: '1px solid ', }} placeholder='Hello I am Intrested in..'/>          
             </div>   
-            <div style={{marginTop: "50px"}}>
-            <Button style={{background: '#292F36', margin: 'auto', fontSize: '18x'}}>Send Now <ArrowRightOutlined style={{color: '#CDA274', marginLeft: "10px"}}/> </Button>
+            <div style={{marginTop: "50px"}} className='mx-auto flex justify-center'>
+            <Button style={{background: '#292F36', margin: 'auto', color: 'white', fontSize: '18x', paddingTop: '10px', paddingBottom: '30px'}}>Send Now <ArrowRightOutlined style={{color: '#CDA274', marginLeft: "10px"}}/> </Button>
             </div>
          </Col>
         <Col span={6}>
