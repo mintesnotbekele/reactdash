@@ -30,7 +30,7 @@ import hands from "./assets/na.jpeg";
 function App() {
   const [diseases, setDiseases] = useState([]);
   useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/disease')
+    axios.get('http://curevive.prophecius.com/api/disease')
     .then((res)=>{
       let temp  = res.data;
         temp.forEach((value, idx) => 
@@ -139,7 +139,7 @@ function App() {
            <div className="col-lg-12 mb-lg-0 mb-4" style={{background: 'rgb(0,0,0,0.0)'}} >
                     <div className="card card-plain" style={{background: 'rgb(0,0,0,0.0)'}}>
                         <div className="card-header p-0 mx-3 mt-3 position-relative z-index-1" style={{background: 'rgb(0,0,0,0.0)'}}> <a href="javascript:;" className="d-block"> 
-                        <img src={`http://127.0.0.1:8000/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '96%'}}/> </a> </div>
+                        <img src={`http://curevive.prophecius.com/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '96%'}}/> </a> </div>
                         <div className="card-body pt-3"> <a href="javascript:;" className="card-title h6 icon-move-right d-block text-darker font-weight-bolder"> 
                         <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
                         {item?.name}
@@ -203,7 +203,7 @@ function App() {
               <div style={{marginTop: "70px",marginBottom: "40px", }}>
                 <h1 className='articleHeader' style={{ textAlign: 'center', color: '#F6F5EC'}}>Want to get your doubts cleared?</h1>
               <p style={{margin: "20px", fontSize: '22px', color: '#F6F5EC'}}>Book a complimentary consultation now!</p>
-              <Button style={{ fontSize: '22px', background: 'none',backgroundColor: '#292F36',height: '60px', borderRadius: '20px', color: '#F6F5EC'}}>
+              <Button style={{ fontSize: '22px', background: 'none',backgroundColor: '#CDA274',height: '60px', borderRadius: '20px', color: '#F6F5EC'}}>
              Book
               <ArrowRightOutlined /></Button>
               </div>

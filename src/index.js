@@ -23,7 +23,7 @@ import Register from './Auth/register';
 import Slider from './components/slider/sliderDisplay';
 import Forums from './forums';
 import ForumDetail from './forumdetail';
-
+import './App.css';
 import EarnWithUs from './earnwithus';
 
 

@@ -1,6 +1,3 @@
-
-import logo from './assets/logo.png';
-import logotext from './assets/text.png';
 import {Row, Button,Col} from 'antd';
 import disease from './assets/diseaseBanner.jpg';
 import Carousel from "react-multi-carousel";
@@ -14,11 +11,9 @@ import axios from 'axios';
 import herbacap from './assets/herbalcapsule1.png';
 import herbaloil from './assets/herbaloil.png'
 import ReactPlayer from 'react-player'
+import './App.css';
 
-import "react-multi-carousel/lib/styles.css";
-import Testimonials from './components/homepage/testimonials';
-import { flexbox } from '@mui/system';
-import env from 'react-dotenv';
+
 
 
 
@@ -119,8 +114,8 @@ const Diseases = ()=>{
      <Row className='testimonialgap' >
         <Col span={4}>
         </Col>
-
-        <Col xl={16} xs={24} span={16} style={{ maxHeight: '600px', backgroundSize: '100% 100%', margin: 'auto'}}>
+{/* 
+        <Col xl={16} xs={24} span={16} style={{ maxHeight: '200px', backgroundSize: '100% 100%', margin: 'auto'}}>
 
             <div className="player-wrapper">
           <ReactPlayer
@@ -133,7 +128,7 @@ const Diseases = ()=>{
           />
         </div>
             
-        </Col>
+        </Col> */}
         <Col span={4}>
         
         </Col>
@@ -295,7 +290,7 @@ const Diseases = ()=>{
                                 max: 3000,
                                 min: 1024
                               },
-                              items: 3,
+                              items: 2,
                               
                             },
                             mobile: {

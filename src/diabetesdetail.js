@@ -1,7 +1,7 @@
 import Header from "./components/header";
 import diseasesBanner from './assets/diseasesditailBanner.jpg';
 import { Row, Button,Col } from "antd";
-
+import './App.css';
 import Footer from "./components/footer";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import herbalmedicine from './assets/herbalmedicine.png';

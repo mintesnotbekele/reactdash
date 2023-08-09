@@ -16,7 +16,7 @@ const Testimonials=()=>{
    const [loading, setLoading] = useState(false);
     useEffect(()=>{
       
-     axios.get(`http://127.0.0.1:8000/api/testimonial`)
+     axios.get(`http://curevive.prophecius.com/api/testimonial`)
      .then((res)=>{
       setTestimonials(res.data);
      })

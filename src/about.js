@@ -16,7 +16,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
 import env from "react-dotenv";
 import Testimonials from './components/homepage/testimonials';
-
+import './App.css';
 const About=()=>{
 
 
@@ -155,7 +155,7 @@ return(
         <Col xl={8} xs={24} span={8}>
             <div>
               
-                <img alt="herbs" src={`http://127.0.0.1:8000/${items.picture}`}/>
+                <img alt="herbs" src={`http://curevive.prophecius.com/${items.picture}`}/>
             </div>
         </Col>
         <Col xl={8} xs={24} span={8}>
@@ -186,7 +186,7 @@ return(
          </Col>
          <Col xl={8} xs={24} span={8}>
             <div>
-                <img alt="herbs" src={`http://127.0.0.1:8000/${items.picture}`}/>
+                <img alt="herbs" src={`http://curevive.prophecius.com/${items.picture}`}/>
             </div>
         </Col>
         <Col span={4}>
@@ -264,7 +264,7 @@ return(
           {teams.map((items) =>
                         <div className='team-member p-1' >
                         <div className="thumb">
-                            <img src={`http://127.0.0.1:8000/${items.picture}`} alt="Alexis-Team" />
+                            <img src={`http://curevive.prophecius.com/${items.picture}`} alt="Alexis-Team" />
                         </div>
                         <div className="content">
                             <div className="member-info">
@@ -348,7 +348,7 @@ return(
         <Col span={6}>
       </Col>
       </Row>
-      <Testimonials/>
+   
     
     
       <Row style={{marginTop: "100px",}}>

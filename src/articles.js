@@ -8,7 +8,7 @@ import blogBanner from './assets/blogsbanner.jpg';
 import Footer from './components/footer';
 import ArticlesComponent from './components/homepage/articles';
 import env from 'react-dotenv';
-
+import './App.css';
 const Articles =()=>{
 
     const [latestpost, setLatestPost] = useState([]);
