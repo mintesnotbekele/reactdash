@@ -23,7 +23,7 @@ const EcommerceHerbal = ()=>{
     
 
     useEffect(()=>{
-        axios.get(`https://curevive.prophecius.com/api/product`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/product`)
       .then((res)=>{
         setProducts(res.data);
         
@@ -86,7 +86,7 @@ const EcommerceHerbal = ()=>{
                            <div style={{width: '100%', border: '2px solid', borderRadius: '50px', margin: '10px', padding: '60px 10px'}}>
            
                                <Link style={{color: 'black'}} to={`/ecommerce/${item.id}`}>
-                               <img style={{padding: '2px' , height:'28px   0px', width: '90%' ,margin: 'auto'}} src={`https://curevive.prophecius.com/${item.picture}`} alt='capsules' />
+                               <img style={{padding: '2px' , height:'28px   0px', width: '90%' ,margin: 'auto'}} src={`${process.env.REACT_APP_API_URL}${item.picture}`} alt='capsules' />
                                <h1 style={{fontFamily: 'Playfair Display', fontSize: '25px', textAlign: 'center'}}>{item.name}</h1>
                                <p className='blogsecond' style={{paddingTop: '10px', float: 'right', fontSize: '22px', fontFamily: 'lato'}}>Explore
                                     <RightOutlined style={{marginTop: '-10px'}} className={ entered1 ? 'cursorhover': 'cursorfree'} />

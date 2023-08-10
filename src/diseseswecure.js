@@ -24,7 +24,7 @@ const DiseasesWeCure=()=>{
 
     const [hoveredCart, setHoveredCart] = useState(-1);
      useEffect(()=>{
-      axios.get(`https://curevive.prophecius.com/api/disease`)
+      axios.get(`${process.env.REACT_APP_API_URL}api/disease`)
       .then((res)=>{
         let temp  = res.data;
         temp.forEach((value, idx) => 
@@ -112,7 +112,7 @@ const DiseasesWeCure=()=>{
                 {diseases.map((item) => 
                 
                 <Col md={12} xs={24} xl={12}>
-                        <img className="diseaseimages" alt="disease images" src={`https://curevive.prophecius.com/${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
+                        <img className="diseaseimages" alt="disease images" src={`${process.env.REACT_APP_API_URL}${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
                             <div style={{width: '95%', }}>
                           <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
                           <p className="diseaseList" >{item?.name}</p>

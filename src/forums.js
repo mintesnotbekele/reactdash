@@ -105,7 +105,7 @@ const Forums=()=>{
    
 
     const handleSubmit=(values)=>{
-      axios.post('https://curevive.prophecius.com/api/threads', {
+      axios.post('${process.env.REACT_APP_API_URL}api/threads', {
           "title" : values.title,
           "description" : values.description,
           

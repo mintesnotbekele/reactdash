@@ -26,22 +26,22 @@ const Diseases = ()=>{
     const [treatments, setTreatments] =useState();
 
      useEffect(()=>{
-      axios.get(`https://curevive.prophecius.com/api/testimonial`)
+      axios.get(`${process.env.REACT_APP_API_URL}api/testimonial`)
       .then((res)=>{
        setTestimonials(res.data);
       })
      },[])
  
      useEffect(()=>{
-        axios.get(`https://curevive.prophecius.com/api/treatment`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/treatment`)
         .then((res)=>{
           setTreatments(res.data);
         });
-        axios.get(`https://curevive.prophecius.com/api/disease/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/disease/${id}`)
         .then((res)=>{
           setDiseases(res.data);
         });
-        axios.get(`https://curevive.prophecius.com/api/researchpaper`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/researchpaper`)
         .then((res)=>{
           setResearchpaper(res.data);
         });
@@ -51,7 +51,7 @@ const Diseases = ()=>{
         <Header/>
             <img style={{width: '100%'}} src={disease} alt='disease'/>
             <div style={{width: '20%', margin: 'auto'}}>
-            <img  src={`https://curevive.prophecius.com/${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
+            <img  src={`${process.env.REACT_APP_API_URL}${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
             </div>
             <Row>
                 <Col  span={4}></Col>

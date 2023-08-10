@@ -11,7 +11,7 @@ import axios from "axios";
 const Book=()=>{
 
     const handleSubmit=(values)=>{
-        axios.post(`https://curevive.prophecius.com/api/books`, {
+        axios.post(`${process.env.REACT_APP_API_URL}api/books`, {
             "name" : values.name,
             "email" : values.email,
             "phone" :  values.phone,

@@ -39,24 +39,24 @@ const About=()=>{
 
    useEffect(()=>{
 
-    axios.get(`https://curevive.prophecius.com/api/quote`)
+    axios.get(`${process.env.REACT_APP_API_URL}api/quote`)
     .then((res)=>{
       setQuotes(res.data);
     });
-    axios.get(`https://curevive.prophecius.com/api/sectionone`)
+    axios.get(`${process.env.REACT_APP_API_URL}api/sectionone`)
     .then((res)=>{
       setSectionone(res.data);
     });
-    axios.get(`https://curevive.prophecius.com/api/sectiontwo`)
+    axios.get(`${process.env.REACT_APP_API_URL}api/sectiontwo`)
     .then((res)=>{
       setSectiontwo(res.data);
     });
-    axios.get(`https://curevive.prophecius.com/api/teams`)
+    axios.get(`${process.env.REACT_APP_API_URL}api/teams`)
     .then((res)=>{
       setTeams(res.data);
     });
     
-    axios.get(`https://curevive.prophecius.com/api/faq`)
+    axios.get(`${process.env.REACT_APP_API_URL}api/faq`)
     .then((res)=>{
       setFaq(res.data);
     });

@@ -21,11 +21,11 @@ const Bronchitis=()=>{
   
      useEffect(()=>{
         
-        axios.get(`https://curevive.prophecius.com/api/product/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/product/${id}`)
         .then((res)=>{
             setProduct(res.data);
         });
-        axios.get(`https://curevive.prophecius.com/api/researchpaper`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/researchpaper`)
         .then((res)=>{
           setResearchpaper(res.data);
         }); 
@@ -43,7 +43,7 @@ const Bronchitis=()=>{
             <Row style={{marginTop: '100px'}}>
                 <Col xl={4}  xs={24} span={4}></Col>
                 <Col xl={11} xs={24} span={11} className="flex mx-auto justify-center" >
-                    <img src={`https://curevive.prophecius.com/${product.picture}`} alt="herbalmedicine"/>
+                    <img src={`${process.env.REACT_APP_API_URL}${product.picture}`} alt="herbalmedicine"/>
                 </Col>
 
                 <Col xl={5} xs={24} span={5} >

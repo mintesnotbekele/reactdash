@@ -25,11 +25,11 @@ const Blogdetail=()=>{
     const [sider, seSider] = useState([]);
      useEffect(()=>{
 
-        axios.get(`https://curevive.prophecius.com/api/newsAndarticle/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/newsAndarticle/${id}`)
         .then((res)=>{
             setArticles(res.data);
         });
-        axios.get(`https://curevive.prophecius.com/api/newsAndarticle`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/newsAndarticle`)
         .then((res)=>{
             let temp  = res.data;
             setAllarticle(res.data);
@@ -59,7 +59,7 @@ const Blogdetail=()=>{
                 <Col span={4}></Col>
                 <Col xs={24} xl={10} style={{padding: '10px'}}>
                     <h1 className="firstheaders">{articles?.title}</h1>
-                    <img style={{margin: 'auto'}} src={`https://curevive.prophecius.com/${articles?.picture}`} alt="blog detail"/>
+                    <img style={{margin: 'auto'}} src={`${process.env.REACT_APP_API_URL}${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
                   </div>
                         <p className="firsttext" style={{textAlign: 'left', marginTop: '50px', marginBottom: '50px'}}> 

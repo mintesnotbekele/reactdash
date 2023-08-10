@@ -18,7 +18,7 @@ import env from "react-dotenv";
 const EarnWithUs=()=>{
     const [faq, setFaq] = useState([]);
     useEffect(()=>{
-        axios.get(`https://curevive.prophecius.com/api/faq`)
+        axios.get(`${process.env.REACT_APP_API_URL}api/faq`)
         .then((res)=>{
           setFaq(res.data);
         });
