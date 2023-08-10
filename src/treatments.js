@@ -238,21 +238,21 @@ const Treatment =()=>{
             <p className='firsttext' style={{textAlign: 'left', color: '#4D5053', margin: '50px 0px'}}>
               Choosing the right points according to your condition and find their exact location can be a tedious task! Curevive
                     is here to guide you at every step . We understand the importance of acupressure as a complementary therapy .</p>
-             <ol>
-              <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
+             <ol style={{paddingLeft: '0px'}}>
+              <li className='firsttext numberStyle my-3'>
               <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>1</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}> 
               Identify the root cause of your condition</span>
               </li>
-              <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
+              <li className='firsttext numberStyle my-3' >
               <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>2</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>
                 Make a list of what acupressure points will work best</span>
                   with your condition.
               </li>
-              <li className='firsttext' style={{textAlign: 'left', margin: '40px'}}>
+              <li className='firsttext numberStyle my-3'>
               <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>3</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}> 
                  Courier you our specially designed acupressure tool</span>
               </li>
-              <li className='firsttext' style={{textAlign: 'left' , margin: '40px'}}>
+              <li className='firsttext numberStyle my-3'>
               <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>4</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>
                 Equip you with our expert guided videos on how to</span>
                 locate the points, chosen by our doctors for you.
