@@ -22,7 +22,8 @@ import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 const tokens = localStorage.getItem('tokens');
 
 const config = {
-  headers: { Authorization: `Bearer ${tokens}` }
+  headers: { Authorization: `Bearer ${tokens}`, 'content-type': 'application/x-www-form-urlencoded' },
+  
 };
 function CustomTabPanel(props) {
 
@@ -78,7 +79,7 @@ const Forums=()=>{
         let token = localStorage.getItem('tokens');
         if(token == undefined)
           navigate('/login');
-        axios.get(`https://curevive.prophecius.com/api/threads`, config)
+        axios.get(`http://127.0.0.1:8000/forum/api/category`, config)
         .then((res)=>{
          setThreads(res.data);
         }).catch((err)=> console.log(err))
@@ -104,7 +105,7 @@ const Forums=()=>{
    
 
     const handleSubmit=(values)=>{
-      axios.post('http://localhost:8000/api/threads', {
+      axios.post('https://curevive.prophecius.com/api/threads', {
           "title" : values.title,
           "description" : values.description,
           

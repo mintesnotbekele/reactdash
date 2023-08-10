@@ -16,7 +16,7 @@ const Testimonials=()=>{
    const [loading, setLoading] = useState(false);
     useEffect(()=>{
       
-     axios.get(`http://curevive.prophecius.com/api/testimonial`)
+     axios.get(`${process.env.REACT_APP_API_URL}/api/testimonial`)
      .then((res)=>{
       setTestimonials(res.data);
      })
@@ -92,7 +92,7 @@ const Testimonials=()=>{
                                  <div className="card text-center" style={{background: 'rgb(0,0,0,0.0)'}}>
                                      <div className="card-body">
                                      <div className="mt-4 mb-4">
-                                             <img style={{float: 'left', borderRadius: '50%'}} src={`http://curevive.prophecius.com/${item.profilepic}`} alt="..." className="avatar mx-auto mb-2 shadow d-block mx-5"/>
+                                             <img style={{float: 'left', borderRadius: '50%'}} src={`${process.env.REACT_APP_API_URL}/${item.profilepic}`} alt="..." className="avatar mx-auto mb-2 shadow d-block mx-5"/>
                                              <div style={{float: 'left'}} className="name d-block mx-3" >
                                                  <span className="text-sm font-weight-bold text-dark mb-0">
                                                   <div style={{textAlign: 'left', fontSize: '22px', color: 'black'}}>

@@ -155,7 +155,7 @@ return(
         <Col xl={8} xs={24} span={8}>
             <div>
               
-                <img alt="herbs" src={`http://curevive.prophecius.com/${items.picture}`}/>
+                <img alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items.picture}`}/>
             </div>
         </Col>
         <Col xl={8} xs={24} span={8}>
@@ -186,7 +186,7 @@ return(
          </Col>
          <Col xl={8} xs={24} span={8}>
             <div>
-                <img alt="herbs" src={`http://curevive.prophecius.com/${items.picture}`}/>
+                <img alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items.picture}`}/>
             </div>
         </Col>
         <Col span={4}>
@@ -264,7 +264,7 @@ return(
           {teams.map((items) =>
                         <div className='team-member p-1' >
                         <div className="thumb">
-                            <img src={`http://curevive.prophecius.com/${items.picture}`} alt="Alexis-Team" />
+                            <img src={`${process.env.REACT_APP_API_URL}/${items.picture}`} alt="Alexis-Team" />
                         </div>
                         <div className="content">
                             <div className="member-info">

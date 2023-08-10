@@ -35,19 +35,19 @@ const Treatment =()=>{
   const [faq, setFaq] = useState([]);
 
    useEffect(()=>{
-    axios.get('http://curevive.prophecius.com/api/sectiononeTreatment')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/sectiononeTreatment`)
     .then((res)=>{
       setSectionone(res.data);
     });
-    axios.get('http://curevive.prophecius.com/api/sectiontwoTreatment')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/sectiontwoTreatment`)
     .then((res)=>{
       setSectiontwo(res.data);
     });
-    axios.get('http://curevive.prophecius.com/api/disease')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/disease`)
     .then((res)=>{
       setDiseases(res.data);
     });
-    axios.get('http://curevive.prophecius.com/api/treatment')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/treatment`)
     .then((res)=>{
       let temp  = res.data;
       temp.forEach((value, idx) => 
@@ -57,11 +57,11 @@ const Treatment =()=>{
       })
       setTreatments(temp);
     });
-    axios.get('http://curevive.prophecius.com/api/researchpaper')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/researchpaper`)
     .then((res)=>{
       setResearchpaper(res.data);
     });
-    axios.get('http://curevive.prophecius.com/api/faq')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/faq`)
     .then((res)=>{
       setFaq(res.data);
     });
@@ -109,7 +109,7 @@ const Treatment =()=>{
             <div  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
 
-            <div onClick={() => handleClick(item.index)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(http://curevive.prophecius.com/${item.background})`}}>
+            <div onClick={() => handleClick(item.index)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(${process.env.REACT_APP_API_URL}/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
@@ -194,7 +194,7 @@ const Treatment =()=>{
               </div>
             </Col>
             <Col xl={10} xs={24} span={10}>
-            <img alt="herbs" src={`http://curevive.prophecius.com/${items?.picture}`}/>
+            <img alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items?.picture}`}/>
             </Col>
           </Row>
         )}
@@ -209,7 +209,7 @@ const Treatment =()=>{
         { sectiontwo.map((items) =>
           <Row>
             <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
-            <img alt="herbs" src={`http://curevive.prophecius.com/${items?.picture}`}/>
+            <img alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items?.picture}`}/>
             </Col>
             <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
               <h1 className='firstheaders'>
