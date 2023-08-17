@@ -25,15 +25,15 @@ import Forums from './forums';
 import ForumDetail from './forumdetail';
 import './App.css';
 import EarnWithUs from './earnwithus';
-
-
+import ForumsThreads from './threads';
+import ForumsReplies from './replies';
+import Affiliates from './affiliates'; 
+import Webinars from './webinars';
+import DoctorPartner from './doctorpartner';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-
-
-    
     <div style={{background: '#F6F5EC'}}>
     <Routes>
                         <Route path="/" element={ <App />}>
@@ -56,11 +56,16 @@ ReactDOM.render(
                         <Route path="/slide" element={<Slider/>}></Route>  
                         <Route path="/forums" element={<Forums/>}></Route>
                         <Route path="/earnwithus" element={<EarnWithUs/>}></Route>
+                        <Route path="/webinars" element={<Webinars/>}></Route>
+                        <Route path="/affiliates" element={<Affiliates/>}></Route>
+                        <Route path="/doctorpartners" element={<DoctorPartner/>}></Route>
                         <Route path="/forums/:id" element={<ForumDetail/>}></Route>
+                        <Route path="/threads/:id" element={<ForumsThreads/>}></Route>
+                        <Route path="/replies/:id/:title"  element={<ForumsReplies/>}></Route>
                     </Routes>
-                    </div>
-    </BrowserRouter>
-  </React.StrictMode>,
+                  </div>
+        </BrowserRouter>
+      </React.StrictMode>,
   document.getElementById('root')
 
 );

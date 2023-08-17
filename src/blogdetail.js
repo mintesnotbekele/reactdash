@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from './components/headerbackup';
 import blogbanner from './assets/blogdetailbanner.jpg';
 import blogdetail from './assets/blogdetail.png';
 import quotes from "./assets/blogquotes.png";
@@ -24,12 +24,12 @@ const Blogdetail=()=>{
     const [loading, setLoading] = useState(false);
     const [sider, seSider] = useState([]);
      useEffect(()=>{
-
-        axios.get(`${process.env.REACT_APP_API_URL}api/newsAndarticle/${id}`)
+        console.log(process.env.REACT_APP_API_URL);
+        axios.get(`${process.env.REACT_APP_API_URL}/api/newsAndarticle/${id}`)
         .then((res)=>{
             setArticles(res.data);
         });
-        axios.get(`${process.env.REACT_APP_API_URL}api/newsAndarticle`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/newsAndarticle`)
         .then((res)=>{
             let temp  = res.data;
             setAllarticle(res.data);
@@ -59,13 +59,13 @@ const Blogdetail=()=>{
                 <Col span={4}></Col>
                 <Col xs={24} xl={10} style={{padding: '10px'}}>
                     <h1 className="firstheaders">{articles?.title}</h1>
-                    <img style={{margin: 'auto'}} src={`${process.env.REACT_APP_API_URL}${articles?.picture}`} alt="blog detail"/>
+                    <img style={{margin: 'auto'}} src={`${process.env.REACT_APP_API_URL}/${articles?.picture}`} alt="blog detail"/>
                     <div style={{margin: '20px'}}>
                   </div>
                         <p className="firsttext" style={{textAlign: 'left', marginTop: '50px', marginBottom: '50px'}}> 
                         {articles?.description}
                         </p>
-                        <div style={{background: '#ECDFD7', borderRadius: '50px'}}>
+                        <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '50px'}}>
                         <h1 className="italicHeader" style={{color: '#CDA274'}}> “</h1>
                             <p className="italictext" style={{color: '#CDA274', marginTop: '-100px', paddingBottom: '100px'}}> {articles?.quotes}</p>
                         </div>
@@ -82,7 +82,7 @@ const Blogdetail=()=>{
                         <SearchIcon />
                     </InputAdornment>
                     ),
-                    style: { background: '#ECDFD7',borderRadius: '10px', height: '60px', border: 'none'}
+                    style: { background: 'rgba(78, 52, 38, 0.6)',borderRadius: '10px', height: '60px', border: 'none'}
                 }}
 
 
@@ -98,7 +98,7 @@ const Blogdetail=()=>{
                 </div>
                 )}
                
-                <div style={{margin: '30px', background: '#ECDFD7', borderRadius: '30px', padding: '30px'}}>
+                <div style={{margin: '30px', background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', padding: '30px'}}>
                         <h1 className="blogHeader">
                         Categories
                         </h1>

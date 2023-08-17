@@ -71,9 +71,9 @@ letter-spacing: 0.02em;
 text-align: left;
 }
 .blogHeader{
-    font-family: Playfair Display;
+font-family: Playfair Display;
 font-size: 25px;
-font-weight: 400;
+font-weight: 600;
 line-height: 31px;
 letter-spacing: 0.02em;
 text-align: left;
@@ -143,16 +143,25 @@ line-height: 23px;
 letter-spacing: 0.02em;
 text-align: center;
 }
-.hoverarticle{
-    
+.hoverarticle  >{
+  color: 'black';
 
 }
 
 .hoverarticle:hover{
-    background: #ECDFD7;
+    background: rgba(78, 52, 38, 0.6);
     border-radius: 40px;
-
+    color: white;
 }
+
+.hoverarticle:hover h1{
+  color: white;
+}
+
+.hoverarticle:hover p{
+  color: white;
+}
+
 
 .articlehead{
     font-family: Playfair Display;
@@ -189,7 +198,6 @@ font-weight: 400;
 line-height: 33px;
 letter-spacing: 0.01em;
 text-align: right;
-
 }
 .diseasecol1{
     font-family: lato;
@@ -226,7 +234,7 @@ text-align: left;
     color: #CDA274;
 }
 .cursorhover{
-    background: #ECDFD7;
+    background: rgba(78, 52, 38, 0.6);
     margin-left: 10px;
     float: right; 
     font-size: 22px;
@@ -257,7 +265,7 @@ backdrop-filter: blur(16.9px);
    background-color: #292F36;
 }
 .commonbutton{
-    background-color: #ECDFD7;
+    background-color: rgba(78, 52, 38, 0.6);
 }
 .displayText{
     visibility: hidden;
@@ -266,18 +274,16 @@ backdrop-filter: blur(16.9px);
     visibility: visible;
     
 }
-.dismage{
+#diseasehover{
     background: rgba(255, 255, 255, 0.57);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(14.3px);
     -webkit-backdrop-filter: blur(14.3px);
-    /* From https://css.glass */
-
-    .react-multiple-carousel__arrow{
+    
         width: 90%;
         margin: auto;
         margin-left: 0px;
-        }
+        
         
         .item{
         width: 1000px;
@@ -413,7 +419,7 @@ color: #000000B2;
 .homeslider{
     height: 600px;
     padding: 30px;
-    background: #ECDFD7; 
+    background: rgba(78, 52, 38, 0.6); 
     border-Radius: 50px;
     @media screen and (max-width: 699px) {
         height: 150px;
@@ -443,7 +449,7 @@ color: #000000B2;
     font-family: Playfair Display;
 }
 .quoteclass{
-    background: #ECDFD7;
+    background: rgba(78, 52, 38, 0.6);
      border-radius: 50px;
       width: 70%;
        padding: 30px;
@@ -571,7 +577,7 @@ color: #000000B2;
 .teamsText{
    margin: auto;
     font-size: 25px;
-    color: #c32d2d;
+    color: #CDA274;
     text-align: center;
 }
 
@@ -682,6 +688,23 @@ color: #4E3426;
         
     }
   }
+
+
+  .disease-member {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .disease-member::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
   
 .team-member {
     margin-bottom: 30px;
@@ -695,9 +718,16 @@ color: #4E3426;
     width: 100%;
     height: 100%;
     background-color: #000000;
-    opacity: 0;
+    background: rgba(255, 255, 255, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
     transition: all 0.3s ease-in-out;
+  
   }
+
   .team-member .thumb {
     overflow: hidden;
   }
@@ -715,6 +745,12 @@ color: #4E3426;
     visibility: hidden;
     width: 100%;
     transition: 0.4s;
+    border-radius: 45px;
+    background: rgba(255, 255, 255, 0);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(15.1px);
+-webkit-backdrop-filter: blur(15.1px);
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
@@ -726,7 +762,8 @@ color: #4E3426;
     }
   }
   .team-member .content .member-info {
-    bottom: 62px;
+    bottom: 120px;
+    color: black;
     position: absolute;
   }
   .team-member .content .member-info .name {
@@ -749,7 +786,7 @@ color: #4E3426;
     color: #fff;
   }
   .team-member .content .member-info .name a:hover {
-    color: #ff1d5d;
+    color: #CDA274;
   }
   .team-member .content .member-info .designation {
     bottom: -10px;
@@ -916,4 +953,40 @@ color: #4E3426;
       margin: 0px;
     
   }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .bg-image {
+    /* The image used */
+   
+   height: 300px;
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
   }

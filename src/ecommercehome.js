@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from './components/headerbackup';
 import disease from './assets/diseaseBanner.jpg';
 import disease1 from './assets/diseaseImage.png';
 import { Col, Button, Row } from "antd";
@@ -31,7 +31,7 @@ Gastritis is the inflammation, irritation or erosion of this protective stomach 
             <Row style={{marginTop: '70px'}}>
                 <Col span={4}></Col>
                 <Col xl={16} xs={24} span={16}>
-                  <div style={{display: 'flex', background: '#ECDFD7', borderRadius: '40px', margin: '70px', padding: '30px'}}>
+                  <div style={{display: 'flex', background: 'rgba(78, 52, 38, 0.6)', borderRadius: '40px', margin: '70px', padding: '30px'}}>
                  
                     <div style={{width: '100%'}}>  
                     <Link style={{color: 'black'}} to='/ecommerceherbal'>

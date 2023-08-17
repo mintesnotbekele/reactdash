@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from './components/headerbackup';
 import aboutBanner from './assets/forumbanner.png';
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -36,7 +36,7 @@ const ForumDetail=()=>{
   };
   const handleSubmit=(values)=>{
  
-    axios.post(`${process.env.REACT_APP_API_URL}api/replies/`,
+    axios.post(`${process.env.REACT_APP_API_URL}/api/replies/`,
      {
         "description" : values.comment,
         "thread" : id,
@@ -54,29 +54,29 @@ const navigate = useNavigate();
     let token = localStorage.getItem('tokens');
     if(token == undefined)
       navigate('/login');
-      axios.get(`${process.env.REACT_APP_API_URL}api/threads/${id}`, config)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/threads/${id}`, config)
       .then((res)=>{
        setThreads(res.data);
       }).catch((err)=> console.log(err));
 
-      axios.get(`${process.env.REACT_APP_API_URL}api/likedby/${id}`, config)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/likedby/${id}`, config)
       .then((res)=>{
        if(res.data.length > 0 ){
         setLiked(true);
        }
       }).catch((err)=> console.log(err));
-      axios.get(`${process.env.REACT_APP_API_URL}api/repliedforum/${id}`, config)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/repliedforum/${id}`, config)
       .then((res)=>{
        setComments(res.data);
       }).catch((err)=> console.log(err))
-      axios.get(`${process.env.REACT_APP_API_URL}api/likecounter/${id}`, config)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/likecounter/${id}`, config)
       .then((res)=>{
         setLikeCount(res.data);
       }).catch((err)=> console.log(err))
      },[updated])
 
      const handliLikes=()=>{
-      axios.post(`${process.env.REACT_APP_API_URL}api/likes/`,
+      axios.post(`${process.env.REACT_APP_API_URL}/api/likes/`,
       {
         "thread" : id,
    }, config)

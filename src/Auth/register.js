@@ -15,7 +15,7 @@ const Register=()=>{
     const navigate = useNavigate();
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const handleSubmit=(values)=>{
-        axios.post(`${process.env.REACT_APP_API_URL}api/auth/register`, {
+        axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
             "name" : values.firstname+values.lastname,
             "email" : values.email,
             "password" : values.password,

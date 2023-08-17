@@ -5,7 +5,7 @@ import faqs from "./assets/faq.png";
 import disease from "./assets/disease.jpg";
 import TextArea from 'antd/es/input/TextArea';
 import {ArrowRightOutlined} from '@ant-design/icons';
-import Header from './components/header';
+import Header from './components/headerbackup';
 import Footer from './components/footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';  
@@ -39,24 +39,24 @@ const About=()=>{
 
    useEffect(()=>{
 
-    axios.get(`${process.env.REACT_APP_API_URL}api/quote`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/quote`)
     .then((res)=>{
       setQuotes(res.data);
     });
-    axios.get(`${process.env.REACT_APP_API_URL}api/sectionone`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/sectionone`)
     .then((res)=>{
       setSectionone(res.data);
     });
-    axios.get(`${process.env.REACT_APP_API_URL}api/sectiontwo`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/sectiontwo`)
     .then((res)=>{
       setSectiontwo(res.data);
     });
-    axios.get(`${process.env.REACT_APP_API_URL}api/teams`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/teams`)
     .then((res)=>{
       setTeams(res.data);
     });
     
-    axios.get(`${process.env.REACT_APP_API_URL}api/faq`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/faq`)
     .then((res)=>{
       setFaq(res.data);
     });
@@ -195,7 +195,7 @@ return(
       </Row> 
 
        )}
-      <Row style={{marginTop: "100px", paddingBottom: '100px', backgroundColor: "#ECDFD7"}}>
+      <Row style={{marginTop: "100px", paddingBottom: '100px', backgroundColor: "rgba(78, 52, 38, 0.6)"}}>
       <Col  xl={24} xs={24} span={24}>
             <div style={{margin: 'auto', width: '100%', }}> 
             <h1 className='firstheaders' style={{ textAlign: 'center'}}>OUR TEAM</h1>
@@ -262,7 +262,7 @@ return(
             swipeable
           >
           {teams.map((items) =>
-                        <div className='team-member p-1' >
+                        <div className='team-member disease-member p-1' >
                         <div className="thumb">
                             <img src={`${process.env.REACT_APP_API_URL}/${items.picture}`} alt="Alexis-Team" />
                         </div>
@@ -328,8 +328,8 @@ return(
                                 <h6 className="accordion-header" id="headingOne"> <button className="accordion-button border-bottom font-weight-bold text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse`+item.id} aria-expanded="false" aria-controls="collapseOne">
                                   {item?.title} <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> </button> </h6>
                                 <div id={`collapse`+item.id} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPricing" >
-                                    <div className="d-block d-lg-flex"> <img className="w-50 w-lg-20 my-3" src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/illustrations/rocket-white.png" alt="rocket"/>
-                                        <div className="accordion-body text-sm opacity-8 my-auto"> We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed. <br/><br/> There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment. </div>
+                                    <div className="d-block d-lg-flex"> 
+                                        <div className="accordion-body" style={{visibility: 'visible', textAlign: 'left'}}> {item.description}</div>
                                     </div>
                                 </div>
                             </div>
@@ -396,7 +396,7 @@ return(
 
 
 
-      <Row style={{marginTop: "100px", marginBottom: '50px', backgroundColor: "#ECDFD7"}}>
+      <Row style={{marginTop: "100px", marginBottom: '50px', backgroundColor: "rgba(78, 52, 38, 0.6)"}}>
    
         <Col xl={6} xs={24} span={6}>
 
@@ -407,12 +407,12 @@ return(
 a productive talk.</h1>
             </div>  
             <div style={{width: '100%', display: "flex"}}>
-            <Input style={{background: "#ECDFD7",border: "none", borderBottom: '1px solid', marginRight: "5px"}} placeholder='Name'/>
-            <Input style={{background: "#ECDFD7",border: "none", borderBottom: '1px solid', marginLeft: "5px"}} placeholder='Email'/>
+            <Input style={{background: "rgba(78, 52, 38, 0.6)",border: "none", borderBottom: '1px solid', marginRight: "5px"}} placeholder='Name'/>
+            <Input style={{background: "rgba(78, 52, 38, 0.6)",border: "none", borderBottom: '1px solid', marginLeft: "5px"}} placeholder='Email'/>
            
             </div>
             <div style={{marginTop: "30px"}}>
-            <TextArea style={{background: "#ECDFD7", border: "none",borderBottom: '1px solid ', }} placeholder='Hello I am Intrested in..'/>          
+            <TextArea style={{background: "rgba(78, 52, 38, 0.6)", border: "none",borderBottom: '1px solid ', }} placeholder='Hello I am Intrested in..'/>          
             </div>   
             <div style={{marginTop: "50px"}} className='mx-auto flex justify-center'>
             <Button style={{background: '#292F36', margin: 'auto', color: 'white', fontSize: '18x', paddingTop: '10px', paddingBottom: '30px'}}>Send Now <ArrowRightOutlined style={{color: '#CDA274', marginLeft: "10px"}}/> </Button>

@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from './components/headerbackup';
 import diseasesBanner from './assets/diseasesditailBanner.jpg';
 import { Row, Button,Col } from "antd";
 import './App.css';
@@ -21,11 +21,11 @@ const Bronchitis=()=>{
   
      useEffect(()=>{
         
-        axios.get(`${process.env.REACT_APP_API_URL}api/product/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/product/${id}`)
         .then((res)=>{
             setProduct(res.data);
         });
-        axios.get(`${process.env.REACT_APP_API_URL}api/researchpaper`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/researchpaper`)
         .then((res)=>{
           setResearchpaper(res.data);
         }); 
@@ -43,11 +43,11 @@ const Bronchitis=()=>{
             <Row style={{marginTop: '100px'}}>
                 <Col xl={4}  xs={24} span={4}></Col>
                 <Col xl={11} xs={24} span={11} className="flex mx-auto justify-center" >
-                    <img src={`${process.env.REACT_APP_API_URL}${product.picture}`} alt="herbalmedicine"/>
+                    <img src={`${process.env.REACT_APP_API_URL}/${product.picture}`} alt="herbalmedicine"/>
                 </Col>
 
                 <Col xl={5} xs={24} span={5} >
-                <div style={{background: '#ECDFD7', padding:'20px', borderRadius: '30px'}}>
+                <div style={{background: 'rgba(78, 52, 38, 0.6)', padding:'20px', borderRadius: '30px'}}>
                     <h1 className="blogHeader" style={{textAlign: 'center',}}>Product description</h1>
                     <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274',  color: '#4D5053',margin: '10px'}}>Medicinal property: {product.medicinalroperty}</p>
                     <p className="firsttext" style={{textAlign: 'left',  border: 'none', borderBottom: '1px solid', borderBottomColor: '#CDA274', color: '#4D5053', margin: '10px'}}>Shelf life: {product.shelflife}</p>
@@ -106,7 +106,6 @@ const Bronchitis=()=>{
             <Col xl={16} xs={24}  span={16} > 
             <h1 className="firstheaders" >Clinically proven!</h1>
             <p className="firsttext">Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
-         
             </Col>
             <Col span={4}></Col>
         </Row>
@@ -120,6 +119,7 @@ const Bronchitis=()=>{
                <Carousel
             additionalTransfrom={0}
             arrows={true}
+            autoPlay
             autoPlaySpeed={3000}
             centerMode={false}
             className=""
@@ -172,7 +172,7 @@ const Bronchitis=()=>{
           >
      
      {researchpaper?.map((item) => 
-            <div style={{width: '90%',margin: '40px' , borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
+            <div style={{width: '90%',margin: '40px' , borderRadius: '60px', margin: '10px', padding: '10px',background: "rgba(78, 52, 38, 0.6)"}}>
                       <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
                         {item.title}
                         </h1>

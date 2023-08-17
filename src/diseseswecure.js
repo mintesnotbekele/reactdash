@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from './components/headerbackup';
 import curedbanner from './assets/curedbanner.jpg';
 import {RightOutlined } from '@ant-design/icons';
 import {  Col, Row } from 'antd';
@@ -24,7 +24,7 @@ const DiseasesWeCure=()=>{
 
     const [hoveredCart, setHoveredCart] = useState(-1);
      useEffect(()=>{
-      axios.get(`${process.env.REACT_APP_API_URL}api/disease`)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/disease`)
       .then((res)=>{
         let temp  = res.data;
         temp.forEach((value, idx) => 
@@ -96,7 +96,7 @@ const DiseasesWeCure=()=>{
                         <SearchIcon />
                     </InputAdornment>
                     ),
-                    style: { background: '#ECDFD7',borderRadius: '30px'}
+                    style: { background: 'rgba(78, 52, 38, 0.6)',borderRadius: '30px'}
                 }}
                 />
                 </div>
@@ -108,31 +108,43 @@ const DiseasesWeCure=()=>{
                 </Col>
 
                 <Col xs={24} md={24} xl={12}>
-                <Row style={{flex: 'justify', marginTop: '100px', marginLeft: '15px', padding: '10px' }} >
+                <Row gutter={50} style={{flex: 'justify', marginTop: '100px', marginLeft: '15px', padding: '10px' }} >
                 {diseases.map((item) => 
-                
-                <Col md={12} xs={24} xl={12}>
-                        <img className="diseaseimages" alt="disease images" src={`${process.env.REACT_APP_API_URL}${item.picture}`} style={{borderTopRightRadius:'45px', width: '96%'}} preview={false}/>
-                            <div style={{width: '95%', }}>
-                          <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
-                          <p className="diseaseList" >{item?.name}</p>
-                          <RightOutlined style={{marginTop: '10px'}} className='cursorhover'/>
-                          </Link>
-                          </div>
-                </Col>
+                                    
+                    <Col className='gutter-row' xs={24} md={12} xl={12}>
+                        <div  className="col-lg-12 mb-lg-0 mb-4 " style={{background: 'rgb(0,0,0,0.0)', maxHeight: '550px'}} >
+                        <div className='team-member disease-member p-1 mb-lg-0 mb-4'  >
+                                        <div className="thumb" style={{height: '410px'}}>
+                                        <img  src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '100%', height: '410px', objectFit: 'fill'}}/>
+                                        </div>
+                                        <div style={{width: '96%'}} className="content">
+                                            <div className="member-info">
+                                                <h3 className="name">
+                                                    <Link style={{color: 'black'}}
+                                                        >{item.description }
+                                                    </Link>
+                                                </h3>
+                                            
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div className="card-body pt-3"> <a href="javascript:;" className="card-title h6 icon-move-right d-block text-darker font-weight-bolder"> 
+                                        <Link style={{color: 'black', fontSize: '30px'}} to={`/diseases/${item.id}`}>
+                                        {item?.name}
+                                        </Link> <i className="fas fa-arrow-right text-sm ms-1" style={{float: 'rights'}} aria-hidden="true"></i> </a> </div>
+                                </div>
+                        </Col>
+                            
                   )}
                 <Col xs={24} md={0} xl={3}></Col>
                 </Row>
-
-
-                
                 </Col>
                 <Col xl={6} >
                 </Col>
         </Row>
             <Row>
                 <Col  style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
-                <div style={{margin: 'auto', width: '20%', height: '100px'}}> 
+                <div className="flex mx-auto justify-center"> 
                 <Pagination size="large"  count={counter} page={page} onChange={handleChange} /></div> </Col>
             </Row>
             <Footer/>

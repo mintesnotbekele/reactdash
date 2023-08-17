@@ -4,7 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import carouse from './assets/carouser.png'
 import { ArrowRightOutlined} from '@ant-design/icons'
-import Header from './components/header';
+import Header from './components/headerbackup';
 import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import axios from 'axios';  
@@ -13,6 +13,7 @@ import herbaloil from './assets/herbaloil.png'
 import ReactPlayer from 'react-player'
 import './App.css';
 import './css/theme.css';
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,22 +27,22 @@ const Diseases = ()=>{
     const [treatments, setTreatments] =useState();
 
      useEffect(()=>{
-      axios.get(`${process.env.REACT_APP_API_URL}api/testimonial`)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/testimonial`)
       .then((res)=>{
        setTestimonials(res.data);
       })
      },[])
  
      useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_API_URL}api/treatment`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/treatment`)
         .then((res)=>{
           setTreatments(res.data);
         });
-        axios.get(`${process.env.REACT_APP_API_URL}api/disease/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/disease/${id}`)
         .then((res)=>{
           setDiseases(res.data);
         });
-        axios.get(`${process.env.REACT_APP_API_URL}api/researchpaper`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/researchpaper`)
         .then((res)=>{
           setResearchpaper(res.data);
         });
@@ -49,19 +50,20 @@ const Diseases = ()=>{
     return(
       <div className="App">  
         <Header/>
-            <img style={{width: '100%'}} src={disease} alt='disease'/>
-            <div style={{width: '20%', margin: 'auto'}}>
-            <img  src={`${process.env.REACT_APP_API_URL}${diseases?.picture}`} style={{marginTop: '-150px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
+         <div class="bg-image" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${diseases?.picture})`}}></div>
+            {/* <img style={{width: '100%', height: '400px'}} src={`${process.env.REACT_APP_API_URL}/${diseases?.picture}`} alt='disease'/> */}
+            <div style={{width: '20%', margin: 'auto', zIndex: '1000'}}>
+            <img  src={`${process.env.REACT_APP_API_URL}/${diseases?.picture}`} style={{marginTop: '-10px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
             </div>
             <Row>
                 <Col  span={4}></Col>
                 <Col xl={16} xs={24} span={16}>
                     <Row>
                     <Col xl={12} xs={24} span={12} style={{padding: "50px"}}> 
-                        <div style={{background: '#ECDFD7', borderRadius: '30px', paddingTop: '50px', paddingBottom: '50px', paddingLeft: '50px', paddingRight: '5px'}}>
+                        <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', paddingTop: '50px', paddingBottom: '50px', paddingLeft: '50px', paddingRight: '5px'}}>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                          
-                            <div className='diseasescol' style={{width: '50%',fontFamily: 'Playfair Display', textAlign: 'left'}}>Age Group:</div>
+                            <div className='diseasescol' style={{width: '50%',fontFamily: 'Playfair Display',color: 'white', textAlign: 'left'}}>Age Group:</div>
                             <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato', textAlign: 'left'}}>    
                             <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word'}}>{ diseases?.agegroup}</p>
                             </div>
@@ -69,7 +71,7 @@ const Diseases = ()=>{
                         </div>
                         <div  style={{display: 'flex', justifyContent: 'space-evenly'}}>
                        
-                            <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display', textAlign: 'left'}}>
+                            <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display',color: 'white', textAlign: 'left'}}>
                             Duration:
                             </div>
                             <div style={{width: '50%'}}>
@@ -79,15 +81,15 @@ const Diseases = ()=>{
                             </div>   
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                            <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display', textAlign: 'left'}}>
+                            <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display',color: 'white', textAlign: 'left'}}>
                              Treatment Includes:
                             </div>
-                            <div style={{width: '50%', height: '100px',textAlign: 'left', overflowWrap: 'break-word'}}>
+                            <div style={{width: '50%',textAlign: 'left', overflowWrap: 'break-word'}}>
                             <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word'}}> {diseases?.treatments}  </p> 
                             </div>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                            <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display', textAlign: 'left'}}>
+                            <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display',color: 'white', textAlign: 'left'}}>
                             Mode: 
                             </div>
                             <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato',textAlign: 'left', overflowWrap: 'break-word'}}>
@@ -137,7 +139,7 @@ const Diseases = ()=>{
    
         </Col>
         </Row>
-        <Row className='ecogap' style={{ background: '#ECDFD7', paddingTop: '150px', paddingBottom: '150px'}}>
+        <Row className='ecogap' style={{ background: 'rgba(78, 52, 38, 0.6)', paddingTop: '150px', paddingBottom: '150px'}}>
            <Col xs={24} xl={4}></Col>
            <Col xs={24} xl={16}> 
            <Row>
@@ -162,9 +164,11 @@ const Diseases = ()=>{
             <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", marginBottom: '70px'}}>Clinically proven!</h1>
             <p style={{ fontFamily: "lato", fontSize: "22px", textAlign: 'center', marginBottom: '70px'}}>Our holistic treatments are backed by clinical evidence to promote overall well-being and improve physical, mental, and emotional health.</p>
             <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly',  marginBottom: '100px'}}>
+    
             {treatments?.map((item, index) => 
-                <Button  className="commonbutton buttonHeader" style={{color: 'black'}}>{item?.name}</Button>
+               <div style={{height: '100px'}}><Button  className="commonbutton buttonHeader" style={{color: 'black'}}>{item?.name}</Button></div> 
                )}
+           
             </div>
             </Col>
             <Col span={4}></Col>
@@ -180,6 +184,7 @@ const Diseases = ()=>{
             arrows
             autoPlaySpeed={1000}
             centerMode={false}
+            autoPlay
             className=""
             containerClass="container-with-dots"
             dotListClass=""
@@ -229,7 +234,7 @@ const Diseases = ()=>{
             swipeable
           >
             {researchpaper.map((item) => 
-            <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', padding: '10px',background: "#ECDFD7"}}>
+            <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', padding: '10px',background: "rgba(78, 52, 38, 0.6)"}}>
                       <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '20px'}}>
                         {item.title}
                         </h1>
@@ -255,18 +260,18 @@ const Diseases = ()=>{
 
         <Row>
             <Col xs={24} xl={4} span={4}></Col>
-            <Col xl={16} xs={24} span={16} style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', paddingTop: '30px'}}>
+            <Col xl={16} xs={24} span={16} style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', marginTop: '100px', paddingTop: '30px'}}>
                 <div>
-                    <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>
+                    <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: ' black'}}>
                     SUCCESS STORIES
                     </h1>
                 </div>
          
-                 <Col style={{background: '#ECDFD7', borderRadius: '20px'}} span={24}>
+                 <Col style={{ borderRadius: '20px'}} span={24}>
                  <section className="py-lg-5">
                   <div className="container">
                  <Carousel
-                           autoPlay
+                          autoPlay
                           additionalTransfrom={0}
                           arrows={false}
                           infinite
@@ -320,7 +325,7 @@ const Diseases = ()=>{
                           swipeable
                               >
                      {testimonials.map((item) => 
-                                 <div className="col-lg-11 col-md-8 mb-4">
+                                 <div className="col-lg-11 mx-auto col-md-8 mb-4">
                                  <div className="card text-center" style={{background: 'background: #F6F5EC'}}>
                                      <div className="card-body">
                                      <div className="mt-4 mb-4">
@@ -367,10 +372,9 @@ const Diseases = ()=>{
                     <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>
                     Begin your journey
                     </h1>
-              
                     </div>
                     <div style={{width: '100%',}}>
-                    <Carousel
+     <Carousel
             additionalTransfrom={0}
             arrows
             autoPlaySpeed={1000}
@@ -441,7 +445,7 @@ const Diseases = ()=>{
             </Col>
             <Col span={4}></Col>
         </Row>
-        <Row >
+        <Row  className='my-10'>
             <Col span={4}></Col>
             <Col xl={16} xs={24} span={16}>
             
@@ -454,7 +458,7 @@ const Diseases = ()=>{
                    <Row>
                     <Col xs={24} xl={8}>
                       <div style={{padding: '10px'}}>
-                        <div style={{background: '#ECDFD7', borderRadius: '30px' , width: '100%', padding: '20px'}}>
+                        <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px' , width: '100%', padding: '20px'}}>
                             <p className='pricingheader'>10 Day trial </p>
                             <p style={{textAlign: 'center'}}>/ month</p>
                             <h1 className='pricingstyle'>₹950</h1>
@@ -471,7 +475,7 @@ const Diseases = ()=>{
                         </Col>
                         <Col xs={24} xl={8}>
                         <div style={{padding: '10px'}}>
-                        <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', padding: '40px'}}>
+                        <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', width: '100%', padding: '40px'}}>
                         <p className='pricingheader'> Complete Plan </p>
                             <h1 className='pricingstyle'>₹9800</h1>
                             <p style={{textAlign: 'center'}}>/ month</p>
@@ -492,7 +496,7 @@ const Diseases = ()=>{
                         </Col>
                         <Col xs={24} xl={8}>
                         <div style={{padding: '10px'}}>
-                        <div style={{background: '#ECDFD7', borderRadius: '30px', width: '100%', padding: '40px'}}>
+                        <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', width: '100%', padding: '40px'}}>
                         <p className='pricingheader'>Premium Plan </p>
                             <h1 className='pricingstyle'>₹10,,380</h1>
                             <p style={{textAlign: 'center'}}>/ month</p>
@@ -523,9 +527,9 @@ const Diseases = ()=>{
         <Row>
             <Col span={4}></Col>
             <Col xl={16} xs={24} span={16}>
-                <div style={{background: '#ECDFD7', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
+                <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
                     <h1 className='firstheaders'>Check out the questions asked by our patients previously</h1>
-                    <h3 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "25px"}}>Visit Q & A </h3>
+                   <Link to="/forums"> <h3 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "25px"}}>Visit Q & A </h3></Link>
                 </div>
             </Col>
             <Col span={4}></Col>

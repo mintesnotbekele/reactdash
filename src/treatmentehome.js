@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from './components/headerbackup';
 import treatmentbanner from './assets/treatmenthome.png';
 import herbaloil from  './assets/herbaloil.png';
 import herbalcapsule from './assets/herbalcapsule1.png'
@@ -60,7 +60,7 @@ const TreatmentHome=()=>{
                                     
             </Row>
 
-            <Row style={{background: '#ECDFD7', marginTop: '100px'}}>
+            <Row style={{background: 'rgba(78, 52, 38, 0.6)', marginTop: '100px'}}>
             <Col  span={24}> 
                
                 <div className="mx-auto flex justify-center">

@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from './components/headerbackup';
 import { Row, Col, Button,Input, message,Form } from "antd";
 import {ArrowRightOutlined} from '@ant-design/icons';
 import bookingbanner from './assets/bookBanner.jpg';
@@ -11,7 +11,7 @@ import axios from "axios";
 const Book=()=>{
 
     const handleSubmit=(values)=>{
-        axios.post(`${process.env.REACT_APP_API_URL}api/books`, {
+        axios.post(`${process.env.REACT_APP_API_URL}/api/books`, {
             "name" : values.name,
             "email" : values.email,
             "phone" :  values.phone,

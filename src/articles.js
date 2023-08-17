@@ -1,4 +1,4 @@
-import Header from './components/header';
+import Header from './components/headerbackup';
 import { Col, Row } from 'antd';
 import moment from 'moment';
 import {RightOutlined} from '@ant-design/icons';
@@ -13,7 +13,7 @@ const Articles =()=>{
 
     const [latestpost, setLatestPost] = useState([]);
      useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_API_URL}api/newsAndarticle`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/newsAndarticle`)
       .then((res)=>{
      
         if(res.data.length != 0)
@@ -42,7 +42,7 @@ const Articles =()=>{
                 <Col md={0} xl={4} xs={0} span={4}></Col>
                 <Col xl={8} md={16} xs={24} span={8}>
                 <div style={{margin: '20px'}}>
-                <img src={`${process.env.REACT_APP_API_URL}${latestpost?.picture}`} alt="latest post"/>
+                <img src={`${process.env.REACT_APP_API_URL}/${latestpost?.tags}`} alt="latest post"/>
                 </div>
                 </Col>
                 <Col xl={8} md={14} xs={24} style={{padding: '30px'}} span={8}>

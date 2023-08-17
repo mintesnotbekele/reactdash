@@ -19,7 +19,7 @@ const Articles= ()=>{
       const [counter , setCounter] = useState([]);
       const [page, setPage] = useState(1);
        useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_API_URL}api/newsAndarticle`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/newsAndarticle`)
         .then((res)=>{
             setArticle(res.data);
             setArticleInit(res.data)
@@ -85,7 +85,7 @@ const Articles= ()=>{
           
            <div style={{ borderWidth: '2px', borderRadius: '25px', padding: '10px', margin: '20px'}}>
            <div style={{height: '100%'}}>
-              <img style={{height: '300px'}} src={`${process.env.REACT_APP_API_URL}${item?.picture}`} alt="articles"/>
+              <img style={{height: '300px', borderRadius: '45px'}} src={`${process.env.REACT_APP_API_URL}/${item?.picture}`} alt="articles"/>
                   <h1 style={{fontSize: '25px', fontFamily: "lato", textAlign: 'left'}}> {item?.title}</h1>
                   <div style={{ marginTop: '30px', marginBottom: '20px'}}>
                         <Link style={{color: 'black'}} to={`/blogdetail/${item?.id}`}>
@@ -104,7 +104,7 @@ const Articles= ()=>{
                       <Stack spacing={2}> 
                           <Row>
                               <Col style={{marginBottom: '100px'}} span={24} variant="outlined" color="secondary"> 
-                                  <div style={{margin: 'auto', width: '50%', height: '100px'}}> 
+                                  <div className="mx-auto justify-center flex"> 
                                   <Pagination size="large"  count={counter} page={page} onChange={handleChange} />
                                   </div> 
                             </Col>

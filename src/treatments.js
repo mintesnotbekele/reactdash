@@ -2,19 +2,13 @@
 
 import aboutBanner from "./assets/treatmentBanner.jpg";
 import {Row, Button,Col} from 'antd';
-
-
 import firstyoga from "./assets/1.png";
-import secondyoga from "./assets/2.png";
-import thirdyoga from "./assets/3.png";
-
 import {ArrowRightOutlined} from '@ant-design/icons';
-import Header from './components/header';
+import Header from './components/headerbackup';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
 import { useRef } from 'react';
 
 const Treatment =()=>{
@@ -35,11 +29,11 @@ const Treatment =()=>{
   const [faq, setFaq] = useState([]);
 
    useEffect(()=>{
-    axios.get(`${process.env.REACT_APP_API_URL}/api/sectiononeTreatment`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/sectiontwoTreatment`)
     .then((res)=>{
       setSectionone(res.data);
     });
-    axios.get(`${process.env.REACT_APP_API_URL}/api/sectiontwoTreatment`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/sectiononeTreatment`)
     .then((res)=>{
       setSectiontwo(res.data);
     });
@@ -90,10 +84,6 @@ const Treatment =()=>{
       partialVisibilityGutter: 300 
     }
   };
-
-
-  const [slideIndex,setSlideIndex] = useState();
-  const [updateCount,setUpdateCount] = useState();
   
    
 
@@ -101,15 +91,19 @@ const Treatment =()=>{
     return(
         <>
     <Header/>
-    <img alt="about Banner"style={{marginBottom: '200px'}} src={aboutBanner}/>
-       <Row style={{marginBottom: '100px'}}>
+    <img alt="about Banner"style={{marginBottom: '100px'}} src={aboutBanner}/>
+       <Row style={{marginBottom: '10px'  }}>
         <Col md={0} xl={4} span={4}>
         </Col>
         <Col xl={16} md={24} xs={24} span={16}>
             <div  style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
             {treatments.map((item) => 
 
-            <div onClick={() => handleClick(item.index)} className='hoverarticle diseaseitems' style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', backgroundImage: `url(${process.env.REACT_APP_API_URL}/${item.background})`}}>
+            <div 
+                  onClick={() => handleClick(item.index)} 
+                  className='hoverarticle diseaseitems align-middle' 
+                  style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', 
+                  backgroundImage: `url(${process.env.REACT_APP_API_URL}/${item.background})`}}>
                     <h1 className='articlehead' style={{textAlign: 'center', marginTop: '50px', fontWeight: '400',}}>
                     {item.name}
                     </h1>
@@ -134,35 +128,36 @@ const Treatment =()=>{
               responsive={responsive} 
              style={{height: '1200px'}}>
            {treatments.map(item=> 
-           <Row style={{background: '#ECDFD7', borderRadius: '40px'}}>
-            <Col xl={10} xs={24}  span={10}>
-            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , padding: '10px'}}>
+           <Row style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '40px'}}>
+            <Col xl={10} xs={24}  span={10} className="p-4">
+            <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , color: 'black', padding: '10px'}}>
               {item?.name}
               </h1>
               <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
             </Col>
-            <Col xl={14} xs={24} className='articletext' span={14} style={{padding:'20px'}}>
-              <p className='treatmentslider' style={{color: '#CDA274'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px'}}>
+            <Col xl={14} xs={24} className='articletext p-4' span={14}>
+              <p className='treatmentslider' style={{color: 'white'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
+              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px', color: 'white'}}>
               Frequently Asked Questions
               </h1>
               
-             <div className="row mb-5">
-                <div className="col-md-10 mx-auto">
+             <div >
+                <div className="col-md-10 justify-start">
                     <div className="card">
-                        <div className="accordion p-3" id="accordionPricing">
-                         {faq.map((item) => 
+                        <div className="accordion" id="accordionPricing">
+                        {faq.map((item) => 
                             <div className="accordion-item mb-3">
                                 <h6 className="accordion-header" id="headingOne"> <button className="accordion-button border-bottom font-weight-bold text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse`+item.id} aria-expanded="false" aria-controls="collapseOne">
                                   {item?.title} <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> </button> </h6>
                                 <div id={`collapse`+item.id} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPricing" >
-                                    <div className="d-block d-lg-flex"> <img className="w-50 w-lg-20 my-3" src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/illustrations/rocket-white.png" alt="rocket"/>
-                                        <div className="accordion-body text-sm opacity-8 my-auto"> We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed. <br/><br/> There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment. </div>
+                                    <div className="d-block d-lg-flex"> 
+                                        <div className="accordion-body" style={{visibility: 'visible', textAlign: 'left'}}> {item.description}</div>
                                     </div>
                                 </div>
                             </div>
                            
                         )}
+                        
                         
                     </div>
                 </div>
@@ -194,14 +189,14 @@ const Treatment =()=>{
               </div>
             </Col>
             <Col xl={10} xs={24} span={10}>
-            <img alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items?.picture}`}/>
+            <img style={{borderRadius: '45px'}} alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items?.picture}`}/>
             </Col>
           </Row>
         )}
         </Col>
         <Col span={4}></Col>
        </Row>
-       <Row style={{marginTop: "50px", background: '#ECDFD7'}}>
+       <Row style={{marginTop: "50px", background:  'rgba(78, 52, 38, 0.6)'}}>
         <Col span={4}>
         
         </Col>
@@ -209,13 +204,13 @@ const Treatment =()=>{
         { sectiontwo.map((items) =>
           <Row>
             <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
-            <img alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items?.picture}`}/>
+            <img style={{borderRadius: '45px'}} alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items?.picture}`}/>
             </Col>
             <Col xl={12} xs={24} style={{padding: "50px"}} span={12}>
-              <h1 className='firstheaders'>
+              <h1 className='firstheaders' style={{color: 'black'}}>
                {items?.title}
               </h1> 
-              <p className='firsttext' style={{textAlign: 'left'}}>
+              <p className='firsttext' style={{textAlign: 'left', color: 'white'}}>
                {items?.description}
               </p>
             </Col>
@@ -227,7 +222,7 @@ const Treatment =()=>{
         </Col>
        </Row>
 
-
+      
        <Row style={{marginTop: '100px', marginBottom: '50px'}}>
         <Col span={4}>
         
@@ -239,23 +234,23 @@ const Treatment =()=>{
               Choosing the right points according to your condition and find their exact location can be a tedious task! Curevive
                     is here to guide you at every step . We understand the importance of acupressure as a complementary therapy .</p>
              <ol style={{paddingLeft: '0px'}}>
-              <li className='firsttext numberStyle my-3'>
-              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>1</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}> 
+              <li className='firsttext numberStyle my-4 ' >
+              <span style={{background: 'rgba(78, 52, 38, 0.6)', color: 'white',fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>1</span><span className='firsttext' style={{textAlign: 'left', color: 'black'}}> 
               Identify the root cause of your condition</span>
               </li>
-              <li className='firsttext numberStyle my-3' >
-              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>2</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>
-                Make a list of what acupressure points will work best</span>
-                  with your condition.
+              <li className='firsttext numberStyle my-4' >
+              <span style={{background: 'rgba(78, 52, 38, 0.6)', color: 'white', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px'}}>2</span> <span className='firsttext' style={{textAlign: 'left', color: 'black'}}>
+                Make a list of what acupressure points will work best with your condition.</span>
+                  
               </li>
-              <li className='firsttext numberStyle my-3'>
-              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>3</span><span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}> 
+              <li className='firsttext numberStyle my-4'>
+              <span style={{background: 'rgba(78, 52, 38, 0.6)', fontSize: '22px', color: 'white',borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>3</span><span className='firsttext' style={{textAlign: 'left', color: 'black'}}> 
                  Courier you our specially designed acupressure tool</span>
               </li>
-              <li className='firsttext numberStyle my-3'>
-              <span style={{background: '#ECDFD7', fontSize: '22px', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>4</span> <span className='firsttext' style={{textAlign: 'left', color: '#4D5053'}}>
-                Equip you with our expert guided videos on how to</span>
-                locate the points, chosen by our doctors for you.
+              <li className='firsttext numberStyle my-4'>
+              <span style={{background: 'rgba(78, 52, 38, 0.6)', fontSize: '22px', color: 'white', borderRadius: '50%', padding: '13px 18px', margin: '10px', textAlign: 'left'}}>4</span> <span className='firsttext' style={{textAlign: 'left', color: 'black'}}>
+                Equip you with our expert guided videos on how to locate the points, chosen by our doctors for you.</span>
+                
               </li>
 
              </ol>
@@ -265,16 +260,17 @@ const Treatment =()=>{
         
         </Col>
        </Row>
-       <Row style={{marginTop: '100px',paddingBottom: '50px', background: '#ECDFD7'}}>
+       <Row style={{marginTop: '100px',paddingBottom: '50px', background: 'rgba(78, 52, 38, 0.6)' }}>
         <Col span={4}>
 
         </Col>
         <Col xl={16} xs={24}  span={16}>
            <div>
-            <h1 className='firstheaders' style={{textAlign: 'center'}}>
+            <br/>
+            <h1 className='firstheaders' style={{textAlign: 'center', color: 'black'}}>
             Backed by evidence !
             </h1>
-            <p className='firsttext' style={{textAlign: 'left', width: '90%', margin: 'auto'}}>
+            <p className='firsttext' style={{textAlign: 'left', width: '90%', color: 'white',  margin: 'auto'}}>
               Modern evidence-based research has shown that stimulation of strategic points on the body influences the body’s
               circulatory, lymphatic and hormonal systems of the body. According to the National Cancer Institute, several studies have
               shown that acupressure has helped cancer patients by reducing cancer-related fatigue and nausea. 
@@ -290,7 +286,7 @@ const Treatment =()=>{
         <Col xl={16} xs={24} span={16}>
           <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
         {diseases.map((item) => 
-          <Button className="commonbutton buttonHeader" style={{color: '#000000'}}>{item?.name}</Button>
+          <Button className="commonbutton buttonHeader" style={{color: 'white'}}>{item?.name}</Button>
         )}
           </div>
         </Col>
@@ -356,15 +352,18 @@ const Treatment =()=>{
             swipeable
           >
             {researchpaper.map((item) => 
-            <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', margin: '10px', padding: '10px',background: "#ECDFD7"}}>
-                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', }}>
+            <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', padding: '10px',background: 'rgba(78, 52, 38, 0.6)'}}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', color: 'black' }}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: 'white'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
-                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
+
+                          <br/>
+                        <a  style={{color:" blue", float: 'right', textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
+                          <br/>
                         </div>
                       </div>
           )}      
@@ -382,7 +381,7 @@ const Treatment =()=>{
               <h1 style={{paddingTop: '30px',fontFamily: "Playfair Display", fontSize: "50px",color: 'white', textAlign: 'center', fontWeight: 'bold'}}>Want to talk to a doctor?</h1>
               <p style={{margin: '30px',fontFamily: 'lato', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>
                     <div className="mx-auto  flex justify-center" style={{width: '100%'}}>
-                      <Button  style={{margin: 'auto', color: 'white', background: '#CDA274'}}>Contact Us <ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/></Button>
+                      <Button  style={{margin: 'auto', color: 'white', background: 'rgba(78, 52, 38, 0.6)'}}>Contact Us <ArrowRightOutlined style={{color: 'white', marginLeft: "10px"}}/></Button>
                     </div>
             </div>
             </div> 

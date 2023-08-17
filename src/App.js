@@ -2,7 +2,7 @@ import background4 from "./assets/1.png";
 import background5 from "./assets/4.png";
 import newhand from "./assets/3.png";
 import birds from "./assets/6.png";
-import Header from './components/header';
+import Header from './components/headerbackup';
 import 'react-multi-carousel/lib/styles.css';
 import {ArrowRightOutlined} from '@ant-design/icons';
 import './App.css';
@@ -12,14 +12,18 @@ import Banner from './components/homepage/banner';
 import Counter from './components/homepage/counter';
 import Testimonials from './components/homepage/testimonials';
 import Articles from './components/homepage/articles';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DisplaySlider from "./components/slider/sliderDisplay";
 import hands from "./assets/na.jpeg";
+import HomeHeader from "./components/header";
+import HomeBanner from "./components/homepage/homebanner";
+import { Height } from "@mui/icons-material";
 
 
 function App() {
+ const navigate= useNavigate();
   const [diseases, setDiseases] = useState([]);
   useEffect(()=>{
     console.log(process.env.REACT_APP_API_URL);
@@ -42,31 +46,28 @@ function App() {
     
     
     <div className="App">    
-     <div  style={{background: "#4E3426",position: 'relative', width: "100%", marginBottom: '80px' }} >
-      <Header/> 
+     <div  style={{position: 'relative', width: "100%", marginBottom: '80px' }} >
+      <HomeHeader/> 
     </div>
-    <Banner/> 
-   
-    
-       <section className="">
-
+    <HomeBanner/>  
+       <section className="" style={{marginTop: '150px'}}>
         <div className="container">
             <div className="row pt-5">
-                <div className="col-md-4 p-4">
-                    <div className="info">
-                        <h6 className="blogHeader" style={{textAlign: 'center', color: 'black'}}>Diseases</h6>
+                <div className="col-md-4 py-7">
+                    <div className="info" onClick={()=> navigate('/cureddisease')}>
+                        <h6 className="blogHeader " style={{textAlign: 'center', color: 'black'}}>Diseases</h6>
                         <p className="firsttext"><span style={{whiteSpaceCollapse: 'preserve', color: 'black'}}>Have diabetes, hypertension, thyroid or more? Learn about your disease and much more.<br/></span></p>
                     </div>
                 </div>
-                <div className="col-md-4 p-4">
-                    <div className="info">
+                <div className="col-md-4 p-4 " style={{ borderTop: 'none',borderBottom: 'none', borderLeftWidth: "1px", borderLeft: 'solid',  borderRight: 'solid', borderWidth: "1px"}}>
+                    <div className="info" onClick={()=> navigate('/about')}>
                         
                         <h6 className="blogHeader" style={{textAlign: 'center', color: 'black'}}>Welcome to Curevive</h6>
                         <p className="firsttext" style={{color: 'black'}}>When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.</p>
                     </div>
                 </div>
-                <div className="col-md-4 p-4">
-                    <div className="info">
+                <div className="col-md-4 py-7">
+                    <div className="info" onClick={()=> navigate('/treatment')}>
                        
                         <h6 className="blogHeader" style={{textAlign: 'center', color: 'black'}}>Treatments</h6>
                         <p className="firsttext"> <span style={{whiteSpaceCollapse: 'preserve',color: 'black'}}>Find a cure for your problems through the extensively researched treatments by specialists of the nation.</span></p>
@@ -103,7 +104,13 @@ function App() {
          <div className='testimonialgap'>
 
          </div>
+         <Row>
+          <Col span={4}></Col>
+          <Col span={16}>
          <Testimonials/>
+         </Col>
+         <Col></Col>
+         </Row>
         <div style={{width: '700px',marginTop: '50px', overflowX: 'hidden'}}> <img alt="background" className='artlineStyle' src={background5}/></div>
        
          <div className="mt-lg-12">
@@ -112,7 +119,7 @@ function App() {
             </Col>
             <Col  xl={16} md={24}>
             <h1 style={{fontSize: '50px', color: '#292F36', marginBottom: "40px", fontFamily: 'Playfair Display'}}>Diseases</h1>
-         <p style={{ padding: '10px', textAlign: 'left', color: '#4D5053', fontSize: '22px', fontFamily: 'lato'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
+         <p style={{ padding: '10px', textAlign: 'center', color: '#4D5053', fontSize: '22px', fontFamily: 'lato'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
          
             </Col>
             <Col md={0} xl={4}>
@@ -124,27 +131,35 @@ function App() {
         <Col xs={24} md={0} xl={4}></Col>
          <Col xs={24} md={24} xl={16}>
           <div className="mt-lg-6">
-         <Row style={{flex: 'justify', paddingLeftLeft: '15px', padding: '10px' }} >
+         <Row gutter={16} style={{flex: 'justify', paddingLeftLeft: '15px', padding: '10px' }} >
          {diseases.map((item) => 
         
-         <Col xs={24} md={12} xl={12}>
-
-           <div className="col-lg-12 mb-lg-0 mb-4" style={{background: 'rgb(0,0,0,0.0)'}} >
-                    <div className="card card-plain" style={{background: 'rgb(0,0,0,0.0)'}}>
-                        <div className="card-header p-0 mx-3 mt-3 position-relative z-index-1" style={{background: 'rgb(0,0,0,0.0)'}}> <a href="javascript:;" className="d-block"> 
-                        <img src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '96%'}}/> </a> </div>
+         <Col   className="gutter-row" xs={24} md={12} xl={11} gap-1>
+           <div  className="col-lg-12 mb-lg-0 mb-4 " style={{background: 'rgb(0,0,0,0.0)'}} >
+           <div className='team-member disease-member p-1 mb-lg-0 mb-4' >
+                        <div className="thumb">
+                        <img  src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '100%', height: '510px'}}/>
+                        </div>
+                        <div style={{width: '96%'}} className="content">
+                            <div className="member-info">
+                                <h3 className="name">
+                                    <Link
+                                        >{item.description }
+                                    </Link>
+                                </h3>
+                               
+                            </div>
+                        </div>
+                        </div>
                         <div className="card-body pt-3"> <a href="javascript:;" className="card-title h6 icon-move-right d-block text-darker font-weight-bolder"> 
                         <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
                         {item?.name}
                         </Link> <i className="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i> </a> </div>
-                    </div>
-                </div>
-        </Col>
-        
+                   </div>
+              </Col>
           )}
-       
          <div style={{width: '100%'}}>
-         <a href="/cureddiseases" className="btn btn-dark" style={{background: '#292F36'}}>
+         <a href="/cureddisease" className="btn btn-dark" style={{background: '#292F36'}}>
               More
            </a>
          </div>
@@ -156,11 +171,7 @@ function App() {
          <Col xl={4} >
          </Col>
         </Row>
-         
-        
-
-          <Counter/>  
-        
+          <Counter/>   
           <Row  className="my-5">
             <Col xs={24} md={2} xl={7} span={7}></Col>
             <Col  xs={24} md={20} xl={10}  span={10}>
@@ -192,9 +203,12 @@ function App() {
               <div style={{marginTop: "70px",marginBottom: "40px", }}>
                 <h1 className='articleHeader' style={{ textAlign: 'center', color: '#F6F5EC'}}>Want to get your doubts cleared?</h1>
               <p style={{margin: "20px", fontSize: '22px', color: '#F6F5EC'}}>Book a complimentary consultation now!</p>
+             <Link to="/book">
               <Button style={{ fontSize: '22px', background: 'none',backgroundColor: '#CDA274',height: '60px', borderRadius: '20px', color: '#F6F5EC'}}>
-             Book
-              <ArrowRightOutlined /></Button>
+                  Book
+              <ArrowRightOutlined/>
+              </Button>
+              </Link>
               </div>
               </Col>
             </Row>
