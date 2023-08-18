@@ -1,9 +1,6 @@
 name: Generate a build and push to another branch
 
-on: 
- push:
-    branches:
-    - build
+on: push
 
 jobs:
   build:
