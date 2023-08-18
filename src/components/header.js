@@ -41,7 +41,7 @@ const [window, setWindow] = useState();
 
 useEffect(() => {
   if (typeof window !== 'undefined') {
-    console.log(window.innerWidth);
+   
     setWindow(window);
   }
 }, []);
@@ -162,7 +162,7 @@ const container = window !== undefined ? () => window().document.body : undefine
         setdisTag(!distag)
   }
   const handleLogout=()=>{
-        console.log("clivjh");
+     
         localStorage.removeItem('tokens');
         navigate('/login');
   }

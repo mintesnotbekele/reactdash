@@ -42,7 +42,7 @@ const Articles= ()=>{
       };
        const [current, setCurrent] = useState(3);
   const onChange = (page) => {
-    console.log(page);
+    
     setCurrent(page);
   };
 

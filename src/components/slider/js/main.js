@@ -773,12 +773,12 @@
           if (response.status == 200) {
             result.innerHTML = json.message;
           } else {
-            console.log(response);
+           
             result.innerHTML = json.message;
           }
         })
         .catch(error => {
-          console.log(error);
+        
           result.innerHTML = 'Something went wrong!';
         })
         .then(function () {
@@ -830,7 +830,7 @@
           '-=0.4',
         );
     } catch (err) {
-      console.log(err);
+    
     }
   }
   document.addEventListener('mousemove', cursorMovingAnimation);

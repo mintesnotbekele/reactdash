@@ -72,7 +72,7 @@ const [window, setWindow] = useState();
 
 useEffect(() => {
   if (typeof window !== 'undefined') {
-    console.log(window.innerWidth);
+   
     setWindow(window);
   }
 }, []);
@@ -167,7 +167,7 @@ function handleCloseHover1() {
 
 
   const handleLogout=()=>{
-        console.log("clivjh");
+      
         localStorage.removeItem('tokens');
         navigate('/login');
   }
