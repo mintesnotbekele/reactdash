@@ -23,6 +23,7 @@ const About=()=>{
   const [quotes, setQuotes] = useState([]);
   const [teams, setTeams] = useState([]);
   const [faq, setFaq] = useState([]);
+  const [diseasfaq, setdiseasfaq] = useState([]);
   const [sectionone, setSectionone] = useState([]);
   const [sectiontwo, setSectiontwo] = useState([]);
  
@@ -58,7 +59,12 @@ const About=()=>{
     
     axios.get(`${process.env.REACT_APP_API_URL}/api/faq`)
     .then((res)=>{
-      setFaq(res.data);
+      setFaq(res.data.filter(item=>{
+        return item.type == "all"
+      }));
+      setdiseasfaq(res.data.filter(item=>{
+        return item.type != "all"
+      }));
     });
 
     
@@ -370,16 +376,16 @@ return(
                 <div className="col-md-10 mx-auto">
                     <div className="card">
                         <div className="accordion p-3" id="accordionPricing">
-                         {faq.map((item) => 
-                            <div className="accordion-item mb-3">
-                                <h6 className="accordion-header" id="headingOne"> <button className="accordion-button border-bottom font-weight-bold text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse`+item.id} aria-expanded="false" aria-controls="collapseOne">
-                                  {item?.title} <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> </button> </h6>
-                                <div id={`collapse`+item.id} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPricing" >
-                                    <div className="d-block d-lg-flex"> <img className="w-50 w-lg-20 my-3" src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/illustrations/rocket-white.png" alt="rocket"/>
-                                        <div className="accordion-body text-sm opacity-8 my-auto"> We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed. <br/><br/> There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment. </div>
-                                    </div>
-                                </div>
-                            </div>
+                         {diseasfaq?.map((item) => 
+                             <div className="accordion-item mb-3">
+                             <h6 className="accordion-header" id="headingOne"> <button className="accordion-button border-bottom font-weight-bold text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse`+item.id} aria-expanded="false" aria-controls="collapseOne">
+                               {item?.title} <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> </button> </h6>
+                             <div id={`collapse`+item.id} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPricing" >
+                                 <div className="d-block d-lg-flex"> 
+                                     <div className="accordion-body" style={{visibility: 'visible', textAlign: 'left'}}> {item.description}</div>
+                                 </div>
+                             </div>
+                         </div>
                            
                         )}
                         

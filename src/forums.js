@@ -189,8 +189,9 @@ const [form] = Form.useForm();
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                 <Tab label="All Categories" {...a11yProps(0)} />
-                <Tab label="Most Comments" {...a11yProps(1)} />
-                <Tab label="Upvoted TOpics" {...a11yProps(2)} />
+                <Tab label="Recent Topics" {...a11yProps(1)} />
+                <Tab label="my Favourites" {...a11yProps(1)} />
+                
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
@@ -220,12 +221,33 @@ const [form] = Form.useForm();
                         </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              
+            <div class="flex-auto p-4 pt-6">
+                            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
+                            {
+                recent?.map((item, index) => 
+                        
+                        <Link style={{color: 'black'}} to={`/threads/${item.id}`}>
+                                <li class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
+                                    <div class="flex flex-col">
+                                    <div className="max-w-full md:w-1/2 md:flex-none">
+                                        <h1 style={{fontSize: '30px', color: 'black'}}>{item.title}</h1>
+                                        </div>
+                                        <div style={{color: 'black'}} className="flex items-center justify-end max-w-full px-3 md:w-1/2 md:flex-none">
+                                        {item.thread_count}: topics 
+                                        {item.post_count}: answers
+                                     </div>
+                                        <span> </span> 
+                                        <span style={{fontSize: '20px', color: 'black'}}>Description: <span class="font-semibold text-slate-700 sm:ml-2" style={{color: 'black'}}>{item.description}</span>
+                                        </span>
+                                     </div>
+                                </li>
+                                </Link>
+                                )}
+                            </ul>
+                        </div>
           
                     </CustomTabPanel>
-            <CustomTabPanel value={value} index={2}>
-              Item Three
-            </CustomTabPanel>
+            
           </Box>
           </div>
         </div>

@@ -50,7 +50,7 @@ const Diseases = ()=>{
     return(
       <div className="App">  
         <Header/>
-         <div class="bg-image" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${diseases?.picture})`}}></div>
+         <div  class="bg-image" style={{height: '400px', backgroundImage: `url(${process.env.REACT_APP_API_URL}/${diseases?.picture})`}}></div>
             {/* <img style={{width: '100%', height: '400px'}} src={`${process.env.REACT_APP_API_URL}/${diseases?.picture}`} alt='disease'/> */}
             <div style={{width: '20%', margin: 'auto', zIndex: '1000'}}>
             <img  src={`${process.env.REACT_APP_API_URL}/${diseases?.picture}`} style={{marginTop: '-10px', marginBottom: '50px', borderRadius: '50px'}}  alt='disease'/>
@@ -64,7 +64,7 @@ const Diseases = ()=>{
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                          
                             <div className='diseasescol' style={{width: '50%',fontFamily: 'Playfair Display',color: 'white', textAlign: 'left'}}>Age Group:</div>
-                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato', textAlign: 'left'}}>    
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato', textAlign: 'left',color: 'white',}}>    
                             <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word'}}>{ diseases?.agegroup}</p>
                             </div>
                             
@@ -75,7 +75,7 @@ const Diseases = ()=>{
                             Duration:
                             </div>
                             <div style={{width: '50%'}}>
-                                <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word'}}>
+                                <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word', color: 'white',}}>
                                 {diseases?.duration} 
                             </p>
                             </div>   
@@ -85,14 +85,14 @@ const Diseases = ()=>{
                              Treatment Includes:
                             </div>
                             <div style={{width: '50%',textAlign: 'left', overflowWrap: 'break-word'}}>
-                            <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word'}}> {diseases?.treatments}  </p> 
+                            <p className='diseasescol' style={{textAlign: 'left', overflowWrap: 'break-word', color: 'white',}}> {diseases?.treatments}  </p> 
                             </div>
                         </div>
                         <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                             <div className='diseasescol' style={{width: '50%', fontFamily: 'Playfair Display',color: 'white', textAlign: 'left'}}>
                             Mode: 
                             </div>
-                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato',textAlign: 'left', overflowWrap: 'break-word'}}>
+                            <div className='diseasecol1' style={{width: '50%', fontFamily: 'lato',textAlign: 'left', overflowWrap: 'break-word', color: 'white',}}>
                             {diseases?.mode} 
                             </div>
                         </div>
@@ -145,13 +145,13 @@ const Diseases = ()=>{
            <Row>
            <Col xl={12} xs={24} style={{padding: '10px'}}>
             <div style={{width: '100%',}}>
-              <img src={herbacap} style={{ margin: 'auto',height: '400px'}}/>
+             <Link to='/EcommerceHerbal'> <img src={herbacap} style={{ margin: 'auto',height: '400px'}}/></Link>
               </div>
               </Col>
              
               <Col xl={12} xs={24} style={{padding: '10px'}}>
               <div style={{width: '100%'}}>
-              <img src={herbaloil} style={{ margin: 'auto', height: '400px'}}/>
+            <Link to='/Ecommercecapsule'>  <img src={herbaloil} style={{ margin: 'auto', height: '400px'}}/></Link>
              </div>
               </Col>
               </Row>
@@ -174,17 +174,15 @@ const Diseases = ()=>{
             <Col span={4}></Col>
         </Row>
 
-        <Row>
-            <Col span={4}>
-            </Col>
-            <Col xs={24} xl={16} span={16}>
-            
-            <Carousel
+        <Row style={{marginTop: '50px'}}>
+        <Col span={4}>
+        </Col>
+        <Col xl={16} xs={24} span={16}>
+        <Carousel
             additionalTransfrom={0}
-            arrows
+            arrows={false}
             autoPlaySpeed={1000}
             centerMode={false}
-            autoPlay
             className=""
             containerClass="container-with-dots"
             dotListClass=""
@@ -197,7 +195,7 @@ const Diseases = ()=>{
             pauseOnHover
             renderArrowsWhenDisabled={false}
             renderButtonGroupOutside={false}
-            renderDotsOutside={false}
+            renderDotsOutside={true}
             responsive={{
               desktop: {
                 breakpoint: {
@@ -205,7 +203,7 @@ const Diseases = ()=>{
                   min: 1024
                 },
                 items: 3,
-                partialVisibilityGutter: 40
+            
               },
               mobile: {
                 breakpoint: {
@@ -213,7 +211,7 @@ const Diseases = ()=>{
                   min: 0
                 },
                 items: 1,
-                partialVisibilityGutter: 30
+           
               },
               tablet: {
                 breakpoint: {
@@ -221,42 +219,38 @@ const Diseases = ()=>{
                   min: 464
                 },
                 items: 2,
-                partialVisibilityGutter: 30
+             
               }
             }}
             rewind={false}
             rewindWithAnimation={false}
             rtl={false}
             shouldResetAutoplay
-            showDots={false}
+            showDots={true}
             sliderClass=""
             slidesToSlide={1}
             swipeable
           >
             {researchpaper.map((item) => 
-            <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', padding: '10px',background: "rgba(78, 52, 38, 0.6)"}}>
-                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '20px'}}>
+            <div style={{width: '90%', margin: 'auto    ',borderRadius: '40px', padding: '10px' ,marginBottom: '30px',background: 'rgba(78, 52, 38, 0.6)'}}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', color: 'black' }}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '18px', margin: '20px', color: 'white'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
-                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
+                          <br/>
+                        <a  style={{fontWeight: 'bold', color:'blacks', float: 'right', textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
+                          <br/>
                         </div>
                       </div>
-          )}
-                         
-                  
-                    
-                
+          )}      
                  </Carousel>
-
-                     
-            </Col>
-            <Col span={4}>
-            </Col>
-        </Row>
+        </Col >
+        <Col span={4}>
+        </Col>
+       </Row>
 
         <Row>
             <Col xs={24} xl={4} span={4}></Col>
@@ -450,7 +444,7 @@ const Diseases = ()=>{
             <Col xl={16} xs={24} span={16}>
             
             <div>
-                    <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>
+                    <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'black'}}>
                     Pricing & Plan
                     </h1>
               
@@ -459,14 +453,14 @@ const Diseases = ()=>{
                     <Col xs={24} xl={8}>
                       <div style={{padding: '10px'}}>
                         <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px' , width: '100%', padding: '20px'}}>
-                            <p className='pricingheader'>10 Day trial </p>
-                            <p style={{textAlign: 'center'}}>/ month</p>
-                            <h1 className='pricingstyle'>₹950</h1>
-                            <hr style={{height: '2px', background: '#CDA274'}}/>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>1 Consultation</p>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Protocol Creation </p>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Diet Plan</p>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Yoga Protocol</p>
+                            <p className='pricingheader' style={{color: 'black'}}>10 Day trial </p>
+                            <p style={{textAlign: 'center' , color: 'black'}} >/ month</p>
+                            <h1 className='pricingstyle' style={{color: 'black'}}>₹950</h1>
+                            <hr style={{height: '2px', background: '#CDA274' ,color: 'white'}}/>
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', color: 'white'}}>1 Consultation</p>
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', color: 'white'}}>Protocol Creation </p>
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', color: 'white'}}>Diet Plan</p>
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', color: 'white'}}>Yoga Protocol</p>
                             <div className='mx-auto justify-center flex'>
                              <Button  style={{background: "#CDA274", color: 'white', fontSize: '18px', fontFamily: 'lato', margin: 'auto', paddingTop: '10px', paddingBottom: '30px'}}> Get Started<ArrowRightOutlined/></Button>
                           </div>
@@ -476,11 +470,11 @@ const Diseases = ()=>{
                         <Col xs={24} xl={8}>
                         <div style={{padding: '10px'}}>
                         <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', width: '100%', padding: '40px'}}>
-                        <p className='pricingheader'> Complete Plan </p>
-                            <h1 className='pricingstyle'>₹9800</h1>
-                            <p style={{textAlign: 'center'}}>/ month</p>
+                        <p className='pricingheader' style={{color: 'black'}}> Complete Plan </p>
+                            <h1 className='pricingstyle' style={{color: 'black'}}>₹9800</h1>
+                            <p style={{textAlign: 'center', color: 'black'}} >/ month</p>
                             <hr style={{height: '2px', background: '#CDA274'}}/>
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center',color: 'white' }}>Weekly Consultation followups Treatment Kit that include herbal capsules and esentil-oil bled
                                             Protocol Creation Diet Plan with Recipes Yoga Protocol
                                             Trataka and Meditation Protocol
                                             Acupressure and Reflexology
@@ -497,13 +491,13 @@ const Diseases = ()=>{
                         <Col xs={24} xl={8}>
                         <div style={{padding: '10px'}}>
                         <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', width: '100%', padding: '40px'}}>
-                        <p className='pricingheader'>Premium Plan </p>
-                            <h1 className='pricingstyle'>₹10,,380</h1>
-                            <p style={{textAlign: 'center'}}>/ month</p>
+                        <p className='pricingheader' style={{color: 'black'}}>Premium Plan </p>
+                            <h1 className='pricingstyle' style={{color: 'black'}}>₹10,,380</h1>
+                            <p style={{textAlign: 'center',color: 'black'}} >/ month</p>
                             
                             <hr style={{height: '2px', background: '#CDA274'}}/>
                             
-                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center'}}>Weekly Consultation followups
+                            <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', color: 'white'}}>Weekly Consultation followups
                                         Additional Free 2 Consultations 3 Sessions with Reiki Master
                                         Treatment Kit that include herbal capsules and esentil-oil bled
                                         Protocol Creation
@@ -528,8 +522,8 @@ const Diseases = ()=>{
             <Col span={4}></Col>
             <Col xl={16} xs={24} span={16}>
                 <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
-                    <h1 className='firstheaders'>Check out the questions asked by our patients previously</h1>
-                   <Link to="/forums"> <h3 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "25px"}}>Visit Q & A </h3></Link>
+                    <h1 className='firstheaders' style={{color: 'white'}}>Check out the questions asked by our patients previously</h1>
+                   <Link to="/forums"> <h3 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "25px", color: 'white'}}>Visit Q & A </h3></Link>
                 </div>
             </Col>
             <Col span={4}></Col>

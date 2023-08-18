@@ -151,22 +151,11 @@ function handleCloseHover1() {
     }
   }, 50);
 }
- 
-  const scrollPosition = useScrollPosition()
+
   const [top, setTop] = useState(false);
   const tokens = localStorage.getItem('tokens');
   const navigate = useNavigate();
 
-  useEffect(()=>{
-  
-    if(scrollPosition < 70)
-    {
-       setTop(true);
-    }
-    else{
-      setTop(false);
-    }
-},[scrollPosition]);
   const [distag, setdisTag] =useState(true);  
 
   const displayTag=()=>{
@@ -186,62 +175,8 @@ function handleCloseHover1() {
      return(
       <Box sx={{ display: 'flex',}}>
       
-      { top ? 
-      <AppBar  elevation={0} component="nav" style={{background: 'rgba(78, 52, 38, 0.0)', marginTop: '15px'}}> 
-        <Toolbar>
-        <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-        <Link to="/">  <img alt='logo' style={{objectFit: 'contain', height: '100px', marginLeft: '150px'}} src={newlogo}/></Link>
-          </Typography>
-          
-          <Box sx={{ display: { xs: 'none', sm: 'block' } , margin: '0px 250px 10px 100px', float : 'left'}}>
-         
-         <div style={{display: distag ? 'none': 'block',}}> 
-          <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px'}} sx={{ color: '#fff' }}>
-            Treatments    
-          </Link>
-          <Link className='navheader' to='/cureddisease' key="Diseases" style={{margin: '10px'}} sx={{ color: '#fff' }}>
-            Diseases    
-          </Link>
-          
-          <Link className='navheader' to='/book' style={{margin: '10px'}} sx={{ color: '#fff' }}>
-            Booking    
-          </Link>
-          <Link className='navheader' to='/about' style={{margin: '10px'}} sx={{ color: '#fff' }}>
-            About Us    
-          </Link>
-          <Link className='navheader' to='/blog' style={{margin: '10px'}} sx={{ color: '#fff' }}>
-            Blog   
-          </Link>
-          <Link className='navheader' to='/forums' key="" style={{margin: '10px'}} sx={{ color: '#fff' }}>
-            Forums    
-          </Link>
-          <Link onClick={displayTag} style={{padding: '10px'}}>
-        
-           </Link>
-          </div>
-          
-  
-        
-        </Box>
-
-        </Toolbar>
       
-      </AppBar>
-      :
-      <AppBar style={{ background: top ? 'rgba(78, 52, 38, 0.0)': 'rgba(78, 52, 38, 0.6)' , display: top ? 'none': 'block',  position : 'fixed'}} component="nav">
+      <AppBar style={{ background: 'rgba(78, 52, 38, 0.6)' , display: 'block',  position : 'fixed'}} component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -250,7 +185,7 @@ function handleCloseHover1() {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{color: 'white'}}/>
           </IconButton>
           <Typography
             variant="h6"
@@ -272,14 +207,12 @@ function handleCloseHover1() {
             </Link>
             
             <Link className='navheader' to='/book' style={{margin: '10px'}} sx={{ color: '#fff' }}>
-              Booking    
+              Contact us   
             </Link>
             <Link className='navheader' to='/about' style={{margin: '10px'}} sx={{ color: '#fff' }}>
               About Us    
             </Link>
-            <Link className='navheader' to='/blog' style={{margin: '10px'}} sx={{ color: '#fff' }}>
-              Blog   
-            </Link>
+         
             
 
             <Link
@@ -347,7 +280,7 @@ function handleCloseHover1() {
               
 
             <Link onClick={displayTag} style={{padding: '10px'}}>
-             <ClearIcon/>
+             <ClearIcon style={{color: 'white', fontSize: '40px'}}/>
              </Link>
             </div>
             
@@ -356,7 +289,7 @@ function handleCloseHover1() {
             <p style={{width: '400px', marginTop: '20px', fontFamily: 'Playfair Display', fontSize: '36px' ,color: 'white', paddingRight: '10px'}}>Nature's healing touch</p>
             </Link>
              <Link onClick={displayTag} style={{padding: '30px'}}>
-             <MenuIcon />
+             <MenuIcon style={{color: 'white', fontSize: '40px'}} />
              </Link>
             </div>
 
@@ -365,7 +298,7 @@ function handleCloseHover1() {
         </Toolbar>
       
       </AppBar>
-    }
+    
       <Box component="nav">
         <Drawer
         

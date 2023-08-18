@@ -12,14 +12,16 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ReactQuill from 'react-quill';
-import TextArea from "antd/es/input/TextArea";
+import { FavoriteBorderOutlined } from '@mui/icons-material';
+import { Favorite } from '@mui/icons-material';
+
+
 
 const tokens = localStorage.getItem('tokens');
 
 const config = {
   headers: { Authorization: `Bearer ${tokens}`,
-  "X-CSRF-TOKEN":'eyJpdiI6IlljeDZrQmFyS1UrY3luR0VRbE9PQnc9PSIsInZhbHVlIjoiNmpRN1hMZGpWbU5yRko4ZlYyUG81SmRNS25LbmsxV2N1bFhIUHdCTExML29KTTdBWmFXSXVtYTdMR1hONmUxaWVyMEplNVlNNjRWS1o0WW05SWlsT2xuWStoOVlCS0NXT0pyYksyNlJtd2NLUTdiSHhDNThVWHhMbkZ6YU9NQVgiLCJtYWMiOiI3NzhhZDE4ODMzYmE5NWMxZjBmOTg2Y2M2MWY4YmM2MmFmNjIwNjg5MTE4N2YxN2JjYjI2ZmU5YmEzZjlkZjY3IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6Inoxa3FKMnRiUlRERkllV1BQUndPeHc9PSIsInZhbHVlIjoiVWNGTHF1dzBveHpEYUp1dm51VFNSUzc2NTNSakIxK2dHZC9tN3BYK3N4c0V5U0h4MlVnZk5NQ3gxSzZVQnRRdlByRUlHZmQyUXZiVnVoU1UxbmdsZFNtZ3BoMnFJWmhnNWdkTW9sYkRtVWZJMjVRWUkzV2FyK0pxd1hDc05iUkoiLCJtYWMiOiI0ODU5OTU5OTRmMjVlZmZhYzc5YTkwMzg4NDUxMWQ0NzEzOWRmNDA3NTZiYjhiMjJlOWRkNDhjODY4MmVlMzcyIiwidGFnIjoiIn0%3D'
-},
+ },
   
 };
 function CustomTabPanel(props) {
@@ -70,21 +72,46 @@ function CustomTabPanel(props) {
 
 const ForumsReplies=()=>{
     const {id, title} = useParams();
+  
   const navigate = useNavigate();
   const [updated, setUpdated] = useState();
   const [threads, setThreads] = useState([]);
   const [recent, setRecent] = useState([]);
   
     useEffect(()=>{
-        console.log("the isid");
-        console.log(id);
+      
         let token = localStorage.getItem('tokens');
         if(token == undefined)
           navigate('/login');
+        
         axios.get(`${process.env.REACT_APP_API_URL}/forum/api/thread/${id}/posts`, config)
         .then((res)=>{
-         setThreads(res.data.data);
+          axios.get(`${process.env.REACT_APP_API_URL}/api/likedby/${id}`, config)
+          .then((response)=>{
+           let tmplike = new Array(response.data.length).fill(0);
+            setLikes(response.data.data);
+            let temp  = response.data;
+            temp.forEach((value, idx) => 
+            {
+           
+            tmplike[idx] = Number(value.thread);
+            
+            }) 
+
+            let tempthreads = res.data.data;
+            tempthreads.forEach((value, idx) => 
+            {
+              tempthreads[idx].likes=tmplike.includes(Number(value.id)) ? 1 :0;
+            });
+        
+           setThreads(tempthreads);
+
+
+          }).catch((err)=> console.log(err));
+       
         }).catch((err)=> console.log(err))
+       
+
         axios.get(`${process.env.REACT_APP_API_URL}/forum/api/thread/recent`, config)
         .then((res)=>{
          setRecent(res.data.data);
@@ -113,7 +140,7 @@ const ForumsReplies=()=>{
   function Replies(props){
     const thre = props.thread;
     const replies= [...threads];
-    console.log(thre)
+   
     const result = replies.filter(item=>{
       return item.post_id == thre
     })
@@ -130,8 +157,10 @@ const ForumsReplies=()=>{
                  </span>
                </div>
              <div className="ml-auto text-right w-full">
+                    
                     <a className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;" data-gramm="false" wt-ignore-input="true" data-quillbot-element="YUwGqBvnPVjrexXORyOMt">
-                     <i className="mr-2 far fa-trash-alt bg-150 bg-gradient-red bg-x-25 bg-clip-text" aria-hidden="true"></i></a>
+                  
+                     </a>
                      <button id={item.id} onClick={()=>handlepostreply(item.id)} className="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;">
                      <i className="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Reply </button>
              </div>
@@ -143,9 +172,6 @@ const ForumsReplies=()=>{
 }
 
     const handleReplies=(values)=>{
-       
-     
-
        
        axios.post(`${process.env.REACT_APP_API_URL}/forum/api/thread/${id}/posts`, {
         "thread_id": id,   
@@ -171,14 +197,36 @@ const ForumsReplies=()=>{
   }
   const [reply, setReply] = useState(false);
   const [posts , setpost]= useState(null);
+  const [likes, setLikes] = useState([]);
+
+
+
+
   const handlepostreply=(value)=>{
     setId(value)
     setReply(true);
     setpost(value);
 
   }
-const [form, registerId] = Form.useForm();
+  
+  
+  const handledisLikes=(value)=>{
+    
+    
+    axios.delete(`${process.env.REACT_APP_API_URL}/api/dislike/${value}`, config);
+    setUpdated(!updated);
+  }
 
+  const handleLikes=(value)=>{
+
+    axios.post(`${process.env.REACT_APP_API_URL}/api/likes/`, {  
+     "thread": value,
+    }, config);
+    setUpdated(!updated);
+  }
+
+const [form, registerId] = Form.useForm();
+var quillObj; 
 
 
 const [forms] =Form.useForm();
@@ -203,7 +251,7 @@ const [forms] =Form.useForm();
                       {
                       threads?.map((item, index) =>                       
                          <div>
-                            {item.post_id == null && item.sequence !== 1 ?
+                            {item.post_id == null ?
                               <div>
                               <li className="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
                                   <div className="flex flex-col">
@@ -219,11 +267,16 @@ const [forms] =Form.useForm();
                                       </span>
                                     </div>
                                   <div className="ml-auto text-right w-full">
+
                                       <a className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;" data-gramm="false" wt-ignore-input="true" data-quillbot-element="YUwGqBvnPVjrexXORyOMt">
                                           <i className="mr-2 far fa-trash-alt bg-150 bg-gradient-red bg-x-25 bg-clip-text" aria-hidden="true"></i></a>
                                       <button id={item.id} onClick={()=>handlepostreply(item.id)} className="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;">
                                           <i className="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Reply </button>
-                                    
+                                          { item.likes == 0 ? 
+                                          <FavoriteBorderOutlined onClick={()=>handleLikes(item.id)}/>:
+                                          <Favorite onClick={()=>handledisLikes(item.id)}/>
+                                          }
+                                          
                                   </div>
                               </li>
                             
@@ -243,7 +296,24 @@ const [forms] =Form.useForm();
                                          message: 'Please input your details!',
                                          },
                                      ]}>
-                                          <ReactQuill theme="snow"/>
+                                       <ReactQuill  
+                                       
+                                       modules={
+                                         {toolbar: {  
+                                           container: [  
+                                             [{ 'header': [1, 2, 3, 4, 5, 6, false] }],  
+                                             ['bold', 'italic', 'underline'],  
+                                             [{ 'list': 'ordered' }, { 'list': 'bullet' }],  
+                                             [{ 'align': [] }],  
+                                             ['link', 'image'],  
+                                             ['clean'],  
+                                             [{ 'color': [] }]  
+                                           ],  
+                                          
+                                         },  }
+                                       } 
+                                   
+                                 />    
                                 </Form.Item>   
                         
                              <Form.Item >
@@ -278,7 +348,24 @@ const [forms] =Form.useForm();
                                                 message: 'Please input your details!',
                                                 },
                                             ]}>
-                                                <ReactQuill theme="snow"/>
+                                                 <ReactQuill  
+                                       
+                                                modules={
+                                                  {toolbar: {  
+                                                    container: [  
+                                                      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],  
+                                                      ['bold', 'italic', 'underline'],  
+                                                      [{ 'list': 'ordered' }, { 'list': 'bullet' }],  
+                                                      [{ 'align': [] }],  
+                                                      ['link', 'image'],  
+                                                      ['clean'],  
+                                                      [{ 'color': [] }]  
+                                                    ],  
+                                                   
+                                                  },  }
+                                                } 
+                                            
+                                          />    
 
                                               </Form.Item>   
                                            <Form.Item >

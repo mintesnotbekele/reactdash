@@ -56,21 +56,6 @@ const EcommerceCapsule = ()=>{
         </Col>
         <Col span={6}></Col>
         </Row>  
-    <Row>
-
-        <Col span={6}>
-        </Col>
-        <Col xl={12} xs={24} span={12}>
-            <div style={{margin: '50px'}}>
-            <h1 style={{textAlign: 'center', fontSize:'70px', fontFamily: 'Playfair Display'}}>Filter by concern.</h1>
-            </div>
-            <div>
-                <img alt='ecommerce frame' src={ecommerceframe}/>
-            </div>
-        </Col>
-        <Col span={6}>
-        </Col>
-    </Row>
 
     <Row>
                 

@@ -28,8 +28,8 @@ const Testimonials=()=>{
       <section className="py-lg-5" style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '45px'}}>
         <div className="container">
             <div className="row">
-                <div className="col-lg-6 my-6 mx-auto text-center">
-                    <h2 className="mb-3 my-2 articleHeader" style={{textAlign: 'center', color: 'white'}}>
+                <div className="col-lg-6 mx-auto text-center">
+                    <h2 className="mb-3 articleHeader" style={{textAlign: 'center', color: 'white'}}>
                       What the People Think About Us</h2>
                        </div>
                     </div>
@@ -89,7 +89,7 @@ const Testimonials=()=>{
                           swipeable
                               >
                      {testimonials.map((item) => 
-                                 <div className="col-lg-11 col-md-8 mb-4">
+                                 <div className="col-lg-11 mx-auto col-md-8 mb-4">
                                  <div className="card text-center bg-white" style={{background: 'rgb(0,0,0,0.0)'}}>
                                      <div className="card-body ">
                                      <div className="mt-4 mb-4">

@@ -5,6 +5,9 @@ import birds from "./assets/6.png";
 import Header from './components/headerbackup';
 import 'react-multi-carousel/lib/styles.css';
 import {ArrowRightOutlined} from '@ant-design/icons';
+import carouse from './assets/carouser.png';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import './App.css';
 import './css/theme.css';
 import { Button ,Row, Col} from "antd";
@@ -22,7 +25,23 @@ import HomeBanner from "./components/homepage/homebanner";
 import { Height } from "@mui/icons-material";
 
 
+
+
 function App() {
+
+
+  const reviews = [
+    { _id: 1, text: "abc" },
+    { _id: 2, text: "def" },
+    { _id: 3, text: "ghi" },
+    { _id: 4, text: "jkl" },
+    { _id: 5, text: "mno" },
+    { _id: 6, text: "pqr" },
+    { _id: 7, text: "stu" },
+    { _id: 8, text: "vwx" },
+    { _id: 9, text: "yza" }
+  ];
+
  const navigate= useNavigate();
   const [diseases, setDiseases] = useState([]);
   useEffect(()=>{
@@ -48,29 +67,29 @@ function App() {
     <div className="App">    
      <div  style={{position: 'relative', width: "100%", marginBottom: '80px' }} >
       <HomeHeader/> 
-    </div>
-    <HomeBanner/>  
-       <section className="" style={{marginTop: '150px'}}>
-        <div className="container">
-            <div className="row pt-5">
-                <div className="col-md-4 py-7">
-                    <div className="info" onClick={()=> navigate('/cureddisease')}>
+       </div>
+      <HomeBanner/>  
+        <section className="" style={{marginTop: '150px'}}>
+          <div className="container">
+              <div className="row pt-5">
+                  <div className="col-md-4 py-7">
+                      <div className="info" onClick={()=> navigate('/cureddisease')}>
                         <h6 className="blogHeader " style={{textAlign: 'center', color: 'black'}}>Diseases</h6>
-                        <p className="firsttext"><span style={{whiteSpaceCollapse: 'preserve', color: 'black'}}>Have diabetes, hypertension, thyroid or more? Learn about your disease and much more.<br/></span></p>
+                        <p className="firsttext" style={{color: 'black', textAlign: 'justify'}}>Have diabetes, hypertension, thyroid or more? Learn about your disease and much more.<br/></p>
                     </div>
                 </div>
                 <div className="col-md-4 p-4 " style={{ borderTop: 'none',borderBottom: 'none', borderLeftWidth: "1px", borderLeft: 'solid',  borderRight: 'solid', borderWidth: "1px"}}>
                     <div className="info" onClick={()=> navigate('/about')}>
                         
                         <h6 className="blogHeader" style={{textAlign: 'center', color: 'black'}}>Welcome to Curevive</h6>
-                        <p className="firsttext" style={{color: 'black'}}>When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.</p>
+                        <p className="firsttext" style={{color: 'black', textAlign: 'justify'}}>When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.</p>
                     </div>
                 </div>
                 <div className="col-md-4 py-7">
                     <div className="info" onClick={()=> navigate('/treatment')}>
                        
                         <h6 className="blogHeader" style={{textAlign: 'center', color: 'black'}}>Treatments</h6>
-                        <p className="firsttext"> <span style={{whiteSpaceCollapse: 'preserve',color: 'black'}}>Find a cure for your problems through the extensively researched treatments by specialists of the nation.</span></p>
+                        <p className="firsttext"style={{color: 'black', textAlign: 'justify'}}>Find a cure for your problems through the extensively researched treatments by specialists of the nation.</p>
                     </div>
                 </div>
             </div>
@@ -88,7 +107,7 @@ function App() {
                     <p className="mb-md-5 mb-4 " style={{textAlign: 'left'}}>
                       <span className="firsttext" style={{whiteSpaceCollapse: 'preserve', color: '#292F36', textAlign: 'left'}}>When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.
                       </span></p>
-                      <a className="btn btn-dark" href="javascript:;" style={{background: '#292F36', float: 'left'}}>Find a Cure</a>
+                      <Link className="btn btn-dark" to="/treatment" style={{background: '#292F36', float: 'left', zIndex: '5000'}}>Find a Cure</Link>
 
                 </div> 
                 <div className="col-md-6">
@@ -133,16 +152,15 @@ function App() {
           <div className="mt-lg-6">
          <Row gutter={16} style={{flex: 'justify', paddingLeftLeft: '15px', padding: '10px' }} >
          {diseases.map((item) => 
-        
          <Col   className="gutter-row" xs={24} md={12} xl={11} gap-1>
            <div  className="col-lg-12 mb-lg-0 mb-4 " style={{background: 'rgb(0,0,0,0.0)'}} >
            <div className='team-member disease-member p-1 mb-lg-0 mb-4' >
                         <div className="thumb">
                         <img  src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '100%', height: '510px'}}/>
                         </div>
-                        <div style={{width: '96%'}} className="content">
-                            <div className="member-info">
-                                <h3 className="name">
+                        <div style={{width: '100%',}} className="content">
+                                            <div className="member-info" style={{padding: '10px'}}>
+                                                <h3 className="name">
                                     <Link
                                         >{item.description }
                                     </Link>
@@ -152,13 +170,15 @@ function App() {
                         </div>
                         </div>
                         <div className="card-body pt-3"> <a href="javascript:;" className="card-title h6 icon-move-right d-block text-darker font-weight-bolder"> 
-                        <Link style={{color: 'black'}} to={`/diseases/${item.id}`}>
-                        {item?.name}
-                        </Link> <i className="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i> </a> </div>
+                                        <Link style={{color: 'black', fontSize: '30px', float: 'left'}} to={`/diseases/${item.id}`}>
+                                       {item?.name}
+                        </Link> <i className="fas fa-arrow-right ms-1" style={{float: 'right', fontSize: '35px'}} aria-hidden="true"></i> </a> </div>
                    </div>
               </Col>
           )}
          <div style={{width: '100%'}}>
+          <br/>
+          <br/>
          <a href="/cureddisease" className="btn btn-dark" style={{background: '#292F36'}}>
               More
            </a>
@@ -193,7 +213,87 @@ function App() {
               </div>
               </Col>
           </Row>
-         <DisplaySlider style={{zIndex: '2000'}}/>  
+          <Row style={{marginTop: '100px'}}>
+            <Col span={4}></Col>
+            <Col xl={16} xs={24} span={16}>
+            <div style={{marginBottom: '40px'}}>
+                    <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px"}}>
+                    Begin your journey
+                    </h1>
+                    </div>
+                    <div style={{width: '100%',}}>
+     <Carousel
+            additionalTransfrom={0}
+            arrows
+            autoPlaySpeed={1000}
+            centerMode={false}
+            className=""
+            containerClass="container-with-dots"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 1,
+          
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 1,
+            
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 2,
+               
+              }
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            showDots={false}
+            sliderClass=""
+            slidesToSlide={1}
+            swipeable
+          >
+                <img
+                    alt="..."
+                    src={carouse}
+                />
+                <img
+                    alt="..."
+                    src={carouse}
+                />
+                <img
+                    alt="..."
+                    src={carouse}
+                />
+                
+                </Carousel> 
+                </div>
+            </Col>
+            <Col span={4}></Col>
+        </Row>
+
          <div style={{width: '1000px', overflowX: 'hidden'}}><img alt="background" className='artlinestyle5' src={birds}/></div>
            <Articles/>
          <div>

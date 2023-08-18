@@ -13,20 +13,27 @@ import { useRef } from 'react';
 
 const Treatment =()=>{
   const carouselRef = useRef(null);
-
-  const handleClick = (slideIndex) => {
-    
-    carouselRef.current.goToSlide(slideIndex);
-  };
-
-  const activeIndex = 3;
-
+  const [name , setName]= useState('');
   const [diseases, setDiseases] = useState([]);
   const [researchpaper, setResearchpaper] = useState([]);
   const [treatments, setTreatments] = useState([]);
   const [sectionone, setSectionone] = useState([]);
   const [sectiontwo, setSectiontwo] = useState([]);
   const [faq, setFaq] = useState([]);
+  const [faqinit, setfaqinit]= useState([]);
+  const handleClick = (slideIndex, name) => {
+     setName(name);
+     setFaq(faqinit.filter(item=>{
+      return(
+        item.type == name
+          )
+      }))
+    carouselRef.current.goToSlide(slideIndex);
+  };
+
+  const activeIndex = 3;
+
+  
 
    useEffect(()=>{
     axios.get(`${process.env.REACT_APP_API_URL}/api/sectiontwoTreatment`)
@@ -58,6 +65,7 @@ const Treatment =()=>{
     axios.get(`${process.env.REACT_APP_API_URL}/api/faq`)
     .then((res)=>{
       setFaq(res.data);
+      setfaqinit(res.data)
     });
    },[])
 
@@ -100,7 +108,7 @@ const Treatment =()=>{
             {treatments.map((item) => 
 
             <div 
-                  onClick={() => handleClick(item.index)} 
+                  onClick={() => handleClick(item.index, item.name)} 
                   className='hoverarticle diseaseitems align-middle' 
                   style={{ height: '300px', padding: '10px', backgroundSize: '100% 100%', 
                   backgroundImage: `url(${process.env.REACT_APP_API_URL}/${item.background})`}}>
@@ -115,9 +123,12 @@ const Treatment =()=>{
         <Col md={0} span={4}>
         </Col>
        </Row>
+       <br/>
+       <br/>
+       <br/>
        <Row style={{marginBottom: '100px'}}>
-        <Col  span={4}></Col>
-        <Col  xl={16} xs={24} span={16}>
+        <Col  span={2}></Col>
+        <Col  xl={20} xs={24} span={20}>
        
         <Carousel 
          ref={carouselRef}
@@ -127,11 +138,11 @@ const Treatment =()=>{
               itemClass="carousel-item-padding-40-px"
               responsive={responsive} 
              style={{height: '1200px'}}>
-           {treatments.map(item=> 
+           {treatments.map(items=> 
            <Row style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '40px'}}>
             <Col xl={10} xs={24}  span={10} className="p-4">
             <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , color: 'black', padding: '10px'}}>
-              {item?.name}
+              {items?.name}
               </h1>
               <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
             </Col>
@@ -146,16 +157,16 @@ const Treatment =()=>{
                     <div className="card">
                         <div className="accordion" id="accordionPricing">
                         {faq.map((item) => 
-                            <div className="accordion-item mb-3">
+                            <div className="accordion-item">
                                 <h6 className="accordion-header" id="headingOne"> <button className="accordion-button border-bottom font-weight-bold text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse`+item.id} aria-expanded="false" aria-controls="collapseOne">
                                   {item?.title} <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i> </button> </h6>
                                 <div id={`collapse`+item.id} className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPricing" >
                                     <div className="d-block d-lg-flex"> 
-                                        <div className="accordion-body" style={{visibility: 'visible', textAlign: 'left'}}> {item.description}</div>
+                                        <div className="accordion-body text-sm" style={{visibility: 'visible', textAlign: 'left'}}> {item.description}</div>
                                     </div>
                                 </div>
                             </div>
-                           
+                        
                         )}
                         
                         
@@ -169,7 +180,7 @@ const Treatment =()=>{
           </Carousel>
     
         </Col>
-        <Col span={4}>
+        <Col span={2}>
         </Col>
        </Row>
 
@@ -352,17 +363,16 @@ const Treatment =()=>{
             swipeable
           >
             {researchpaper.map((item) => 
-            <div style={{width: '95%', margin: 'auto    ',borderRadius: '60px', padding: '10px',background: 'rgba(78, 52, 38, 0.6)'}}>
+            <div style={{width: '90%', margin: 'auto    ',borderRadius: '40px', padding: '10px' ,marginBottom: '30px',background: 'rgba(78, 52, 38, 0.6)'}}>
                       <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', color: 'black' }}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: 'white'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '18px', margin: '20px', color: 'white'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
-
                           <br/>
-                        <a  style={{color:" blue", float: 'right', textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
+                        <a  style={{fontWeight: 'bold', color:'blacks', float: 'right', textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
                           <br/>
                         </div>
                       </div>

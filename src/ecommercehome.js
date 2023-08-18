@@ -66,23 +66,21 @@ Gastritis is the inflammation, irritation or erosion of this protective stomach 
         <Col span={6}></Col>
         </Row>  
      
-        <Row style={{marginTop: '30px', marginBottom: '50px'}}>
-                <Col  span={6}>
-                
-                </Col>
-                <Col xl={12} xs={24} span={12}>
-            <div style={{margin: '70px'}}>
-                <div style={{background: '#292F36', borderRadius: '30px', marginTop: '100px', padding: '70px'}}>
-                        <h1 style={{textAlign: 'center', fontFamily: "Playfair Display", fontSize: "50px", color: 'white'}}>Want to talk to a doctor?</h1>
-                        <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
-                        
-                        <Button style={{margin: 'auto', background: '#CDA274', color: 'white'}}>View packages<ArrowRightOutlined/></Button>
+        <Row style={{marginTop: '150px', marginBottom: '100px'}}>
+          <Col xl={4} xs={0} span={4}></Col>
+          <Col xl={16} xs={24} span={16}>
+             <div style={{padding: '10px'}}>
+            <div style={{borderRadius: "50px", paddingBottom: '50px',  background: "#292F36" }}> 
+              <h1 style={{paddingTop: '30px',fontFamily: "Playfair Display", fontSize: "50px",color: 'white', textAlign: 'center', fontWeight: 'bold'}}>Want to talk to a doctor?</h1>
+              <p style={{margin: '30px',fontFamily: 'lato', fontSize: '22px', color: 'white', textAlign: 'center'}}>Book a complimentary consultation now.</p>
+                    <div className="mx-auto  flex justify-center" style={{width: '100%'}}>
+                      <Button  style={{margin: 'auto', color: 'white', background: 'rgba(78, 52, 38, 0.6)'}}>Contact Us <ArrowRightOutlined style={{color: 'white', marginLeft: "10px"}}/></Button>
                     </div>
-                    </div>
-                </Col>
-                <Col span={6}>
-                </Col>
-            </Row>
+            </div>
+            </div> 
+          </Col>
+          <Col xs={0} xl={4} span={4}></Col>
+       </Row> 
             <Footer/>
 
     </div>)

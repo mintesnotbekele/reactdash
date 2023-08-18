@@ -7,13 +7,16 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { useEffect, useState } from "react";
 import Typography from '@mui/material/Typography';
+import SearchIcon from '@mui/icons-material/Search';
 import PropTypes from 'prop-types';
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import TextArea from "antd/es/input/TextArea";
 import ReactQuill from 'react-quill';
+import TextField from '@mui/material/TextField';
 import 'react-quill/dist/quill.snow.css';
+import InputAdornment from "@mui/material/InputAdornment";
 const tokens = localStorage.getItem('tokens');
 
 const config = {
@@ -70,6 +73,9 @@ const ForumsThreads=()=>{
   const [updated, setUpdated] = useState();
     const [threads, setThreads] = useState([]);
     const [recent, setRecent] = useState([]);
+    const [threadInit, setThreadinit] = useState([]);
+    const [mythreads, setMythreads] = useState([]);
+    const [myComments, setMyComments] = useState([]);
 
     useEffect(()=>{
         let token = localStorage.getItem('tokens');
@@ -78,6 +84,11 @@ const ForumsThreads=()=>{
         axios.get(`${process.env.REACT_APP_API_URL}/forum/api/category/${id}/thread`, config)
         .then((res)=>{
          setThreads(res.data.data);
+         let my = res.data.data.filter(item=>{
+          return item.author_id ==  1;
+        })
+        setMythreads(res.data.data);
+        setThreadinit(res.data.data)
         }).catch((err)=> console.log(err))
         axios.get(`${process.env.REACT_APP_API_URL}/forum/api/thread/recent`, config)
         .then((res)=>{
@@ -103,6 +114,13 @@ const ForumsThreads=()=>{
       setIsModalOpen(false);
     };
    
+    function handleSearch (e){
+      
+      setThreads(threadInit.filter(item=>{
+            return(
+            item.title.toLowerCase().includes(e.target.value.toLowerCase()))
+        }))
+   }
 
     const handleSubmit=(values)=>{
     
@@ -132,8 +150,9 @@ const [form] = Form.useForm();
                       <Col xl={22}><div className="firstheaders"> Community Activity</div></Col>
                       <Col xl={2}></Col>
                       <Col xl={22}><Button className="buttonHeader" style={{background: '#CDA274'}} onClick={showModal}>Ask Question</Button></Col>
+                        
             <Col xl={6}></Col>
-          
+           
           
              <Modal title="Ask a Question" open={isModalOpen} onOk={form.submit} onCancel={handleCancel}>
                   <Form
@@ -166,19 +185,58 @@ const [form] = Form.useForm();
                             message: 'Please input description!',
                          },
                      ]}>
-                        <ReactQuill theme="snow"/>
+                         <ReactQuill  
+                                       
+                                       modules={
+                                         {toolbar: {  
+                                           container: [  
+                                             [{ 'header': [1, 2, 3, 4, 5, 6, false] }],  
+                                             ['bold', 'italic', 'underline'],  
+                                             [{ 'list': 'ordered' }, { 'list': 'bullet' }],  
+                                             [{ 'align': [] }],  
+                                             ['link', 'image'],  
+                                             ['clean'],  
+                                             [{ 'color': [] }]  
+                                           ],  
+                                          
+                                         },  }
+                                       } 
+                                   
+                                 />    
                          </Form.Item>
                   </Form>
               </Modal>
            </Row>
-                 
+           <div className='mx-9 justify-center flex-start my-5 ' style={{width: '50%'}}>
+            <TextField
+               
+                variant="outlined"
+                placeholder="Search"
+                onChange={handleSearch}
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment position="end">
+                        <SearchIcon />
+                    </InputAdornment>
+                    ),
+                    style: { background: 'rgba(78, 52, 38, 0.6)',borderRadius: '30px'}
+                }}
+                />
+            </div>
            <div class="w-full px-6 py-6 mx-auto loopple-min-height-78vh text-slate-500">
             <div class="flex flex-wrap -mx-3 removable">
                 <div class="w-full max-w-full px-3 mt-6 md:w-7/12 md:flex-none">
                     <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border mb-4">
-                        <div class="p-6 px-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
-                        <h6 class="mb-0">All Threads</h6>
-                    </div>         
+                    <Box sx={{ width: '100%' }}>
+                      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                          <Tab label="All Categories" {...a11yProps(0)} />
+                          <Tab label="My Queriess" {...a11yProps(1)} />
+                      
+                        </Tabs>
+                      </Box>
+                      <CustomTabPanel value={value} index={0}>
+                             
                         <div class="flex-auto p-4 pt-6">
                             <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                             {
@@ -199,6 +257,32 @@ const [form] = Form.useForm();
                                 )}
                             </ul>
                         </div>
+                              </CustomTabPanel>
+                        <CustomTabPanel value={value} index={1}>
+                          
+                        <div class="flex-auto p-4 pt-6">
+                            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
+                            {
+                        threads?.map((item, index) => 
+                        <Link to={`/replies/${item.id}/${item.title}`}>
+                                <li class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
+                                    <div class="flex flex-col">
+                                        <h6 class="mb-4 leading-normal text-sm">{item.title}</h6>
+                                        <span class="mb-2 leading-tight text-xs">Author: <span class="font-semibold text-slate-700 sm:ml-2">{item.author_name}</span>
+                                        </span>
+                                      </div>
+                                    <div class="ml-auto text-right">
+                                        <a class="inline-block px-4 py-3 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;">
+                                        replies: {item.reply_count} </a>
+                                    </div>
+                                </li>
+                                </Link>
+                                )}
+                            </ul>
+                        </div>
+                              </CustomTabPanel>
+                             
+                        </Box>
                     </div>
                   
                 </div>

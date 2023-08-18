@@ -78,7 +78,7 @@ const Bronchitis=()=>{
                 <Col xl={16} xs={24} span={16}>
                     <div className="quoteclass">
                     <h1 className="italicHeader" style={{color: '#CDA274'}}> “</h1>
-                    <p className="italictext" style={{color: '#CDA274' , marginTop: '-100px'}}>{product?.quotes}</p>
+                    <p className="italictext" style={{ marginTop: '-100px', color: 'white'}}>{product?.quotes}</p>
                     </div>
                 </Col>
                 <Col span={4}></Col>
@@ -110,17 +110,14 @@ const Bronchitis=()=>{
             <Col span={4}></Col>
         </Row>
 
-        <Row>
-            <Col span={4}>
-            </Col>
-            <Col xl={16} xs={24} span={16}>
-                <div>
-       
-               <Carousel
+        <Row style={{marginTop: '50px'}}>
+        <Col span={4}>
+        </Col>
+        <Col xl={16} xs={24} span={16}>
+        <Carousel
             additionalTransfrom={0}
-            arrows={true}
-            autoPlay
-            autoPlaySpeed={3000}
+            arrows={false}
+            autoPlaySpeed={1000}
             centerMode={false}
             className=""
             containerClass="container-with-dots"
@@ -134,7 +131,7 @@ const Bronchitis=()=>{
             pauseOnHover
             renderArrowsWhenDisabled={false}
             renderButtonGroupOutside={false}
-            renderDotsOutside={false}
+            renderDotsOutside={true}
             responsive={{
               desktop: {
                 breakpoint: {
@@ -142,7 +139,7 @@ const Bronchitis=()=>{
                   min: 1024
                 },
                 items: 3,
-                
+            
               },
               mobile: {
                 breakpoint: {
@@ -150,48 +147,46 @@ const Bronchitis=()=>{
                   min: 0
                 },
                 items: 1,
-                
+           
               },
               tablet: {
                 breakpoint: {
                   max: 1024,
                   min: 464
                 },
-                items: 1,
-                
+                items: 2,
+             
               }
             }}
             rewind={false}
             rewindWithAnimation={false}
             rtl={false}
             shouldResetAutoplay
-            showDots={false}
+            showDots={true}
             sliderClass=""
             slidesToSlide={1}
             swipeable
           >
-     
-     {researchpaper?.map((item) => 
-            <div style={{width: '90%',margin: '40px' , borderRadius: '60px', margin: '10px', padding: '10px',background: "rgba(78, 52, 38, 0.6)"}}>
-                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", fontWeight: 'bold', margin: '10px'}}>
+            {researchpaper.map((item) => 
+            <div style={{width: '90%', margin: 'auto    ',borderRadius: '40px', padding: '10px' ,marginBottom: '30px',background: 'rgba(78, 52, 38, 0.6)'}}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', color: 'black' }}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lato', fontSize: '22px', margin: '20px', color: '#4D5053'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '18px', margin: '20px', color: 'white'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
-                        <a  style={{marginTop: '30px', marginLeft: '0px', color:" blue", textDecoration: 'undeline'}}  href ={`${item.file}`} >Read reseach paper....</a>
+                          <br/>
+                        <a  style={{fontWeight: 'bold', color:'blacks', float: 'right', textDecoration: 'undeline'}} target='_blank' href ={`${item.file}`} >Read reseach paper....</a>
+                          <br/>
                         </div>
                       </div>
-          )}
-          </Carousel>
-                     </div>
-
-                     
-            </Col>
-            <Col span={6}>
-            </Col>
-        </Row>   
+          )}      
+                 </Carousel>
+        </Col >
+        <Col span={4}>
+        </Col>
+       </Row> 
             <Row style={{marginTop: '30px', marginBottom: '50px', padding: '10px'}}>
                 <Col span={4}>
                 

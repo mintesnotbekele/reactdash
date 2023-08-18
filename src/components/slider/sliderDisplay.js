@@ -1,86 +1,60 @@
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import carouse from '../../assets/carouser.png';
+import { Height } from "@mui/icons-material";
 import React, { useState } from "react";
-import { Row, Col } from "antd";
-
-
+import casousel from "../../assets/carouser.png"
+// import { Row, Col } from "antd";
+// import './slide.css';
+// //simport './slide.js';
+// import "~slick-carousel/slick/slick.css"; 
+// import "~slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 function DisplaySlider(props) {
 
-
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 1,
+    speed: 500,
+    dots: true,
+  };
   return (
-    <Row><Col span={4}></Col><Col span={16}>
-         <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlay    
-            autoPlaySpeed={1000}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass=""
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024
-                },
-                items: 1,
-          
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0
-                },
-                items: 1,
-            
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464
-                },
-                items: 2,
-               
-              }
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
-            swipeable
-          >
-                <img
-                    alt="..."
-                    src={carouse}
-                />
-                <img
-                    alt="..."
-                    src={carouse}
-                />
-                <img
-                    alt="..."
-                    src={carouse}
-                />
-                
-                </Carousel> 
-                </Col>
-                <Col span={4}></Col></Row>
+    <div>
+    <h2>Center Mode</h2>
+    <Slider {...settings}>
+      <div>
+        <h3  style={{backgroundColor: 'black', height: '100px', width: '100%' }}>
+          <img src={casousel}/>
+        </h3>
+      </div>
+      <div>
+        <h3>
+        <img src={casousel}/>
+        </h3>
+      </div>
+      <div >
+        <h3  style={{backgroundColor: 'black', height: '100px', width: '100%' }}>3</h3>
+      </div>
+      <div>
+        <h3>
+        <img src={casousel}/>
+        </h3>
+      </div>
+      <div>
+        <h3  style={{backgroundColor: 'black', height: '100px', width
+    : '100%' }}>
+       <img src={casousel}/>
+    </h3>
+      </div>
+      <div>
+        <h3>
+           <img src={casousel}/>ss
+        </h3>
+      </div>
+    </Slider>
+  </div>
 
   );
+
 }
 export default DisplaySlider;

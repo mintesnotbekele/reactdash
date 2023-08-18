@@ -117,10 +117,10 @@ const DiseasesWeCure=()=>{
                                         <div className="thumb" style={{height: '410px'}}>
                                         <img  src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '100%', height: '410px', objectFit: 'fill'}}/>
                                         </div>
-                                        <div style={{width: '96%'}} className="content">
+                                        <div style={{width: '100%'}} className="content">
                                             <div className="member-info">
                                                 <h3 className="name">
-                                                    <Link style={{color: 'black'}}
+                                                    <Link style={{color: 'white'}}
                                                         >{item.description }
                                                     </Link>
                                                 </h3>
@@ -131,7 +131,7 @@ const DiseasesWeCure=()=>{
                                         <div className="card-body pt-3"> <a href="javascript:;" className="card-title h6 icon-move-right d-block text-darker font-weight-bolder"> 
                                         <Link style={{color: 'black', fontSize: '30px'}} to={`/diseases/${item.id}`}>
                                         {item?.name}
-                                        </Link> <i className="fas fa-arrow-right text-sm ms-1" style={{float: 'rights'}} aria-hidden="true"></i> </a> </div>
+                                        </Link> <i className="fas fa-arrow-right ms-1" style={{float: 'right', fontSize: '35px'}} aria-hidden="true"></i> </a> </div>
                                 </div>
                         </Col>
                             
