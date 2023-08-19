@@ -19,6 +19,7 @@ const Login=()=>{
            if(res.data.message == 'User Logged In Successfully' && res.data.status == true)
              {
                 localStorage.setItem('tokens', res.data.token);
+                localStorage.setItem('user', res.data.user);
                message.success(`successfully Logged In`);
                navigate('/forums')
                 }

@@ -24,7 +24,7 @@ const Blogdetail=()=>{
     const [loading, setLoading] = useState(false);
     const [sider, seSider] = useState([]);
      useEffect(()=>{
-        console.log(process.env.REACT_APP_API_URL);
+       
         axios.get(`${process.env.REACT_APP_API_URL}/api/newsAndarticle/${id}`)
         .then((res)=>{
             setArticles(res.data);
@@ -45,7 +45,7 @@ const Blogdetail=()=>{
      },[]);
 
      function handleSearch (e){
-         console.log()
+    
         seSider(allArticle.filter(item=>{
               return(
               item.title.toLowerCase().includes(e.target.value.toLowerCase()))

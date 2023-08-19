@@ -39,7 +39,7 @@ const DiseasesWeCure=()=>{
             }));
         setPage(1);
         setCounter(Math.ceil(res.data.length/4));
-        console.log()
+    
         setDiseasesInit(temp);
       })
      },[])
@@ -62,14 +62,14 @@ const DiseasesWeCure=()=>{
 
    const handleChange = (event, value) => {
     let div = counter; 
-    console.log(value);
+  
     setDiseases(diseasesInit.filter(item=>{
         if(value> 1){
         return(
             item.index > div*value - div+1 && item.index <= (div*value)+4
             )}
          else {
-            console.log(item.index)
+           
             return (item.index < 4)
          }
         }));
@@ -85,20 +85,20 @@ const DiseasesWeCure=()=>{
           <Col md={8} xl={8} xs={24} span={8}></Col>
           <Col xl={8} md={10} sm={20} xs={24}>
              <div style={{width: '100%'}}>
-            <TextField
-                style={{width: '100%'}}
-                variant="outlined"
-                placeholder="Search"
-                onChange={handleSearch}
-                InputProps={{
-                    endAdornment: (
-                    <InputAdornment position="end">
-                        <SearchIcon />
-                    </InputAdornment>
-                    ),
-                    style: { background: 'rgba(78, 52, 38, 0.6)',borderRadius: '30px'}
-                }}
-                />
+                <TextField
+                    style={{width: '100%'}}
+                    variant="outlined"
+                    placeholder="Search"
+                    onChange={handleSearch}
+                    InputProps={{
+                        endAdornment: (
+                        <InputAdornment position="end">
+                            <SearchIcon />
+                        </InputAdornment>
+                        ),
+                        style: { background: 'rgba(78, 52, 38, 0.6)',borderRadius: '30px'}
+                    }}
+                    />
                 </div>
                 </Col>
                 <Col md={2} xl={8}  xs={24}></Col>

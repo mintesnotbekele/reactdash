@@ -103,8 +103,26 @@ const ForumsReplies=()=>{
             {
               tempthreads[idx].likes=tmplike.includes(Number(value.id)) ? 1 :0;
             });
+            axios.get(`${process.env.REACT_APP_API_URL}/api/likecounter/${id}`, config)
+            .then((likeresponse)=>{
+             let templikes = new Array(res.data.data.length).fill(0);
+              let temp = res.data.data;
+             likeresponse.data.forEach((value, index)=>
+             {
+                templikes[index] = value.numoflikes;
+             })
+    
+             temp.forEach((value, idx) => 
+             {
+            
+              temp[idx].likescount = templikes[idx]; 
+             
+             }) 
+             setThreads(temp);
+          
+            })
         
-           setThreads(tempthreads);
+         
 
 
           }).catch((err)=> console.log(err));
@@ -147,8 +165,8 @@ const ForumsReplies=()=>{
     return(
         <div>
        {result.map((item) => (
-             <li className="relative flex p-6 mb-2 border-0 rounded-t-inherit px-12 rounded-xl bg-gray-50">
-             <div className="flex flex-col">
+             <li className="relative flex p-2 mb-2 border-0 rounded-t-inherit px-6 rounded-xl bg-gray-50">
+             <div className="flex flex-col w-full">
                  <h6 className="mb-4 leading-normal text-sm">{item.title}</h6>
                  <span className="mb-2 leading-tight text-xs"><span className="font-semibold text-slate-700"> <div dangerouslySetInnerHTML={{__html: item.content}} />
                  </span>
@@ -158,11 +176,10 @@ const ForumsReplies=()=>{
                </div>
              <div className="ml-auto text-right w-full">
                     
-                    <a className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;" data-gramm="false" wt-ignore-input="true" data-quillbot-element="YUwGqBvnPVjrexXORyOMt">
-                  
-                     </a>
+                    
                      <button id={item.id} onClick={()=>handlepostreply(item.id)} className="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;">
                      <i className="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Reply </button>
+
              </div>
          </li>
        ))}
@@ -240,10 +257,10 @@ const [forms] =Form.useForm();
                  
            <div className="w-full px-6 py-6 mx-auto loopple-min-height-78vh text-slate-500">
             <div className="flex flex-wrap -mx-3 removable">
-                <div className="w-full max-w-full px-3 mt-6 md:w-7/12 md:flex-none">
-                    <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border mb-4">
-                        <div className="p-6 px-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
-                            <h6 className="mb-0 firsttext" style={{}}>Topic: {title}</h6>
+                <div className="w-full max-w-full px-3 mt-1 md:w-7/12 md:flex-none">
+                    <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+                        <div className="p-3 px-4  mb-0 bg-white border-b-0 rounded-t-2xl">
+                            <h6 className="mb-0 firsttext" style={{textAlign: 'left', color: 'black'}}>Topic: {title}</h6>
                         </div>
                 
                 <div className="flex-auto p-4 pt-6">
@@ -253,13 +270,12 @@ const [forms] =Form.useForm();
                          <div>
                             {item.post_id == null ?
                               <div>
-                              <li className="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
-                                  <div className="flex flex-col">
+                              <li className="relative flex p-2 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
+                                  <div className="flex flex-col w-full">
                                       <h6 className="mb-4 leading-normal" style={{textAlign: 'left', fontSize: '30px'}}>{item.title}</h6>
                                       <span className="mb-2 leading-tight"  style={{textAlign: 'left', fontSize: '30px'}}><span className="font-semibold text-slate-700">
                                         
-                                      <div dangerouslySetInnerHTML={{__html: item.content}}
-                    />
+                                      <div dangerouslySetInnerHTML={{__html: item.content}}/>
                                         </span>
                                       
                                       </span>
@@ -276,6 +292,9 @@ const [forms] =Form.useForm();
                                           <FavoriteBorderOutlined onClick={()=>handleLikes(item.id)}/>:
                                           <Favorite onClick={()=>handledisLikes(item.id)}/>
                                           }
+                                          <a className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;" data-gramm="false" wt-ignore-input="true" data-quillbot-element="YUwGqBvnPVjrexXORyOMt">
+                                          {item.likescount} 
+                     </a>
                                           
                                   </div>
                               </li>

@@ -115,5 +115,5 @@ window.env = {
   "INIT_CWD": "/media/mente/F4A81F8DA81F4D8C/projects/prophecius/curevive/my-project",
   "EDITOR": "vi",
   "REACT_APP_SECRET_NAME": "secretvaluehere123",
-  "REACT_APP_API_URL": "https://curevive.prophecius.com"
+  "REACT_APP_API_URL": "http://127.0.0.1:8000"
 };

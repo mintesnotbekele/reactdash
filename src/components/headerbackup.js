@@ -151,9 +151,10 @@ function handleCloseHover1() {
     }
   }, 50);
 }
+const tokens = localStorage.getItem('tokens');
 
   const [top, setTop] = useState(false);
-  const tokens = localStorage.getItem('tokens');
+
   const navigate = useNavigate();
 
   const [distag, setdisTag] =useState(true);  
@@ -277,7 +278,12 @@ function handleCloseHover1() {
                     <MenuItem onClick={handleClose}><Link to="/blog"> Blogs & Articles</Link></MenuItem>
                     <MenuItem onClick={handleClose}> <Link to="/webinars"> Webinars</Link></MenuItem>
                   </Menu>
+                  {tokens == undefined ?
+             <Link onClick={()=>handleLogout}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Login</Link>
               
+                : 
+                <Link onClick={()=>handleLogout}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Logout</Link>
+                }
 
             <Link onClick={displayTag} style={{padding: '10px'}}>
              <ClearIcon style={{color: 'white', fontSize: '40px'}}/>

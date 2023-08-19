@@ -100,8 +100,9 @@ function handleCloseHover1() {
     }
   }, 50);
 }
-
+const tokens = localStorage.getItem('tokens');
 const drawer = (
+  
   <Box style={{background: 'rgba(78, 52, 38, 0.6)'}} onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
    
     <Divider />
@@ -137,6 +138,16 @@ const drawer = (
               Forums
             </Link>
         </ListItem>
+
+        {tokens == undefined ?
+         <ListItem disablePadding>
+             <Link onClick={()=>handleLogout}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Login</Link>
+             </ListItem>
+                : 
+                <ListItem disablePadding>
+                <Link onClick={()=>handleLogout}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Logout</Link>
+               </ListItem>
+                }
     
     </List>
   </Box>
@@ -145,9 +156,9 @@ const container = window !== undefined ? () => window().document.body : undefine
  
   const scrollPosition = useScrollPosition()
   const [top, setTop] = useState(false);
-  const tokens = localStorage.getItem('tokens');
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
+  
   useEffect(()=>{
     if(scrollPosition < 70)
     {
@@ -162,9 +173,12 @@ const container = window !== undefined ? () => window().document.body : undefine
         setdisTag(!distag)
   }
   const handleLogout=()=>{
-     
+        console.log("loggedout")
         localStorage.removeItem('tokens');
         navigate('/login');
+  }
+  const handleLogin=()=>{
+    navigate('/login');
   }
     
      return(
@@ -179,21 +193,22 @@ const container = window !== undefined ? () => window().document.body : undefine
           <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px 20px',  color: 'black'}} >
             Treatments    
           </Link>
-          <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+          <Link className='navheader' to='/cureddisease' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
             Diseases    
           </Link>
-          <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
-            Booking     
+          <Link className='navheader' to='/book' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+            Contact Us     
           </Link>
-          <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+          <Link className='navheader' to='/about' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
             About Us    
           </Link>
-          <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+          <Link className='navheader' to='/blog' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
             Blog    
           </Link>
-          <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px 20px', color: 'black'}}>
+          <Link className='navheader' to='/forums' key="treatments" style={{margin: '10px 20px', color: 'black'}}>
             Forums
           </Link>
+
            
           </div>
       </div>
@@ -263,6 +278,7 @@ const container = window !== undefined ? () => window().document.body : undefine
               <MenuItem> <Link to="/earnwithus"> Earn with us</Link></MenuItem>
               <MenuItem><Link to="/doctorpartners"> Doctor Partners </Link></MenuItem>
             </Menu>
+          
                   <Link
                     className='navheader px-3'
                     aria-owns={anchorEl ? "simple-menu" : undefined}
@@ -293,7 +309,13 @@ const container = window !== undefined ? () => window().document.body : undefine
                     <MenuItem><Link to="/blog"> Blogs & Articles</Link></MenuItem>
                     <MenuItem> <Link to="/webinars"> Webinars</Link></MenuItem>
                   </Menu>
-      
+                
+                  {tokens == undefined ?
+             <Link onClick={()=>handleLogin()}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Login</Link>
+              
+                : 
+                <Link onClick={()=>handleLogout()}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Logout</Link>
+                }
     
 
             

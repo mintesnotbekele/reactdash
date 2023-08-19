@@ -45,7 +45,7 @@ function App() {
  const navigate= useNavigate();
   const [diseases, setDiseases] = useState([]);
   useEffect(()=>{
-    console.log(process.env.REACT_APP_API_URL);
+   
     axios.get(`${process.env.REACT_APP_API_URL}/api/disease`)
     .then((res)=>{
       let temp  = res.data;
