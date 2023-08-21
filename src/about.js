@@ -14,9 +14,9 @@ import "react-multi-carousel/lib/styles.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Link } from 'react-router-dom';
-import env from "react-dotenv";
-import Testimonials from './components/homepage/testimonials';
 import './App.css';
+import "./css/about.css";
+
 const About=()=>{
 
 
@@ -160,8 +160,9 @@ return(
         
         <Col xl={8} xs={24} span={8}>
             <div>
-              
+              <div className='container-fluid'>
                 <img alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items.picture}`}/>
+                </div>
             </div>
         </Col>
         <Col xl={8} xs={24} span={8}>
@@ -191,8 +192,10 @@ return(
             </div>
          </Col>
          <Col xl={8} xs={24} span={8}>
-            <div>
+         <div>
+              <div className='container-fluid'>
                 <img alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items.picture}`}/>
+            </div>
             </div>
         </Col>
         <Col span={4}>
@@ -204,7 +207,7 @@ return(
       <Row style={{marginTop: "100px", paddingBottom: '100px', backgroundColor: "rgba(78, 52, 38, 0.6)"}}>
       <Col  xl={24} xs={24} span={24}>
             <div style={{margin: 'auto', width: '100%', }}> 
-            <h1 className='firstheaders' style={{ textAlign: 'center'}}>OUR TEAM</h1>
+            <h1 className='firstheaders' style={{ textAlign: 'center', color: 'white'}}>OUR TEAM</h1>
             </div>
             </Col>
         <Col span={6}>
@@ -268,14 +271,15 @@ return(
             swipeable
           >
           {teams.map((items) =>
-                        <div className='team-member disease-member p-1' >
+                        <div className='team1-member disease-member p-1 my-3' >
                         <div className="thumb">
-                            <img src={`${process.env.REACT_APP_API_URL}/${items.picture}`} alt="Alexis-Team" />
+                            <img  src={`${process.env.REACT_APP_API_URL}/${items.picture}`} alt="Alexis-Team" />
                         </div>
-                        <div className="content">
-                            <div className="member-info">
+                        <div className="content" style={{width: '100%'}}>
+                            <div className="member-info" style={{marginLeft: '30%'}}>
                                 <h3 className="name">
                                     <Link
+                                    style={{textAlign: 'center'}}
                                         >{items.name }
                                     </Link>
                                 </h3>
@@ -404,21 +408,21 @@ return(
 
       <Row style={{marginTop: "100px", marginBottom: '50px', backgroundColor: "rgba(78, 52, 38, 0.6)"}}>
    
-        <Col xl={6} xs={24} span={6}>
+        <Col xl={4} xs={24} span={4}>
 
         </Col>
-        <Col xl={12} xs={24} span={12} className='aboutContainer'>
+        <Col xl={16} xs={24} span={16} className='aboutContainer'>
         <div style={{margin: 'auto', width: '100%', }}> 
-            <h1 style={{fontFamily: "Playfair Display", fontSize: "50px", textAlign: 'center'}}>Have concerns? Let's have
+            <h1 style={{fontFamily: "Playfair Display", fontSize: "50px", textAlign: 'center', color: 'white'}}>Have concerns? Let's have
 a productive talk.</h1>
             </div>  
             <div style={{width: '100%', display: "flex"}}>
-            <Input style={{background: "rgba(78, 52, 38, 0.6)",border: "none", borderBottom: '1px solid', marginRight: "5px"}} placeholder='Name'/>
-            <Input style={{background: "rgba(78, 52, 38, 0.6)",border: "none", borderBottom: '1px solid', marginLeft: "5px"}} placeholder='Email'/>
+            <Input style={{background: "rgba(78, 52, 38, 0.6)",border: "none", borderBottom: '1px solid', marginRight: "5px", backgroundColor: 'wheat'}} placeholder='Name'/>
+            <Input style={{background: "rgba(78, 52, 38, 0.6)",border: "none", borderBottom: '1px solid', marginLeft: "5px", backgroundColor: 'wheat'}} placeholder='Email'/>
            
             </div>
             <div style={{marginTop: "30px"}}>
-            <TextArea style={{background: "rgba(78, 52, 38, 0.6)", border: "none",borderBottom: '1px solid ', }} placeholder='Hello I am Intrested in..'/>          
+            <TextArea style={{background: "rgba(78, 52, 38, 0.6)", border: "none",borderBottom: '1px solid ',backgroundColor: 'wheat' }} placeholder='Hello I am Intrested in..'/>          
             </div>   
             <div style={{marginTop: "50px"}} className='mx-auto flex justify-center'>
             <Button style={{background: '#292F36', margin: 'auto', color: 'white', fontSize: '18x', paddingTop: '10px', paddingBottom: '30px'}}>Send Now <ArrowRightOutlined style={{color: '#CDA274', marginLeft: "10px"}}/> </Button>

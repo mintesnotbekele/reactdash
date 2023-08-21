@@ -64,11 +64,12 @@ font-size: 120px;
 }
 .latestArticleheader{
     font-family: Playfair Display;
-font-size: 25px;
-font-weight: 400;
-line-height: 31px;
-letter-spacing: 0.02em;
-text-align: left;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: black;
 }
 .blogHeader{
 font-family: Playfair Display;
@@ -78,6 +79,14 @@ line-height: 31px;
 letter-spacing: 0.02em;
 text-align: left;
 
+}
+.headerhover{
+text-align: center;
+color: black
+}
+
+.headerhover:hover{
+  color: rgb(204, 155, 155);
 }
 .aboutgap{
     margin-top: 100px;
@@ -150,7 +159,7 @@ text-align: center;
 
 .hoverarticle:hover{
     background: rgba(78, 52, 38, 0.6);
-    border-radius: 40px;
+    border-radius: 25px;
     color: white;
 }
 
@@ -503,6 +512,7 @@ color: #000000B2;
         display: none;
     }
 }
+
 .artlinestyle4{
     position: absolute;
     opacity: 60%;
@@ -688,25 +698,14 @@ color: #4E3426;
     }
   }
 
+  .container-fluid img{
+    text-align:center;
+    padding-top: calc(100vh/9);
+    position:relative;
+}
 
-  .disease-member {
-    margin-bottom: 30px;
-    position: relative;
-  }
-  .disease-member::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-  }
-  
 .team-member {
-    margin-bottom: 30px;
+    
     position: relative;
   }
   .team-member::before {
@@ -716,13 +715,8 @@ color: #4E3426;
     left: 0;
     width: 100%;
     height: 100%;
-  
     border-top-right-radius: 45px;
-
-
-
     transition: all 0.3s ease-in-out;
-  
   }
 
   .team-member .thumb {
@@ -732,11 +726,9 @@ color: #4E3426;
     width: 100%;
   }
   .team-member .content {
-   
     height: 100%;
     left: 0;
     opacity: 0;
-    padding: 0 25px;
     position: absolute;
     top: 0;
     visibility: hidden;
@@ -744,14 +736,9 @@ color: #4E3426;
     transition: 0.4s;
     border-top-right-radius: 45px;
     background: rgba(0, 0, 0, 0.29);
-    
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15.4px);
     -webkit-backdrop-filter: blur(15.4px);
-
-/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(15.1px); */
-/* s-webkit-backdrop-filter: blur(15.1px); */
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
@@ -774,7 +761,7 @@ backdrop-filter: blur(15.1px); */
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0;
-    margin-bottom: 1px;
+    margin-bottom: -10px;
     opacity: 0;
     position: relative;
     transition: 0.5s;
@@ -991,4 +978,25 @@ backdrop-filter: blur(15.1px); */
     padding: 20px;
     text-align: center;
   }
-  
+  .earnwithusbackground {  
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+ .earnwithusbackground::before{    
+      background-image:  url("../assets/3.png");
+      background-size: 100% 100%;
+      width: 76%;
+      overflow-x: hidden;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.3;
+      content: "";
+      background-size: 100% 100%;
+      position: absolute;
+      transform: rotate(22deg);
+
+  }

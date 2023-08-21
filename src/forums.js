@@ -140,7 +140,7 @@ const [form] = Form.useForm();
     return(
         <div>
             <Header/>
-               <img alt="about Banner"style={{marginBottom: '30px'}} src={aboutBanner}/>
+               <img alt="about Banner" src={aboutBanner}/>
                  <Row>
                       <Col className='pl-4' xl={12}><div style={{color: 'black', textAlign: 'left'}} className="firstheaders"> Community Activity</div></Col>
                   <Col xl={6}></Col>
@@ -180,9 +180,9 @@ const [form] = Form.useForm();
            </Row>
         
 
-           <div class="w-full px-6 py-6 mx-auto loopple-min-height-78vh text-slate-500">
-            <div class="flex flex-wrap -mx-3 removable">
-                <div class="w-full max-w-full px-3 mt-6 md:w-7/12 md:flex-none">
+           <div class="w-full px-2 py-2 mx-auto loopple-min-height-78vh text-slate-500">
+            <div class="flex flex-wrap removable">
+                <div class="w-full max-w-full px-2 md:w-7/12 md:flex-none">
                     <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border mb-4">
                       
            <Box sx={{ width: '100%' }}>
@@ -195,23 +195,27 @@ const [form] = Form.useForm();
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-            <div class="flex-auto p-4 pt-6">
+            <div class="flex-auto">
                             <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                             {
                 threads?.map((item, index) => 
                         
                         <Link style={{color: 'black'}} to={`/threads/${item.id}`}>
-                                <li class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
+                                <li class="relative flex p-2 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
                                     <div class="flex flex-col">
                                     <div className="max-w-full md:w-1/2 md:flex-none">
                                         <h1 style={{fontSize: '30px', color: 'black'}}>{item.title}</h1>
                                         </div>
-                                        <div style={{color: 'black'}} className="flex items-center justify-end max-w-full px-3 md:w-1/2 md:flex-none">
-                                        {item.thread_count}: topics 
-                                        {item.post_count}: answers
-                                     </div>
-                                        <span> </span> 
-                                        <span style={{fontSize: '20px', color: 'black'}}>Description: <span class="font-semibold text-slate-700 sm:ml-2" style={{color: 'black'}}>{item.description}</span>
+                                        <div className="ml-auto text-right">
+                                    
+                                        <a className="inline-block px-4  mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"   style={{color: 'black'}}>
+                                       
+                                        {item.thread_count}: topics </a>
+                                        <a className="inline-block px-4  mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"   style={{color: 'black'}}>
+                                       
+                                        {item.post_count}: answers </a>
+                                    </div>
+                                        <span>Description: <span class="font-semibold text-slate-700 sm:ml-2" >{item.description}</span>
                                         </span>
                                      </div>
                                 </li>
@@ -221,27 +225,24 @@ const [form] = Form.useForm();
                         </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-            <div class="flex-auto p-4 pt-6">
+            <div class="flex-auto">
                             <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                             {
                 recent?.map((item, index) => 
                         
-                        <Link style={{color: 'black'}} to={`/threads/${item.id}`}>
-                                <li class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
-                                    <div class="flex flex-col">
-                                    <div className="max-w-full md:w-1/2 md:flex-none">
-                                        <h1 style={{fontSize: '30px', color: 'black'}}>{item.title}</h1>
-                                        </div>
-                                        <div style={{color: 'black'}} className="flex items-center justify-end max-w-full px-3 md:w-1/2 md:flex-none">
-                                        {item.thread_count}: topics 
-                                        {item.post_count}: answers
-                                     </div>
-                                        <span> </span> 
-                                        <span style={{fontSize: '20px', color: 'black'}}>Description: <span class="font-semibold text-slate-700 sm:ml-2" style={{color: 'black'}}>{item.description}</span>
-                                        </span>
-                                     </div>
-                                </li>
-                                </Link>
+                <Link to={`/replies/${item.id}/${item.title}`}>
+                <li className="relative flex p-2 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
+                    <div className="flex flex-col">
+                        <h4 style={{color: 'black', fontFamily: 'poppins'}}>{item.title}</h4>
+                        <span className="mb-2 leading-tight text-xs" style={{color: 'black'}}>Author: <span class="font-semibold text-slate-700 sm:ml-2">{item.author_name}</span>
+                        </span>
+                      </div>
+                    <div className="ml-auto text-right">
+                        <a className="inline-block px-4  mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"   style={{color: 'black'}}>
+                        replies: {item.reply_count} </a>
+                    </div>
+                </li>
+                </Link>
                                 )}
                             </ul>
                         </div>
@@ -251,7 +252,7 @@ const [form] = Form.useForm();
           </Box>
           </div>
         </div>
-        <div className="w-full max-w-full px-3 mt-6 md:w-5/12 md:flex-none">
+        <div className="w-full max-w-full px-3  md:w-5/12 md:flex-none">
                     <div className="relative flex flex-col h-full min-w-0 mb-6 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border mb-4">
                         <div className="p-6 px-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
                             <div className="flex flex-wrap -mx-3">
@@ -276,12 +277,10 @@ const [form] = Form.useForm();
                                         </button>
                                         <div className="flex flex-col">
                                             <h6 className="mb-1 leading-normal text-sm text-slate-700">{items.title}</h6>
-                                            <span className="leading-tight text-xs">{items.created_at}</span>
+                                            <span className="leading-tight text-xs">{moment(items.created_at).fromNow()}</span>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center justify-center">
-                                        <p className="relative z-10 inline-block m-0 font-semibold leading-normal text-transparent bg-gradient-red text-sm bg-clip-text">- $ 2,500</p>
-                                    </div>
+                                  
                                 </li>
                                 </Link>
                                 )}

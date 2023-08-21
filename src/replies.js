@@ -426,12 +426,10 @@ const [forms] =Form.useForm();
                                         </button>
                                         <div className="flex flex-col">
                                             <h6 className="mb-1 leading-normal text-sm text-slate-700">{items.title}</h6>
-                                            <span className="leading-tight text-xs">{items.created_at}</span>
+                                            <span className="leading-tight text-xs">{moment(items.created_at).fromNow()}</span>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-center justify-center">
-                                        <p className="relative z-10 inline-block m-0 font-semibold leading-normal text-transparent bg-gradient-red text-sm bg-clip-text">- $ 2,500</p>
-                                    </div>
+                               
                                 </li>
                                 </Link>
                                 )}

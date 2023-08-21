@@ -114,7 +114,7 @@ const drawer = (
             </Link>
         </ListItem>
         <ListItem disablePadding>
-            <Link className='navheader' to='/cureddisease' key="Diseases" style={{margin: '30px'}} sx={{ color: '#fff' }}>
+            <Link className='navheader' to='/diseases' key="Diseases" style={{margin: '30px'}} sx={{ color: '#fff' }}>
               Diseases    
             </Link>
         </ListItem>
@@ -193,7 +193,7 @@ const container = window !== undefined ? () => window().document.body : undefine
           <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px 20px',  color: 'black'}} >
             Treatments    
           </Link>
-          <Link className='navheader' to='/cureddisease' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+          <Link className='navheader' to='/diseases' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
             Diseases    
           </Link>
           <Link className='navheader' to='/book' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
@@ -239,7 +239,7 @@ const container = window !== undefined ? () => window().document.body : undefine
             <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px'}} sx={{ color: '#fff' }}>
               Treatments    
             </Link>
-            <Link className='navheader' to='/cureddisease' key="Diseases" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+            <Link className='navheader' to='/diseases' key="Diseases" style={{margin: '10px'}} sx={{ color: '#fff' }}>
               Diseases    
             </Link>
             <Link className='navheader' to='/about' style={{margin: '10px'}} sx={{ color: '#fff' }}>
@@ -311,10 +311,10 @@ const container = window !== undefined ? () => window().document.body : undefine
                   </Menu>
                 
                   {tokens == undefined ?
-             <Link onClick={()=>handleLogin()}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Login</Link>
+             <Button onClick={()=>handleLogin()}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Login</Button>
               
                 : 
-                <Link onClick={()=>handleLogout()}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Logout</Link>
+                <Button onClick={()=>handleLogout()}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Logout</Button>
                 }
     
 

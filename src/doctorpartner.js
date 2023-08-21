@@ -53,9 +53,10 @@ const DoctorPartner=()=>{
                 </Col>
             </Row>
 
-            <Row style={{background: '#FAFAFA', padding: '100px 0px'}}>
-                <Col span={4}></Col>
-              <Col span={16} style={{padding: '50px'}}>
+            <Row>
+            <Col span={4}>
+            </Col>
+            <Col span={16} style={{padding: '50px'}}>
                 
                 <div style={{padding: '50px 0px', display: 'flex'}}>
                 <div style={{width: '80%'}}>    
@@ -63,14 +64,15 @@ const DoctorPartner=()=>{
                 <h3 className="earnbannertext" style={{color: '#140C44B5'}}>Get your affiliate or social links in one place easly</h3>
                 
                 </div>
-                <div style={{ float: 'right'}}>
-                <Button style={{float: 'right', margin: '10px', borderRadius: '50px', color: '#4E3426', borderColor: '#4E3426'}} variant="outlined">View More</Button>
+              
                 </div>
-                
-                </div>
-            <Row>
+
+
+
+
+                <Row>
                     <Col   span={8}>
-                    <Card  sx={{ maxWidth: 345, borderRadius: '50px', padding: '30px' }}>
+                    <Card className="mx-2"  sx={{ maxWidth: 345, borderRadius: '50px', padding: '10px'}}>
                         <CardMedia
                             sx={{ height: 140, borderRadius: '50px' }}
                             image="/static/images/cards/contemplative-reptile.jpg"
@@ -89,7 +91,7 @@ const DoctorPartner=()=>{
                         </Card>
                     </Col>
                     <Col   span={8}>
-                    <Card  sx={{ maxWidth: 345, borderRadius: '50px', padding: '30px' }}>
+                    <Card className="mx-2" sx={{ maxWidth: 345, borderRadius: '50px', padding: '10px' }}>
                         <CardMedia
                             sx={{ height: 140, borderRadius: '50px' }}
                             image="/static/images/cards/contemplative-reptile.jpg"
@@ -109,7 +111,7 @@ const DoctorPartner=()=>{
                         </Card>
                     </Col>
                     <Col   span={8}>
-                    <Card  sx={{ maxWidth: 345, borderRadius: '50px', padding: '30px' }}>
+                    <Card  className="mx-2" sx={{ maxWidth: 345, borderRadius: '50px', padding: '10px' }}>
                         <CardMedia
                             sx={{ height: 140, borderRadius: '50px' }}
                             image="/static/images/cards/contemplative-reptile.jpg"
@@ -129,11 +131,12 @@ const DoctorPartner=()=>{
                         </Card>
                     </Col>
                 </Row>
-                
-                </Col>
-                <Col span={4}></Col>
-            </Row>
-            <Row>
+            </Col>
+            <Col span={4}>
+            </Col>
+         </Row>
+        
+         <Row>
             <Col span={4}>
             </Col>
             <Col className="earnbanner" style={{backgroundImage: `url(${bannervector})`}} span={16}>
@@ -141,8 +144,8 @@ const DoctorPartner=()=>{
                      <h1 className="earnmiddle" style={{textAlign: 'left', color: 'white'}}>How It Works</h1>
                     <h3 className="earnbannertext">let's love your body by keeping your body obesity</h3>
                     <Row>
-                        <Col span={12}>
-                            <div style={{display: 'flex', width: '70%', margin: 'auto', padding: '30px'}}>
+                    <Col span={12}>
+                        <div style={{display: 'flex',  width: '70%', margin: 'auto'}}>
                                 <h1 className="bannerCounter">01</h1>
                                 <h2 className="bannerContent">Get Affiliated link and
                                                 create a product
@@ -183,6 +186,7 @@ const DoctorPartner=()=>{
             <Col span={4}>
             </Col>
          </Row>
+         
          <br/>
          <Footer/>
          <br/><br/>

@@ -73,22 +73,22 @@ function App() {
           <div className="container">
               <div className="row pt-5">
                   <div className="col-md-4 py-7">
-                      <div className="info" onClick={()=> navigate('/cureddisease')}>
-                        <h6 className="blogHeader " style={{textAlign: 'center', color: 'black'}}>Diseases</h6>
+                      <div className="info" onClick={()=> navigate('/diseases')}>
+                        <h6 className="blogHeader headerhover">Diseases</h6>
                         <p className="firsttext" style={{color: 'black', textAlign: 'justify'}}>Have diabetes, hypertension, thyroid or more? Learn about your disease and much more.<br/></p>
                     </div>
                 </div>
                 <div className="col-md-4 p-4 " style={{ borderTop: 'none',borderBottom: 'none', borderLeftWidth: "1px", borderLeft: 'solid',  borderRight: 'solid', borderWidth: "1px"}}>
                     <div className="info" onClick={()=> navigate('/about')}>
                         
-                        <h6 className="blogHeader" style={{textAlign: 'center', color: 'black'}}>Welcome to Curevive</h6>
+                        <h6 className="blogHeader headerhover">Welcome to Curevive</h6>
                         <p className="firsttext" style={{color: 'black', textAlign: 'justify'}}>When one lives in harmony with nature and her essence, they have attained their highest form of being. We at Curevive aim at helping you reach the greatest version of yourself by enriching your innate ability to oppose disease and remain in a state of equilibrium; physically, emotionally, socially and spiritually.</p>
                     </div>
                 </div>
                 <div className="col-md-4 py-7">
                     <div className="info" onClick={()=> navigate('/treatment')}>
                        
-                        <h6 className="blogHeader" style={{textAlign: 'center', color: 'black'}}>Treatments</h6>
+                        <h6 className="blogHeader headerhover">Treatments</h6>
                         <p className="firsttext"style={{color: 'black', textAlign: 'justify'}}>Find a cure for your problems through the extensively researched treatments by specialists of the nation.</p>
                     </div>
                 </div>
@@ -138,7 +138,7 @@ function App() {
             </Col>
             <Col  xl={16} md={24}>
             <h1 style={{fontSize: '50px', color: '#292F36', marginBottom: "40px", fontFamily: 'Playfair Display'}}>Diseases</h1>
-         <p style={{ padding: '10px', textAlign: 'center', color: '#4D5053', fontSize: '22px', fontFamily: 'lato'}}>Here is a gist of the most common diseases we have cured through our time in this industry!</p>
+         <p style={{ padding: '10px', textAlign: 'center', color: '#4D5053', fontSize: '22px', fontFamily: 'lato'}}>Here is a list of the most common diseases we have cured through our time in this industry!</p>
          
             </Col>
             <Col md={0} xl={4}>
@@ -152,15 +152,15 @@ function App() {
           <div className="mt-lg-6">
          <Row gutter={16} style={{flex: 'justify', paddingLeftLeft: '15px', padding: '10px' }} >
          {diseases.map((item) => 
-         <Col   className="gutter-row" xs={24} md={12} xl={11} gap-1>
-           <div  className="col-lg-12 mb-lg-0 mb-4 " style={{background: 'rgb(0,0,0,0.0)'}} >
-           <div className='team-member disease-member p-1 mb-lg-0 mb-4' >
-                        <div className="thumb">
-                        <img  src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '100%', height: '510px'}}/>
-                        </div>
-                        <div style={{width: '100%',}} className="content">
+         <Col   className="gutter-row"  xs={24} md={12} xl={9} gap-1>
+           <div  className="col-lg-12" style={{background: 'rgb(0,0,0,0.0)'}} >
+               <div className='team-member disease-member' >
+                     <div className="thumb">
+                        <img  src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '100%', height: '390px'}}/>
+                      </div>
+                        <div style={{width: '100%', padding: '10px'}} className="content">
                                             <div className="member-info" style={{padding: '10px'}}>
-                                                <h3 className="name">
+                                             <h3 className="name">
                                     <Link
                                         >{item.description }
                                     </Link>
@@ -169,7 +169,8 @@ function App() {
                             </div>
                         </div>
                         </div>
-                        <div className="card-body pt-3"> <a href="javascript:;" className="card-title h6 icon-move-right d-block text-darker font-weight-bolder"> 
+                        <div className="card-body">
+                           <a className="card-title icon-move-right d-block text-darker font-weight-bolder"> 
                                         <Link style={{color: 'black', fontSize: '30px', float: 'left'}} to={`/diseases/${item.id}`}>
                                        {item?.name}
                         </Link> <i className="fas fa-arrow-right ms-1" style={{float: 'right', fontSize: '35px'}} aria-hidden="true"></i> </a> </div>
@@ -179,7 +180,7 @@ function App() {
          <div style={{width: '100%'}}>
           <br/>
           <br/>
-         <a href="/cureddisease" className="btn btn-dark" style={{background: '#292F36'}}>
+         <a href="/diseases" className="btn btn-dark" style={{background: '#292F36'}}>
               More
            </a>
          </div>

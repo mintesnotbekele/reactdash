@@ -40,21 +40,21 @@ const Articles =()=>{
             
             <Row style={{marginTop: '30px'}}>
                 <Col md={0} xl={4} xs={0} span={4}></Col>
-                <Col xl={8} md={16} xs={24} span={8}>
+                <Col xl={6} md={16} xs={24} span={6}>
                 <div style={{margin: '20px'}}>
-                <img src={`${process.env.REACT_APP_API_URL}/${latestpost?.tags}`} alt="latest post"/>
+                <img src={`${process.env.REACT_APP_API_URL}/${latestpost?.picture}`} alt="latest post"/>
                 </div>
                 </Col>
-                <Col xl={8} md={14} xs={24} style={{padding: '30px'}} span={8}>
-                    <h1  className='latestArticleheader'>
+                <Col xl={10} md={14} xs={24} span={8}>
+                    <h1  className='latestArticleheader my-3' style={{fontWeight: 'bold'}}>
                      { latestpost == null ?  "" :  latestpost?.title}
                     </h1>
-                    <p className='firsttext' style={{textAlign: 'left'}}>
+                    <p className='firsttext' style={{textAlign: 'left', color: 'black'}}>
                     { latestpost == null ?  "" :  latestpost?.description}
                     </p>
                     
                     <p className='blogsecond' style={{marginTop: '30px' , width: '90%'}}>
-                      {moment(latestpost?.create_at).fromNow()}<RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px'}}/>
+                      {moment(latestpost?.created_at).fromNow()}<RightOutlined style={{color: '#CDA274', marginLeft: "10px", float: 'right', fontSize: '22px'}}/>
                         </p>
                     
                  </Col>

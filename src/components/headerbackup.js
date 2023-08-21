@@ -88,7 +88,7 @@ const drawer = (
             </Link>
         </ListItem>
         <ListItem disablePadding>
-            <Link className='navheader' to='/cureddisease' key="Diseases" style={{margin: '30px'}} sx={{ color: '#fff' }}>
+            <Link className='navheader' to='/diseases' key="Diseases" style={{margin: '30px'}} sx={{ color: '#fff' }}>
               Diseases    
             </Link>
         </ListItem>
@@ -169,8 +169,8 @@ const tokens = localStorage.getItem('tokens');
 
   const handleLogout=()=>{
       
-        localStorage.removeItem('tokens');
-        navigate('/login');
+       localStorage.removeItem('tokens');
+       navigate('/');
   }
      
      return(
@@ -203,7 +203,7 @@ const tokens = localStorage.getItem('tokens');
             <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px'}} sx={{ color: '#fff' }}>
               Treatments    
             </Link>
-            <Link className='navheader' to='/cureddisease' key="Diseases" style={{margin: '10px'}} sx={{ color: '#fff' }}>
+            <Link className='navheader' to='/diseases' key="Diseases" style={{margin: '10px'}} sx={{ color: '#fff' }}>
               Diseases    
             </Link>
             
@@ -279,10 +279,10 @@ const tokens = localStorage.getItem('tokens');
                     <MenuItem onClick={handleClose}> <Link to="/webinars"> Webinars</Link></MenuItem>
                   </Menu>
                   {tokens == undefined ?
-             <Link onClick={()=>handleLogout}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Login</Link>
+             <Button onClick={()=>handleLogout()}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Login</Button>
               
                 : 
-                <Link onClick={()=>handleLogout}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Logout</Link>
+                <Button onClick={()=>handleLogout()}  style={{margin: '10px', color: 'white'}} sx={{ color: 'white' }}>Logout</Button>
                 }
 
             <Link onClick={displayTag} style={{padding: '10px'}}>

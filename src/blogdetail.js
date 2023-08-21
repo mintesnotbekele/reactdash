@@ -92,7 +92,7 @@ const Blogdetail=()=>{
                 <div style={{marginTop: '30px', marginLeft: '30px'}}>
                 <h1 className="blogHeader">{item.title}</h1>
                 <h1 className="blogHeader">{item.quotes}</h1>
-                <p style={{float: 'right'}}>{moment(item.create_at).fromNow()}</p>
+                <p style={{float: 'right'}}>{moment(item.created_at).fromNow()}</p>
                 <br></br>
                 <hr style={{height:'2px', background: '#CDA274'}}/>
                 </div>

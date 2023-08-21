@@ -40,7 +40,7 @@ ReactDOM.render(
                         </Route>
                         <Route path="/about" element={<About />}></Route>
                         <Route path="/treatment" element={<Treatment />}></Route>
-                        <Route path="/cureddisease" element={<DiseasesWeCure/>}></Route>
+                        <Route path="/diseases" element={<DiseasesWeCure/>}></Route>
                         <Route path="/diseases/:id" element={<Diseases/>}></Route>
                         <Route path="/ecommercecapsule" element={<EcommerceCapsule/>}></Route>
                         <Route path="/ecommerceherbal" element={<EcommerceHerbal/>}></Route>

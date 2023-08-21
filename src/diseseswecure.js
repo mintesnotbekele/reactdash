@@ -78,7 +78,7 @@ const DiseasesWeCure=()=>{
 
 
     return(
-        <div>
+        <div className="App">
             <Header/>
             <img src={curedbanner} alt="cured disease banner"/>
             <Row style={{ marginTop: '100px', marginBottom: '100px'}}>
@@ -104,40 +104,40 @@ const DiseasesWeCure=()=>{
                 <Col md={2} xl={8}  xs={24}></Col>
             </Row>
             <Row style={{ zIndex: "1500"}}>
-                <Col xs={24} md={6} xl={6}>
-                </Col>
-
-                <Col xs={24} md={24} xl={12}>
-                <Row gutter={50} style={{flex: 'justify', marginTop: '100px', marginLeft: '15px', padding: '10px' }} >
+        <Col xs={24} md={0} xl={4}></Col>
+         <Col xs={24} md={24} xl={16}>
+          <div>
+         <Row gutter={16} style={{flex: 'justify', padding: '10px' }} >
                 {diseases.map((item) => 
-                                    
-                    <Col className='gutter-row' xs={24} md={12} xl={12}>
-                        <div  className="col-lg-12 mb-lg-0 mb-4 " style={{background: 'rgb(0,0,0,0.0)', maxHeight: '550px'}} >
-                        <div className='team-member disease-member p-1 mb-lg-0 mb-4'  >
-                                        <div className="thumb" style={{height: '410px'}}>
-                                        <img  src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '100%', height: '410px', objectFit: 'fill'}}/>
-                                        </div>
-                                        <div style={{width: '100%'}} className="content">
-                                            <div className="member-info">
-                                                <h3 className="name">
-                                                    <Link style={{color: 'white'}}
-                                                        >{item.description }
-                                                    </Link>
-                                                </h3>
-                                            
+                                    <Col   className="gutter-row"  xs={24} md={12} xl={9} gap-1>
+                                    <div  className="col-lg-12" style={{background: 'rgb(0,0,0,0.0)'}} >
+                                        <div className='team-member disease-member' >
+                                              <div className="thumb">
+                                                 <img  src={`${process.env.REACT_APP_API_URL}/${item.picture}`} className="img-fluid" style={{borderTopRightRadius:'45px', width: '100%', height: '390px'}}/>
+                                               </div>
+                                                 <div style={{width: '100%', padding: '10px'}} className="content">
+                                                                     <div className="member-info" style={{padding: '10px'}}>
+                                                                      <h3 className="name">
+                                                             <Link 
+                                                                 >{item.description }
+                                                             </Link>
+                                                         </h3>
+                                                        
+                                                     </div>
+                                                 </div>
+                                                 </div>
+                                                 <div className="card-body">
+                                                    <a className="card-title icon-move-right d-block text-darker font-weight-bolder"> 
+                                                                 <Link style={{color: 'black', fontSize: '30px', float: 'left'}} to={`/diseases/${item.id}`}>
+                                                                {item?.name}
+                                                 </Link> <i className="fas fa-arrow-right ms-1" style={{float: 'right', fontSize: '35px'}} aria-hidden="true"></i> </a> </div>
                                             </div>
-                                        </div>
-                                        </div>
-                                        <div className="card-body pt-3"> <a href="javascript:;" className="card-title h6 icon-move-right d-block text-darker font-weight-bolder"> 
-                                        <Link style={{color: 'black', fontSize: '30px'}} to={`/diseases/${item.id}`}>
-                                        {item?.name}
-                                        </Link> <i className="fas fa-arrow-right ms-1" style={{float: 'right', fontSize: '35px'}} aria-hidden="true"></i> </a> </div>
-                                </div>
-                        </Col>
+                                       </Col>
                             
                   )}
                 <Col xs={24} md={0} xl={3}></Col>
                 </Row>
+                </div>
                 </Col>
                 <Col xl={6} >
                 </Col>

@@ -146,9 +146,9 @@ const Treatment =()=>{
               </h1>
               <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
             </Col>
-            <Col xl={14} xs={24} className='articletext p-4' span={14}>
-              <p className='treatmentslider' style={{color: 'white'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice. Yoga is founded on the idea that the body and mind are inextricably linked and that practicing yoga may assist to promote both physical and mental well-being.</p>
-              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '20px 10px', color: 'white'}}>
+            <Col xl={14} xs={24} className='articletext p-2' span={14}>
+              <p className='treatmentslider' style={{color: 'white'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice.</p>
+              <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '10px 10px', color: 'white'}}>
               Frequently Asked Questions
               </h1>
               
@@ -196,11 +196,10 @@ const Treatment =()=>{
               <p className='firsttext' style={{textAlign: 'left'}}>
               {items.description}
               </p>
-
               </div>
             </Col>
             <Col xl={10} xs={24} span={10}>
-            <img style={{borderRadius: '45px'}} alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items?.picture}`}/>
+            <img style={{borderRadius: '45px', verticalAlign: 'middle', display: 'flex'}} alt="herbs" src={`${process.env.REACT_APP_API_URL}/${items?.picture}`}/>
             </Col>
           </Row>
         )}
