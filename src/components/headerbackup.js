@@ -168,7 +168,6 @@ const tokens = localStorage.getItem('tokens');
 
 
   const handleLogout=()=>{
-      
        localStorage.removeItem('tokens');
        navigate('/');
   }
