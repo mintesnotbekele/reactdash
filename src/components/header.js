@@ -165,7 +165,7 @@ const container = window !== undefined ? () => window().document.body : undefine
     console.log(scrollPosition )
     if(scrollPosition < 80 )
     {
-    if(prev >scrollPosition )
+    if(prev > scrollPosition )
     {
     if(prev - scrollPosition <40)
      setTimeout(() => {
