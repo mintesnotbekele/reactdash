@@ -109,7 +109,7 @@ const DiseasesWeCure=()=>{
           <div>
          <Row gutter={16} style={{flex: 'justify', padding: '10px' }} >
                 {diseases.map((item) => 
-                                    <Col   className="gutter-row"  xs={24} md={12} xl={9} gap-1>
+                                    <Col   className="gutter-row"  xs={24} md={12} xl={9}>
                                     <div  className="col-lg-12" style={{background: 'rgb(0,0,0,0.0)'}} >
                                         <div className='team-member disease-member' >
                                               <div className="thumb">

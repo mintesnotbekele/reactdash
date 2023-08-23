@@ -31,7 +31,7 @@ const Treatment =()=>{
     carouselRef.current.goToSlide(slideIndex);
   };
 
-  const activeIndex = 3;
+  const activeIndex = 1;
 
   
 
@@ -64,7 +64,11 @@ const Treatment =()=>{
     });
     axios.get(`${process.env.REACT_APP_API_URL}/api/faq`)
     .then((res)=>{
-      setFaq(res.data);
+      setFaq(res.data.filter(item=>{
+        return(
+          item.id == 1
+            )
+        }));
       setfaqinit(res.data)
     });
    },[])
@@ -144,15 +148,14 @@ const Treatment =()=>{
             <h1 style={{fontFamily: "Playfair Display", fontSize: "60px" , color: 'black', padding: '10px'}}>
               {items?.name}
               </h1>
-              <img style={{marginTop: "100px"}} alt='yoga' src={firstyoga}/>
+              <img style={{marginTop: "100px"}} alt='yoga' src={`${process.env.REACT_APP_API_URL}/${items?.slidericon}`}/>
             </Col>
             <Col xl={14} xs={24} className='articletext p-2' span={14}>
-              <p className='treatmentslider' style={{color: 'white'}}>Yoga is an ancient Indian physical, mental, and spiritual discipline. Physical postures (asanas), breathing methods (pranayama), relaxation, and meditation are all part of the practice.</p>
+              <p className='treatmentslider' style={{color: 'white'}}>{items?.details}</p>
               <h1 style={{fontFamily: "Playfair Display", fontSize: "40px", textAlign: 'left', margin: '10px 10px', color: 'white'}}>
               Frequently Asked Questions
               </h1>
-              
-             <div >
+             <div>
                 <div className="col-md-10 justify-start">
                     <div className="card">
                         <div className="accordion" id="accordionPricing">

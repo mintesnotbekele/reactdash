@@ -2,6 +2,7 @@
 import newlogo from '../assets/homelogo.png';
 import { Row, Col, Button } from 'antd';
 import {useScrollPosition} from '../hooks/scrollhooks';
+
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
@@ -155,17 +156,37 @@ const drawer = (
 const container = window !== undefined ? () => window().document.body : undefined;
  
   const scrollPosition = useScrollPosition()
+  const [prev, setPrev] =useState(0);
   const [top, setTop] = useState(false);
 
   const navigate = useNavigate();
   
   useEffect(()=>{
-    if(scrollPosition < 70)
+    console.log(scrollPosition )
+    if(scrollPosition < 80 )
     {
+    if(prev >scrollPosition )
+    {
+    if(prev - scrollPosition <40)
+     setTimeout(() => {
        setTop(true);
+       setPrev(scrollPosition)
+      }, 500);  
     }
+    else
+    {
+      if(scrollPosition  - prev < 40)
+     setTimeout(() => {
+       setTop(true);
+       setPrev(scrollPosition)
+      }, 500);   
+    }
+  }
     else{
+      setTimeout(() => {
       setTop(false);
+      setPrev(scrollPosition)
+    }, 500);  
     }
 },[scrollPosition]);
   const [distag, setdisTag] =useState(true);  
@@ -173,7 +194,7 @@ const container = window !== undefined ? () => window().document.body : undefine
         setdisTag(!distag)
   }
   const handleLogout=()=>{
-        console.log("loggedout")
+      
         localStorage.removeItem('tokens');
         navigate('/login');
   }
@@ -193,19 +214,19 @@ const container = window !== undefined ? () => window().document.body : undefine
           <Link className='navheader' to='/treatment' key="treatments" style={{margin: '10px 20px',  color: 'black'}} >
             Treatments    
           </Link>
-          <Link className='navheader' to='/diseases' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+          <Link className='navheader' to='/diseases' key="diseases" style={{margin: '10px 20px', color: 'black'}} >
             Diseases    
           </Link>
-          <Link className='navheader' to='/book' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+          <Link className='navheader' to='/book' key="book" style={{margin: '10px 20px', color: 'black'}} >
             Contact Us     
           </Link>
-          <Link className='navheader' to='/about' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+          <Link className='navheader' to='/about' key="about" style={{margin: '10px 20px', color: 'black'}} >
             About Us    
           </Link>
-          <Link className='navheader' to='/blog' key="treatments" style={{margin: '10px 20px', color: 'black'}} >
+          <Link className='navheader' to='/blog' key="blog" style={{margin: '10px 20px', color: 'black'}} >
             Blog    
           </Link>
-          <Link className='navheader' to='/forums' key="treatments" style={{margin: '10px 20px', color: 'black'}}>
+          <Link className='navheader' to='/forums' key="forum" style={{margin: '10px 20px', color: 'black'}}>
             Forums
           </Link>
 

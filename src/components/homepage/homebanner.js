@@ -17,9 +17,9 @@ const HomeBanner=()=>{
       <div className="row">
      
           <div className="col-lg-5 mt-auto justify-content-bottom mx-2 my-auto">
-          <div class="container1 mt-10 px-5 pb-20" >
+          <div className="container1 mt-10 px-5 pb-20" >
               <h5 className="text-gradient text-warning fadeIn1 fadeInBottom text-warning mb-0 mt-2 font-weight-bolder"></h5>
-              <h1 className="fadeIn2 fadeInBottom mb-4 display-4 font-weight-bolder" style={{textAlign: 'left', color: 'black'}} spellcheck="false">Naturopathy</h1>
+              <h1 className="fadeIn2 fadeInBottom mb-4 display-4 font-weight-bolder" style={{textAlign: 'left', color: 'black'}} >Naturopathy</h1>
               <p style={{color: 'black' , textAlign: 'left'}}>Nurturing Wellness Naturally -  Embrace Your Inner Balance with Curevive's Holistic Naturopathy</p>
               <a href="/about" className="btn btn-default mb-10" style={{background: '#292F36', float: 'left', marginTop: '20px', color: 'white'}}>ABOUT</a>
           </div>

@@ -12,10 +12,10 @@ import Header from './components/headerbackup';
 import Footer from './components/footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const EcommerceCapsule = ()=>{
-
+    const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [entered1, setEntered1] = useState(true);
     
@@ -115,7 +115,7 @@ const EcommerceCapsule = ()=>{
                         <h1 className="articleHeader" style={{textAlign: 'center', color: 'white'}}>Want to talk to a doctor?</h1>
                                 <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                                 <div className="mx-auto flex justify-center">
-                                <Button style={{margin: 'auto', background: '#CDA274', color: 'white', paddingTop: '10px', paddingBottom: '30px'}}>View packages<ArrowRightOutlined/></Button>
+                                <Button onClick={()=> navigate('/about')} style={{margin: 'auto', background: '#CDA274', color: 'white', paddingTop: '10px', paddingBottom: '30px'}}>View packages<ArrowRightOutlined/></Button>
                                 </div>
                             </div>
                             </div>

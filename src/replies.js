@@ -14,6 +14,7 @@ import { useParams } from "react-router-dom";
 import ReactQuill from 'react-quill';
 import { FavoriteBorderOutlined } from '@mui/icons-material';
 import { Favorite } from '@mui/icons-material';
+import { CircularProgress } from '@mui/material';
 
 
 
@@ -77,9 +78,9 @@ const ForumsReplies=()=>{
   const [updated, setUpdated] = useState();
   const [threads, setThreads] = useState([]);
   const [recent, setRecent] = useState([]);
-  
+  const [loading, setLoading] = useState(false);
     useEffect(()=>{
-      
+        setLoading(true);
         let token = localStorage.getItem('tokens');
         if(token == undefined)
           navigate('/login');
@@ -119,12 +120,8 @@ const ForumsReplies=()=>{
              
              }) 
              setThreads(temp);
-          
+             setLoading(false);
             })
-        
-         
-
-
           }).catch((err)=> console.log(err));
        
         }).catch((err)=> console.log(err))
@@ -265,11 +262,17 @@ const [forms] =Form.useForm();
                 
                 <div className="flex-auto p-4 pt-6">
                       <ul className="flex flex-col pl-0 mb-0 rounded-lg">
-                      {
+                      {loading ? 
+                                  <div className='mx-auto justify-center flex'>
+                                <CircularProgress />
+                                </div>
+                                :
+                      
                       threads?.map((item, index) =>                       
                          <div>
                             {item.post_id == null ?
                               <div>
+                                
                               <li className="relative flex p-2 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
                                   <div className="flex flex-col w-full">
                                       <h6 className="mb-4 leading-normal" style={{textAlign: 'left', fontSize: '30px'}}>{item.title}</h6>
@@ -294,11 +297,10 @@ const [forms] =Form.useForm();
                                           }
                                           <a className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;" data-gramm="false" wt-ignore-input="true" data-quillbot-element="YUwGqBvnPVjrexXORyOMt">
                                           {item.likescount} 
-                     </a>
-                                          
-                                  </div>
-                              </li>
-                            
+                                                    </a>        
+                                              </div>
+                                  </li>
+                                
                               <Replies thread={item.id}/>
 
                             { posts == item.id ? <div className="display-flex">  
@@ -348,7 +350,9 @@ const [forms] =Form.useForm();
                            null
                             }
                          </div>
+
                                 )}
+                                
                                 <li>
                                 <hr className="horizontal dark my-4"/>
                                     <div>
@@ -401,7 +405,7 @@ const [forms] =Form.useForm();
                     </div>
                 </div>
 
-                <div className="w-full max-w-full px-3 mt-6 md:w-5/12 md:flex-none">
+                <div className="w-full max-w-full px-3 mt-2 md:w-5/12 md:flex-none">
                     <div className="relative flex flex-col h-full min-w-0 mb-6 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border mb-4">
                         <div className="p-6 px-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
                             <div className="flex flex-wrap -mx-3">

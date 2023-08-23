@@ -17,6 +17,9 @@ import ReactQuill from 'react-quill';
 import TextField from '@mui/material/TextField';
 import 'react-quill/dist/quill.snow.css';
 import InputAdornment from "@mui/material/InputAdornment";
+import { CircularProgress } from '@mui/material';
+
+
 const tokens = localStorage.getItem('tokens');
 
 const config = {
@@ -69,8 +72,9 @@ function CustomTabPanel(props) {
 
 const ForumsThreads=()=>{
     const {id} = useParams();
-  const navigate = useNavigate();
-  const [updated, setUpdated] = useState();
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+    const [updated, setUpdated] = useState();
     const [threads, setThreads] = useState([]);
     const [recent, setRecent] = useState([]);
     const [threadInit, setThreadinit] = useState([]);
@@ -79,15 +83,15 @@ const ForumsThreads=()=>{
     const [postLikes, setPostLikes] = useState([]);
 
     useEffect(()=>{
+      setLoading(true);
         let token = localStorage.getItem('tokens');
         if(token == undefined)
           navigate('/login');
         axios.get(`${process.env.REACT_APP_API_URL}/forum/api/category/${id}/thread`, config)
         .then((res)=>{
-          
+         setLoading(false);
          setThreads(res.data.data);
          const user = localStorage.getItem('user');
-        
          let my = res.data.data.filter(item=>{
           return item.author_id ==  user;
         })
@@ -257,8 +261,13 @@ const [form] = Form.useForm();
                           <Tab style={{color: 'black'}} label="My Favourites" {...a11yProps(2)} />
                         </Tabs>
                       </Box>
+
                       <CustomTabPanel value={value} index={0}>
-                             
+                        {loading ? 
+              <div className='mx-auto justify-center flex'>
+            <CircularProgress />
+            </div>
+            :       
                         <div class="flex-auto p-2 pt-2">
                             <ul class="flex flex-col pl-0 mb-0 rounded-lg">
                             {
@@ -280,6 +289,7 @@ const [form] = Form.useForm();
                                 )}
                             </ul>
                         </div>
+                              }
                               </CustomTabPanel>
                         <CustomTabPanel value={value} index={1}>
                           

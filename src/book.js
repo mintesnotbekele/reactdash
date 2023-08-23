@@ -6,10 +6,11 @@ import TextArea from 'antd/es/input/TextArea';
 import env from "react-dotenv";
 import Footer from "./components/footer";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 
 const Book=()=>{
-
+    const navigate = useNavigate();
     const handleSubmit=(values)=>{
         axios.post(`${process.env.REACT_APP_API_URL}/api/books`, {
             "name" : values.name,
@@ -142,7 +143,7 @@ const Book=()=>{
                 <div style={{background: '#292F36', borderRadius: '50px', marginTop: '100px', padding: '70px'}}>
                         <h1 className="articleHeader" style={{textAlign: 'center', color: 'white'}}>Here are some answers to frequently asked questions</h1>
                         <div className="mx-auto flex justify-center">
-                        <Button className="customButton" style={{margin: 'auto', background: '#CDA274', color: 'white', paddingTop: '10px',paddingBottom: '30px', marginTop: '30px',  width: '150px'}}>
+                        <Button onClick={()=> navigate('/treatment')} className="customButton" style={{margin: 'auto', background: '#CDA274', color: 'white', paddingTop: '10px',paddingBottom: '30px', marginTop: '30px',  width: '150px'}}>
                           FAQs<ArrowRightOutlined style={{color: '#292F36', marginLeft: "10px"}}/>
                         </Button>
                         </div>

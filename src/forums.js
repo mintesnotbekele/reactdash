@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-
+import { CircularProgress } from '@mui/material';
 
 
 
@@ -28,8 +28,8 @@ function CustomTabPanel(props) {
 
 
   const { children, value, index, ...other } = props;
+   
     const [isModalOpen, setIsModalOpen] = useState(false);
-    
     const showModal = () => {
       setIsModalOpen(true);
     };
@@ -70,7 +70,7 @@ function CustomTabPanel(props) {
   }
 
 const Forums=()=>{
-
+  const [loading, setLoading] = useState(false);
   const [editorState, setEditorState] = useState();
 
   const onEditorStateChange = (editorState) => {
@@ -85,18 +85,21 @@ const Forums=()=>{
 
 
     useEffect(()=>{
+      setLoading(true)
         let token = localStorage.getItem('tokens');
         if(token == undefined)
           navigate('/login');
         axios.get(`${process.env.REACT_APP_API_URL}/forum/api/category`, config)
         .then((res)=>{
          setThreads(res.data.data);
+         setLoading(false);
         }).catch((err)=> console.log(err))
         axios.get(`${process.env.REACT_APP_API_URL}/forum/api/thread/recent`, config)
         .then((res)=>{
          setRecent(res.data.data);
+         setLoading(false);
         }).catch((err)=> console.log(err))
-
+        
        },[updated])
 
     const [value, setValue] = useState(0);
@@ -180,10 +183,10 @@ const [form] = Form.useForm();
            </Row>
         
 
-           <div class="w-full px-2 py-2 mx-auto loopple-min-height-78vh text-slate-500">
-            <div class="flex flex-wrap removable">
-                <div class="w-full max-w-full px-2 md:w-7/12 md:flex-none">
-                    <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border mb-4">
+           <div className="w-full px-2 py-2 mx-auto loopple-min-height-78vh text-slate-500">
+            <div className="flex flex-wrap removable">
+                <div className="w-full max-w-full px-2 md:w-7/12 md:flex-none">
+                    <div className="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border mb-4">
                       
            <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -195,14 +198,19 @@ const [form] = Form.useForm();
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
-            <div class="flex-auto">
-                            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
+              {loading ? 
+              <div className='mx-auto justify-center flex'>
+            <CircularProgress />
+            </div>
+            :
+            <div className="flex-auto">
+                            <ul className="flex flex-col pl-0 mb-0 rounded-lg">
                             {
                 threads?.map((item, index) => 
                         
                         <Link style={{color: 'black'}} to={`/threads/${item.id}`}>
-                                <li class="relative flex p-2 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
-                                    <div class="flex flex-col">
+                                <li className="relative flex p-2 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
+                                    <div className="flex flex-col">
                                     <div className="max-w-full md:w-1/2 md:flex-none">
                                         <h1 style={{fontSize: '30px', color: 'black'}}>{item.title}</h1>
                                         </div>
@@ -215,7 +223,7 @@ const [form] = Form.useForm();
                                        
                                         {item.post_count}: answers </a>
                                     </div>
-                                        <span>Description: <span class="font-semibold text-slate-700 sm:ml-2" >{item.description}</span>
+                                        <span>Description: <span className="font-semibold text-slate-700 sm:ml-2" >{item.description}</span>
                                         </span>
                                      </div>
                                 </li>
@@ -223,10 +231,11 @@ const [form] = Form.useForm();
                                 )}
                             </ul>
                         </div>
+                        }
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-            <div class="flex-auto">
-                            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
+            <div className="flex-auto">
+                            <ul className="flex flex-col pl-0 mb-0 rounded-lg">
                             {
                 recent?.map((item, index) => 
                         
@@ -234,7 +243,7 @@ const [form] = Form.useForm();
                 <li className="relative flex p-2 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50">
                     <div className="flex flex-col">
                         <h4 style={{color: 'black', fontFamily: 'poppins'}}>{item.title}</h4>
-                        <span className="mb-2 leading-tight text-xs" style={{color: 'black'}}>Author: <span class="font-semibold text-slate-700 sm:ml-2">{item.author_name}</span>
+                        <span className="mb-2 leading-tight text-xs" style={{color: 'black'}}>Author: <span className="font-semibold text-slate-700 sm:ml-2">{item.author_name}</span>
                         </span>
                       </div>
                     <div className="ml-auto text-right">

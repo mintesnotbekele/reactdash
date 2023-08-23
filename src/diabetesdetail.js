@@ -7,7 +7,7 @@ import {ArrowRightOutlined} from '@ant-design/icons';
 import herbalmedicine from './assets/herbalmedicine.png';
 import adoosa from './assets/broartilcle.png';
 import { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -30,7 +30,7 @@ const Bronchitis=()=>{
           setResearchpaper(res.data);
         }); 
      },[]);
-  
+     const navigate = useNavigate();
     const [researchpaper, setResearchpaper] = useState([]);
    
     
@@ -213,7 +213,7 @@ const Bronchitis=()=>{
                            <h1 className="articleHeader" style={{textAlign: 'center', color: 'white'}}>Want to talk to a doctor?</h1>
                                    <p style={{fontFamily: 'lato', fontSize: '22px', textAlign: 'center',color: 'white', marginBottom: '30px'}}>Book a consultation now.</p>
                                    <div className="mx-auto flex justify-center">
-                                   <Button style={{margin: 'auto', background: '#CDA274', color: 'white', paddingTop: '10px', paddingBottom: '30px'}}>View packages<ArrowRightOutlined/></Button>
+                                   <Button onClick={()=> navigate('/abou')} style={{margin: 'auto', background: '#CDA274', color: 'white', paddingTop: '10px', paddingBottom: '30px'}}>View packages<ArrowRightOutlined/></Button>
                                    </div>
                                </div>
                                </div>

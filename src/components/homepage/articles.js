@@ -80,12 +80,12 @@ const Articles= ()=>{
             </h1>
             <p style={{margin: "20px", fontSize: '22px', fontFamily: "lato"}}>Detailed and fun to read articles written by well researched individuals from around the world.</p>
             </div>
-           <Row gutter={16}>
+           <Row >
            {article.map((item) => 
            <>
            
           
-               <Col xl={8} xs={24} onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle gutter-row m-1 py-2 px-2' span={8}>  
+               <Col xl={8} xs={24} onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle gutter-row py-2 px-2' span={8}>  
                <div style={{ borderWidth: '2px', borderRadius: '25px'}} className="py-2 px-2">
                <div style={{height: '100%'}}>
                   <img style={{ maxHeight: '300px', borderRadius: '25px'}} src={`${process.env.REACT_APP_API_URL}/${item?.picture}`} alt="articles"/>
@@ -101,7 +101,43 @@ const Articles= ()=>{
                        </div>
                       </div>
                       </div>    
-                </Col> </>
+                </Col> 
+                <Col xl={8} xs={24} onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle gutter-row py-2 px-2' span={8}>  
+               <div style={{ borderWidth: '2px', borderRadius: '25px'}} className="py-2 px-2">
+               <div style={{height: '100%'}}>
+                  <img style={{ maxHeight: '300px', borderRadius: '25px'}} src={`${process.env.REACT_APP_API_URL}/${item?.picture}`} alt="articles"/>
+                      <h1 className="mt-2" style={{fontSize: '25px', fontFamily: "lato", textAlign: 'left', color:'black'}}> {item?.title}</h1>
+                      <div className="my-2">
+                            <Link style={{color: 'black'}} to={`/blogdetail/${item?.id}`}>
+                             <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}> 
+                               <p className='blogsecond my-4'  style={{ width: '90%'}}>{moment(item.created_at).fromNow()} 
+                             
+                                    <RightOutlined style={{color: 'black'}} className={ entered1 ? 'cursorhover': 'cursorfree'} /></p>
+                            </p>
+                            </Link>
+                       </div>
+                      </div>
+                      </div>    
+                </Col> 
+                <Col xl={8} xs={24} onMouseEnter={()=>handleHoverEnter(1)}  onMouseLeave={()=>handleHoverleave(1)} className='hoverarticle gutter-row py-2 px-2' span={8}>  
+               <div style={{ borderWidth: '2px', borderRadius: '25px'}} className="py-2 px-2">
+               <div style={{height: '100%'}}>
+                  <img style={{ maxHeight: '300px', borderRadius: '25px'}} src={`${process.env.REACT_APP_API_URL}/${item?.picture}`} alt="articles"/>
+                      <h1 className="mt-2" style={{fontSize: '25px', fontFamily: "lato", textAlign: 'left', color:'black'}}> {item?.title}</h1>
+                      <div className="my-2">
+                            <Link style={{color: 'black'}} to={`/blogdetail/${item?.id}`}>
+                             <p style={{ color: '#4D5053', width: '100%', textAlign: 'left'}}> 
+                               <p className='blogsecond my-4'  style={{ width: '90%'}}>{moment(item.created_at).fromNow()} 
+                             
+                                    <RightOutlined style={{color: 'black'}} className={ entered1 ? 'cursorhover': 'cursorfree'} /></p>
+                            </p>
+                            </Link>
+                       </div>
+                      </div>
+                      </div>    
+                </Col> 
+                
+                </>
            )}     
            </Row>
                 <div style={{margin: 'auto', width: '30%'}}>

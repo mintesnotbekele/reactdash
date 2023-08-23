@@ -276,7 +276,7 @@ return(
                             <img  src={`${process.env.REACT_APP_API_URL}/${items.picture}`} alt="Alexis-Team" />
                         </div>
                         <div className="content" style={{width: '100%'}}>
-                            <div className="member-info" style={{marginLeft: '30%'}}>
+                            <div className="member-info" style={{marginLeft: '35%'}}>
                                 <h3 className="name">
                                     <Link
                                     style={{textAlign: 'center'}}

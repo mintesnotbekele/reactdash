@@ -89,7 +89,7 @@ const Testimonials=()=>{
                           swipeable
                               >
                      {testimonials.map((item) => 
-                                 <div className="col-lg-11 mx-auto">
+                                 <div key={item.id} className="col-lg-11 mx-auto">
                                  <div className="card text-center bg-white" style={{background: 'rgb(0,0,0,0.0)'}}>
                                      <div className="card-body " style={{padding: '10px'}}>
                                      <div className="flex">

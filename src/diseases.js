@@ -233,10 +233,10 @@ const Diseases = ()=>{
           >
             {researchpaper.map((item) => 
             <div style={{width: '90%', margin: 'auto    ',borderRadius: '40px', padding: '10px' ,marginBottom: '30px',background: 'rgba(78, 52, 38, 0.6)'}}>
-                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', color: 'black' }}>
+                      <h1  style={{fontFamily: "Playfair Display", fontSize: "22px", margin: '20px',fontWeight: 'bold', color: 'black', textAlign: 'left' }}>
                         {item.title}
                         </h1>
-                        <p style={{fontFamily: 'lato', fontSize: '18px', margin: '20px', color: 'white'}}> 
+                        <p style={{fontFamily: 'lato', fontSize: '18px', margin: '20px', color: 'white', textAlign: 'left'}}> 
                         {item.description}
                         </p>
                         <div style={{margin: '20px'}}>
@@ -452,10 +452,11 @@ const Diseases = ()=>{
                    <Row>
                     <Col xs={24} xl={8}>
                       <div style={{padding: '10px'}}>
-                        <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px' , width: '100%', padding: '20px'}}>
+                      <div style={{background: 'rgba(78, 52, 38, 0.6)', borderRadius: '30px', width: '100%', padding: '40px'}}>
                             <p className='pricingheader' style={{color: 'black'}}>10 Day trial </p>
-                            <p style={{textAlign: 'center' , color: 'black'}} >/ month</p>
+                           
                             <h1 className='pricingstyle' style={{color: 'black'}}>₹950</h1>
+                            <p style={{textAlign: 'center' , color: 'black'}} >/ month</p>
                             <hr style={{height: '2px', background: '#CDA274' ,color: 'white'}}/>
                             <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', color: 'white'}}>1 Consultation</p>
                             <p style={{fontFamily: 'lato', fontSize: '20px', textAlign: 'center', color: 'white'}}>Protocol Creation </p>
