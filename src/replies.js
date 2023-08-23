@@ -80,7 +80,7 @@ const ForumsReplies=()=>{
   const [recent, setRecent] = useState([]);
   const [loading, setLoading] = useState(false);
     useEffect(()=>{
-        setLoading(true);
+      
         let token = localStorage.getItem('tokens');
         if(token == undefined)
           navigate('/login');
