@@ -1,9 +1,7 @@
 import Header from './components/headerbackup';
 import aboutBanner from './assets/forumbanner.png';
 import moment from "moment";
-import { Row,Button, Col, Modal, message,Input,Form } from "antd";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import { Row, message,Form } from "antd";
 import Box from '@mui/material/Box';
 import { useEffect, useState } from "react";
 import Typography from '@mui/material/Typography';
@@ -30,17 +28,7 @@ function CustomTabPanel(props) {
 
   
   const { children, value, index, ...other } = props;
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    
-    const showModal = () => {
-      setIsModalOpen(true);
-    };
-    const handleOk = () => {
-      setIsModalOpen(false);
-    };
-    const handleCancel = () => {
-      setIsModalOpen(false);
-    };
+
     return (
       <div
         role="tabpanel"
@@ -64,12 +52,7 @@ function CustomTabPanel(props) {
     value: PropTypes.number.isRequired,
   };
 
-  function a11yProps(index) {
-    return {
-      id: `simple-tab-${index}`,
-      'aria-controls': `simple-tabpanel-${index}`,
-    };
-  }
+
 
 const ForumsReplies=()=>{
     const {id, title} = useParams();
@@ -133,25 +116,14 @@ const ForumsReplies=()=>{
         }).catch((err)=> console.log(err))
        },[updated])
 
-    const [value, setValue] = useState(0);
+ 
 
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
+    const [ setId] = useState();
+   
+   
 
-    const [newid, setId] = useState();
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const showModal = () => {
-      setIsModalOpen(true);
-    };
+   
 
-    const handleOk = () => {
-      setIsModalOpen(false);
-    };
-
-    const handleCancel = () => {
-      setIsModalOpen(false);
-    };
   function Replies(props){
     const thre = props.thread;
     const replies= [...threads];
@@ -174,7 +146,7 @@ const ForumsReplies=()=>{
              <div className="ml-auto text-right w-full">
                     
                     
-                     <button id={item.id} onClick={()=>handlepostreply(item.id)} className="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;">
+                     <button id={item.id} onClick={()=>handlepostreply(item.id)} className="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700">
                      <i className="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Reply </button>
 
              </div>
@@ -209,9 +181,9 @@ const ForumsReplies=()=>{
       })
       setpost(null);
   }
-  const [reply, setReply] = useState(false);
+  const [ setReply] = useState(false);
   const [posts , setpost]= useState(null);
-  const [likes, setLikes] = useState([]);
+  const [ setLikes] = useState([]);
 
 
 
@@ -239,8 +211,8 @@ const ForumsReplies=()=>{
     setUpdated(!updated);
   }
 
-const [form, registerId] = Form.useForm();
-var quillObj; 
+const [form] = Form.useForm();
+
 
 
 const [forms] =Form.useForm();
@@ -287,15 +259,15 @@ const [forms] =Form.useForm();
                                     </div>
                                   <div className="ml-auto text-right w-full">
 
-                                      <a className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;" data-gramm="false" wt-ignore-input="true" data-quillbot-element="YUwGqBvnPVjrexXORyOMt">
+                                      <a href='#' className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center text-transparent uppercase align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" data-gramm="false" wt-ignore-input="true" >
                                           <i className="mr-2 far fa-trash-alt bg-150 bg-gradient-red bg-x-25 bg-clip-text" aria-hidden="true"></i></a>
-                                      <button id={item.id} onClick={()=>handlepostreply(item.id)} className="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700" href="javascript:;">
+                                      <button id={item.id} onClick={()=>handlepostreply(item.id)} className="inline-block px-4 py-3 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 hover:scale-102 active:opacity-85 bg-x-25 text-slate-700">
                                           <i className="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Reply </button>
                                           { item.likes == 0 ? 
                                           <FavoriteBorderOutlined onClick={()=>handleLikes(item.id)}/>:
                                           <Favorite onClick={()=>handledisLikes(item.id)}/>
                                           }
-                                          <a className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;" data-gramm="false" wt-ignore-input="true" data-quillbot-element="YUwGqBvnPVjrexXORyOMt">
+                                          <a href='#' className="z-10 inline-block px-4 py-3 mb-0 font-bold text-center rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in bg-150 bg-gradient-red hover:scale-102 active:opacity-85 bg-x-25 bg-clip-text" >
                                           {item.likescount} 
                                                     </a>        
                                               </div>
@@ -303,7 +275,7 @@ const [forms] =Form.useForm();
                                 
                               <Replies thread={item.id}/>
 
-                            { posts == item.id ? <div className="display-flex">  
+                            { posts === item.id ? <div className="display-flex">  
                                <Form
                                  form={forms}
                                  name={`basic${item.id}`} 

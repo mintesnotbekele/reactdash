@@ -1,6 +1,3 @@
-
-import {Row, Col} from 'antd';
-import avatar from "../../assets/avatar.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useEffect, useState } from 'react';
@@ -13,7 +10,7 @@ const Testimonials=()=>{
 
 
    const [testimonials, setTestimonials] = useState([]);
-   const [loading, setLoading] = useState(false);
+
     useEffect(()=>{
       
      axios.get(`${process.env.REACT_APP_API_URL}/api/testimonial`)
