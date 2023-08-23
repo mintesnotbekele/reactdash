@@ -19,7 +19,7 @@ const Affiliates=()=>{
         axios.get(`${process.env.REACT_APP_API_URL}/api/faq`)
         .then((res)=>{
           setFaq(res.data);
-        });
+        }).catch((err)=> console.log(err))
     },[])
    return(
     <div>

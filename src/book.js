@@ -26,7 +26,7 @@ const Book=()=>{
             else {
               message.error(`the is something wong contact administrator Please!`);
             }
-        })
+        }).catch((err)=> console.log(err))
     }
         return(
             <div>

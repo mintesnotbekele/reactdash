@@ -41,7 +41,7 @@ const Blogdetail=()=>{
                 return(
                   item.index < 3
                     )}));
-        })
+        }).catch((err)=> console.log(err))
      },[]);
 
      function handleSearch (e){
