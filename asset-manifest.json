@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c33f37ab.css",
-    "main.js": "/static/js/main.b3ce07d8.js",
+    "main.css": "/static/css/main.afa3fd5f.css",
+    "main.js": "/static/js/main.18a6dc3f.js",
     "static/media/backvideo.mp4": "/static/media/backvideo.7901c3eab58d4793243b.mp4",
     "static/media/treatmenthome.png": "/static/media/treatmenthome.d29e06dd1ec049d19eb7.png",
     "static/media/earn.png": "/static/media/earn.d085dffb04c97e28703c.png",
@@ -49,11 +49,11 @@
     "static/media/logo.png": "/static/media/logo.726721089b42ba5a7b46.png",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/index.html",
-    "main.c33f37ab.css.map": "/static/css/main.c33f37ab.css.map",
-    "main.b3ce07d8.js.map": "/static/js/main.b3ce07d8.js.map"
+    "main.afa3fd5f.css.map": "/static/css/main.afa3fd5f.css.map",
+    "main.18a6dc3f.js.map": "/static/js/main.18a6dc3f.js.map"
   },
   "entrypoints": [
-    "static/css/main.c33f37ab.css",
-    "static/js/main.b3ce07d8.js"
+    "static/css/main.afa3fd5f.css",
+    "static/js/main.18a6dc3f.js"
   ]
 }
