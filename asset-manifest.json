@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.afa3fd5f.css",
-    "main.js": "/static/js/main.16499ecc.js",
+    "main.js": "/static/js/main.e84f90db.js",
     "static/media/backvideo.mp4": "/static/media/backvideo.7901c3eab58d4793243b.mp4",
     "static/media/treatmenthome.png": "/static/media/treatmenthome.d29e06dd1ec049d19eb7.png",
     "static/media/earn.png": "/static/media/earn.d085dffb04c97e28703c.png",
@@ -45,15 +45,14 @@
     "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/text.png": "/static/media/text.83064579b660d40e3e25.png",
-    "static/media/avatar.png": "/static/media/avatar.02fa54475c0d6c9f3cee.png",
     "static/media/logo.png": "/static/media/logo.726721089b42ba5a7b46.png",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/index.html",
     "main.afa3fd5f.css.map": "/static/css/main.afa3fd5f.css.map",
-    "main.16499ecc.js.map": "/static/js/main.16499ecc.js.map"
+    "main.e84f90db.js.map": "/static/js/main.e84f90db.js.map"
   },
   "entrypoints": [
     "static/css/main.afa3fd5f.css",
-    "static/js/main.16499ecc.js"
+    "static/js/main.e84f90db.js"
   ]
 }
